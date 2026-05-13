@@ -1,5 +1,8 @@
 # AI News Digest Archive
 
+> Daily-to-yearly AI intelligence reports with commentary, judgment, and long-term signal tracking.
+> 从日报到年报的 AI 情报档案库，记录事实，也沉淀判断与长期信号。
+
 一个持续更新的 AI 情报档案库，按日报、周报、月报、年报沉淀全球 AI 领域的重要动态与判断，重点关注中美大模型、AI 编程代理、官方博客 / 研究 / 发布，以及 GitHub 热门项目和开源基础设施。
 
 ## 这是什么

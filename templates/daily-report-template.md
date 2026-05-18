@@ -3,6 +3,45 @@
 - 生成时间：YYYY-MM-DD 09:00 Asia/Shanghai
 - 覆盖时间窗：YYYY-MM-DD 09:00 至 YYYY-MM-DD 09:00
 
+## 元数据
+
+```yaml
+date: YYYY-MM-DD
+window_start: YYYY-MM-DD 09:00 Asia/Shanghai
+window_end: YYYY-MM-DD 09:00 Asia/Shanghai
+supplemental_range: none
+summary:
+  themes:
+    - agent_api
+    - runtime_governance
+  regions:
+    - us
+    - china
+  companies:
+    - OpenAI
+    - Anthropic
+    - GitHub
+    - Qwen
+  products:
+    - Codex
+    - Claude Code
+    - GitHub Copilot
+    - Qwen Code
+  signals:
+    - API 化
+    - 开发环境化
+    - 团队治理
+  followups:
+    - GitHub 是否继续扩展 agent task API
+    - Qwen Code 是否推进稳定版 runtime
+  confidence: high
+```
+
+- `supplemental_range` 没有补充窗口外内容时写 `none`
+- `themes` 建议尽量复用稳定标签，便于周报、月报汇总
+- `signals` 写人能读懂的短语，`themes` 写更稳定的机器可复用标签
+- `followups` 只保留未来 1-7 天值得继续观察的问题
+
 ## 主线判断
 
 - 用 3-5 句话概括今天最值得记住的主线。
@@ -62,6 +101,21 @@
 ## 值得继续跟踪
 
 - 未来 1-3 天值得继续观察的话题
+
+## 今日结构化结论
+
+### 公司 / 产品 / 主题索引
+
+- 公司：
+- 产品：
+- 主题标签：
+- 信号标签：
+
+### 判断变化
+
+- 延续了什么：
+- 新出现了什么：
+- 被削弱了什么：
 
 ## 参考来源
 

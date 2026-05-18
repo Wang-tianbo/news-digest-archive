@@ -88,6 +88,13 @@ templates/              日报/周报模板
 
 参考模板见 [templates/daily-report-template.md](templates/daily-report-template.md)。
 
+如果你希望把日报进一步沉淀成长期认知系统，可以继续看：
+
+- 周报模板：[templates/weekly-report-template.md](templates/weekly-report-template.md)
+- 月报模板：[templates/monthly-report-template.md](templates/monthly-report-template.md)
+- 长期议题台账模板：[templates/trend-ledger-template.md](templates/trend-ledger-template.md)
+- 长期议题台账说明：[docs/trend-ledger.md](docs/trend-ledger.md)
+
 ## 自动化计划
 
 - 定时：每天 09:00，Asia/Shanghai
@@ -100,6 +107,8 @@ templates/              日报/周报模板
 - 周报 / 月报 / 年报自动汇总框架
 - 固定 watchlist 与动态流规则
 - 评论 / 判断层沉淀机制
+- 结构化元数据模板
+- 长期议题台账模板与方法说明
 
 ## 跨电脑恢复
 

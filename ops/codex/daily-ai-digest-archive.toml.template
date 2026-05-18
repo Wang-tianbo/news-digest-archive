@@ -30,11 +30,14 @@ Content requirements:
 - Pay special attention to AI coding agents and developer tools, including Codex, Claude Code, GitHub Copilot, Cursor, Devin, Gemini CLI, and important official company blogs or research posts behind those products.
 - Include clickable source links for every major item and use absolute dates instead of relative wording.
 - Keep the digest concise and high signal.
+- Include a short `元数据` YAML block near the top of the report following the repository template, capturing at least date/window, supplemental range, themes, regions, companies, products, signals, followups, and confidence.
+- Reuse stable labels for themes, companies, and products where possible so later weekly/monthly summaries can aggregate them consistently.
 - Include a dedicated `今日评论与判断` section. This section must go beyond summarizing facts and should capture the day's independent judgment about competitive dynamics, product momentum, technical direction, workflow change, weak signals versus real trends, and what is worth tracking next.
 - Make it explicit that the judgment section is based on the current report's sample of confirmed facts.
 - For changing metrics such as stars, trending position, release cadence, or similar snapshots, include a date, version number, or snapshot time when practical.
 
 Recommended structure:
+- 元数据
 - 主线判断
 - 今日评论与判断
 - 今日最重要的 3-5 条更新
@@ -43,6 +46,7 @@ Recommended structure:
 - 官方博客 / 研究 / 发布
 - GitHub 热门项目
 - 值得继续跟踪
+- 今日结构化结论
 - 参考来源
 
 Git requirements:

@@ -5,6 +5,17 @@
 
 一个持续更新的 AI 情报档案库，按日报、周报、月报、年报沉淀全球 AI 领域的重要动态与判断，重点关注中美大模型、AI 编程代理、官方博客 / 研究 / 发布，以及 GitHub 热门项目和开源基础设施。
 
+## 谁适合用
+
+如果你也想要一套能长期沉淀 AI 观察、并且能由 Codex 每天自动写日报的仓库，这个项目可以直接 fork 后拿来用。
+
+它适合：
+
+- 想每天跟踪全球 AI 热点的人
+- 想重点看中美大模型、AI 编程代理、官方博客与 GitHub 开源动态的人
+- 想把“事实 + 判断”一起长期积累下来的人
+- 想在自己的电脑上恢复同一套 Codex 自动化流程的人
+
 ## 这是什么
 
 这个仓库不是单纯的“新闻搬运”。
@@ -32,7 +43,7 @@
 - GitHub 热门 AI 项目、重要开源仓库与基础设施进展
 - 关键投融资、政策、算力、推理服务、Agent 产品趋势
 
-更细的覆盖清单见 [docs/coverage-map.md](/Users/tbw/Documents/Playground/news-digest-archive/docs/coverage-map.md)。
+更细的覆盖清单见 [docs/coverage-map.md](docs/coverage-map.md)。
 
 ## 日报原则
 
@@ -43,7 +54,7 @@
 - 每条信息都尽量回答两个问题：发生了什么、为什么值得关注
 - 明确日期和时间窗，避免“今天”“昨天”这类模糊表述
 
-具体写作规范见 [docs/editorial-guidelines.md](/Users/tbw/Documents/Playground/news-digest-archive/docs/editorial-guidelines.md)。
+具体写作规范见 [docs/editorial-guidelines.md](docs/editorial-guidelines.md)。
 
 ## 仓库结构
 
@@ -75,7 +86,7 @@ templates/              日报/周报模板
 - 值得继续跟踪的话题
 - 参考来源
 
-参考模板见 [templates/daily-report-template.md](/Users/tbw/Documents/Playground/news-digest-archive/templates/daily-report-template.md)。
+参考模板见 [templates/daily-report-template.md](templates/daily-report-template.md)。
 
 ## 自动化计划
 
@@ -89,6 +100,17 @@ templates/              日报/周报模板
 - 周报 / 月报 / 年报自动汇总框架
 - 固定 watchlist 与动态流规则
 - 评论 / 判断层沉淀机制
+
+## 跨电脑恢复
+
+这套流程现在已经支持“仓库自带安装说明 + 本机一键恢复”：
+
+1. fork 这个仓库到你自己的 GitHub 账号，或者直接克隆你自己的副本
+2. 在本地克隆仓库
+3. 确保 Codex 已登录，且当前仓库具备 `git push` 权限
+4. 运行 `python3 scripts/install_codex_daily_digest.py`
+
+详细步骤见 [docs/portable-setup.md](docs/portable-setup.md)。
 
 后续可以继续扩展：
 

@@ -32,7 +32,7 @@
 
 ## 必查数据源
 
-- 先查 [docs/source-watchlist.md](/Users/tbw/Documents/Playground/news-digest-archive/docs/source-watchlist.md) 中的 AI 编程代理专项源
+- 先查 [docs/source-watchlist.md](source-watchlist.md) 中的 AI 编程代理专项源
 - 再查中国模型厂商专项源
 - 对 Codex、Claude Code、Copilot、Cursor、Gemini CLI、Devin、Qwen Code 相关动态，优先查产品页、官方文档、changelog、官方仓库和 release
 - 对 DeepSeek、Qwen、智谱、Kimi、MiniMax、腾讯混元、百度文心、豆包 / 火山方舟，优先查官方博客、产品页、文档页、产品动态和官方 GitHub
@@ -67,6 +67,15 @@
 - 只提交本次生成或更新的日报文件
 - commit message 使用：`docs: add ai digest for YYYY-MM-DD`
 - 默认推送到 `main`
+
+## 跨电脑安装
+
+- 仓库内提供跨平台安装器 `scripts/install_codex_daily_digest.py`
+- macOS / Linux 另外提供便捷包装脚本 `scripts/install_codex_daily_digest.sh`
+- 脚本会把自动化配置写入 `${CODEX_HOME:-~/.codex}/automations/daily-ai-digest-archive/automation.toml`
+- 脚本会根据当前电脑的本地时区，计算与 `Asia/Shanghai 09:00` 对应的本地触发时间
+- 如果仓库换了路径，或者系统时区发生变化，重跑一次安装脚本
+- 详细说明见 [docs/portable-setup.md](portable-setup.md)
 
 ## 失败处理
 

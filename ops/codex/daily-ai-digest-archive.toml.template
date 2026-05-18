@@ -1,0 +1,63 @@
+version = 1
+id = "daily-ai-digest-archive"
+kind = "cron"
+name = "Daily AI Digest Archive"
+prompt = """
+Before doing any research, determine the current time in Asia/Shanghai.
+
+- If the current Asia/Shanghai time is not between 09:00:00 and 09:14:59, exit immediately with a concise no-op note and make no file or git changes.
+- If it is within that window, research and write the daily AI digest for the current scheduled run using the current workspace git repository as the archive.
+
+Determine the report date in Asia/Shanghai and cover the window from the previous 09:00:00 to the current 09:00:00 Asia/Shanghai bucket using the automation schedule time; if schedule metadata is unavailable, fall back to the previous 24 hours and state that fallback explicitly in the report. Create or update `daily/YYYY/YYYY-MM/YYYY-MM-DD.md` with title `# AI 日报 - YYYY-MM-DD`. Follow the repository guidance in `README.md`, `docs/coverage-map.md`, `docs/editorial-guidelines.md`, `docs/source-watchlist.md`, and `docs/automation-spec.md`.
+
+Time-window and novelty requirements:
+- Primary reporting window is the prior 09:00 to current 09:00 Asia/Shanghai bucket.
+- If that strict window has too few high-value confirmed updates, you may supplement with still-developing high-value official updates from the previous several days, but you must explicitly state the supplemental date range in the report.
+- Supplemental items must avoid repeating items already covered in the repository's recent daily digests unless there is a materially new angle, update, or follow-up.
+- If there is no sufficiently high-confidence new information, prefer a shorter digest rather than filler.
+
+Data-source requirements:
+- First scan the AI coding agent watchlist in `docs/source-watchlist.md`, including Codex, Claude Code, Cursor, GitHub Copilot, Gemini CLI, Devin, Qwen Code, and Z Code related product pages, blogs, docs, changelogs, releases, and official repositories.
+- Then scan the China model company watchlist in `docs/source-watchlist.md`, including DeepSeek, Qwen, Zhipu, Kimi, MiniMax, Tencent Hunyuan, Baidu Wenxin, and ByteDance Doubao / Volcano Engine Ark related official product pages, docs, product updates, blogs, and GitHub orgs where available.
+- For important tools and products, do not rely on a single homepage. Check the product page plus official docs plus changelog or release notes plus official GitHub or release activity when available.
+- Prefer official primary sources first: company blogs, research pages, product docs, official GitHub repos, changelogs, release notes, product update pages, and official announcements. Use media coverage only as supporting context.
+- Use dynamic update streams where relevant: changelog pages, release notes pages, GitHub releases, recent org activity, and documentation update pages.
+- Prefer deep links to the exact changelog entry, release page, doc page, or article when possible instead of only top-level index pages.
+
+Content requirements:
+- Focus on global AI hotspots with priority on Chinese and US model companies.
+- Prioritize OpenAI, Anthropic, Google, Meta, Microsoft, GitHub, DeepSeek, Qwen, Zhipu, Kimi, MiniMax, Baidu, Tencent, ByteDance, and notable open-source AI infrastructure.
+- Pay special attention to AI coding agents and developer tools, including Codex, Claude Code, GitHub Copilot, Cursor, Devin, Gemini CLI, and important official company blogs or research posts behind those products.
+- Include clickable source links for every major item and use absolute dates instead of relative wording.
+- Keep the digest concise and high signal.
+- Include a dedicated `今日评论与判断` section. This section must go beyond summarizing facts and should capture the day's independent judgment about competitive dynamics, product momentum, technical direction, workflow change, weak signals versus real trends, and what is worth tracking next.
+- Make it explicit that the judgment section is based on the current report's sample of confirmed facts.
+- For changing metrics such as stars, trending position, release cadence, or similar snapshots, include a date, version number, or snapshot time when practical.
+
+Recommended structure:
+- 主线判断
+- 今日评论与判断
+- 今日最重要的 3-5 条更新
+- 中美大模型
+- AI 编程代理
+- 官方博客 / 研究 / 发布
+- GitHub 热门项目
+- 值得继续跟踪
+- 参考来源
+
+Git requirements:
+- Sync with `origin/main` before writing if needed.
+- Stage only the generated digest file.
+- Commit with `docs: add ai digest for YYYY-MM-DD` or `docs: update ai digest for YYYY-MM-DD` if the file already existed.
+- Push to `origin main`.
+- Do not use destructive git commands and do not modify unrelated files.
+- Report a concise run summary with the report path, covered time window, top themes, key judgments, and pushed commit hash or exact git blocker.
+"""
+status = "ACTIVE"
+rrule = __RRULE_JSON__
+model = "gpt-5.4"
+reasoning_effort = "high"
+execution_environment = "local"
+cwds = [__REPO_ROOT_JSON__]
+created_at = __CREATED_AT_MS__
+updated_at = __UPDATED_AT_MS__

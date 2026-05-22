@@ -19,6 +19,7 @@ Time-window and novelty requirements:
 Data-source requirements:
 - First scan the AI coding agent watchlist in `docs/source-watchlist.md`, including Codex, Claude Code, Cursor, GitHub Copilot, Gemini CLI, Devin, Qwen Code, and Z Code related product pages, blogs, docs, changelogs, releases, and official repositories.
 - Then scan the China model company watchlist in `docs/source-watchlist.md`, including DeepSeek, Qwen, Zhipu, Kimi, MiniMax, Tencent Hunyuan, Baidu Wenxin, and ByteDance Doubao / Volcano Engine Ark related official product pages, docs, product updates, blogs, and GitHub orgs where available.
+- If there are high-value adjacent signals that materially affect the AI competitive landscape, also scan the AI peripheral watchlist in `docs/source-watchlist.md`, including compute and semiconductors, cloud and datacenter capacity, policy and regulation, security and misuse governance, enterprise adoption, and high-value industry deployment.
 - For important tools and products, do not rely on a single homepage. Check the product page plus official docs plus changelog or release notes plus official GitHub or release activity when available.
 - Prefer official primary sources first: company blogs, research pages, product docs, official GitHub repos, changelogs, release notes, product update pages, and official announcements. Use media coverage only as supporting context.
 - Use dynamic update streams where relevant: changelog pages, release notes pages, GitHub releases, recent org activity, and documentation update pages.
@@ -28,24 +29,29 @@ Content requirements:
 - Focus on global AI hotspots with priority on Chinese and US model companies.
 - Prioritize OpenAI, Anthropic, Google, Meta, Microsoft, GitHub, DeepSeek, Qwen, Zhipu, Kimi, MiniMax, Baidu, Tencent, ByteDance, and notable open-source AI infrastructure.
 - Pay special attention to AI coding agents and developer tools, including Codex, Claude Code, GitHub Copilot, Cursor, Devin, Gemini CLI, and important official company blogs or research posts behind those products.
+- Expand beyond AI-only headlines when warranted, but keep the center of gravity on AI. Only include adjacent signals when they clearly feed back into AI competition, model deployment, developer workflows, governance, or adoption.
 - Include clickable source links for every major item and use absolute dates instead of relative wording.
 - Keep the digest concise and high signal.
-- Include a short `元数据` YAML block near the top of the report following the repository template, capturing at least date/window, supplemental range, themes, regions, companies, products, signals, followups, and confidence.
+- Include a short human-readable `结构化快照` near the top of the report following the repository template.
+- Place the full machine-friendly YAML metadata in a `结构化索引` section later in the report, preferably inside a collapsible block, capturing at least date/window, supplemental range, themes, regions, companies, products, signals, followups, and confidence.
+- When adjacent signals are included, record them under `peripheral_themes` in the YAML metadata and summarize them in an `AI 外围情报观察` section.
 - Reuse stable labels for themes, companies, and products where possible so later weekly/monthly summaries can aggregate them consistently.
 - Include a dedicated `今日评论与判断` section. This section must go beyond summarizing facts and should capture the day's independent judgment about competitive dynamics, product momentum, technical direction, workflow change, weak signals versus real trends, and what is worth tracking next.
 - Make it explicit that the judgment section is based on the current report's sample of confirmed facts.
 - For changing metrics such as stars, trending position, release cadence, or similar snapshots, include a date, version number, or snapshot time when practical.
 
 Recommended structure:
-- 元数据
+- 结构化快照
 - 主线判断
 - 今日评论与判断
 - 今日最重要的 3-5 条更新
 - 中美大模型
 - AI 编程代理
 - 官方博客 / 研究 / 发布
+- AI 外围情报观察
 - GitHub 热门项目
 - 值得继续跟踪
+- 结构化索引
 - 今日结构化结论
 - 参考来源
 

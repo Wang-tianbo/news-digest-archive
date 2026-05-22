@@ -3,44 +3,14 @@
 - 生成时间：YYYY-MM-DD 09:00 Asia/Shanghai
 - 覆盖时间窗：YYYY-MM-DD 09:00 至 YYYY-MM-DD 09:00
 
-## 元数据
+## 结构化快照
 
-```yaml
-date: YYYY-MM-DD
-window_start: YYYY-MM-DD 09:00 Asia/Shanghai
-window_end: YYYY-MM-DD 09:00 Asia/Shanghai
-supplemental_range: none
-summary:
-  themes:
-    - agent_api
-    - runtime_governance
-  regions:
-    - us
-    - china
-  companies:
-    - OpenAI
-    - Anthropic
-    - GitHub
-    - Qwen
-  products:
-    - Codex
-    - Claude Code
-    - GitHub Copilot
-    - Qwen Code
-  signals:
-    - API 化
-    - 开发环境化
-    - 团队治理
-  followups:
-    - GitHub 是否继续扩展 agent task API
-    - Qwen Code 是否推进稳定版 runtime
-  confidence: high
-```
-
-- `supplemental_range` 没有补充窗口外内容时写 `none`
-- `themes` 建议尽量复用稳定标签，便于周报、月报汇总
-- `signals` 写人能读懂的短语，`themes` 写更稳定的机器可复用标签
-- `followups` 只保留未来 1-7 天值得继续观察的问题
+- 主题标签：`agent_api`、`runtime_governance`
+- 重点公司：`OpenAI`、`Anthropic`、`GitHub`、`Qwen`
+- 重点产品：`Codex`、`Claude Code`、`GitHub Copilot`、`Qwen Code`
+- 今日信号：API 化、开发环境化、团队治理
+- 跟踪问题：GitHub 是否继续扩展 agent task API；Qwen Code 是否推进稳定版 runtime
+- 置信度：`high`
 
 ## 主线判断
 
@@ -90,6 +60,14 @@ summary:
 - 值得关注点：
 - 来源：
 
+## AI 外围情报观察
+
+### 方向 / 主题名
+
+- 发生了什么：
+- 为什么会反作用于 AI 主线：
+- 来源：
+
 ## GitHub 热门项目
 
 ### 项目名
@@ -102,6 +80,47 @@ summary:
 
 - 未来 1-3 天值得继续观察的话题
 
+## 结构化索引
+
+<details>
+<summary>查看完整元数据</summary>
+
+```yaml
+date: YYYY-MM-DD
+window_start: YYYY-MM-DD 09:00 Asia/Shanghai
+window_end: YYYY-MM-DD 09:00 Asia/Shanghai
+supplemental_range: none
+themes:
+  - agent_api
+  - runtime_governance
+regions:
+  - us
+  - china
+companies:
+  - OpenAI
+  - Anthropic
+  - GitHub
+  - Qwen
+products:
+  - Codex
+  - Claude Code
+  - GitHub Copilot
+  - Qwen Code
+signals:
+  - API 化
+  - 开发环境化
+  - 团队治理
+peripheral_themes:
+  - 算力与半导体
+  - 政策与治理
+followups:
+  - GitHub 是否继续扩展 agent task API
+  - Qwen Code 是否推进稳定版 runtime
+confidence: high
+```
+
+</details>
+
 ## 今日结构化结论
 
 ### 公司 / 产品 / 主题索引
@@ -110,6 +129,7 @@ summary:
 - 产品：
 - 主题标签：
 - 信号标签：
+- 外围主题：
 
 ### 判断变化
 

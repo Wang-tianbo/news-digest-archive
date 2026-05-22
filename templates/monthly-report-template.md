@@ -1,37 +1,16 @@
 # AI 月报 - YYYY-MM
 
 - 生成时间：YYYY-MM-DD 09:00 Asia/Shanghai
-- 覆盖时间窗：YYYY-MM-01 00:00 至 YYYY-MM-DD 23:59
+- 覆盖时间窗：YYYY-MM-01 00:00 至 YYYY-MM-DD 23:59 Asia/Shanghai
 
-## 月报元数据
+## 结构化快照
 
-```yaml
-month: YYYY-MM
-window_start: YYYY-MM-01 00:00 Asia/Shanghai
-window_end: YYYY-MM-DD 23:59 Asia/Shanghai
-source_weeklies:
-  - weekly/YYYY/YYYY-Www.md
-source_digests:
-  - daily/YYYY/YYYY-MM/YYYY-MM-DD.md
-summary:
-  dominant_themes:
-    - runtime_governance
-    - agent_platformization
-  leading_companies:
-    - GitHub
-    - Anthropic
-    - OpenAI
-  emerging_topics:
-    - mobile_agent_handoff
-    - agent_memory
-  changed_judgments:
-    - 竞争主线从功能展示转向工作系统能力
-  durable_signals:
-    - 多家公司同时补运行时与治理层
-  next_month_watchlist:
-    - agent API 是否继续标准化
-    - 中国侧公开 agent runtime 是否继续加速
-```
+- 主导主题：`runtime_governance`、`agent_platformization`
+- 领先公司：`GitHub`、`Anthropic`、`OpenAI`
+- 新兴主题：`mobile_agent_handoff`、`agent_memory`
+- 耐久信号：多家公司同时补运行时与治理层
+- 判断变化：竞争主线从功能展示转向工作系统能力
+- 下月重点：agent API 是否继续标准化；中国侧公开 agent runtime 是否继续加速
 
 ## 本月结论
 
@@ -44,7 +23,7 @@ summary:
 - 哪些主题热度很高，但价值有限
 - 对下个月的预判
 
-## 本月判断变化
+## 本月判断复盘
 
 ### 被验证的判断
 
@@ -90,9 +69,29 @@ summary:
 - 格局判断：
 - 阶段性变化：
 
+### AI 外围情报观察
+
+- 本月最重要的外围变量：
+- 它们如何反作用于 AI 主线：
+- 哪些已经值得进入季度 / 年度视角：
+
 ## 本月反复出现的信号
 
-- 列出在多篇日报中重复出现的高价值信号
+- 列出在多篇日报或多份周报中重复出现的高价值信号
+
+## 本月议题台账流转
+
+### 本月新升格议题
+
+- 哪些主题本月正式从周度观察升级为长期议题
+
+### 本月持续议题
+
+- 哪些议题已经进入稳定跟踪周期
+
+### 本月降权或拆分议题
+
+- 哪些议题需要降权、拆分或归档
 
 ## 本月议题台账
 
@@ -104,6 +103,50 @@ summary:
 - 当前状态：升温 / 延续 / 转弱 / 进入稳定期 / 待确认
 - 下月观察点：
 
+## 本月结构化索引
+
+<details>
+<summary>查看完整月报元数据</summary>
+
+```yaml
+month: YYYY-MM
+window_start: YYYY-MM-01 00:00 Asia/Shanghai
+window_end: YYYY-MM-DD 23:59 Asia/Shanghai
+source_weeklies:
+  - weekly/YYYY/YYYY-Www.md
+source_digests:
+  - daily/YYYY/YYYY-MM/YYYY-MM-DD.md
+themes:
+  - runtime_governance
+  - agent_platformization
+leading_companies:
+  - GitHub
+  - Anthropic
+  - OpenAI
+emerging_topics:
+  - mobile_agent_handoff
+  - agent_memory
+durable_signals:
+  - 多家公司同时补运行时与治理层
+peripheral_themes:
+  - 算力与半导体
+  - 政策与治理
+validated_judgments:
+  - 竞争主线从功能展示转向工作系统能力
+revised_judgments:
+  - 只看单日 headline 无法解释阶段性格局
+promoted_ledgers:
+  - runtime_governance
+stable_ledgers:
+  - agent_platformization
+next_month_watchlist:
+  - agent API 是否继续标准化
+  - 中国侧公开 agent runtime 是否继续加速
+confidence: high
+```
+
+</details>
+
 ## 本月结构化结论
 
 ### 公司 / 产品 / 主题索引
@@ -111,12 +154,13 @@ summary:
 - 领先公司：
 - 加速产品：
 - 主导主题：
-- 转弱主题：
+- 外围主题：
 
 ### 方法论修正
 
 - 本月最重要的认知更新：
 - 本月最应该降低权重的旧判断：
+- 哪些议题应继续保留到季度 / 年度视角：
 
 ## 下月观察点
 

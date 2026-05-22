@@ -78,8 +78,9 @@
 
 - 仓库内提供跨平台安装器 `scripts/install_codex_daily_digest.py`
 - macOS / Linux 另外提供便捷包装脚本 `scripts/install_codex_daily_digest.sh`
-- 脚本会把自动化配置写入 `${CODEX_HOME:-~/.codex}/automations/daily-ai-digest-archive/automation.toml`
-- 脚本会根据当前电脑的本地时区，计算与 `Asia/Shanghai 09:00` 对应的本地触发时间
+- 脚本会一并安装日报、周报、月报、年报四个 Codex 自动化任务
+- 脚本会把自动化配置写入 `${CODEX_HOME:-~/.codex}/automations/<automation-id>/automation.toml`
+- 脚本会根据当前电脑的本地时区，计算日报、周报、月报、年报各自对应的 `Asia/Shanghai` 本地触发时间
 - 如果仓库换了路径，或者系统时区发生变化，重跑一次安装脚本
 - 详细说明见 [docs/portable-setup.md](portable-setup.md)
 

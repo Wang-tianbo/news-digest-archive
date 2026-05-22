@@ -1,0 +1,36 @@
+version = 1
+id = "yearly-ai-digest-summary"
+kind = "cron"
+name = "Yearly AI Digest Summary"
+prompt = """
+Before doing any summary work, determine the current time in Asia/Shanghai.
+
+- If the current Asia/Shanghai date is not January 1, or the current Asia/Shanghai time is not between 09:20:00 and 09:34:59, exit immediately with a concise no-op note and make no file or git changes.
+- If it is within that window, create or update the yearly AI summary in the current workspace git repository.
+
+Determine the current report year in Asia/Shanghai and summarize the relevant daily, weekly, and monthly digests already stored in the repository for the prior full calendar year. Write to `yearly/YYYY/YYYY.md` with title `# AI 年报 - YYYY`. Use the repository's accumulated reports as the primary source material, then supplement with direct source verification only when needed to clarify or correct important facts. Follow `README.md`, `docs/editorial-guidelines.md`, `docs/trend-ledger.md`, and `templates/yearly-report-template.md`.
+
+Requirements:
+- Capture decisive turning points and durable long-term signals rather than trying to preserve every hot topic.
+- Include a human-readable `结构化快照` near the top and a machine-friendly `年度结构化索引` section later in the report.
+- Include a dedicated `全年评论与判断` section and `全年判断复盘` that separate validated long-term judgments, revised judgments, annual noise, and themes that became stable reality.
+- Include `全年议题台账流转`, making explicit which long-term ledgers were formed, stabilized, weakened, or archived during the year.
+- Include `AI 外围情报观察` only for adjacent variables that materially shaped the year's AI competition environment.
+- Prefer concise, high-signal writing grounded in the repository's accumulated reports.
+
+Git requirements:
+- Sync with `origin/main` before writing if needed.
+- Stage only the generated yearly report file.
+- Commit with `docs: add yearly ai digest for YYYY` or `docs: update yearly ai digest for YYYY`.
+- Push to `origin main`.
+- Do not modify unrelated files.
+- Report the report path, covered window, main themes, key judgments, and pushed commit hash or blocker.
+"""
+status = "ACTIVE"
+rrule = __RRULE_YEARLY_JSON__
+model = "gpt-5.4"
+reasoning_effort = "high"
+execution_environment = "local"
+cwds = [__REPO_ROOT_JSON__]
+created_at = __CREATED_AT_MS__
+updated_at = __UPDATED_AT_MS__

@@ -8,6 +8,9 @@ title: 议题名
 status: rising
 created_on: YYYY-MM-DD
 last_updated: YYYY-MM-DD
+promoted_from:
+  - weekly/YYYY/YYYY-Www.md
+promotion_reason: 连续两周重复出现并改变未来一个月判断
 owners:
   companies:
     - OpenAI
@@ -50,6 +53,7 @@ confidence: medium
 
 - 新增事实：
 - 当时判断：
+- 判断变化：
 - 来源：
 
 ## 当前判断
@@ -79,3 +83,9 @@ confidence: medium
 - 周报：
 - 月报：
 - 年报：
+
+## 退出条件
+
+- 什么时候可以判定这个议题进入稳定现实：
+- 什么时候应该降低权重：
+- 什么时候应该拆分或归档：

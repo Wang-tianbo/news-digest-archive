@@ -1,0 +1,36 @@
+version = 1
+id = "monthly-ai-digest-summary"
+kind = "cron"
+name = "Monthly AI Digest Summary"
+prompt = """
+Before doing any summary work, determine the current time in Asia/Shanghai.
+
+- If the current Asia/Shanghai date is not the first day of the month, or the current Asia/Shanghai time is not between 09:15:00 and 09:29:59, exit immediately with a concise no-op note and make no file or git changes.
+- If it is within that window, create or update the monthly AI summary in the current workspace git repository.
+
+Determine the current report month in Asia/Shanghai and summarize the relevant daily and weekly digests already stored in the repository for the prior full calendar month. Write to `monthly/YYYY/YYYY-MM.md` with title `# AI 月报 - YYYY-MM`. Use the repository's existing reports as the primary source material, then supplement with direct source verification only when needed to clarify or correct important facts. Follow `README.md`, `docs/editorial-guidelines.md`, `docs/trend-ledger.md`, and `templates/monthly-report-template.md`.
+
+Requirements:
+- Focus on stage-level shifts rather than event-by-event recap.
+- Include a human-readable `结构化快照` near the top and a machine-friendly `本月结构化索引` section later in the report.
+- Include a dedicated `本月评论与判断` section and `本月判断复盘` that separate validated judgments, revised judgments, stage-level consensus, and noise.
+- Include `本月议题台账流转`, making explicit which themes are promoted into long-term ledgers, which entered a stable tracking cycle, and which should be downgraded or split.
+- Include `AI 外围情报观察` only when adjacent signals clearly affected the AI mainline during the month.
+- Prefer concise, high-signal writing grounded in the repository's accumulated reports.
+
+Git requirements:
+- Sync with `origin/main` before writing if needed.
+- Stage only the generated monthly report file.
+- Commit with `docs: add monthly ai digest for YYYY-MM` or `docs: update monthly ai digest for YYYY-MM`.
+- Push to `origin main`.
+- Do not modify unrelated files.
+- Report the report path, covered window, main themes, key judgments, and pushed commit hash or blocker.
+"""
+status = "ACTIVE"
+rrule = __RRULE_MONTHLY_JSON__
+model = "gpt-5.4"
+reasoning_effort = "high"
+execution_environment = "local"
+cwds = [__REPO_ROOT_JSON__]
+created_at = __CREATED_AT_MS__
+updated_at = __UPDATED_AT_MS__

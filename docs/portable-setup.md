@@ -1,6 +1,6 @@
 # 跨电脑恢复指南
 
-这份指南的目标很简单：不论你是换一台电脑，还是第一次 fork 这个项目，只要把仓库拉下来，再执行一次安装脚本，就能把日报自动化恢复到可运行状态。
+这份指南的目标很简单：不论你是换一台电脑，还是第一次 fork 这个项目，只要把仓库拉下来，再执行一次安装脚本，就能把这套 `日报 + 周报 + 月报 + 年报` 自动化恢复到可运行状态。
 
 ## 最推荐的使用方式
 
@@ -10,11 +10,11 @@
 2. 把你自己的 fork 克隆到本地
 3. 登录 Codex
 4. 运行安装脚本
-5. 等待每天自动生成日报并推送到你自己的仓库
+5. 等待每天 / 每周 / 每月 / 每年自动生成报告并推送到你自己的仓库
 
 这样做的好处是：
 
-- 日报会提交到你自己的仓库，而不是别人的仓库
+- 各周期报告会提交到你自己的仓库，而不是别人的仓库
 - 你可以自由改写 watchlist、模板和评论风格
 - 后续换电脑时，只需要重新克隆你的 fork 再安装一次
 
@@ -52,7 +52,7 @@ bash scripts/install_codex_daily_digest.sh
 - 计算当前电脑本地时间里，对应 `Asia/Shanghai 09:00` 的触发时间
 - 生成本机可用的 Codex 自动化配置
 - 把仓库当前绝对路径写入自动化的 `cwds`
-- 写入 `${CODEX_HOME:-~/.codex}/automations/daily-ai-digest-archive/automation.toml`
+- 写入日报、周报、月报、年报四个 automation 目录下的 `automation.toml`
 
 安装器不会替你登录 Codex，也不会替你自动创建 GitHub fork；它负责的是把“这台电脑上的 Codex 自动化配置”恢复好。
 
@@ -67,7 +67,7 @@ bash scripts/install_codex_daily_digest.sh
 
 如果你是第一次 fork 这个项目，还要多注意一点：
 
-- 日报默认会 `push origin main`
+- 各周期报告默认都会 `push origin main`
 - 所以 `origin` 最好指向你自己的 GitHub 仓库
 - 如果 `origin` 还是别人的仓库，而你又没有写权限，日报生成后会在 push 这一步失败
 
@@ -75,9 +75,15 @@ bash scripts/install_codex_daily_digest.sh
 
 日报的业务时间仍然固定为 `Asia/Shanghai 09:00`。
 
-安装脚本不会直接假设“每台电脑都在中国时区”，而是会根据当前电脑的本地时区，换算出对应的本地触发时间，再写入自动化配置。这样你在另一台电脑上恢复时，不需要手工改时间。
+同时，安装器也会一并安装：
 
-对于存在夏令时的时区，安装器会写入覆盖冬令时与夏令时的两个本地触发时间；真正执行前，自动化提示词还会再次检查当前是否处于 `Asia/Shanghai 09:00` 窗口，不在窗口内就直接 no-op，因此不会误生成重复日报。
+- 周报：每周一 `09:10 Asia/Shanghai`
+- 月报：每月 `1` 日 `09:15 Asia/Shanghai`
+- 年报：每年 `1` 月 `1` 日 `09:20 Asia/Shanghai`
+
+安装脚本不会直接假设“每台电脑都在中国时区”，而是会根据当前电脑的本地时区，把日报、周报、月报、年报各自对应的 `Asia/Shanghai` 业务时刻换算成本地触发时间，再写入自动化配置。这样你在另一台电脑上恢复时，不需要手工改时间。
+
+对于存在夏令时的时区，安装器会写入覆盖冬令时与夏令时的本地触发候选时刻；真正执行前，自动化提示词还会再次检查当前是否处于对应的 `Asia/Shanghai` 业务窗口，不在窗口内就直接 no-op，因此不会误生成重复报告。
 
 说明：
 
@@ -86,15 +92,19 @@ bash scripts/install_codex_daily_digest.sh
 
 ## 验证方法
 
-安装完成后，可以检查下面这个文件是否已生成：
+安装完成后，可以检查下面这些文件是否已生成：
 
 - `${CODEX_HOME:-~/.codex}/automations/daily-ai-digest-archive/automation.toml`
+- `${CODEX_HOME:-~/.codex}/automations/weekly-ai-digest-summary/automation.toml`
+- `${CODEX_HOME:-~/.codex}/automations/monthly-ai-digest-summary/automation.toml`
+- `${CODEX_HOME:-~/.codex}/automations/yearly-ai-digest-summary/automation.toml`
 
 也可以按下面的清单自检：
 
 1. 重新打开 Codex，确认自动化已经出现在本机配置里
 2. 运行 `git remote -v`，确认 `origin` 指向你自己的仓库
 3. 确认每天 09:00 Asia/Shanghai 之后，日报会写入 `daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
+4. 确认周报 / 月报 / 年报的 automation 文件也已经生成
 
 如果你只是想先验证安装器是否工作，不想等到第二天，也可以先检查自动化文件是否已经生成，再手动阅读里面的 `cwds` 和 `rrule` 是否符合预期。
 
@@ -104,7 +114,7 @@ bash scripts/install_codex_daily_digest.sh
 
 通常是因为你没有在仓库根目录执行脚本，或者仓库没有完整克隆下来。回到项目根目录后重新运行即可。
 
-### 2. 日报生成了，但 push 失败
+### 2. 报告生成了，但 push 失败
 
 最常见原因有两个：
 
@@ -123,6 +133,6 @@ bash scripts/install_codex_daily_digest.sh
 
 ## 当前边界
 
-- 这套方案解决的是“换电脑后如何恢复同一套自动化”
+- 这套方案解决的是“换电脑后如何恢复同一套多周期自动化”
 - 它不代替 Codex 登录，也不代替 GitHub 凭据配置
-- 如果你未来要加周报、月报、年报自动化，可以沿用同样的模板和安装方式继续扩展
+- 如果你未来还要加季度报、专题报，也可以沿用同样的模板和安装方式继续扩展

@@ -1,0 +1,36 @@
+version = 1
+id = "weekly-ai-digest-summary"
+kind = "cron"
+name = "Weekly AI Digest Summary"
+prompt = """
+Before doing any summary work, determine the current time in Asia/Shanghai.
+
+- If the current Asia/Shanghai time is not Monday between 09:10:00 and 09:24:59, exit immediately with a concise no-op note and make no file or git changes.
+- If it is within that window, create or update the weekly AI summary in the current workspace git repository.
+
+Determine the current report week in Asia/Shanghai and summarize the relevant daily digests already stored in the repository for the full prior reporting week. Write to `weekly/YYYY/YYYY-Www.md` with title `# AI 周报 - YYYY-Www`. Use the repository's daily digests as the primary source material, then supplement with direct source verification only when needed to clarify or correct important facts. Follow `README.md`, `docs/editorial-guidelines.md`, `docs/trend-ledger.md`, and `templates/weekly-report-template.md`.
+
+Requirements:
+- Summarize repeated signals rather than mechanically stitching daily items together.
+- Include a human-readable `结构化快照` near the top and a machine-friendly `结构化索引` section later in the report.
+- Include a dedicated `本周评论与判断` section and a `本周判断复盘` section that distinguish what was validated, what was revised, and what is newly worth stating this week.
+- Include `本周议题台账流转`, making explicit which themes should be promoted into long-term ledgers, which should stay under observation, and which should be downgraded.
+- Include `AI 外围情报观察` only when adjacent signals clearly affected the AI mainline that week.
+- Prefer concise, high-signal writing grounded in the repository's accumulated reports.
+
+Git requirements:
+- Sync with `origin/main` before writing if needed.
+- Stage only the generated weekly report file.
+- Commit with `docs: add weekly ai digest for YYYY-Www` or `docs: update weekly ai digest for YYYY-Www`.
+- Push to `origin main`.
+- Do not modify unrelated files.
+- Report the report path, covered window, main themes, key judgments, and pushed commit hash or blocker.
+"""
+status = "ACTIVE"
+rrule = __RRULE_WEEKLY_JSON__
+model = "gpt-5.4"
+reasoning_effort = "high"
+execution_environment = "local"
+cwds = [__REPO_ROOT_JSON__]
+created_at = __CREATED_AT_MS__
+updated_at = __UPDATED_AT_MS__

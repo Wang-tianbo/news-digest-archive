@@ -1,63 +1,122 @@
 # AI News Digest Archive
 
-> Daily-to-yearly AI intelligence reports with commentary, judgment, and long-term signal tracking.
-> 从日报到年报的 AI 情报档案库，记录事实，也沉淀判断与长期信号。
+> Daily-to-yearly AI intelligence archive with facts, judgment, and long-term signal tracking.  
+> 一套围绕 AI 主线、同时吸收关键外围变量的长期情报档案库。
 
-一个持续更新的 AI 情报档案库，按日报、周报、月报、年报沉淀全球 AI 领域的重要动态与判断，重点关注中美大模型、AI 编程代理、官方博客 / 研究 / 发布，以及 GitHub 热门项目和开源基础设施。
+这不是一个“把新闻贴满仓库”的项目。
 
-现在这套方法也支持有节制地向外扩一圈：当算力、云平台、监管、安全治理、企业采用或重点行业落地对 AI 主线产生实质影响时，日报会把它们作为“AI 外围高相关情报”纳入观察，而不是把范围无边界地扩成泛科技资讯。
+它更像一套可持续运行的 AI 情报工作流：每天生成高信噪比日报，在事实之外沉淀判断，再通过周报、月报、年报把短期热点变成长期认知资产。
 
-## 谁适合用
+项目主线始终围绕 AI 本身展开，重点关注：
 
-如果你也想要一套能长期沉淀 AI 观察、并且能由 Codex 每天自动写日报的仓库，这个项目可以直接 fork 后拿来用。
+- 中美大模型公司与模型节奏
+- AI 编程代理、开发者工具、Agent 工作流
+- 官方博客、研究、产品更新、changelog、release notes
+- GitHub 热门项目与关键开源基础设施
 
-它适合：
+同时，这套方法也允许有节制地向外扩一圈：
 
-- 想每天跟踪全球 AI 热点的人
-- 想重点看中美大模型、AI 编程代理、官方博客与 GitHub 开源动态的人
-- 想把“事实 + 判断”一起长期积累下来的人
-- 想在自己的电脑上恢复同一套 Codex 自动化流程的人
+- 当算力、半导体、云平台、监管、安全治理、企业采用、重点行业落地对 AI 主线产生实质影响时，会作为 `AI 外围高相关情报` 纳入观察
+- 如果这些外围变量当天没有高置信度新增，就不强行写入日报
 
-## 这是什么
+这意味着它不是泛科技资讯仓库，而是一套“`AI 核心主线 + AI 外围关键变量`”的情报归档系统。
 
-这个仓库不是单纯的“新闻搬运”。
+## 适合谁
 
-它更像一个长期维护的 AI 观察站：
+这个仓库适合下面几类人：
 
-- 记录每天最值得关注的 AI 更新
-- 在事实之上补充评论、判断和趋势推演
-- 通过周报、月报、年报沉淀长期信号
-- 尽量优先引用官方一手来源，减少二手转述噪声
+- 想长期跟踪全球 AI 竞争，而不是只看零散新闻的人
+- 想重点观察中美模型公司、AI 编程代理、官方发布和开源基础设施的人
+- 想把“事实 + 判断 + 跟踪问题”一起沉淀下来的人
+- 想要一套可以 fork、克隆、换电脑后仍然能恢复运行的 Codex 自动化流程的人
 
-## 目标
+## 这个项目解决什么问题
 
-- 每天上午 9 点生成一篇 AI 日报并提交到仓库
-- 优先记录高信噪比信息，而不是堆砌链接
-- 在事实之外沉淀评论、判断和趋势推演
-- 长期形成可检索、可回看的个人情报档案
+很多 AI 资讯流有两个常见问题：
 
-## 重点覆盖范围
+- 信息很多，但没有稳定主线
+- 文章很多，但没有持续判断
 
-- 中美大模型公司与模型更新
-- AI 编程代理与编程工具
-- OpenAI / Anthropic / Google / Meta / xAI / Microsoft 等官方博客、研究、发布
-- DeepSeek / Qwen / 智谱 / Kimi / MiniMax / 百度 / 腾讯 / 字节等中国 AI 厂商动态
-- GitHub 热门 AI 项目、重要开源仓库与基础设施进展
-- 关键投融资、政策、算力、推理服务、Agent 产品趋势
-- 必要时补充算力、云平台、监管、安全、企业采用、重点行业落地等外围高相关变量
+这个仓库要解决的是另一类问题：
 
-更细的覆盖清单见 [docs/coverage-map.md](docs/coverage-map.md)。
+- 每天只记录最值得记住的高价值更新
+- 尽量优先引用官方一手来源，减少二手噪声
+- 把“事实”和“判断”明确分开
+- 允许日报偏短，不为了凑数重复昨天已经写过的内容
+- 通过周报、月报、年报不断修正和沉淀自己的长期判断
 
-## 日报原则
+## 方法特点
 
-- 优先一手来源：官方博客、官方公告、研究页面、官方 GitHub、公司账号
-- 媒体报道只做补充，不让二手转述盖过原始信息
-- 事实和判断分开写，避免把观点伪装成事实
-- 每篇报告都要有评论判断层，积累连续的认知与观点
-- 每条信息都尽量回答两个问题：发生了什么、为什么值得关注
-- 明确日期和时间窗，避免“今天”“昨天”这类模糊表述
+这套流程的核心不是“搜更多”，而是“更稳定地选、写、存、复盘”。
 
-具体写作规范见 [docs/editorial-guidelines.md](docs/editorial-guidelines.md)。
+它的工作方法大致是：
+
+1. 先扫固定 watchlist 中最重要的一手源
+2. 再看 changelog、release、文档更新等动态流
+3. 只挑会改变格局、工作流、部署方式或开发者行为的高价值信息
+4. 在事实层之后追加当日判断
+5. 用结构化元数据为周报、月报、年报和长期议题台账做索引
+
+你可以把它理解成一套带有编辑标准的 AI 情报生产线，而不是一份临时整理的链接清单。
+
+## 当前覆盖范围
+
+核心覆盖：
+
+- OpenAI / Anthropic / Google / Meta / xAI / Microsoft / GitHub
+- DeepSeek / Qwen / 智谱 / Kimi / MiniMax / 百度 / 腾讯 / 字节 / 01.AI / 商汤
+- Codex / Claude Code / Cursor / GitHub Copilot / Gemini CLI / Devin / Qwen Code / Z Code
+- GitHub 热门 AI 项目、MCP 生态、vLLM、SGLang、llama.cpp、Transformers 等关键基础设施
+
+外围高相关覆盖：
+
+- 算力与半导体
+- 云平台、数据中心与推理容量
+- 政策、监管与地缘政治
+- 安全、滥用与治理
+- 企业采用、组织变革与劳动力
+- AI 在重点行业中的高价值落地
+
+更细的对象和来源见：
+
+- [docs/coverage-map.md](docs/coverage-map.md)
+- [docs/source-watchlist.md](docs/source-watchlist.md)
+
+## 日报长什么样
+
+默认日报会包含这些模块：
+
+- `结构化快照`
+- `主线判断`
+- `今日评论与判断`
+- `今日最重要的 3-5 条更新`
+- `中美大模型`
+- `AI 编程代理`
+- `官方博客 / 研究 / 发布`
+- `AI 外围情报观察`
+- `GitHub 热门项目`
+- `值得继续跟踪`
+- `结构化索引`
+- `今日结构化结论`
+- `参考来源`
+
+其中有两个点是这个项目很看重的：
+
+- 正文前部是给人看的 `结构化快照`
+- 文末附近保留可折叠的 `结构化索引`，方便后续周报、月报、年报和机器聚合
+
+参考模板见 [templates/daily-report-template.md](templates/daily-report-template.md)。
+
+## 核心原则
+
+- 优先使用官方一手来源
+- 事实和判断分开写
+- 不重复前几日日报已经写过的内容，除非有实质新角度
+- 如果没有高置信度新增，允许日报更短
+- 外围情报只有在能明确反作用于 AI 主线时才进入日报
+- 评论必须建立在当天样本之上，而不是泛泛感想
+
+详细规范见 [docs/editorial-guidelines.md](docs/editorial-guidelines.md) 和 [docs/automation-spec.md](docs/automation-spec.md)。
 
 ## 仓库结构
 
@@ -67,67 +126,70 @@ weekly/                 每周周报
 monthly/                每月月报
 yearly/                 每年年报
 docs/                   覆盖范围、写作规范、工作流说明
-templates/              日报/周报模板
+templates/              日报、周报、月报、年报模板
+scripts/                安装与恢复脚本
+ops/                    Codex 自动化模板
 ```
 
-各类报告默认路径：
+默认路径约定：
 
 - 日报：`daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
 - 周报：`weekly/YYYY/YYYY-Www.md`
 - 月报：`monthly/YYYY/YYYY-MM.md`
 - 年报：`yearly/YYYY/YYYY.md`
 
-## 推荐日报结构
+## 自动化能力
 
-- 今日主线判断
-- 今日评论与判断
-- 最重要的 3-5 条更新
-- 中美大模型动态
-- AI 编程代理与开发工具
-- 官方博客 / 研究 / 发布
-- AI 外围情报观察
-- GitHub 热门项目与开源基础设施
-- 值得继续跟踪的话题
-- 参考来源
+这个仓库当前已经具备：
 
-参考模板见 [templates/daily-report-template.md](templates/daily-report-template.md)。
-
-如果你希望把日报进一步沉淀成长期认知系统，可以继续看：
-
-- 周报模板：[templates/weekly-report-template.md](templates/weekly-report-template.md)
-- 月报模板：[templates/monthly-report-template.md](templates/monthly-report-template.md)
-- 长期议题台账模板：[templates/trend-ledger-template.md](templates/trend-ledger-template.md)
-- 长期议题台账说明：[docs/trend-ledger.md](docs/trend-ledger.md)
-
-## 自动化计划
-
-- 定时：每天 09:00，Asia/Shanghai
-- 时间窗：前一日 09:00 到当日 09:00
-- 输出：生成当天日报 Markdown 并直接提交到本仓库 `main`
-
-当前已经具备：
-
-- 日报自动生成
-- 周报 / 月报 / 年报自动汇总框架
-- 固定 watchlist 与动态流规则
+- 每天 `09:00 Asia/Shanghai` 自动生成日报
+- 每周 / 每月 / 每年自动生成高层总结
+- 固定 watchlist 与动态流巡检规则
 - 评论 / 判断层沉淀机制
 - 结构化元数据模板
+- 周报 / 月报 / 年报模板
 - 长期议题台账模板与方法说明
+- 跨电脑恢复安装方案
 
-## 跨电脑恢复
+日报自动化的业务时间固定为：
 
-这套流程现在已经支持“仓库自带安装说明 + 本机一键恢复”：
+- 生成时间：每天 `09:00 Asia/Shanghai`
+- 覆盖时间窗：前一日 `09:00` 到当日 `09:00`
 
-1. fork 这个仓库到你自己的 GitHub 账号，或者直接克隆你自己的副本
-2. 在本地克隆仓库
+如果严格时间窗内高价值更新太少，允许补充最近几天仍在发酵的一手信息，但不能和前几日日报简单重复。
+
+## 如何开始
+
+如果你想直接复用这套方法，推荐这样开始：
+
+1. fork 这个仓库到你自己的 GitHub 账号
+2. 克隆你自己的仓库到本地
 3. 确保 Codex 已登录，且当前仓库具备 `git push` 权限
-4. 运行 `python3 scripts/install_codex_daily_digest.py`
+4. 在仓库根目录运行 `python3 scripts/install_codex_daily_digest.py`
+5. 安装器会一次性写入日报、周报、月报、年报这四个 Codex 自动化任务
 
-详细步骤见 [docs/portable-setup.md](docs/portable-setup.md)。
+详细说明见 [docs/portable-setup.md](docs/portable-setup.md)。
 
-后续可以继续扩展：
+## 如果你想继续扩展
 
-- 按主题生成专题索引，例如 Agent、开源模型、AI 编程、推理基础设施
+这个仓库后续很适合继续往这些方向发展：
+
+- 做专题索引，例如 Agent、开源模型、AI 编程、推理基础设施
 - 增加跨周期趋势追踪和年度回顾
 - 接入 RSS / Atom / 官方账号流
 - 增加推送提醒与摘要分发
+- 基于 `结构化索引` 做自动聚合、检索和可视化
+
+## 相关文档
+
+- [docs/coverage-map.md](docs/coverage-map.md)
+- [docs/source-watchlist.md](docs/source-watchlist.md)
+- [docs/editorial-guidelines.md](docs/editorial-guidelines.md)
+- [docs/automation-spec.md](docs/automation-spec.md)
+- [docs/portable-setup.md](docs/portable-setup.md)
+- [docs/trend-ledger.md](docs/trend-ledger.md)
+- [templates/daily-report-template.md](templates/daily-report-template.md)
+- [templates/weekly-report-template.md](templates/weekly-report-template.md)
+- [templates/monthly-report-template.md](templates/monthly-report-template.md)
+- [templates/yearly-report-template.md](templates/yearly-report-template.md)
+- [templates/trend-ledger-template.md](templates/trend-ledger-template.md)

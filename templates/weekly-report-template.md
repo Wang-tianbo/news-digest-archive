@@ -3,34 +3,14 @@
 - 生成时间：YYYY-MM-DD 09:00 Asia/Shanghai
 - 覆盖时间窗：YYYY-MM-DD 09:00 至 YYYY-MM-DD 09:00
 
-## 周报元数据
+## 结构化快照
 
-```yaml
-week: YYYY-Www
-window_start: YYYY-MM-DD 09:00 Asia/Shanghai
-window_end: YYYY-MM-DD 09:00 Asia/Shanghai
-source_digests:
-  - daily/YYYY/YYYY-MM/YYYY-MM-DD.md
-summary:
-  dominant_themes:
-    - runtime_governance
-    - agent_platformization
-  leading_companies:
-    - GitHub
-    - Anthropic
-    - OpenAI
-  accelerating_products:
-    - GitHub Copilot
-    - Claude Code
-    - Qwen Code
-  weakening_or_quiet_signals:
-    - 基础模型 headline 密度下降
-  changed_judgments:
-    - 竞争焦点从功能展示转向运行时和治理
-  next_week_watchlist:
-    - Copilot metrics / API 是否继续闭环
-    - Qwen Code 稳定版节奏
-```
+- 主导主题：`runtime_governance`、`agent_platformization`
+- 领先公司：`GitHub`、`Anthropic`、`OpenAI`
+- 加速产品：`GitHub Copilot`、`Claude Code`、`Qwen Code`
+- 转弱信号：基础模型 headline 密度下降
+- 判断变化：竞争焦点从功能展示转向运行时和治理
+- 下周重点：Copilot metrics / API 是否继续闭环；Qwen Code 稳定版节奏
 
 ## 本周主线
 
@@ -42,24 +22,19 @@ summary:
 - 哪些公司在加速，哪些公司在放缓
 - 哪些判断相比上周发生了修正
 
-## 本周判断变化
+## 本周判断复盘
 
-### 延续中的主线
+### 上周判断哪些被验证
 
-- 哪些主线已连续出现 2 周以上
+- 哪些来自上周的判断，本周继续被事实强化
 
-### 本周新增信号
+### 上周判断哪些被修正
 
-- 哪些变化是本周第一次明确出现
+- 哪些判断本周要降权、改写或拆分
 
-### 被修正的判断
+### 本周新增判断
 
-- 哪些原本的预判本周被强化、削弱或推翻
-
-### 噪声与真实趋势
-
-- 哪些只是单点事件
-- 哪些已经具备跨天、跨公司、跨产品的重复信号
+- 哪些是这周第一次可以更明确说出口的判断
 
 ## 本周最重要的 5-10 条更新
 
@@ -89,10 +64,30 @@ summary:
 - 影响：
 - 长期价值：
 
+### AI 外围情报观察
+
+- 本周最重要的外围变量：
+- 它为什么会反作用于 AI 主线：
+- 它更像短期波动还是中期趋势：
+
 ### GitHub 热门项目
 
 - 本周升温项目：
 - 值得跟踪原因：
+
+## 本周议题台账流转
+
+### 候选升格议题
+
+- 哪些主题已连续 2 周以上出现，值得升格为长期议题
+
+### 持续跟踪议题
+
+- 哪些既有议题仍在延续
+
+### 降权或归档议题
+
+- 哪些议题本周明显转弱，适合降权或准备归档
 
 ## 本周议题台账
 
@@ -106,6 +101,66 @@ summary:
 ## 下周观察点
 
 - 下周最值得继续跟踪的话题
+
+## 结构化索引
+
+<details>
+<summary>查看完整周报元数据</summary>
+
+```yaml
+week: YYYY-Www
+window_start: YYYY-MM-DD 09:00 Asia/Shanghai
+window_end: YYYY-MM-DD 09:00 Asia/Shanghai
+source_digests:
+  - daily/YYYY/YYYY-MM/YYYY-MM-DD.md
+themes:
+  - runtime_governance
+  - agent_platformization
+regions:
+  - us
+  - china
+leading_companies:
+  - GitHub
+  - Anthropic
+  - OpenAI
+accelerating_products:
+  - GitHub Copilot
+  - Claude Code
+  - Qwen Code
+weakening_or_quiet_signals:
+  - 基础模型 headline 密度下降
+peripheral_themes:
+  - 政策与治理
+  - 企业采用
+validated_judgments:
+  - 竞争焦点从功能展示转向运行时和治理
+revised_judgments:
+  - 仅盯模型 headline 已不足以描述赛道变化
+candidate_ledgers:
+  - runtime_governance
+  - china_open_agent_runtime
+next_week_watchlist:
+  - Copilot metrics / API 是否继续闭环
+  - Qwen Code 稳定版节奏
+confidence: high
+```
+
+</details>
+
+## 本周结构化结论
+
+### 公司 / 产品 / 主题索引
+
+- 领先公司：
+- 加速产品：
+- 主导主题：
+- 外围主题：
+
+### 判断变化
+
+- 被验证的判断：
+- 被修正的判断：
+- 新进入台账的议题：
 
 ## 参考来源
 

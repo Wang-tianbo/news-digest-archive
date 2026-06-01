@@ -10,7 +10,8 @@
 - 重点产品：`Codex`、`Claude Code`、`GitHub Copilot`、`Qwen Code`
 - 今日信号：API 化、开发环境化、团队治理
 - 跟踪问题：GitHub 是否继续扩展 agent task API；Qwen Code 是否推进稳定版 runtime
-- 置信度：`high`
+- 事实置信度：`high`
+- 信号强度：`medium`
 
 ## 主线判断
 
@@ -62,6 +63,8 @@
 
 ## AI 外围情报观察
 
+> 如果当天没有高置信度外围信号，省略本节，并在 `结构化索引` 中写 `peripheral_themes: []`。
+
 ### 方向 / 主题名
 
 - 发生了什么：
@@ -112,11 +115,11 @@ signals:
   - 团队治理
 peripheral_themes:
   - 算力与半导体
-  - 政策与治理
 followups:
   - GitHub 是否继续扩展 agent task API
   - Qwen Code 是否推进稳定版 runtime
-confidence: high
+fact_confidence: high
+signal_strength: medium
 ```
 
 </details>
@@ -130,6 +133,8 @@ confidence: high
 - 主题标签：
 - 信号标签：
 - 外围主题：
+- 事实置信度：
+- 信号强度：
 
 ### 判断变化
 

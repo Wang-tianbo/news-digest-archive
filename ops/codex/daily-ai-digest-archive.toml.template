@@ -33,8 +33,9 @@ Content requirements:
 - Include clickable source links for every major item and use absolute dates instead of relative wording.
 - Keep the digest concise and high signal.
 - Include a short human-readable `结构化快照` near the top of the report following the repository template.
-- Place the full machine-friendly YAML metadata in a `结构化索引` section later in the report, preferably inside a collapsible block, capturing at least date/window, supplemental range, themes, regions, companies, products, signals, followups, and confidence.
-- When adjacent signals are included, record them under `peripheral_themes` in the YAML metadata and summarize them in an `AI 外围情报观察` section.
+- Place the full machine-friendly YAML metadata in a `结构化索引` section later in the report, preferably inside a collapsible block, capturing at least date/window, supplemental range, themes, regions, companies, products, signals, followups, fact_confidence, and signal_strength.
+- When adjacent signals are included, record them under `peripheral_themes` in the YAML metadata and summarize them in an `AI 外围情报观察` section. If there are no high-confidence adjacent signals, omit the body section and set `peripheral_themes: []`.
+- Use `fact_confidence` for source reliability and `signal_strength` for how important the day's signal is; do not use one generic confidence value for both.
 - Reuse stable labels for themes, companies, and products where possible so later weekly/monthly summaries can aggregate them consistently.
 - Include a dedicated `今日评论与判断` section. This section must go beyond summarizing facts and should capture the day's independent judgment about competitive dynamics, product momentum, technical direction, workflow change, weak signals versus real trends, and what is worth tracking next.
 - Make it explicit that the judgment section is based on the current report's sample of confirmed facts.
@@ -48,7 +49,7 @@ Recommended structure:
 - 中美大模型
 - AI 编程代理
 - 官方博客 / 研究 / 发布
-- AI 外围情报观察
+- AI 外围情报观察, only when there is a high-confidence adjacent signal
 - GitHub 热门项目
 - 值得继续跟踪
 - 结构化索引

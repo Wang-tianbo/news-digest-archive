@@ -142,7 +142,8 @@ stable_ledgers:
 next_month_watchlist:
   - agent API 是否继续标准化
   - 中国侧公开 agent runtime 是否继续加速
-confidence: high
+fact_confidence: high
+signal_strength: high
 ```
 
 </details>

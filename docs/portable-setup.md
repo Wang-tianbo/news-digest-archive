@@ -105,6 +105,7 @@ bash scripts/install_codex_daily_digest.sh
 2. 运行 `git remote -v`，确认 `origin` 指向你自己的仓库
 3. 确认每天 09:00 Asia/Shanghai 之后，日报会写入 `daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
 4. 确认周报 / 月报 / 年报的 automation 文件也已经生成
+5. 运行 `python3 scripts/check_archive_health.py`，确认最近日报、已完成周报、已完成月报和 Git 同步状态正常
 
 如果你只是想先验证安装器是否工作，不想等到第二天，也可以先检查自动化文件是否已经生成，再手动阅读里面的 `cwds` 和 `rrule` 是否符合预期。
 

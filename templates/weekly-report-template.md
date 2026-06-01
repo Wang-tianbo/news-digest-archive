@@ -142,7 +142,8 @@ candidate_ledgers:
 next_week_watchlist:
   - Copilot metrics / API 是否继续闭环
   - Qwen Code 稳定版节奏
-confidence: high
+fact_confidence: high
+signal_strength: high
 ```
 
 </details>

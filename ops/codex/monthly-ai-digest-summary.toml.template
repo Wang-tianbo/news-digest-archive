@@ -13,6 +13,7 @@ Determine the current report month in Asia/Shanghai and summarize the relevant d
 Requirements:
 - Focus on stage-level shifts rather than event-by-event recap.
 - Include a human-readable `结构化快照` near the top and a machine-friendly `本月结构化索引` section later in the report.
+- In the machine-friendly metadata, use `fact_confidence` for source reliability and `signal_strength` for the month's signal strength.
 - Include a dedicated `本月评论与判断` section and `本月判断复盘` that separate validated judgments, revised judgments, stage-level consensus, and noise.
 - Include `本月议题台账流转`, making explicit which themes are promoted into long-term ledgers, which entered a stable tracking cycle, and which should be downgraded or split.
 - Include `AI 外围情报观察` only when adjacent signals clearly affected the AI mainline during the month.

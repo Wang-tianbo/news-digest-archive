@@ -132,7 +132,8 @@ archived_ledgers:
 next_year_watchlist:
   - 哪些主线会继续强化
   - 哪些主线会开始分化
-confidence: high
+fact_confidence: high
+signal_strength: high
 ```
 
 </details>

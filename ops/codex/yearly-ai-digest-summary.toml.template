@@ -13,6 +13,7 @@ Determine the current report year in Asia/Shanghai and summarize the relevant da
 Requirements:
 - Capture decisive turning points and durable long-term signals rather than trying to preserve every hot topic.
 - Include a human-readable `结构化快照` near the top and a machine-friendly `年度结构化索引` section later in the report.
+- In the machine-friendly metadata, use `fact_confidence` for source reliability and `signal_strength` for the year's signal strength.
 - Include a dedicated `全年评论与判断` section and `全年判断复盘` that separate validated long-term judgments, revised judgments, annual noise, and themes that became stable reality.
 - Include `全年议题台账流转`, making explicit which long-term ledgers were formed, stabilized, weakened, or archived during the year.
 - Include `AI 外围情报观察` only for adjacent variables that materially shaped the year's AI competition environment.

@@ -129,6 +129,7 @@ docs/                   覆盖范围、写作规范、工作流说明
 templates/              日报、周报、月报、年报模板
 scripts/                安装与恢复脚本
 ops/                    Codex 自动化模板
+ledgers/                长期议题台账
 ```
 
 默认路径约定：
@@ -150,6 +151,7 @@ ops/                    Codex 自动化模板
 - 周报 / 月报 / 年报模板
 - 长期议题台账模板与方法说明
 - 跨电脑恢复安装方案
+- 归档健康检查脚本，用于发现缺失日报、周报、月报和 Git 同步异常
 
 日报自动化的业务时间固定为：
 
@@ -169,6 +171,20 @@ ops/                    Codex 自动化模板
 5. 安装器会一次性写入日报、周报、月报、年报这四个 Codex 自动化任务
 
 详细说明见 [docs/portable-setup.md](docs/portable-setup.md)。
+
+## 归档健康检查
+
+如果你怀疑定时任务没有正常生成报告，可以在仓库根目录运行：
+
+```bash
+python3 scripts/check_archive_health.py
+```
+
+它会检查最近日报、已完成周报、已完成月报和 Git 同步状态。你也可以指定日期做复盘：
+
+```bash
+python3 scripts/check_archive_health.py --today 2026-06-01
+```
 
 ## 如果你想继续扩展
 

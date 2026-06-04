@@ -49,7 +49,7 @@ bash scripts/install_codex_daily_digest.sh
 
 - 检查当前目录是否像一个可用的 Git 仓库
 - 检查仓库里是否存在自动化模板文件
-- 计算当前电脑本地时间里，对应 `Asia/Shanghai 09:00` 的触发时间
+- 计算当前电脑本地时间里，对应 `Asia/Shanghai 09:05` 的触发时间
 - 生成本机可用的 Codex 自动化配置
 - 把仓库当前绝对路径写入自动化的 `cwds`
 - 写入日报、周报、月报、年报四个 automation 目录下的 `automation.toml`
@@ -73,7 +73,7 @@ bash scripts/install_codex_daily_digest.sh
 
 ## 时区处理
 
-日报的业务时间仍然固定为 `Asia/Shanghai 09:00`。
+日报的业务时间仍然固定为 `Asia/Shanghai 09:00`，自动化实际触发时间为 `Asia/Shanghai 09:05`。
 
 同时，安装器也会一并安装：
 
@@ -81,7 +81,9 @@ bash scripts/install_codex_daily_digest.sh
 - 月报：每月 `1` 日 `09:15 Asia/Shanghai`
 - 年报：每年 `1` 月 `1` 日 `09:20 Asia/Shanghai`
 
-安装脚本不会直接假设“每台电脑都在中国时区”，而是会根据当前电脑的本地时区，把日报、周报、月报、年报各自对应的 `Asia/Shanghai` 业务时刻换算成本地触发时间，再写入自动化配置。这样你在另一台电脑上恢复时，不需要手工改时间。
+日报晚 5 分钟触发，是为了避开本机多个 Codex automation 同时在 `09:00` 启动时可能出现的后台静默结束。报告归档仍按 `09:00-09:00 Asia/Shanghai` 计算，不会改变日报内容口径。
+
+安装脚本不会直接假设“每台电脑都在中国时区”，而是会根据当前电脑的本地时区，把日报、周报、月报、年报各自对应的 `Asia/Shanghai` 触发时刻换算成本地触发时间，再写入自动化配置。这样你在另一台电脑上恢复时，不需要手工改时间。
 
 对于存在夏令时的时区，安装器会写入覆盖冬令时与夏令时的本地触发候选时刻；真正执行前，自动化提示词还会再次检查当前是否处于对应的 `Asia/Shanghai` 业务窗口，不在窗口内就直接 no-op，因此不会误生成重复报告。
 
@@ -103,7 +105,7 @@ bash scripts/install_codex_daily_digest.sh
 
 1. 重新打开 Codex，确认自动化已经出现在本机配置里
 2. 运行 `git remote -v`，确认 `origin` 指向你自己的仓库
-3. 确认每天 09:00 Asia/Shanghai 之后，日报会写入 `daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
+3. 确认每天 09:05 Asia/Shanghai 之后，日报会写入 `daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
 4. 确认周报 / 月报 / 年报的 automation 文件也已经生成
 5. 运行 `python3 scripts/check_archive_health.py`，确认最近日报、已完成周报、已完成月报和 Git 同步状态正常
 

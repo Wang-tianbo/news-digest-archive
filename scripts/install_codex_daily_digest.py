@@ -13,12 +13,19 @@ import time
 
 SHANGHAI_TZ = timezone(timedelta(hours=8))
 RRULE_WEEKDAYS = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]
+DAILY_TRIGGER_HOUR = 9
+DAILY_TRIGGER_MINUTE = 5
+DAILY_TRIGGER_SECOND = 0
 AUTOMATIONS = [
     {
         "id": "daily-ai-digest-archive",
         "template": "daily-ai-digest-archive.toml.template",
         "rrule_key": "__RRULE_JSON__",
-        "schedule": lambda: daily_rrule_for_shanghai_clock(9, 0, 0),
+        "schedule": lambda: daily_rrule_for_shanghai_clock(
+            DAILY_TRIGGER_HOUR,
+            DAILY_TRIGGER_MINUTE,
+            DAILY_TRIGGER_SECOND,
+        ),
     },
     {
         "id": "weekly-ai-digest-summary",
@@ -242,7 +249,14 @@ def main() -> None:
     year = datetime.now(SHANGHAI_TZ).year
     daily_local_times = ", ".join(
         candidate.strftime("%H:%M:%S")
-        for candidate in local_candidates_for_shanghai_datetimes(shanghai_clock_samples(year, 9, 0, 0))
+        for candidate in local_candidates_for_shanghai_datetimes(
+            shanghai_clock_samples(
+                year,
+                DAILY_TRIGGER_HOUR,
+                DAILY_TRIGGER_MINUTE,
+                DAILY_TRIGGER_SECOND,
+            )
+        )
     )
     weekly_local_slots = ", ".join(
         f"{RRULE_WEEKDAYS[candidate.weekday()]} {candidate.strftime('%H:%M:%S')}"
@@ -275,7 +289,11 @@ def main() -> None:
     print(f"Repository root: {root}")
     print(f"Git origin: {origin_url or 'not configured'}")
     print(f"Local timezone: {timezone_label}")
-    print(f"Daily local trigger candidates for Asia/Shanghai 09:00: {daily_local_times}")
+    print(
+        "Daily local trigger candidates for "
+        f"Asia/Shanghai {DAILY_TRIGGER_HOUR:02d}:{DAILY_TRIGGER_MINUTE:02d}: "
+        f"{daily_local_times}"
+    )
     print(f"Weekly local trigger candidates for Asia/Shanghai Monday 09:10: {weekly_local_slots}")
     print(f"Monthly local trigger candidates for Asia/Shanghai day 1 09:15: {monthly_local_slots}")
     print(f"Yearly local trigger candidates for Asia/Shanghai January 1 09:20: {yearly_local_slots}")

@@ -16,6 +16,9 @@ RRULE_WEEKDAYS = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]
 DAILY_TRIGGER_HOUR = 9
 DAILY_TRIGGER_MINUTE = 5
 DAILY_TRIGGER_SECOND = 0
+WATCHDOG_TRIGGER_HOUR = 9
+WATCHDOG_TRIGGER_MINUTE = 35
+WATCHDOG_TRIGGER_SECOND = 0
 AUTOMATIONS = [
     {
         "id": "daily-ai-digest-archive",
@@ -25,6 +28,16 @@ AUTOMATIONS = [
             DAILY_TRIGGER_HOUR,
             DAILY_TRIGGER_MINUTE,
             DAILY_TRIGGER_SECOND,
+        ),
+    },
+    {
+        "id": "daily-ai-digest-watchdog",
+        "template": "daily-ai-digest-watchdog.toml.template",
+        "rrule_key": "__RRULE_WATCHDOG_JSON__",
+        "schedule": lambda: daily_rrule_for_shanghai_clock(
+            WATCHDOG_TRIGGER_HOUR,
+            WATCHDOG_TRIGGER_MINUTE,
+            WATCHDOG_TRIGGER_SECOND,
         ),
     },
     {
@@ -258,6 +271,17 @@ def main() -> None:
             )
         )
     )
+    watchdog_local_times = ", ".join(
+        candidate.strftime("%H:%M:%S")
+        for candidate in local_candidates_for_shanghai_datetimes(
+            shanghai_clock_samples(
+                year,
+                WATCHDOG_TRIGGER_HOUR,
+                WATCHDOG_TRIGGER_MINUTE,
+                WATCHDOG_TRIGGER_SECOND,
+            )
+        )
+    )
     weekly_local_slots = ", ".join(
         f"{RRULE_WEEKDAYS[candidate.weekday()]} {candidate.strftime('%H:%M:%S')}"
         for candidate in local_candidates_for_shanghai_datetimes(
@@ -293,6 +317,11 @@ def main() -> None:
         "Daily local trigger candidates for "
         f"Asia/Shanghai {DAILY_TRIGGER_HOUR:02d}:{DAILY_TRIGGER_MINUTE:02d}: "
         f"{daily_local_times}"
+    )
+    print(
+        "Daily watchdog local trigger candidates for "
+        f"Asia/Shanghai {WATCHDOG_TRIGGER_HOUR:02d}:{WATCHDOG_TRIGGER_MINUTE:02d}: "
+        f"{watchdog_local_times}"
     )
     print(f"Weekly local trigger candidates for Asia/Shanghai Monday 09:10: {weekly_local_slots}")
     print(f"Monthly local trigger candidates for Asia/Shanghai day 1 09:15: {monthly_local_slots}")

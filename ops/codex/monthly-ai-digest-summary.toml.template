@@ -29,7 +29,7 @@ Git requirements:
 """
 status = "ACTIVE"
 rrule = __RRULE_MONTHLY_JSON__
-model = "gpt-5.4"
+model = "gpt-5.5"
 reasoning_effort = "high"
 execution_environment = "local"
 cwds = [__REPO_ROOT_JSON__]

@@ -1,6 +1,6 @@
 # 跨电脑恢复指南
 
-这份指南的目标很简单：不论你是换一台电脑，还是第一次 fork 这个项目，只要把仓库拉下来，再执行一次安装脚本，就能把这套 `日报 + 周报 + 月报 + 年报` 自动化恢复到可运行状态。
+这份指南的目标很简单：不论你是换一台电脑，还是第一次 fork 这个项目，只要把仓库拉下来，再执行一次安装脚本，就能把这套 `日报 + 日报 watchdog + 周报 + 月报 + 年报` 自动化恢复到可运行状态。
 
 ## 最推荐的使用方式
 
@@ -52,7 +52,7 @@ bash scripts/install_codex_daily_digest.sh
 - 计算当前电脑本地时间里，对应 `Asia/Shanghai 09:05` 的触发时间
 - 生成本机可用的 Codex 自动化配置
 - 把仓库当前绝对路径写入自动化的 `cwds`
-- 写入日报、周报、月报、年报四个 automation 目录下的 `automation.toml`
+- 写入日报、日报 watchdog、周报、月报、年报五个 automation 目录下的 `automation.toml`
 
 安装器不会替你登录 Codex，也不会替你自动创建 GitHub fork；它负责的是把“这台电脑上的 Codex 自动化配置”恢复好。
 
@@ -77,11 +77,14 @@ bash scripts/install_codex_daily_digest.sh
 
 同时，安装器也会一并安装：
 
+- 日报 watchdog：每天 `09:35 Asia/Shanghai`
 - 周报：每周一 `09:10 Asia/Shanghai`
 - 月报：每月 `1` 日 `09:15 Asia/Shanghai`
 - 年报：每年 `1` 月 `1` 日 `09:20 Asia/Shanghai`
 
 日报晚 5 分钟触发，是为了避开本机多个 Codex automation 同时在 `09:00` 启动时可能出现的后台静默结束。报告归档仍按 `09:00-09:00 Asia/Shanghai` 计算，不会改变日报内容口径。
+
+日报 watchdog 是一层保险丝：它每天 `09:35` 检查当天日报文件是否已经存在。如果主日报任务正常完成，watchdog 不会修改仓库；如果主任务触发后静默失败或没有落盘，watchdog 会按同一日报规则补写并推送。
 
 安装脚本不会直接假设“每台电脑都在中国时区”，而是会根据当前电脑的本地时区，把日报、周报、月报、年报各自对应的 `Asia/Shanghai` 触发时刻换算成本地触发时间，再写入自动化配置。这样你在另一台电脑上恢复时，不需要手工改时间。
 
@@ -97,6 +100,7 @@ bash scripts/install_codex_daily_digest.sh
 安装完成后，可以检查下面这些文件是否已生成：
 
 - `${CODEX_HOME:-~/.codex}/automations/daily-ai-digest-archive/automation.toml`
+- `${CODEX_HOME:-~/.codex}/automations/daily-ai-digest-watchdog/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/weekly-ai-digest-summary/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/monthly-ai-digest-summary/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/yearly-ai-digest-summary/automation.toml`
@@ -106,8 +110,9 @@ bash scripts/install_codex_daily_digest.sh
 1. 重新打开 Codex，确认自动化已经出现在本机配置里
 2. 运行 `git remote -v`，确认 `origin` 指向你自己的仓库
 3. 确认每天 09:05 Asia/Shanghai 之后，日报会写入 `daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
-4. 确认周报 / 月报 / 年报的 automation 文件也已经生成
-5. 运行 `python3 scripts/check_archive_health.py`，确认最近日报、已完成周报、已完成月报和 Git 同步状态正常
+4. 确认每天 09:35 Asia/Shanghai 的 watchdog automation 文件已经生成
+5. 确认周报 / 月报 / 年报的 automation 文件也已经生成
+6. 运行 `python3 scripts/check_archive_health.py`，确认最近日报、已完成周报、已完成月报和 Git 同步状态正常
 
 如果你只是想先验证安装器是否工作，不想等到第二天，也可以先检查自动化文件是否已经生成，再手动阅读里面的 `cwds` 和 `rrule` 是否符合预期。
 

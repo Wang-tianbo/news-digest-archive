@@ -120,6 +120,89 @@ def local_candidates_for_shanghai_datetimes(
     return candidates
 
 
+def utc_candidates_for_shanghai_datetimes(
+    shanghai_datetimes: list[datetime],
+) -> list[datetime]:
+    candidates: list[datetime] = []
+    for shanghai_time in shanghai_datetimes:
+        candidate = shanghai_time.astimezone(timezone.utc)
+        exists = any(
+            existing.hour == candidate.hour
+            and existing.minute == candidate.minute
+            and existing.second == candidate.second
+            and existing.weekday() == candidate.weekday()
+            and existing.day == candidate.day
+            and existing.month == candidate.month
+            for existing in candidates
+        )
+        if not exists:
+            candidates.append(candidate)
+
+    return candidates
+
+
+def clock_candidates_for_shanghai_datetimes(
+    shanghai_datetimes: list[datetime],
+) -> list[datetime]:
+    # Codex cron has shown both local-clock and UTC-clock behavior across app
+    # versions. Include both candidates; each automation prompt gates on the
+    # real Asia/Shanghai business window before doing any repository work.
+    candidates = [
+        *local_candidates_for_shanghai_datetimes(shanghai_datetimes),
+        *utc_candidates_for_shanghai_datetimes(shanghai_datetimes),
+    ]
+    unique: list[datetime] = []
+    for candidate in candidates:
+        exists = any(
+            existing.hour == candidate.hour
+            and existing.minute == candidate.minute
+            and existing.second == candidate.second
+            and existing.weekday() == candidate.weekday()
+            and existing.day == candidate.day
+            and existing.month == candidate.month
+            for existing in unique
+        )
+        if not exists:
+            unique.append(candidate)
+    return unique
+
+
+def describe_clock_candidates(candidates: list[datetime]) -> str:
+    labels: list[str] = []
+    for candidate in candidates:
+        label = candidate.strftime("%H:%M:%S %Z")
+        if label not in labels:
+            labels.append(label)
+    return ", ".join(labels)
+
+
+def describe_weekday_clock_candidates(candidates: list[datetime]) -> str:
+    labels: list[str] = []
+    for candidate in candidates:
+        label = f"{RRULE_WEEKDAYS[candidate.weekday()]} {candidate.strftime('%H:%M:%S %Z')}"
+        if label not in labels:
+            labels.append(label)
+    return ", ".join(labels)
+
+
+def describe_monthday_clock_candidates(candidates: list[datetime]) -> str:
+    labels: list[str] = []
+    for candidate in candidates:
+        label = f"{candidate.day} {candidate.strftime('%H:%M:%S %Z')}"
+        if label not in labels:
+            labels.append(label)
+    return ", ".join(labels)
+
+
+def describe_yearday_clock_candidates(candidates: list[datetime]) -> str:
+    labels: list[str] = []
+    for candidate in candidates:
+        label = f"{candidate.month:02d}-{candidate.day:02d} {candidate.strftime('%H:%M:%S %Z')}"
+        if label not in labels:
+            labels.append(label)
+    return ", ".join(labels)
+
+
 def shanghai_clock_samples(year: int, hour: int, minute: int, second: int) -> list[datetime]:
     return [
         datetime(year, 1, 15, hour, minute, second, tzinfo=SHANGHAI_TZ),
@@ -129,7 +212,7 @@ def shanghai_clock_samples(year: int, hour: int, minute: int, second: int) -> li
 
 def daily_rrule_for_shanghai_clock(hour: int, minute: int, second: int) -> str:
     year = datetime.now(SHANGHAI_TZ).year
-    candidates = local_candidates_for_shanghai_datetimes(
+    candidates = clock_candidates_for_shanghai_datetimes(
         shanghai_clock_samples(year, hour, minute, second)
     )
     hours = sorted({candidate.hour for candidate in candidates})
@@ -154,7 +237,7 @@ def weekly_rrule_for_shanghai_weekday(
     for sample in shanghai_clock_samples(year, hour, minute, second):
         delta = (shanghai_weekday - sample.weekday()) % 7
         samples.append(sample + timedelta(days=delta))
-    candidates = local_candidates_for_shanghai_datetimes(samples)
+    candidates = clock_candidates_for_shanghai_datetimes(samples)
     bydays = sorted({RRULE_WEEKDAYS[candidate.weekday()] for candidate in candidates})
     hours = sorted({candidate.hour for candidate in candidates})
     minutes = sorted({candidate.minute for candidate in candidates})
@@ -169,7 +252,7 @@ def weekly_rrule_for_shanghai_weekday(
 
 def monthly_rrule_for_shanghai_first_day(hour: int, minute: int, second: int) -> str:
     year = datetime.now(SHANGHAI_TZ).year
-    candidates = local_candidates_for_shanghai_datetimes(
+    candidates = clock_candidates_for_shanghai_datetimes(
         [
             datetime(year, 1, 1, hour, minute, second, tzinfo=SHANGHAI_TZ),
             datetime(year, 7, 1, hour, minute, second, tzinfo=SHANGHAI_TZ),
@@ -188,7 +271,7 @@ def monthly_rrule_for_shanghai_first_day(hour: int, minute: int, second: int) ->
 
 def yearly_rrule_for_shanghai_jan1(hour: int, minute: int, second: int) -> str:
     year = datetime.now(SHANGHAI_TZ).year
-    candidates = local_candidates_for_shanghai_datetimes(
+    candidates = clock_candidates_for_shanghai_datetimes(
         [datetime(year, 1, 1, hour, minute, second, tzinfo=SHANGHAI_TZ)]
     )
     hours = sorted({candidate.hour for candidate in candidates})
@@ -260,9 +343,8 @@ def main() -> None:
 
     timezone_label = getattr(local_now.tzinfo, "key", None) or local_now.tzname() or "local"
     year = datetime.now(SHANGHAI_TZ).year
-    daily_local_times = ", ".join(
-        candidate.strftime("%H:%M:%S")
-        for candidate in local_candidates_for_shanghai_datetimes(
+    daily_trigger_times = describe_clock_candidates(
+        clock_candidates_for_shanghai_datetimes(
             shanghai_clock_samples(
                 year,
                 DAILY_TRIGGER_HOUR,
@@ -271,9 +353,8 @@ def main() -> None:
             )
         )
     )
-    watchdog_local_times = ", ".join(
-        candidate.strftime("%H:%M:%S")
-        for candidate in local_candidates_for_shanghai_datetimes(
+    watchdog_trigger_times = describe_clock_candidates(
+        clock_candidates_for_shanghai_datetimes(
             shanghai_clock_samples(
                 year,
                 WATCHDOG_TRIGGER_HOUR,
@@ -282,27 +363,24 @@ def main() -> None:
             )
         )
     )
-    weekly_local_slots = ", ".join(
-        f"{RRULE_WEEKDAYS[candidate.weekday()]} {candidate.strftime('%H:%M:%S')}"
-        for candidate in local_candidates_for_shanghai_datetimes(
+    weekly_trigger_slots = describe_weekday_clock_candidates(
+        clock_candidates_for_shanghai_datetimes(
             [
                 sample + timedelta(days=(0 - sample.weekday()) % 7)
                 for sample in shanghai_clock_samples(year, 9, 10, 0)
             ]
         )
     )
-    monthly_local_slots = ", ".join(
-        f"{candidate.day} {candidate.strftime('%H:%M:%S')}"
-        for candidate in local_candidates_for_shanghai_datetimes(
+    monthly_trigger_slots = describe_monthday_clock_candidates(
+        clock_candidates_for_shanghai_datetimes(
             [
                 datetime(year, 1, 1, 9, 15, 0, tzinfo=SHANGHAI_TZ),
                 datetime(year, 7, 1, 9, 15, 0, tzinfo=SHANGHAI_TZ),
             ]
         )
     )
-    yearly_local_slots = ", ".join(
-        f"{candidate.month:02d}-{candidate.day:02d} {candidate.strftime('%H:%M:%S')}"
-        for candidate in local_candidates_for_shanghai_datetimes(
+    yearly_trigger_slots = describe_yearday_clock_candidates(
+        clock_candidates_for_shanghai_datetimes(
             [datetime(year, 1, 1, 9, 20, 0, tzinfo=SHANGHAI_TZ)]
         )
     )
@@ -314,18 +392,23 @@ def main() -> None:
     print(f"Git origin: {origin_url or 'not configured'}")
     print(f"Local timezone: {timezone_label}")
     print(
-        "Daily local trigger candidates for "
+        "Daily trigger candidates for "
         f"Asia/Shanghai {DAILY_TRIGGER_HOUR:02d}:{DAILY_TRIGGER_MINUTE:02d}: "
-        f"{daily_local_times}"
+        f"{daily_trigger_times}"
     )
     print(
-        "Daily watchdog local trigger candidates for "
+        "Daily watchdog trigger candidates for "
         f"Asia/Shanghai {WATCHDOG_TRIGGER_HOUR:02d}:{WATCHDOG_TRIGGER_MINUTE:02d}: "
-        f"{watchdog_local_times}"
+        f"{watchdog_trigger_times}"
     )
-    print(f"Weekly local trigger candidates for Asia/Shanghai Monday 09:10: {weekly_local_slots}")
-    print(f"Monthly local trigger candidates for Asia/Shanghai day 1 09:15: {monthly_local_slots}")
-    print(f"Yearly local trigger candidates for Asia/Shanghai January 1 09:20: {yearly_local_slots}")
+    print(f"Weekly trigger candidates for Asia/Shanghai Monday 09:10: {weekly_trigger_slots}")
+    print(f"Monthly trigger candidates for Asia/Shanghai day 1 09:15: {monthly_trigger_slots}")
+    print(f"Yearly trigger candidates for Asia/Shanghai January 1 09:20: {yearly_trigger_slots}")
+    print(
+        "RRULEs include both local-clock and UTC-clock candidates because Codex "
+        "cron interpretation can vary by app version; prompts no-op outside the "
+        "Asia/Shanghai business window."
+    )
     if not origin_url:
         print("Warning: no git origin remote found. Automated pushes will fail until origin is configured.")
     print("Rerun this script if the repository path or system timezone changes.")

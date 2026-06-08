@@ -50,6 +50,7 @@ bash scripts/install_codex_daily_digest.sh
 - 检查当前目录是否像一个可用的 Git 仓库
 - 检查仓库里是否存在自动化模板文件
 - 计算当前电脑本地时间里，对应 `Asia/Shanghai 09:05` 的触发时间
+- 额外写入 UTC 时钟候选触发时间，用来兼容不同 Codex Desktop 版本对 cron `BYHOUR` 的解释差异
 - 生成本机可用的 Codex 自动化配置
 - 把仓库当前绝对路径写入自动化的 `cwds`
 - 写入日报、日报 watchdog、周报、月报、年报五个 automation 目录下的 `automation.toml`
@@ -88,6 +89,8 @@ bash scripts/install_codex_daily_digest.sh
 
 安装脚本不会直接假设“每台电脑都在中国时区”，而是会根据当前电脑的本地时区，把日报、周报、月报、年报各自对应的 `Asia/Shanghai` 触发时刻换算成本地触发时间，再写入自动化配置。这样你在另一台电脑上恢复时，不需要手工改时间。
 
+同时，安装脚本也会额外写入 UTC 时钟候选触发点。这样做是因为 Codex Desktop 的 cron 在不同版本中可能把 `BYHOUR` 当作本地时钟，也可能当作 UTC 时钟；双候选能避免任务被推迟到 `17:xx Asia/Shanghai` 才触发。真正执行前，自动化提示词会再次校验当前是否处于正确的 `Asia/Shanghai` 业务窗口，并检查当天日报是否已经存在，所以多出来的候选触发只会 no-op，不会重复生成报告。
+
 对于存在夏令时的时区，安装器会写入覆盖冬令时与夏令时的本地触发候选时刻；真正执行前，自动化提示词还会再次检查当前是否处于对应的 `Asia/Shanghai` 业务窗口，不在窗口内就直接 no-op，因此不会误生成重复报告。
 
 说明：
@@ -115,6 +118,8 @@ bash scripts/install_codex_daily_digest.sh
 6. 运行 `python3 scripts/check_archive_health.py`，确认最近日报、已完成周报、已完成月报和 Git 同步状态正常
 
 如果你只是想先验证安装器是否工作，不想等到第二天，也可以先检查自动化文件是否已经生成，再手动阅读里面的 `cwds` 和 `rrule` 是否符合预期。
+
+在中国时区机器上，日报主任务的 `rrule` 通常应同时包含 `BYHOUR=1,9;BYMINUTE=5`，watchdog 应同时包含 `BYHOUR=1,9;BYMINUTE=35`。其中 `9` 覆盖本地时钟解释，`1` 覆盖 UTC 时钟解释；真正写报告的仍只有上海时间 09 点窗口。
 
 ## 常见问题
 

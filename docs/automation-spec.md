@@ -15,6 +15,8 @@
 - 兜底巡检时间：每天 09:35，Asia/Shanghai
 - 报告时间窗：前一日 09:00 至当日 09:00
 - 触发时间比业务窗口晚 5 分钟，是为了避开本机多个 Codex automation 同时抢启动导致的静默失败风险
+- 安装器会同时写入本地时钟和 UTC 时钟候选触发点，兼容 Codex Desktop cron 在不同版本中的时区解释差异
+- 日报主任务执行前必须再次检查真实 `Asia/Shanghai` 时间窗口和当天日报文件；如果不在窗口内或文件已存在，必须 no-op 且不改仓库
 - watchdog 只检查当天日报是否已经落盘；如果已存在，不改仓库；如果缺失，按同一时间窗补写日报并推送
 - 如果严格时间窗内高价值更新偏少，可以补入最近几天仍在持续发酵的高价值官方更新，但必须在正文中明确补充范围
 - 补充内容必须避免与仓库中最近几日日报重复；如果没有新的高置信度信息，允许生成更短的简版日报
@@ -84,7 +86,7 @@
 - macOS / Linux 另外提供便捷包装脚本 `scripts/install_codex_daily_digest.sh`
 - 脚本会一并安装日报、日报 watchdog、周报、月报、年报五个 Codex 自动化任务
 - 脚本会把自动化配置写入 `${CODEX_HOME:-~/.codex}/automations/<automation-id>/automation.toml`
-- 脚本会根据当前电脑的本地时区，计算日报、周报、月报、年报各自对应的 `Asia/Shanghai` 本地触发时间
+- 脚本会根据当前电脑的本地时区，计算日报、周报、月报、年报各自对应的 `Asia/Shanghai` 本地触发时间，并额外写入 UTC 时钟候选触发时间
 - 如果仓库换了路径，或者系统时区发生变化，重跑一次安装脚本
 - 详细说明见 [docs/portable-setup.md](portable-setup.md)
 
@@ -93,3 +95,4 @@
 - 如果当天高价值更新很少，仍生成简版日报
 - 如果抓取过程受阻，保留已验证的重要信息，不用未经确认的内容凑数
 - 如果自动化连续缺失日报，先运行 `python3 scripts/check_archive_health.py` 检查缺失日报、周报、月报和最近提交状态
+- 如果 session 日志显示任务在 `17:xx Asia/Shanghai` 触发并因窗口校验 no-op，说明当前 Codex cron 正在按 UTC 时钟解释 `BYHOUR`；重跑 `python3 scripts/install_codex_daily_digest.py`，确认 RRULE 同时包含 `BYHOUR=1,9` 这类双候选小时

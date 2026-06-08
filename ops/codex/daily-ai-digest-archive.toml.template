@@ -6,7 +6,8 @@ prompt = """
 Before doing any research, determine the current time in Asia/Shanghai.
 
 - If the current Asia/Shanghai time is not between 09:00:00 and 09:14:59, exit immediately with a concise no-op note and make no file or git changes.
-- If it is within that window, research and write the daily AI digest for the current scheduled run using the current workspace git repository as the archive.
+- If it is within that window, compute today's digest path `daily/YYYY/YYYY-MM/YYYY-MM-DD.md` using the current Asia/Shanghai date. If the file already exists, exit immediately with a concise no-op note and make no file or git changes.
+- If the file is missing, research and write the daily AI digest for the current scheduled run using the current workspace git repository as the archive.
 
 Determine the report date in Asia/Shanghai and cover the window from the previous 09:00:00 to the current 09:00:00 Asia/Shanghai bucket using the automation schedule time; if schedule metadata is unavailable, fall back to the previous 24 hours and state that fallback explicitly in the report. Create or update `daily/YYYY/YYYY-MM/YYYY-MM-DD.md` with title `# AI 日报 - YYYY-MM-DD`. Follow the repository guidance in `README.md`, `docs/coverage-map.md`, `docs/editorial-guidelines.md`, `docs/source-watchlist.md`, and `docs/automation-spec.md`.
 

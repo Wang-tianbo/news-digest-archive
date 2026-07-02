@@ -272,7 +272,47 @@
 - NVIDIA 企业 AI 新闻: [nvidianews.nvidia.com/news](https://nvidianews.nvidia.com/news)
 - 中国政府网“人工智能+”行动样本页: [关于深入实施“人工智能+”行动的意见](https://www.gov.cn/zhengce/202508/content_7037899.htm)
 
-## 六、动态流 / 可订阅流
+## 六、AI 思想与观点观察源
+
+这部分用于长期跟踪中文互联网与全球范围内的 AI 技术工作者、研究者、创业者及关键人物，在博客、X、公众号、长文中表达的判断、困惑、分歧与方法论。
+
+使用原则：
+
+- 这是观点源，不是事实源；不能用人物观点替代官方发布、文档、Release 或 changelog
+- 优先使用博客、长文、技术文章、公开访谈和可复查文章；X / Twitter、微博、短帖只作为观点线索
+- 只记录有长期复盘价值的判断、分歧、困惑与方法论；如果当天没有高信号观点，日报整段省略
+- 观点进入日报时要写清楚 `观点摘要`、`为什么值得记录`、`我的判断` 和 `来源`
+
+### 全球人物与长文源
+
+- Andrej Karpathy Blog: [karpathy.ai](https://karpathy.ai/)
+- Andrej Karpathy X: [x.com/karpathy](https://x.com/karpathy)
+- Simon Willison Blog: [simonwillison.net](https://simonwillison.net/)
+- Simon Willison X: [x.com/simonw](https://x.com/simonw)
+- Ethan Mollick / One Useful Thing: [oneusefulthing.org](https://www.oneusefulthing.org/)
+- Ethan Mollick X: [x.com/emollick](https://x.com/emollick)
+- François Chollet Blog: [fchollet.com](https://fchollet.com/)
+- François Chollet X: [x.com/fchollet](https://x.com/fchollet)
+- Jim Fan X: [x.com/DrJimFan](https://x.com/DrJimFan)
+- Sam Altman Blog: [blog.samaltman.com](https://blog.samaltman.com/)
+- Sam Altman X: [x.com/sama](https://x.com/sama)
+- Dario Amodei / Anthropic Essays: [anthropic.com/news](https://www.anthropic.com/news)
+- Yann LeCun X: [x.com/ylecun](https://x.com/ylecun)
+- Noam Brown X: [x.com/polynoamial](https://x.com/polynoamial)
+- Latent Space / swyx: [latent.space](https://www.latent.space/)
+- swyx X: [x.com/swyx](https://x.com/swyx)
+- Andrew Ng / The Batch: [deeplearning.ai/the-batch](https://www.deeplearning.ai/the-batch/)
+
+### 中文互联网人物与长文源
+
+- 宝玉 Blog: [baoyu.io](https://baoyu.io/)
+- 宝玉 X: [x.com/dotey](https://x.com/dotey)
+- 李沐 / 动手学深度学习: [zh.d2l.ai](https://zh.d2l.ai/)
+- DeepLearning.AI 中文相关内容可作为 Andrew Ng 观点的补充入口: [deeplearning.ai](https://www.deeplearning.ai/)
+
+说明：中文个人观点源先保持保守。后续如果要加入公众号、知识星球、播客或中文长文平台，应优先选择公开可访问、能稳定引用、适合长期复查的入口。
+
+## 七、动态流 / 可订阅流
 
 这部分不是单个页面，而是每天应主动扫的“更新流”。
 
@@ -329,15 +369,17 @@
 - 个别官网入口对脚本访问不稳定，自动化优先选文档页、Release 页、changelog 页，官网首页作为人工补充。
 - 这一步当前先作为“每日巡检规则”执行，等日报稳定后再进一步自动化订阅。
 
-## 七、使用建议
+## 八、使用建议
 
 - 每天先扫“日报必扫”源：Codex、Claude Code、Copilot、Cursor、Gemini CLI、Qwen Code，再扫中美重点模型厂商官方动态
 - 如果当天出现重大模型发布，回到“发布文 + 文档 + changelog + GitHub 仓库”四件套核实
 - 如果核心源当天信号偏弱，再启用“静默日补位”源，但不要为了凑篇幅重复前几日日报已经写过的内容
 - 对 Codex、Claude Code、Copilot、Cursor、Gemini CLI、Devin、Qwen Code 这类产品，不只看博客，也要看文档和版本发布
 - 对中国厂商，优先看产品页、文档页、官方博客、官方 GitHub，再看开发者社区和媒体报道
+- 对 AI 思想与观点观察，优先记录能解释方法论变化、路线分歧、产品判断或组织采用困惑的观点；不要把人物动态做成每日签到
 - 对外围情报，只选那些会真实改变 AI 主线的变量，例如算力、云平台接入、监管变化、安全治理、企业采用或关键行业落地；如果只是一般科技新闻，不进日报
 - 日报里的外围情报建议控制在 1-3 条；如果当天没有高置信度外围信号，可以整段省略
+- 日报里的观点观察建议控制在 1-3 条；如果当天没有高信号观点，可以整段省略
 - 对 vLLM、SGLang、llama.cpp、Transformers、MCP 生态这类基础设施，更适合作为周报 / 月报中的“趋势层”素材
 - 算力与半导体、政策与治理、企业采用这三类外围情报，更适合在周报 / 月报中沉淀连续判断，而不是每天机械签到
 - 媒体报道只用于补充上下文，不作为最核心事实来源

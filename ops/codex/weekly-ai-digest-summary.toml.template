@@ -16,6 +16,7 @@ Requirements:
 - In the machine-friendly metadata, use `fact_confidence` for source reliability and `signal_strength` for the week's signal strength.
 - Include a dedicated `本周评论与判断` section and a `本周判断复盘` section that distinguish what was validated, what was revised, and what is newly worth stating this week.
 - Include `本周议题台账流转`, making explicit which themes should be promoted into long-term ledgers, which should stay under observation, and which should be downgraded.
+- Aggregate high-signal daily `AI 思想与观点观察` items when they appear, summarizing durable viewpoints, disagreements, confusions, and methodology shifts. Treat them as opinion samples, not factual confirmation.
 - Include `AI 外围情报观察` only when adjacent signals clearly affected the AI mainline that week.
 - Prefer concise, high-signal writing grounded in the repository's accumulated reports.
 

@@ -8,6 +8,7 @@
 - 主题标签：`agent_api`、`runtime_governance`
 - 重点公司：`OpenAI`、`Anthropic`、`GitHub`、`Qwen`
 - 重点产品：`Codex`、`Claude Code`、`GitHub Copilot`、`Qwen Code`
+- 观点来源：`opinion_sources` 为空时写“无高信号新增”
 - 今日信号：API 化、开发环境化、团队治理
 - 跟踪问题：GitHub 是否继续扩展 agent task API；Qwen Code 是否推进稳定版 runtime
 - 事实置信度：`high`
@@ -59,6 +60,18 @@
 
 - 摘要：
 - 值得关注点：
+- 来源：
+
+## AI 思想与观点观察
+
+> 如果当天没有高信号观点，省略本节，并在 `结构化索引` 中写 `opinion_sources: []` 和 `viewpoint_themes: []`。
+> 本节只记录观点样本，不能替代事实来源。
+
+### 人物 / 观点主题
+
+- 观点摘要：
+- 为什么值得记录：
+- 我的判断：
 - 来源：
 
 ## AI 外围情报观察
@@ -113,6 +126,10 @@ signals:
   - API 化
   - 开发环境化
   - 团队治理
+opinion_sources:
+  - Simon Willison
+viewpoint_themes:
+  - AI 编程方法论
 peripheral_themes:
   - 算力与半导体
 followups:
@@ -132,6 +149,8 @@ signal_strength: medium
 - 产品：
 - 主题标签：
 - 信号标签：
+- 观点来源：
+- 观点主题：
 - 外围主题：
 - 事实置信度：
 - 信号强度：

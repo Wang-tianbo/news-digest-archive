@@ -87,7 +87,7 @@ bash scripts/install_codex_daily_digest.sh
 
 日报 watchdog 是一层保险丝：它每天 `09:35` 检查当天日报文件是否已经存在。如果主日报任务正常完成，watchdog 不会修改仓库；如果主任务触发后静默失败或没有落盘，watchdog 会按同一日报规则补写并推送。
 
-安装脚本不会直接假设“每台电脑都在中国时区”，而是会根据当前电脑的本地时区，把日报、周报、月报、年报各自对应的 `Asia/Shanghai` 触发时刻换算成本地触发时间，再写入自动化配置。这样你在另一台电脑上恢复时，不需要手工改时间。
+安装脚本不会直接假设“每台电脑都在中国时区”，而是会优先使用当前电脑的 IANA 本地时区规则，把日报、周报、月报、年报各自对应的 `Asia/Shanghai` 触发时刻换算成本地触发时间，再写入自动化配置。这样你在另一台电脑上恢复时，不需要手工改时间。
 
 同时，安装脚本也会额外写入 UTC 时钟候选触发点。这样做是因为 Codex Desktop 的 cron 在不同版本中可能把 `BYHOUR` 当作本地时钟，也可能当作 UTC 时钟；双候选能避免任务被推迟到 `17:xx Asia/Shanghai` 才触发。真正执行前，自动化提示词会再次校验当前是否处于正确的 `Asia/Shanghai` 业务窗口，并检查当天日报是否已经存在，所以多出来的候选触发只会 no-op，不会重复生成报告。
 
@@ -97,6 +97,7 @@ bash scripts/install_codex_daily_digest.sh
 
 - 如果系统时区之后发生变化，建议重跑一次安装脚本
 - 如果你把仓库移动到了新的绝对路径，也建议重跑一次安装脚本
+- 如果你在多台电脑上安装同一仓库的 automation，建议只保留一台机器作为主动写入端，其余机器暂停日报类 automation，避免多端同时生成同一天报告
 
 ## 验证方法
 
@@ -115,7 +116,7 @@ bash scripts/install_codex_daily_digest.sh
 3. 确认每天 09:05 Asia/Shanghai 之后，日报会写入 `daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
 4. 确认每天 09:35 Asia/Shanghai 的 watchdog automation 文件已经生成
 5. 确认周报 / 月报 / 年报的 automation 文件也已经生成
-6. 运行 `python3 scripts/check_archive_health.py`，确认最近日报、已完成周报、已完成月报和 Git 同步状态正常
+6. 运行 `python3 scripts/check_archive_health.py --fetch`，确认最近日报、已完成周报、已完成月报、本机 automation 和 Git 远端同步状态正常
 
 如果你只是想先验证安装器是否工作，不想等到第二天，也可以先检查自动化文件是否已经生成，再手动阅读里面的 `cwds` 和 `rrule` 是否符合预期。
 

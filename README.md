@@ -223,6 +223,24 @@ python3 scripts/check_archive_health.py
 python3 scripts/check_archive_health.py --today 2026-06-01
 ```
 
+如果你想同时检查远端同步和本机 Codex automation 是否安装，可以运行：
+
+```bash
+python3 scripts/check_archive_health.py --fetch
+```
+
+默认日报检查最近 7 天，避免历史缺口干扰当前自动化巡检；如果要追查更早的缺失，可以显式增加 lookback：
+
+```bash
+python3 scripts/check_archive_health.py --daily-lookback 30
+```
+
+如果你想检查明天起的新模板字段是否齐全，可以加上严格模板检查：
+
+```bash
+python3 scripts/check_archive_health.py --strict-template
+```
+
 ## 如果你想继续扩展
 
 这个仓库后续很适合继续往这些方向发展：

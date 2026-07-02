@@ -10,6 +10,16 @@ import shutil
 import subprocess
 import time
 
+try:
+    import tomllib
+except ModuleNotFoundError:  # pragma: no cover - Python < 3.11 fallback.
+    tomllib = None
+
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:  # pragma: no cover - Python < 3.9 fallback.
+    ZoneInfo = None
+
 
 SHANGHAI_TZ = timezone(timedelta(hours=8))
 RRULE_WEEKDAYS = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]
@@ -80,6 +90,8 @@ def read_origin_url(root: Path) -> str | None:
         cwd=root,
         capture_output=True,
         text=True,
+        encoding="utf-8",
+        errors="replace",
         check=False,
     )
     if result.returncode != 0:
@@ -94,17 +106,38 @@ def codex_home() -> Path:
     return Path.home() / ".codex"
 
 
+def local_timezone():
+    if ZoneInfo is not None:
+        env_tz = os.environ.get("TZ")
+        if env_tz and not env_tz.startswith(":"):
+            try:
+                return ZoneInfo(env_tz)
+            except Exception:
+                pass
+
+        localtime = Path("/etc/localtime")
+        if localtime.exists():
+            try:
+                resolved = localtime.resolve()
+                parts = resolved.parts
+                if "zoneinfo" in parts:
+                    zone_key = "/".join(parts[parts.index("zoneinfo") + 1 :])
+                    return ZoneInfo(zone_key)
+            except Exception:
+                pass
+
+    return datetime.now().astimezone().tzinfo
+
+
 def local_candidates_for_shanghai_datetimes(
     shanghai_datetimes: list[datetime],
 ) -> list[datetime]:
     candidates: list[datetime] = []
-    local_now = datetime.now().astimezone()
-    local_tz = local_now.tzinfo
-    if local_tz is None:
-        raise SystemExit("Unable to determine local timezone.")
 
     for shanghai_time in shanghai_datetimes:
-        candidate = shanghai_time.astimezone(local_tz)
+        # Use the OS local-time conversion for each target instant so DST
+        # transitions are handled even when no IANA timezone name is available.
+        candidate = datetime.fromtimestamp(shanghai_time.timestamp(), timezone.utc).astimezone()
         exists = any(
             existing.hour == candidate.hour
             and existing.minute == candidate.minute
@@ -262,7 +295,7 @@ def monthly_rrule_for_shanghai_first_day(hour: int, minute: int, second: int) ->
     minutes = sorted({candidate.minute for candidate in candidates})
     seconds = sorted({candidate.second for candidate in candidates})
     return (
-        "FREQ=MONTHLY;BYMONTHDAY=1,28,29,30,31;"
+        "FREQ=MONTHLY;BYMONTHDAY=1,-1;"
         f"BYHOUR={','.join(str(value) for value in hours)};"
         f"BYMINUTE={','.join(str(value) for value in minutes)};"
         f"BYSECOND={','.join(str(value) for value in seconds)}"
@@ -278,7 +311,7 @@ def yearly_rrule_for_shanghai_jan1(hour: int, minute: int, second: int) -> str:
     minutes = sorted({candidate.minute for candidate in candidates})
     seconds = sorted({candidate.second for candidate in candidates})
     return (
-        "FREQ=YEARLY;BYMONTH=1,12;BYMONTHDAY=1,31;"
+        "FREQ=YEARLY;BYYEARDAY=1,-1;"
         f"BYHOUR={','.join(str(value) for value in hours)};"
         f"BYMINUTE={','.join(str(value) for value in minutes)};"
         f"BYSECOND={','.join(str(value) for value in seconds)}"
@@ -302,6 +335,21 @@ def render_template(
     return template
 
 
+def validate_toml(rendered: str, target_file: Path) -> None:
+    if tomllib is None:
+        return
+    try:
+        tomllib.loads(rendered)
+    except tomllib.TOMLDecodeError as exc:
+        raise SystemExit(f"Rendered automation TOML is invalid for {target_file}: {exc}") from exc
+
+
+def atomic_write_text(path: Path, content: str) -> None:
+    tmp_path = path.with_name(f".{path.name}.tmp.{os.getpid()}")
+    tmp_path.write_text(content, encoding="utf-8")
+    tmp_path.replace(path)
+
+
 def install_one(root: Path, spec: dict[str, object], timestamp_ms: int) -> Path:
     template_path = root / "ops" / "codex" / str(spec["template"])
     if not template_path.is_file():
@@ -319,12 +367,13 @@ def install_one(root: Path, spec: dict[str, object], timestamp_ms: int) -> Path:
     rrule = str(spec["schedule"]())
     rrule_key = str(spec["rrule_key"])
     rendered = render_template(
-        template_path.read_text(),
+        template_path.read_text(encoding="utf-8"),
         root,
         timestamp_ms,
         {rrule_key: json.dumps(rrule)},
     )
-    target_file.write_text(rendered)
+    validate_toml(rendered, target_file)
+    atomic_write_text(target_file, rendered)
     return target_file
 
 
@@ -332,7 +381,11 @@ def main() -> None:
     root = repo_root()
     ensure_git_repo(root)
 
-    local_now = datetime.now().astimezone()
+    detected_local_tz = local_timezone()
+    if detected_local_tz:
+        local_now = datetime.now().astimezone(detected_local_tz)
+    else:
+        local_now = datetime.now().astimezone()
     timestamp_ms = int(time.time() * 1000)
     origin_url = read_origin_url(root)
 
@@ -341,7 +394,7 @@ def main() -> None:
         installed = install_one(root, spec, timestamp_ms)
         installed_files.append((str(spec["id"]), installed))
 
-    timezone_label = getattr(local_now.tzinfo, "key", None) or local_now.tzname() or "local"
+    timezone_label = getattr(detected_local_tz, "key", None) or local_now.tzname() or "local"
     year = datetime.now(SHANGHAI_TZ).year
     daily_trigger_times = describe_clock_candidates(
         clock_candidates_for_shanghai_datetimes(

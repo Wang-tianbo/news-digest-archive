@@ -240,9 +240,14 @@
 - arXiv cs.AI recent: [arxiv.org/list/cs.AI/recent](https://arxiv.org/list/cs.AI/recent)
 - arXiv cs.CV recent: [arxiv.org/list/cs.CV/recent](https://arxiv.org/list/cs.CV/recent)
 - arXiv cs.RO recent: [arxiv.org/list/cs.RO/recent](https://arxiv.org/list/cs.RO/recent)
+- OpenReview: [openreview.net](https://openreview.net/)
+- ACL Anthology: [aclanthology.org](https://aclanthology.org/)
+- NeurIPS Proceedings: [proceedings.neurips.cc](https://proceedings.neurips.cc/)
+- Proceedings of Machine Learning Research: [proceedings.mlr.press](https://proceedings.mlr.press/)
 - Hugging Face Papers: [huggingface.co/papers](https://huggingface.co/papers)
 - Hugging Face Trending Papers: [huggingface.co/papers/trending](https://huggingface.co/papers/trending)
 - Papers with Code: [paperswithcode.com](https://paperswithcode.com/)
+- Papers with Code SOTA: [paperswithcode.com/sota](https://paperswithcode.com/sota)
 - alphaXiv: [alphaxiv.org](https://www.alphaxiv.org/)
 
 ### 研究博客与实验室动向
@@ -260,9 +265,15 @@
 ### Benchmark / Eval / 开源实现
 
 - SWE-bench: [swebench.com](https://www.swebench.com/)
+- SWE-bench Verified: [swebench.com](https://www.swebench.com/)
+- LiveCodeBench: [livecodebench.github.io](https://livecodebench.github.io/)
+- Aider LLM Leaderboards: [aider.chat/docs/leaderboards](https://aider.chat/docs/leaderboards/)
 - Chatbot Arena / LMSYS: [lmarena.ai](https://lmarena.ai/)
 - HELM: [crfm.stanford.edu/helm](https://crfm.stanford.edu/helm/latest/)
 - OpenCompass: [github.com/open-compass/opencompass](https://github.com/open-compass/opencompass)
+- EvalPlus: [github.com/evalplus/evalplus](https://github.com/evalplus/evalplus)
+- Berkeley Function-Calling Leaderboard: [gorilla.cs.berkeley.edu/leaderboard.html](https://gorilla.cs.berkeley.edu/leaderboard.html)
+- Artificial Analysis: [artificialanalysis.ai](https://artificialanalysis.ai/)
 - Hugging Face Models: [huggingface.co/models](https://huggingface.co/models)
 - Hugging Face Spaces: [huggingface.co/spaces](https://huggingface.co/spaces)
 - GitHub Trending AI: [github.com/trending](https://github.com/trending)
@@ -272,6 +283,9 @@
 - 论文作者、实验室官方博客、项目核心维护者的一手解读
 - Simon Willison、Nathan Lambert / Interconnects、Sebastian Raschka、Chip Huyen、Hamel Husain、Eugene Yan、Jason Liu、Jack Clark / Import AI 等高质量技术长文
 - 宝玉、李继刚、歸藏、WaytoAGI、响马等中文技术工作者或 AI 博主的公开解读
+- METR: [metr.org](https://metr.org/)
+- Epoch AI: [epoch.ai](https://epoch.ai/)
+- EleutherAI Blog: [eleuther.ai/blog](https://www.eleuther.ai/blog/)
 
 ## 六、AI 外围高相关情报
 

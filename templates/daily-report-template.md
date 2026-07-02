@@ -14,6 +14,7 @@
 - 跟踪问题：GitHub 是否继续扩展 agent task API；Qwen Code 是否推进稳定版 runtime
 - 事实置信度：`high`
 - 信号强度：`medium`
+- 来源巡检：核心官方源、AI 圈博主、研究前沿均已在 `结构化索引` 记录巡检结果
 
 ## 主线判断
 
@@ -35,6 +36,7 @@
 
 - 发生了什么：
 - 为什么重要：
+- 证据口径：官方发布 / 官方文档 / release note / 论文原文 / benchmark 原页；如果是媒体或博主线索，需补一手来源
 - 来源：
 
 #### 2. 标题
@@ -79,6 +81,7 @@
 - 为什么值得记录：
 - 我的判断：
 - 来源：
+- 原始事实来源：如果该条涉及产品 / 模型 / 项目事实，补官方发布、文档、release 或原始项目链接；没有则写“仅作线索源”
 
 ## AI 研究前沿
 
@@ -92,6 +95,8 @@
 - 核心思路：
 - 为什么可能影响未来：
 - 局限 / 待验证点：
+- 研究成熟度：早期论文 / 已有代码 / 有第三方复现 / 已进入产品或基准
+- 可复现状态：未验证 / 作者开源 / 第三方复现 / 仅有报告
 - 原文链接：
 - 权威解读：作者 / 研究员 / 核心开发者 / 可信技术博主的解读链接；没有则写“暂无”
 - 我的判断：
@@ -162,6 +167,30 @@ research_interpretations:
   - 权威解读来源名称或 none
 peripheral_themes:
   - 算力与半导体
+source_checks:
+  - source_id: openai_news
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: hit
+    note: checked exact article/changelog/release page
+  - source_id: ai_blogger_core_radar
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: miss
+    note: no high-value clue included
+  - source_id: research_frontier
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: hit
+    note: original paper/research page retained when included
+evidence_items:
+  - item_id: news-1
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: YYYY-MM-DD
+    snapshot_time: YYYY-MM-DD HH:MM Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://example.com
+    confidence_reason: official release note with exact URL
 followups:
   - GitHub 是否继续扩展 agent task API
   - Qwen Code 是否推进稳定版 runtime

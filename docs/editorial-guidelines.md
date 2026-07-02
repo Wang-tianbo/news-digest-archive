@@ -69,6 +69,9 @@
 - `AI 圈博主` 条目类型固定为：`信息线索`、`观点判断`、`方法论`、`实践复盘`
 - `AI 研究前沿` 条目类型固定为：`论文`、`研究博客`、`benchmark`、`eval`、`开源实现`、`实验室动向`
 - `AI 研究前沿` 必须包含原文链接；权威解读可辅助理解，但不能替代原文
+- `AI 研究前沿` 建议写明 `研究成熟度` 与 `可复现状态`，避免把早期论文、作者开源、第三方复现和生产落地区分不清
+- 每篇日报应在 `结构化索引` 中记录 `source_checks`，说明主要来源组是否已巡检、巡检时间和结果
+- 每篇日报建议在 `结构化索引` 中记录 `evidence_items`，为核心条目保留来源角色、证据类型、条目日期、快照时间和一手链接
 
 评论 / 判断模块建议回答：
 
@@ -117,6 +120,8 @@
 - `research_artifacts` 用于记录研究产物类型，例如 `paper`、`benchmark`、`eval`、`repo`、`research_blog`
 - `research_interpretations` 用于记录权威解读来源；如果没有可用解读，写 `[]` 或 `none`
 - `peripheral_themes` 用于记录外围情报归属，例如 `算力与半导体`、`政策与治理`、`企业采用`
+- `source_checks` 用于记录本次运行实际巡检过的主要来源组，例如 `coding_agent_releases`、`china_model_officials`、`ai_blogger_core_radar`、`research_frontier`；`result` 只使用 `hit`、`miss`、`blocked`
+- `evidence_items` 用于记录核心条目的证据链，`source_role` 建议使用 `official`、`research`、`opinion`、`media`、`community`，`verification_status` 建议使用 `verified`、`partial`、`unverified`
 - `companies`、`products` 尽量用统一命名，避免同一对象出现多个写法
 - `followups` 只记录短期可验证问题，不写空泛愿景
 - `fact_confidence` 表示事实来源可靠性，建议使用 `high`、`medium`、`low`

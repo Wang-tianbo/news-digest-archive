@@ -31,7 +31,7 @@
 - 必须优先使用官方来源
 - 必须使用绝对日期，避免“今天”“昨天”
 - 必须包含独立的评论 / 判断模块
-- 建议包含一个简短的“结构化快照”，并在文末附近提供可折叠的完整 YAML 元数据，记录主题、公司、产品、信号、opinion_sources、viewpoint_themes、research_sources、research_themes、research_artifacts、research_interpretations、followups、fact_confidence 和 signal_strength，便于后续周报 / 月报聚合
+- 建议包含一个简短的“结构化快照”，并在文末附近提供可折叠的完整 YAML 元数据，记录主题、公司、产品、信号、opinion_sources、viewpoint_themes、research_sources、research_themes、research_artifacts、research_interpretations、source_checks、evidence_items、followups、fact_confidence 和 signal_strength，便于后续周报 / 月报聚合
 
 其他周期报告路径约定：
 
@@ -84,6 +84,8 @@
 - 外围情报不是每期必写；如果当天没有高置信度外围变量，正文省略该模块，并在结构化索引里写 `peripheral_themes: []`
 - 使用 `fact_confidence` 表示事实来源可靠性，使用 `signal_strength` 表示当天信号强弱，避免把“事实可靠”误读成“今天信号很强”
 - 对 changelog、release、trending、stars、排名等易变化信息，优先引用具体条目，并尽量附带版本号、日期或快照时间
+- 对主要来源组，必须在 `source_checks` 中记录是否巡检、巡检时间和 `hit` / `miss` / `blocked` 结果
+- 对核心条目，建议在 `evidence_items` 中记录来源角色、证据类型、条目日期、快照时间、一手链接和置信理由
 - 对不确定信息明确标注
 
 ## Git 要求
@@ -106,5 +108,5 @@
 
 - 如果当天高价值更新很少，仍生成简版日报
 - 如果抓取过程受阻，保留已验证的重要信息，不用未经确认的内容凑数
-- 如果自动化连续缺失日报，先运行 `python3 scripts/check_archive_health.py` 检查缺失日报、周报、月报和最近提交状态
+- 如果自动化连续缺失日报，先运行 `python3 scripts/check_archive_health.py --fetch` 检查缺失日报、周报、月报、本机 automation、远端同步和最近提交状态
 - 如果 session 日志显示任务在 `17:xx Asia/Shanghai` 触发并因窗口校验 no-op，说明当前 Codex cron 正在按 UTC 时钟解释 `BYHOUR`；重跑 `python3 scripts/install_codex_daily_digest.py`，确认 RRULE 同时包含 `BYHOUR=1,9` 这类双候选小时

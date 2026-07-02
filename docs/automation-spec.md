@@ -45,6 +45,7 @@
 - 再查中国模型厂商专项源
 - 如果核心主线之外出现高价值外围变量，再查 AI 外围高相关情报源
 - 优先扫描 AI 圈博主源中的核心日常雷达；低频关键人物候选只在出现长文、公开演讲、重大短帖或关键线索时使用
+- AI 圈博主暂不纳入 X-only 来源；优先使用博客、RSS / Atom、Substack、GitHub、公众号公开页和公开长文。如果账号只有 X 入口，在 `source_checks` 中标记为 `blocked` 或 `partial`
 - 扫描 AI 研究前沿源，优先挑选有原文链接且可能影响技术路线判断的论文、研究博客、benchmark、eval、开源实现或实验室动向
 - 对 Codex、Claude Code、Copilot、Cursor、Gemini CLI、Devin、Qwen Code 相关动态，优先查产品页、官方文档、changelog、官方仓库和 release
 - 对 DeepSeek、Qwen、智谱、Kimi、MiniMax、腾讯混元、百度文心、豆包 / 火山方舟，优先查官方博客、产品页、文档页、产品动态和官方 GitHub

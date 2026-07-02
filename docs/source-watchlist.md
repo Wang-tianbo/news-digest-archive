@@ -341,14 +341,16 @@
 
 ## 七、AI 圈博主源
 
-这部分用于长期跟踪中文互联网与全球范围内活跃且核心的 AI 博主、技术工作者、研究者、创业者及关键人物，在博客、X、公众号、长文中表达的高价值线索、判断、困惑、分歧与方法论。
+这部分用于长期跟踪中文互联网与全球范围内活跃且核心的 AI 博主、技术工作者、研究者、创业者及关键人物，在博客、公众号、Substack、GitHub、公开长文中表达的高价值线索、判断、困惑、分歧与方法论。
 
 使用原则：
 
 - 这是观点 / 线索源，不是事实源；不能用个人观点或资讯整理替代官方发布、文档、Release、changelog 或原始项目链接
 - 核心日常雷达里的资讯整理型博主可以提供高价值 AI 线索、工具发现、社区信号或产品动态，但进入日报时必须标明 `类型：信息线索`
 - 观点、方法论或实践复盘进入日报时，建议标明 `类型：观点判断`、`类型：方法论` 或 `类型：实践复盘`
-- 优先使用博客、长文、技术文章、公开访谈、公众号原文和可复查文章；X / Twitter、微博、短帖可以作为线索源，但重要事实应尽量补官方或原始来源
+- 优先使用博客、RSS / Atom、Substack、GitHub、长文、技术文章、公开访谈、公众号原文和其他可复查文章
+- 暂不纳入 X / Twitter-only 来源；如果某个核心账号只有 X 入口，在 `source_checks` 中标记为 `blocked` 或 `partial`，不要写成 `miss`
+- 如果未来接入官方 X API，再单独恢复 X-only 来源巡检；在此之前，不用未登录网页抓取结果判断账号是否有新增
 - 核心池不是每日必写池；如果当天没有高价值线索或观点样本，日报整段省略
 - 条目进入日报时要写清楚 `类型`、`摘要`、`为什么值得记录`、`我的判断` 和 `来源`
 
@@ -358,26 +360,26 @@
 
 | 人物 / 账号 | 重点观察方向 | 日报口径 | 首选入口 |
 | --- | --- | --- | --- |
-| 宝玉 / dotey | AI Agent、AI 编程、Prompt、软件工程实践 | 可写观点、方法论、实践复盘、重要线索 | [Blog](https://baoyu.io/), [X](https://x.com/dotey) |
-| 歸藏 / op7418 | AI 工具、设计工作流、多模态、产品实践 | 可写产品发现、工具体验、观点判断 | [Website](https://www.guizang.ai/), [X](https://x.com/op7418) |
-| Gorden_Sun | AI 新产品、新模型、热点变化 | 可写高价值资讯线索和社区信号 | [X](https://x.com/Gorden_Sun) |
-| 小互 / XiaoHu | AI 日报、工具、产品体验、趋势解读 | 可写高价值资讯线索和社区信号 | 公开 X / 公众号入口，日报引用时补原始链接 |
-| shao__meng | Agent、MCP、AI 创业、工作流实践 | 可写观点、实践复盘、重要线索 | [X](https://x.com/shao__meng) |
-| goocarlos | Dify、AI 应用搭建、Agent 产品化 | 可写实践复盘、工具动态、重要线索 | [X](https://x.com/goocarlos) |
-| Tumeng05 | LLM、RAG、Agent、AI 创业落地 | 可写实践复盘、产品判断、重要线索 | [X](https://x.com/Tumeng05) |
-| Axton Liu | Prompt、AI 自动化、Agent 工作流 | 可写方法论、实践复盘、重要线索 | 公开 X / 公众号入口，日报引用时补原始链接 |
-| 向阳乔木 / vista8 | AI 产品、工作流、Vibe Coding、趋势判断 | 可写工具体验、趋势判断、重要线索 | [X](https://x.com/vista8) |
+| 宝玉 / dotey | AI Agent、AI 编程、Prompt、软件工程实践 | 可写观点、方法论、实践复盘、重要线索 | [Blog](https://baoyu.io/)；X 暂不纳入 |
+| 歸藏 / op7418 | AI 工具、设计工作流、多模态、产品实践 | 可写产品发现、工具体验、观点判断 | [Website](https://www.guizang.ai/)；X 暂不纳入 |
+| Gorden_Sun | AI 新产品、新模型、热点变化 | 可写高价值资讯线索和社区信号 | X-only，暂记为 blocked |
+| 小互 / XiaoHu | AI 日报、工具、产品体验、趋势解读 | 可写高价值资讯线索和社区信号 | 公众号 / 公开文章优先；X 暂不纳入 |
+| shao__meng | Agent、MCP、AI 创业、工作流实践 | 可写观点、实践复盘、重要线索 | X-only，暂记为 blocked |
+| goocarlos | Dify、AI 应用搭建、Agent 产品化 | 可写实践复盘、工具动态、重要线索 | X-only，暂记为 blocked |
+| Tumeng05 | LLM、RAG、Agent、AI 创业落地 | 可写实践复盘、产品判断、重要线索 | X-only，暂记为 blocked |
+| Axton Liu | Prompt、AI 自动化、Agent 工作流 | 可写方法论、实践复盘、重要线索 | 公众号 / 公开文章优先；X 暂不纳入 |
+| 向阳乔木 / vista8 | AI 产品、工作流、Vibe Coding、趋势判断 | 可写工具体验、趋势判断、重要线索 | X-only，暂记为 blocked |
 | 李继刚 / lijigang | Prompt 方法论、AI 写作、认知工具 | 可写方法论和观点判断 | [GitHub](https://github.com/lijigang/write-prompt), 公众号 `Write Prompt` |
 | WaytoAGI | AI 知识整理、前沿资源、学习路径 | 可写高价值资源线索和方法论总结 | [GitHub](https://github.com/waytoagi), 公众号 / 社群公开入口 |
-| 响马 / xicilion | AI 编程、开发者工作流、工程实践 | 可写工程实践、工具判断、重要线索 | [X](https://x.com/xicilion) |
+| 响马 / xicilion | AI 编程、开发者工作流、工程实践 | 可写工程实践、工具判断、重要线索 | X-only，暂记为 blocked |
 | Orange AI / oran_ge | AI 创业、产品、国内模型与应用生态 | 可写产品动态、创业观察、重要线索 | [Blog](https://blog.orangesai.com/) |
-| AI进化论 花生 / AlchainHust | AI Native 产品、AI 编程、工具实践 | 可写产品发现、实践复盘、重要线索 | [X](https://x.com/AlchainHust) |
+| AI进化论 花生 / AlchainHust | AI Native 产品、AI 编程、工具实践 | 可写产品发现、实践复盘、重要线索 | X-only，暂记为 blocked |
 
 #### 全球核心
 
 | 人物 / 账号 | 重点观察方向 | 日报口径 | 首选入口 |
 | --- | --- | --- | --- |
-| Simon Willison | LLM 工程、AI 编程、开源工具 | 可写工程实践、工具发现、观点判断 | [Blog](https://simonwillison.net/), [X](https://x.com/simonw) |
+| Simon Willison | LLM 工程、AI 编程、开源工具 | 可写工程实践、工具发现、观点判断 | [Blog](https://simonwillison.net/)；X 暂不纳入 |
 | Nathan Lambert / Interconnects | 开源模型、训练范式、产业判断 | 可写观点判断、研究线索、路线分歧 | [Interconnects](https://www.interconnects.ai/) |
 | swyx / Latent Space | AI Engineer、Agent 工程、开发者生态 | 可写社区信号、工程趋势、观点判断 | [Latent Space](https://www.latent.space/), [swyx.io](https://www.swyx.io/) |
 | Sebastian Raschka | LLM 研究、模型机制、技术教育 | 可写研究解读、技术线索、方法论 | [Ahead of AI](https://magazine.sebastianraschka.com/), [Blog](https://sebastianraschka.com/blog/) |
@@ -389,8 +391,8 @@
 | Andrew Ng / The Batch | AI 应用、创业、教育、产业落地 | 可写产业信号、创业判断、应用案例 | [The Batch](https://www.deeplearning.ai/the-batch/) |
 | Ethan Mollick | AI 组织采用、教育、工作方式变化 | 可写组织采用、实践观察、观点判断 | [One Useful Thing](https://www.oneusefulthing.org/) |
 | Arvind Narayanan / Sayash Kapoor | AI 泡沫、风险、社会影响、反 hype | 可写风险判断、反共识观点 | [AI Snake Oil](https://www.aisnakeoil.com/) |
-| Jim Fan | Agent、机器人、具身智能、Physical AI | 可写研究线索、路线判断 | [Website](https://jimfan.me/), [X](https://x.com/DrJimFan) |
-| Riley Goodside | Prompt、模型行为、AI 交互边界 | 可写模型行为线索、Prompt 实验 | [X](https://x.com/goodside) |
+| Jim Fan | Agent、机器人、具身智能、Physical AI | 可写研究线索、路线判断 | [Website](https://jimfan.me/)；X 暂不纳入 |
+| Riley Goodside | Prompt、模型行为、AI 交互边界 | 可写模型行为线索、Prompt 实验 | X-only，暂记为 blocked |
 
 ### 低频关键人物候选
 

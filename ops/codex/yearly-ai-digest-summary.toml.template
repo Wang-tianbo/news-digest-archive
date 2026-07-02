@@ -16,7 +16,7 @@ Requirements:
 - In the machine-friendly metadata, use `fact_confidence` for source reliability and `signal_strength` for the year's signal strength.
 - Include a dedicated `全年评论与判断` section and `全年判断复盘` that separate validated long-term judgments, revised judgments, annual noise, and themes that became stable reality.
 - Include `全年议题台账流转`, making explicit which long-term ledgers were formed, stabilized, weakened, or archived during the year.
-- Aggregate only durable `AI 思想与观点观察` signals that changed the year's observation framework, such as major methodology shifts, recurring disagreements, or viewpoints later validated or weakened by facts. Treat them as opinion samples, not factual confirmation.
+- Aggregate only durable `AI 思想与观点观察` signals that changed the year's observation framework, such as repeated information clues, major methodology shifts, recurring disagreements, practice changes, or viewpoints later validated or weakened by facts. Treat them as clue or opinion samples, not factual confirmation.
 - Include `AI 外围情报观察` only for adjacent variables that materially shaped the year's AI competition environment.
 - Prefer concise, high-signal writing grounded in the repository's accumulated reports.
 

@@ -16,7 +16,7 @@ Requirements:
 - In the machine-friendly metadata, use `fact_confidence` for source reliability and `signal_strength` for the month's signal strength.
 - Include a dedicated `本月评论与判断` section and `本月判断复盘` that separate validated judgments, revised judgments, stage-level consensus, and noise.
 - Include `本月议题台账流转`, making explicit which themes are promoted into long-term ledgers, which entered a stable tracking cycle, and which should be downgraded or split.
-- Aggregate repeated `AI 思想与观点观察` signals from daily and weekly reports, focusing on methodology changes, durable disagreements, recurring confusions, and viewpoints that revised the month's judgment. Treat them as opinion samples, not factual confirmation.
+- Aggregate repeated `AI 思想与观点观察` signals from daily and weekly reports, focusing on recurring information clues, methodology changes, durable disagreements, recurring confusions, practice reviews, and viewpoints that revised the month's judgment. Treat them as clue or opinion samples, not factual confirmation.
 - Include `AI 外围情报观察` only when adjacent signals clearly affected the AI mainline during the month.
 - Prefer concise, high-signal writing grounded in the repository's accumulated reports.
 

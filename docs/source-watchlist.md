@@ -274,43 +274,65 @@
 
 ## 六、AI 思想与观点观察源
 
-这部分用于长期跟踪中文互联网与全球范围内的 AI 技术工作者、研究者、创业者及关键人物，在博客、X、公众号、长文中表达的判断、困惑、分歧与方法论。
+这部分用于长期跟踪中文互联网与全球范围内活跃且核心的 AI 博主、技术工作者、研究者、创业者及关键人物，在博客、X、公众号、长文中表达的高价值线索、判断、困惑、分歧与方法论。
 
 使用原则：
 
-- 这是观点源，不是事实源；不能用人物观点替代官方发布、文档、Release 或 changelog
-- 优先使用博客、长文、技术文章、公开访谈和可复查文章；X / Twitter、微博、短帖只作为观点线索
-- 只记录有长期复盘价值的判断、分歧、困惑与方法论；如果当天没有高信号观点，日报整段省略
-- 观点进入日报时要写清楚 `观点摘要`、`为什么值得记录`、`我的判断` 和 `来源`
+- 这是观点 / 线索源，不是事实源；不能用个人观点或资讯整理替代官方发布、文档、Release、changelog 或原始项目链接
+- 核心日常雷达里的资讯整理型博主可以提供高价值 AI 线索、工具发现、社区信号或产品动态，但进入日报时必须标明 `类型：信息线索`
+- 观点、方法论或实践复盘进入日报时，建议标明 `类型：观点判断`、`类型：方法论` 或 `类型：实践复盘`
+- 优先使用博客、长文、技术文章、公开访谈、公众号原文和可复查文章；X / Twitter、微博、短帖可以作为线索源，但重要事实应尽量补官方或原始来源
+- 核心池不是每日必写池；如果当天没有高价值线索或观点样本，日报整段省略
+- 条目进入日报时要写清楚 `类型`、`摘要`、`为什么值得记录`、`我的判断` 和 `来源`
 
-### 全球人物与长文源
+### 核心日常雷达
 
-- Andrej Karpathy Blog: [karpathy.ai](https://karpathy.ai/)
-- Andrej Karpathy X: [x.com/karpathy](https://x.com/karpathy)
-- Simon Willison Blog: [simonwillison.net](https://simonwillison.net/)
-- Simon Willison X: [x.com/simonw](https://x.com/simonw)
-- Ethan Mollick / One Useful Thing: [oneusefulthing.org](https://www.oneusefulthing.org/)
-- Ethan Mollick X: [x.com/emollick](https://x.com/emollick)
-- François Chollet Blog: [fchollet.com](https://fchollet.com/)
-- François Chollet X: [x.com/fchollet](https://x.com/fchollet)
-- Jim Fan X: [x.com/DrJimFan](https://x.com/DrJimFan)
-- Sam Altman Blog: [blog.samaltman.com](https://blog.samaltman.com/)
-- Sam Altman X: [x.com/sama](https://x.com/sama)
-- Dario Amodei / Anthropic Essays: [anthropic.com/news](https://www.anthropic.com/news)
-- Yann LeCun X: [x.com/ylecun](https://x.com/ylecun)
-- Noam Brown X: [x.com/polynoamial](https://x.com/polynoamial)
-- Latent Space / swyx: [latent.space](https://www.latent.space/)
-- swyx X: [x.com/swyx](https://x.com/swyx)
-- Andrew Ng / The Batch: [deeplearning.ai/the-batch](https://www.deeplearning.ai/the-batch/)
+#### 中文核心
 
-### 中文互联网人物与长文源
+| 人物 / 账号 | 重点观察方向 | 日报口径 | 首选入口 |
+| --- | --- | --- | --- |
+| 宝玉 / dotey | AI Agent、AI 编程、Prompt、软件工程实践 | 可写观点、方法论、实践复盘、重要线索 | [Blog](https://baoyu.io/), [X](https://x.com/dotey) |
+| 歸藏 / op7418 | AI 工具、设计工作流、多模态、产品实践 | 可写产品发现、工具体验、观点判断 | [Website](https://www.guizang.ai/), [X](https://x.com/op7418) |
+| Gorden_Sun | AI 新产品、新模型、热点变化 | 可写高价值资讯线索和社区信号 | [X](https://x.com/Gorden_Sun) |
+| 小互 / XiaoHu | AI 日报、工具、产品体验、趋势解读 | 可写高价值资讯线索和社区信号 | 公开 X / 公众号入口，日报引用时补原始链接 |
+| shao__meng | Agent、MCP、AI 创业、工作流实践 | 可写观点、实践复盘、重要线索 | [X](https://x.com/shao__meng) |
+| goocarlos | Dify、AI 应用搭建、Agent 产品化 | 可写实践复盘、工具动态、重要线索 | [X](https://x.com/goocarlos) |
+| Tumeng05 | LLM、RAG、Agent、AI 创业落地 | 可写实践复盘、产品判断、重要线索 | [X](https://x.com/Tumeng05) |
+| Axton Liu | Prompt、AI 自动化、Agent 工作流 | 可写方法论、实践复盘、重要线索 | 公开 X / 公众号入口，日报引用时补原始链接 |
+| 向阳乔木 / vista8 | AI 产品、工作流、Vibe Coding、趋势判断 | 可写工具体验、趋势判断、重要线索 | [X](https://x.com/vista8) |
+| 李继刚 / lijigang | Prompt 方法论、AI 写作、认知工具 | 可写方法论和观点判断 | [GitHub](https://github.com/lijigang/write-prompt), 公众号 `Write Prompt` |
+| WaytoAGI | AI 知识整理、前沿资源、学习路径 | 可写高价值资源线索和方法论总结 | [GitHub](https://github.com/waytoagi), 公众号 / 社群公开入口 |
+| 响马 / xicilion | AI 编程、开发者工作流、工程实践 | 可写工程实践、工具判断、重要线索 | [X](https://x.com/xicilion) |
+| Orange AI / oran_ge | AI 创业、产品、国内模型与应用生态 | 可写产品动态、创业观察、重要线索 | [Blog](https://blog.orangesai.com/) |
+| AI进化论 花生 / AlchainHust | AI Native 产品、AI 编程、工具实践 | 可写产品发现、实践复盘、重要线索 | [X](https://x.com/AlchainHust) |
 
-- 宝玉 Blog: [baoyu.io](https://baoyu.io/)
-- 宝玉 X: [x.com/dotey](https://x.com/dotey)
-- 李沐 / 动手学深度学习: [zh.d2l.ai](https://zh.d2l.ai/)
-- DeepLearning.AI 中文相关内容可作为 Andrew Ng 观点的补充入口: [deeplearning.ai](https://www.deeplearning.ai/)
+#### 全球核心
 
-说明：中文个人观点源先保持保守。后续如果要加入公众号、知识星球、播客或中文长文平台，应优先选择公开可访问、能稳定引用、适合长期复查的入口。
+| 人物 / 账号 | 重点观察方向 | 日报口径 | 首选入口 |
+| --- | --- | --- | --- |
+| Simon Willison | LLM 工程、AI 编程、开源工具 | 可写工程实践、工具发现、观点判断 | [Blog](https://simonwillison.net/), [X](https://x.com/simonw) |
+| Nathan Lambert / Interconnects | 开源模型、训练范式、产业判断 | 可写观点判断、研究线索、路线分歧 | [Interconnects](https://www.interconnects.ai/) |
+| swyx / Latent Space | AI Engineer、Agent 工程、开发者生态 | 可写社区信号、工程趋势、观点判断 | [Latent Space](https://www.latent.space/), [swyx.io](https://www.swyx.io/) |
+| Sebastian Raschka | LLM 研究、模型机制、技术教育 | 可写研究解读、技术线索、方法论 | [Ahead of AI](https://magazine.sebastianraschka.com/), [Blog](https://sebastianraschka.com/blog/) |
+| Chip Huyen | AI Engineering、评估、生产化 | 可写工程方法论、实践复盘 | [Blog](https://huyenchip.com/) |
+| Hamel Husain | evals、LLM 产品改进、工程实践 | 可写评估方法、实践复盘、工具线索 | [Blog](https://hamel.dev/) |
+| Eugene Yan | AI 产品、推荐系统、LLM 工程 | 可写工程实践、产品判断 | [Blog](https://eugeneyan.com/) |
+| Jason Liu | RAG、结构化输出、AI 工程落地 | 可写工具实践、工程方法、重要线索 | [Blog](https://jxnl.co/) |
+| Jack Clark / Import AI | AI 研究、产业、安全与社会影响 | 可写研究线索、产业判断、风险观察 | [Import AI](https://importai.substack.com/) |
+| Andrew Ng / The Batch | AI 应用、创业、教育、产业落地 | 可写产业信号、创业判断、应用案例 | [The Batch](https://www.deeplearning.ai/the-batch/) |
+| Ethan Mollick | AI 组织采用、教育、工作方式变化 | 可写组织采用、实践观察、观点判断 | [One Useful Thing](https://www.oneusefulthing.org/) |
+| Arvind Narayanan / Sayash Kapoor | AI 泡沫、风险、社会影响、反 hype | 可写风险判断、反共识观点 | [AI Snake Oil](https://www.aisnakeoil.com/) |
+| Jim Fan | Agent、机器人、具身智能、Physical AI | 可写研究线索、路线判断 | [Website](https://jimfan.me/), [X](https://x.com/DrJimFan) |
+| Riley Goodside | Prompt、模型行为、AI 交互边界 | 可写模型行为线索、Prompt 实验 | [X](https://x.com/goodside) |
+
+### 低频关键人物候选
+
+这些人不进入日常强制巡检，但出现公开长文、长访谈、演讲、一手文章，或重大短帖判断时可进入日报。
+
+| 区域 | 人物 | 触发条件 |
+| --- | --- | --- |
+| 全球 | Andrej Karpathy、Lilian Weng、François Chollet、Yann LeCun、Dario Amodei、Sam Altman、Demis Hassabis、Jensen Huang | 长文、公开演讲、重大短帖、路线争议或战略判断 |
+| 中文 | 梁文锋、李沐、苏剑林、张俊林、刘知远、唐杰、朱松纯、王小川、杨植麟、李开复、周鸿祎 | 长访谈、公开演讲、一手文章、重大短帖或关键行业判断 |
 
 ## 七、动态流 / 可订阅流
 
@@ -376,10 +398,10 @@
 - 如果核心源当天信号偏弱，再启用“静默日补位”源，但不要为了凑篇幅重复前几日日报已经写过的内容
 - 对 Codex、Claude Code、Copilot、Cursor、Gemini CLI、Devin、Qwen Code 这类产品，不只看博客，也要看文档和版本发布
 - 对中国厂商，优先看产品页、文档页、官方博客、官方 GitHub，再看开发者社区和媒体报道
-- 对 AI 思想与观点观察，优先记录能解释方法论变化、路线分歧、产品判断或组织采用困惑的观点；不要把人物动态做成每日签到
+- 对 AI 思想与观点观察，优先扫描核心日常雷达；资讯整理型博主可以提供高价值线索，但必须标注为 `信息线索`，不要把人物动态做成每日签到
 - 对外围情报，只选那些会真实改变 AI 主线的变量，例如算力、云平台接入、监管变化、安全治理、企业采用或关键行业落地；如果只是一般科技新闻，不进日报
 - 日报里的外围情报建议控制在 1-3 条；如果当天没有高置信度外围信号，可以整段省略
-- 日报里的观点观察建议控制在 1-3 条；如果当天没有高信号观点，可以整段省略
+- 日报里的观点观察建议控制在 1-3 条；如果当天没有高价值线索或观点样本，可以整段省略
 - 对 vLLM、SGLang、llama.cpp、Transformers、MCP 生态这类基础设施，更适合作为周报 / 月报中的“趋势层”素材
 - 算力与半导体、政策与治理、企业采用这三类外围情报，更适合在周报 / 月报中沉淀连续判断，而不是每天机械签到
 - 媒体报道只用于补充上下文，不作为最核心事实来源

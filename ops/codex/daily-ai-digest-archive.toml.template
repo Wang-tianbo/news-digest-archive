@@ -21,12 +21,12 @@ Data-source requirements:
 - First scan the AI coding agent watchlist in `docs/source-watchlist.md`, including Codex, Claude Code, Cursor, GitHub Copilot, Gemini CLI, Devin, Qwen Code, and Z Code related product pages, blogs, docs, changelogs, releases, and official repositories.
 - Then scan the China model company watchlist in `docs/source-watchlist.md`, including DeepSeek, Qwen, Zhipu, Kimi, MiniMax, Tencent Hunyuan, Baidu Wenxin, and ByteDance Doubao / Volcano Engine Ark related official product pages, docs, product updates, blogs, and GitHub orgs where available.
 - If there are high-value adjacent signals that materially affect the AI competitive landscape, also scan the AI peripheral watchlist in `docs/source-watchlist.md`, including compute and semiconductors, cloud and datacenter capacity, policy and regulation, security and misuse governance, enterprise adoption, and high-value industry deployment.
-- If there are high-signal viewpoints, disagreements, confusions, or methodology notes from AI technical workers, researchers, founders, or key public figures, scan the AI thought and viewpoint watchlist in `docs/source-watchlist.md`. Prefer blogs, essays, long-form posts, and official public writing; use X/Twitter or short social posts only as clearly labeled opinion signals.
+- Scan the AI thought and viewpoint watchlist in `docs/source-watchlist.md`, prioritizing the core daily radar of active AI bloggers and practitioners. Core radar sources may contribute high-value AI clues, tool discoveries, community signals, product updates, viewpoints, methodology notes, or practice reviews. Use low-frequency key-person candidates only when there is a public long-form post, public talk, major short post, route disagreement, strategic judgment, or key signal.
 - For important tools and products, do not rely on a single homepage. Check the product page plus official docs plus changelog or release notes plus official GitHub or release activity when available.
 - Prefer official primary sources first: company blogs, research pages, product docs, official GitHub repos, changelogs, release notes, product update pages, and official announcements. Use media coverage only as supporting context.
 - Use dynamic update streams where relevant: changelog pages, release notes pages, GitHub releases, recent org activity, and documentation update pages.
 - Prefer deep links to the exact changelog entry, release page, doc page, or article when possible instead of only top-level index pages.
-- Treat personal viewpoints as opinion samples, not as factual confirmation. Do not use a person's blog post, X/Twitter post, or public comment as the sole factual source for a news item.
+- Treat personal viewpoints and curated social posts as clue or opinion samples, not as factual confirmation. Do not use a person's blog post, X/Twitter post, public comment, or curated roundup as the sole factual source for a news item; when practical, add the official source or original project link.
 
 Content requirements:
 - Focus on global AI hotspots with priority on Chinese and US model companies.
@@ -37,7 +37,7 @@ Content requirements:
 - Keep the digest concise and high signal.
 - Include a short human-readable `结构化快照` near the top of the report following the repository template.
 - Place the full machine-friendly YAML metadata in a `结构化索引` section later in the report, preferably inside a collapsible block, capturing at least date/window, supplemental range, themes, regions, companies, products, signals, followups, fact_confidence, and signal_strength.
-- If high-signal viewpoints are included, add an `AI 思想与观点观察` section with `观点摘要`, `为什么值得记录`, `我的判断`, and `来源`. If there are no high-signal viewpoints, omit the body section and set `opinion_sources: []` and `viewpoint_themes: []` in YAML.
+- If high-value clues or opinion samples are included, add an `AI 思想与观点观察` section with `类型：信息线索 / 观点判断 / 方法论 / 实践复盘`, `摘要`, `为什么值得记录`, `我的判断`, and `来源`. If there are no high-value clues or opinion samples, omit the body section and set `opinion_sources: []` and `viewpoint_themes: []` in YAML.
 - When adjacent signals are included, record them under `peripheral_themes` in the YAML metadata and summarize them in an `AI 外围情报观察` section. If there are no high-confidence adjacent signals, omit the body section and set `peripheral_themes: []`.
 - Use `fact_confidence` for source reliability and `signal_strength` for how important the day's signal is; do not use one generic confidence value for both.
 - Reuse stable labels for themes, companies, and products where possible so later weekly/monthly summaries can aggregate them consistently.
@@ -53,7 +53,7 @@ Recommended structure:
 - 中美大模型
 - AI 编程代理
 - 官方博客 / 研究 / 发布
-- AI 思想与观点观察, only when there is a high-signal viewpoint or methodology note
+- AI 思想与观点观察, only when there is a high-value clue, opinion sample, methodology note, or practice review
 - AI 外围情报观察, only when there is a high-confidence adjacent signal
 - GitHub 热门项目
 - 值得继续跟踪

@@ -9,6 +9,7 @@
 - 领先公司：`GitHub`、`Anthropic`、`OpenAI`
 - 加速产品：`GitHub Copilot`、`Claude Code`、`Qwen Code`
 - 观点 / 线索主题：AI 编程方法论、研究范式争议、工具发现
+- 研究前沿主题：agent eval、test-time compute、world model
 - 转弱信号：基础模型 headline 密度下降
 - 判断变化：竞争焦点从功能展示转向运行时和治理
 - 下周重点：Copilot metrics / API 是否继续闭环；Qwen Code 稳定版节奏
@@ -37,40 +38,39 @@
 
 - 哪些是这周第一次可以更明确说出口的判断
 
-## 本周最重要的 5-10 条更新
+## 本周三大雷达
 
-### 1. 标题
+### AI 新闻
 
-- 发生了什么：
-- 为什么重要：
-- 来源：
+- 本周最重要的官方动态：
+- 中美大模型变化：
+- AI 编程代理变化：
+- 官方博客 / release / changelog 连续性信号：
 
-## 重点主题追踪
-
-### 中美大模型
-
-- 本周变化：
-- 判断：
-- 连续性信号：
-
-### AI 编程代理
-
-- 本周变化：
-- 判断：
-- 连续性信号：
-
-### 官方博客 / 研究 / 发布
-
-- 本周最重要的发布：
-- 影响：
-- 长期价值：
-
-### AI 思想与观点观察
+### AI 圈博主
 
 - 本周最值得沉淀的线索或观点：
 - 它体现了什么信息线索、判断、困惑、分歧或方法论：
 - 它和本周事实样本的关系：
 - 哪些观点值得继续观察，哪些更像短期表达：
+
+### AI 研究前沿
+
+- 本周最重要的论文或研究动向：
+- 原文链接：
+- 权威解读：
+- 它可能改变的技术路线或判断：
+- 局限 / 待验证点：
+- 是否值得进入长期议题台账：
+
+## 重点主题追踪
+
+### 核心赛道
+
+- 中美大模型：
+- AI 编程代理：
+- 开源与基础设施：
+- 研究前沿：
 
 ### AI 外围情报观察
 
@@ -141,6 +141,14 @@ opinion_sources:
   - Simon Willison
 viewpoint_themes:
   - AI 编程方法论
+research_sources:
+  - arXiv
+research_themes:
+  - agent_evaluation
+research_artifacts:
+  - paper
+research_interpretations:
+  - 权威解读来源名称或 none
 peripheral_themes:
   - 政策与治理
   - 企业采用
@@ -168,6 +176,7 @@ signal_strength: high
 - 加速产品：
 - 主导主题：
 - 观点 / 线索主题：
+- 研究前沿主题：
 - 外围主题：
 
 ### 判断变化

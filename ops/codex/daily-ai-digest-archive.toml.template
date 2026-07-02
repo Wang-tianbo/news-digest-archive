@@ -21,7 +21,8 @@ Data-source requirements:
 - First scan the AI coding agent watchlist in `docs/source-watchlist.md`, including Codex, Claude Code, Cursor, GitHub Copilot, Gemini CLI, Devin, Qwen Code, and Z Code related product pages, blogs, docs, changelogs, releases, and official repositories.
 - Then scan the China model company watchlist in `docs/source-watchlist.md`, including DeepSeek, Qwen, Zhipu, Kimi, MiniMax, Tencent Hunyuan, Baidu Wenxin, and ByteDance Doubao / Volcano Engine Ark related official product pages, docs, product updates, blogs, and GitHub orgs where available.
 - If there are high-value adjacent signals that materially affect the AI competitive landscape, also scan the AI peripheral watchlist in `docs/source-watchlist.md`, including compute and semiconductors, cloud and datacenter capacity, policy and regulation, security and misuse governance, enterprise adoption, and high-value industry deployment.
-- Scan the AI thought and viewpoint watchlist in `docs/source-watchlist.md`, prioritizing the core daily radar of active AI bloggers and practitioners. Core radar sources may contribute high-value AI clues, tool discoveries, community signals, product updates, viewpoints, methodology notes, or practice reviews. Use low-frequency key-person candidates only when there is a public long-form post, public talk, major short post, route disagreement, strategic judgment, or key signal.
+- Scan the AI blogger watchlist in `docs/source-watchlist.md`, prioritizing the core daily radar of active AI bloggers and practitioners. Core radar sources may contribute high-value AI clues, tool discoveries, community signals, product updates, viewpoints, methodology notes, or practice reviews. Use low-frequency key-person candidates only when there is a public long-form post, public talk, major short post, route disagreement, strategic judgment, or key signal.
+- Scan the AI research frontier watchlist in `docs/source-watchlist.md` for high-value papers, research blogs, benchmarks, evals, open-source implementations, and lab signals. For each included research item, prioritize the original paper or research source link. If there is a useful interpretation from an author, researcher, core maintainer, or credible technical blogger, include it as auxiliary interpretation, not as a replacement for the original source.
 - For important tools and products, do not rely on a single homepage. Check the product page plus official docs plus changelog or release notes plus official GitHub or release activity when available.
 - Prefer official primary sources first: company blogs, research pages, product docs, official GitHub repos, changelogs, release notes, product update pages, and official announcements. Use media coverage only as supporting context.
 - Use dynamic update streams where relevant: changelog pages, release notes pages, GitHub releases, recent org activity, and documentation update pages.
@@ -36,12 +37,13 @@ Content requirements:
 - Include clickable source links for every major item and use absolute dates instead of relative wording.
 - Keep the digest concise and high signal.
 - Include a short human-readable `结构化快照` near the top of the report following the repository template.
-- Place the full machine-friendly YAML metadata in a `结构化索引` section later in the report, preferably inside a collapsible block, capturing at least date/window, supplemental range, themes, regions, companies, products, signals, followups, fact_confidence, and signal_strength.
-- If high-value clues or opinion samples are included, add an `AI 思想与观点观察` section with `类型：信息线索 / 观点判断 / 方法论 / 实践复盘`, `摘要`, `为什么值得记录`, `我的判断`, and `来源`. If there are no high-value clues or opinion samples, omit the body section and set `opinion_sources: []` and `viewpoint_themes: []` in YAML.
+- Place the full machine-friendly YAML metadata in a `结构化索引` section later in the report, preferably inside a collapsible block, capturing at least date/window, supplemental range, themes, regions, companies, products, signals, opinion_sources, viewpoint_themes, research_sources, research_themes, research_artifacts, research_interpretations, followups, fact_confidence, and signal_strength.
+- If high-value clues or opinion samples are included, add an `AI 圈博主` section with `类型：信息线索 / 观点判断 / 方法论 / 实践复盘`, `摘要`, `为什么值得记录`, `我的判断`, and `来源`. If there are no high-value clues or opinion samples, omit the body section and set `opinion_sources: []` and `viewpoint_themes: []` in YAML.
+- If high-value research frontier items are included, add an `AI 研究前沿` section with `类型：论文 / 研究博客 / benchmark / eval / 开源实现 / 实验室动向`, `研究问题`, `核心思路`, `为什么可能影响未来`, `局限 / 待验证点`, `原文链接`, `权威解读`, and `我的判断`. If there are no high-value research frontier items, omit the body section and set `research_sources: []`, `research_themes: []`, `research_artifacts: []`, and `research_interpretations: []` in YAML.
 - When adjacent signals are included, record them under `peripheral_themes` in the YAML metadata and summarize them in an `AI 外围情报观察` section. If there are no high-confidence adjacent signals, omit the body section and set `peripheral_themes: []`.
 - Use `fact_confidence` for source reliability and `signal_strength` for how important the day's signal is; do not use one generic confidence value for both.
 - Reuse stable labels for themes, companies, and products where possible so later weekly/monthly summaries can aggregate them consistently.
-- Include a dedicated `今日评论与判断` section. This section must go beyond summarizing facts and should capture the day's independent judgment about competitive dynamics, product momentum, technical direction, workflow change, weak signals versus real trends, and what is worth tracking next.
+- Include a dedicated `今日评论与判断` section. This section must synthesize the three radars (`AI 新闻`, `AI 圈博主`, and `AI 研究前沿`) and go beyond summarizing facts to capture the day's independent judgment about competitive dynamics, product momentum, technical direction, workflow change, weak signals versus real trends, and what is worth tracking next.
 - Make it explicit that the judgment section is based on the current report's sample of confirmed facts.
 - For changing metrics such as stars, trending position, release cadence, or similar snapshots, include a date, version number, or snapshot time when practical.
 
@@ -49,11 +51,9 @@ Recommended structure:
 - 结构化快照
 - 主线判断
 - 今日评论与判断
-- 今日最重要的 3-5 条更新
-- 中美大模型
-- AI 编程代理
-- 官方博客 / 研究 / 发布
-- AI 思想与观点观察, only when there is a high-value clue, opinion sample, methodology note, or practice review
+- AI 新闻, including the day's most important 3-5 official/company/model/product updates
+- AI 圈博主, only when there is a high-value clue, opinion sample, methodology note, or practice review
+- AI 研究前沿, only when there is a high-value paper or research signal
 - AI 外围情报观察, only when there is a high-confidence adjacent signal
 - GitHub 热门项目
 - 值得继续跟踪

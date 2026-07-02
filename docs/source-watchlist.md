@@ -10,7 +10,8 @@
 
 - 日报必扫：核心公司官方博客、官方文档、官方 changelog、重点产品仓库 Release
 - 静默日补位：第二梯队 AI 编程工具、云平台动态、开发者工具专题源
-- 周报 / 月报专题：开源基础设施、模型服务框架、MCP 生态、云厂商系统层更新
+- 研究前沿巡检：高价值论文、研究博客、benchmark / eval、开源实现和权威解读
+- 周报 / 月报专题：开源基础设施、模型服务框架、MCP 生态、云厂商系统层更新和阶段性研究路线变化
 
 ## 一、海外核心官方源
 
@@ -220,7 +221,59 @@
 - MCP Registry: [github.com/modelcontextprotocol/registry](https://github.com/modelcontextprotocol/registry)
 - NVIDIA Generative AI Blog: [developer.nvidia.com/blog/category/deep-learning/generative-ai](https://developer.nvidia.com/blog/category/deep-learning/generative-ai/)
 
-## 五、AI 外围高相关情报
+## 五、AI 研究前沿源
+
+这部分用于捕捉能帮助判断未来技术路线的论文、研究博客、benchmark、eval、开源实现和实验室动向。
+
+使用原则：
+
+- 研究条目必须优先保留论文或研究动向原文链接
+- 权威解读只作为辅助材料，不能替代原文
+- 日报建议控制在 1-3 条，不做论文列表
+- 每条研究前沿都要回答“为什么可能影响未来”和“局限 / 待验证点”
+- 如果研究信号来自论文实现或热门仓库，应同时保留论文原文和代码仓库链接
+
+### 论文与聚合源
+
+- arXiv cs.CL recent: [arxiv.org/list/cs.CL/recent](https://arxiv.org/list/cs.CL/recent)
+- arXiv cs.LG recent: [arxiv.org/list/cs.LG/recent](https://arxiv.org/list/cs.LG/recent)
+- arXiv cs.AI recent: [arxiv.org/list/cs.AI/recent](https://arxiv.org/list/cs.AI/recent)
+- arXiv cs.CV recent: [arxiv.org/list/cs.CV/recent](https://arxiv.org/list/cs.CV/recent)
+- arXiv cs.RO recent: [arxiv.org/list/cs.RO/recent](https://arxiv.org/list/cs.RO/recent)
+- Hugging Face Papers: [huggingface.co/papers](https://huggingface.co/papers)
+- Hugging Face Trending Papers: [huggingface.co/papers/trending](https://huggingface.co/papers/trending)
+- Papers with Code: [paperswithcode.com](https://paperswithcode.com/)
+- alphaXiv: [alphaxiv.org](https://www.alphaxiv.org/)
+
+### 研究博客与实验室动向
+
+- OpenAI Research: [openai.com/research](https://openai.com/research/)
+- Anthropic Research: [anthropic.com/research](https://www.anthropic.com/research)
+- Google DeepMind Blog: [deepmind.google/en/blog](https://deepmind.google/en/blog/)
+- Meta AI Blog: [ai.meta.com/blog](https://ai.meta.com/blog/)
+- Microsoft Research AI: [microsoft.com/research/research-area/artificial-intelligence](https://www.microsoft.com/en-us/research/research-area/artificial-intelligence/)
+- Stanford HAI: [hai.stanford.edu](https://hai.stanford.edu/)
+- Berkeley BAIR Blog: [bair.berkeley.edu/blog](https://bair.berkeley.edu/blog/)
+- Qwen Blog: [qwenlm.github.io/blog](https://qwenlm.github.io/blog/)
+- DeepSeek GitHub: [github.com/deepseek-ai](https://github.com/deepseek-ai)
+
+### Benchmark / Eval / 开源实现
+
+- SWE-bench: [swebench.com](https://www.swebench.com/)
+- Chatbot Arena / LMSYS: [lmarena.ai](https://lmarena.ai/)
+- HELM: [crfm.stanford.edu/helm](https://crfm.stanford.edu/helm/latest/)
+- OpenCompass: [github.com/open-compass/opencompass](https://github.com/open-compass/opencompass)
+- Hugging Face Models: [huggingface.co/models](https://huggingface.co/models)
+- Hugging Face Spaces: [huggingface.co/spaces](https://huggingface.co/spaces)
+- GitHub Trending AI: [github.com/trending](https://github.com/trending)
+
+### 权威解读辅助源
+
+- 论文作者、实验室官方博客、项目核心维护者的一手解读
+- Simon Willison、Nathan Lambert / Interconnects、Sebastian Raschka、Chip Huyen、Hamel Husain、Eugene Yan、Jason Liu、Jack Clark / Import AI 等高质量技术长文
+- 宝玉、李继刚、歸藏、WaytoAGI、响马等中文技术工作者或 AI 博主的公开解读
+
+## 六、AI 外围高相关情报
 
 这些源不是为了把日报做成“泛科技新闻”，而是为了补足那些会反过来改变 AI 竞争格局的外围变量。
 
@@ -272,7 +325,7 @@
 - NVIDIA 企业 AI 新闻: [nvidianews.nvidia.com/news](https://nvidianews.nvidia.com/news)
 - 中国政府网“人工智能+”行动样本页: [关于深入实施“人工智能+”行动的意见](https://www.gov.cn/zhengce/202508/content_7037899.htm)
 
-## 六、AI 思想与观点观察源
+## 七、AI 圈博主源
 
 这部分用于长期跟踪中文互联网与全球范围内活跃且核心的 AI 博主、技术工作者、研究者、创业者及关键人物，在博客、X、公众号、长文中表达的高价值线索、判断、困惑、分歧与方法论。
 
@@ -334,7 +387,7 @@
 | 全球 | Andrej Karpathy、Lilian Weng、François Chollet、Yann LeCun、Dario Amodei、Sam Altman、Demis Hassabis、Jensen Huang | 长文、公开演讲、重大短帖、路线争议或战略判断 |
 | 中文 | 梁文锋、李沐、苏剑林、张俊林、刘知远、唐杰、朱松纯、王小川、杨植麟、李开复、周鸿祎 | 长访谈、公开演讲、一手文章、重大短帖或关键行业判断 |
 
-## 七、动态流 / 可订阅流
+## 八、动态流 / 可订阅流
 
 这部分不是单个页面，而是每天应主动扫的“更新流”。
 
@@ -391,17 +444,19 @@
 - 个别官网入口对脚本访问不稳定，自动化优先选文档页、Release 页、changelog 页，官网首页作为人工补充。
 - 这一步当前先作为“每日巡检规则”执行，等日报稳定后再进一步自动化订阅。
 
-## 八、使用建议
+## 九、使用建议
 
 - 每天先扫“日报必扫”源：Codex、Claude Code、Copilot、Cursor、Gemini CLI、Qwen Code，再扫中美重点模型厂商官方动态
 - 如果当天出现重大模型发布，回到“发布文 + 文档 + changelog + GitHub 仓库”四件套核实
 - 如果核心源当天信号偏弱，再启用“静默日补位”源，但不要为了凑篇幅重复前几日日报已经写过的内容
 - 对 Codex、Claude Code、Copilot、Cursor、Gemini CLI、Devin、Qwen Code 这类产品，不只看博客，也要看文档和版本发布
 - 对中国厂商，优先看产品页、文档页、官方博客、官方 GitHub，再看开发者社区和媒体报道
-- 对 AI 思想与观点观察，优先扫描核心日常雷达；资讯整理型博主可以提供高价值线索，但必须标注为 `信息线索`，不要把人物动态做成每日签到
+- 对 AI 圈博主，优先扫描核心日常雷达；资讯整理型博主可以提供高价值线索，但必须标注为 `信息线索`，不要把人物动态做成每日签到
+- 对 AI 研究前沿，优先保留原文链接；有作者、研究员、核心开发者或可信技术博主的权威解读时，可以作为辅助阅读材料，但不能替代原文
 - 对外围情报，只选那些会真实改变 AI 主线的变量，例如算力、云平台接入、监管变化、安全治理、企业采用或关键行业落地；如果只是一般科技新闻，不进日报
 - 日报里的外围情报建议控制在 1-3 条；如果当天没有高置信度外围信号，可以整段省略
 - 日报里的观点观察建议控制在 1-3 条；如果当天没有高价值线索或观点样本，可以整段省略
+- 日报里的研究前沿建议控制在 1-3 条；如果当天没有高价值论文或研究动向，可以整段省略
 - 对 vLLM、SGLang、llama.cpp、Transformers、MCP 生态这类基础设施，更适合作为周报 / 月报中的“趋势层”素材
 - 算力与半导体、政策与治理、企业采用这三类外围情报，更适合在周报 / 月报中沉淀连续判断，而不是每天机械签到
 - 媒体报道只用于补充上下文，不作为最核心事实来源

@@ -44,7 +44,8 @@
 - 先查 [docs/source-watchlist.md](source-watchlist.md) 中的 AI 编程代理专项源
 - 再查中国模型厂商专项源
 - 如果核心主线之外出现高价值外围变量，再查 AI 外围高相关情报源
-- 优先扫描 AI 圈博主源中的核心日常雷达；低频关键人物候选只在出现长文、公开演讲、重大短帖或关键线索时使用
+- 优先扫描 AI 圈博主源中的核心日常雷达和 `AI 圈观点与社区信号源池`；低频关键人物候选只在出现长文、公开演讲、重大短帖或关键线索时使用
+- 对中英文扩展源，优先使用 RSS / Atom、GitHub Releases、GitHub org activity、changelog 和公开长文；网页型来源可作为常规巡检或低频候选，不要求每日命中
 - AI 圈博主暂不纳入 X-only 来源；优先使用博客、RSS / Atom、Substack、GitHub、公众号公开页和公开长文。如果账号只有 X 入口，在 `source_checks` 中标记为 `blocked` 或 `partial`
 - 扫描 AI 研究前沿源，优先挑选有原文链接且可能影响技术路线判断的论文、研究博客、benchmark、eval、开源实现或实验室动向
 - 对 Codex、Claude Code、Copilot、Cursor、Gemini CLI、Devin、Qwen Code 相关动态，优先查产品页、官方文档、changelog、官方仓库和 release
@@ -78,6 +79,8 @@
 - 尽量复用稳定的主题标签、公司名和产品名，减少同义写法，便于长期索引
 - 观点 / 线索源只作为信息线索、思想信号和判断样本，不能替代官方发布、文档、changelog、Release 或原始项目链接等事实来源
 - AI 圈博主条目必须标明 `类型：信息线索 / 观点判断 / 方法论 / 实践复盘`
+- 媒体、资讯整理、GitHub 项目动态和社区资源进入 AI 圈博主时默认标为 `信息线索`，涉及事实时尽量补官方发布、论文原文、release 或原始项目链接
+- 中英文扩展源每天合计建议只选 2-4 条高价值社区 / 观点信号；无高价值新增时可省略正文，不机械凑数
 - AI 圈博主不是每期必写；如果当天没有高价值线索或观点样本，正文省略该模块，并在结构化索引里写 `opinion_sources: []` 和 `viewpoint_themes: []`
 - AI 研究前沿条目必须标明 `类型：论文 / 研究博客 / benchmark / eval / 开源实现 / 实验室动向`，并保留原文链接
 - 权威解读只能作为辅助理解材料，不能替代论文或研究原文
@@ -85,7 +88,7 @@
 - 外围情报不是每期必写；如果当天没有高置信度外围变量，正文省略该模块，并在结构化索引里写 `peripheral_themes: []`
 - 使用 `fact_confidence` 表示事实来源可靠性，使用 `signal_strength` 表示当天信号强弱，避免把“事实可靠”误读成“今天信号很强”
 - 对 changelog、release、trending、stars、排名等易变化信息，优先引用具体条目，并尽量附带版本号、日期或快照时间
-- 对主要来源组，必须在 `source_checks` 中记录是否巡检、巡检时间和 `hit` / `miss` / `blocked` 结果
+- 对主要来源组，必须在 `source_checks` 中记录是否巡检、巡检时间和 `hit` / `miss` / `blocked` / `partial` 结果；推荐分组包括 `ai_blogger_core_radar`、`ai_blogger_free_opinion_pool`、`china_ai_media_signals`、`china_ai_engineering_radar`、`china_research_community`、`english_ai_engineering_radar`、`english_agent_infra_radar`、`english_inference_platforms`、`english_research_blogs`、`english_industry_analysis`、`english_safety_governance`
 - 对核心条目，建议在 `evidence_items` 中记录来源角色、证据类型、条目日期、快照时间、一手链接和置信理由
 - 对不确定信息明确标注
 

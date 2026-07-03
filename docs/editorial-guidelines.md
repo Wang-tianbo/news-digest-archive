@@ -35,6 +35,7 @@
 
 - 中文互联网与全球范围内活跃 AI 博主、技术工作者、研究者、创业者及关键人物的公开输出
 - 博客、RSS / Atom、Substack、GitHub、公众号公开页、长文、公开访谈中出现的高价值 AI 线索、工具发现、社区信号、判断、困惑、分歧与方法论
+- 中英文 AI 圈观点与社区信号源池中的媒体线索、开源工程生态、Agent 基础设施、推理平台、研究社区和安全治理源
 - 对 AI 编程、模型竞争、产品形态、研究范式、组织采用有复盘价值的信息线索、观点判断、方法论或实践复盘
 - 能够和当天事实样本互相印证、形成张力或提供新观察角度的观点与线索
 - 暂不纳入 X-only 来源；如果 X API 不可用或账号只有 X 入口，在 `source_checks` 中标为 `blocked` 或 `partial`，不要写成 `miss`
@@ -68,6 +69,8 @@
 - 如果引用热度、stars、排名、版本发布等易变化信息，尽量附带时间点、发布日期或版本号
 - 如果引用人物观点或资讯整理，必须明确标记条目类型，不能把个人判断或整理内容当作事实来源
 - `AI 圈博主` 条目类型固定为：`信息线索`、`观点判断`、`方法论`、`实践复盘`
+- 媒体、资讯整理、GitHub 项目动态和社区资源进入 `AI 圈博主` 时默认标为 `信息线索`，并尽量补官方发布、论文原文、release 或原始项目链接
+- 中英文扩展源每天合计建议只选 2-4 条高价值社区 / 观点信号；没有高价值新增时可省略正文，不为凑数量机械填充
 - `AI 研究前沿` 条目类型固定为：`论文`、`研究博客`、`benchmark`、`eval`、`开源实现`、`实验室动向`
 - `AI 研究前沿` 必须包含原文链接；权威解读可辅助理解，但不能替代原文
 - `AI 研究前沿` 建议写明 `研究成熟度` 与 `可复现状态`，避免把早期论文、作者开源、第三方复现和生产落地区分不清
@@ -121,7 +124,8 @@
 - `research_artifacts` 用于记录研究产物类型，例如 `paper`、`benchmark`、`eval`、`repo`、`research_blog`
 - `research_interpretations` 用于记录权威解读来源；如果没有可用解读，写 `[]` 或 `none`
 - `peripheral_themes` 用于记录外围情报归属，例如 `算力与半导体`、`政策与治理`、`企业采用`
-- `source_checks` 用于记录本次运行实际巡检过的主要来源组，例如 `coding_agent_releases`、`china_model_officials`、`ai_blogger_core_radar`、`research_frontier`；`result` 只使用 `hit`、`miss`、`blocked`
+- `source_checks` 用于记录本次运行实际巡检过的主要来源组，例如 `coding_agent_releases`、`china_model_officials`、`ai_blogger_core_radar`、`ai_blogger_free_opinion_pool`、`china_ai_media_signals`、`china_ai_engineering_radar`、`china_research_community`、`english_ai_engineering_radar`、`english_agent_infra_radar`、`english_inference_platforms`、`english_research_blogs`、`english_industry_analysis`、`english_safety_governance`、`research_frontier`
+- `source_checks.result` 建议使用 `hit`、`miss`、`blocked`、`partial`；访问受限、入口不稳定或只完成部分巡检时用 `partial`
 - `evidence_items` 用于记录核心条目的证据链，`source_role` 建议使用 `official`、`research`、`opinion`、`media`、`community`，`verification_status` 建议使用 `verified`、`partial`、`unverified`
 - `companies`、`products` 尽量用统一命名，避免同一对象出现多个写法
 - `followups` 只记录短期可验证问题，不写空泛愿景

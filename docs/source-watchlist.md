@@ -254,11 +254,17 @@
 
 - OpenAI Research: [openai.com/research](https://openai.com/research/)
 - Anthropic Research: [anthropic.com/research](https://www.anthropic.com/research)
+- Google Research Blog: [research.google/blog](https://research.google/blog/)
 - Google DeepMind Blog: [deepmind.google/en/blog](https://deepmind.google/en/blog/)
 - Meta AI Blog: [ai.meta.com/blog](https://ai.meta.com/blog/)
 - Microsoft Research AI: [microsoft.com/research/research-area/artificial-intelligence](https://www.microsoft.com/en-us/research/research-area/artificial-intelligence/)
 - Stanford HAI: [hai.stanford.edu](https://hai.stanford.edu/)
+- Stanford CRFM Blog: [crfm.stanford.edu/blog.html](https://crfm.stanford.edu/blog.html)
 - Berkeley BAIR Blog: [bair.berkeley.edu/blog](https://bair.berkeley.edu/blog/)
+- Allen Institute for AI Blog: [allenai.org/blog](https://allenai.org/blog)
+- Lilian Weng Blog: [lilianweng.github.io](https://lilianweng.github.io/)
+- Andrej Karpathy Blog: [karpathy.github.io](https://karpathy.github.io/)
+- Transformer Circuits: [transformer-circuits.pub](https://transformer-circuits.pub/)
 - Qwen Blog: [qwenlm.github.io/blog](https://qwenlm.github.io/blog/)
 - DeepSeek GitHub: [github.com/deepseek-ai](https://github.com/deepseek-ai)
 
@@ -286,6 +292,8 @@
 - METR: [metr.org](https://metr.org/)
 - Epoch AI: [epoch.ai](https://epoch.ai/)
 - EleutherAI Blog: [eleuther.ai/blog](https://www.eleuther.ai/blog/)
+- GovAI: [governance.ai](https://www.governance.ai/)
+- Apollo Research: [apolloresearch.ai](https://www.apolloresearch.ai/)
 
 ## 六、AI 外围高相关情报
 
@@ -402,6 +410,53 @@
 | --- | --- | --- |
 | 全球 | Andrej Karpathy、Lilian Weng、François Chollet、Yann LeCun、Dario Amodei、Sam Altman、Demis Hassabis、Jensen Huang | 长文、公开演讲、重大短帖、路线争议或战略判断 |
 | 中文 | 梁文锋、李沐、苏剑林、张俊林、刘知远、唐杰、朱松纯、王小川、杨植麟、李开复、周鸿祎 | 长访谈、公开演讲、一手文章、重大短帖或关键行业判断 |
+
+### AI 圈观点与社区信号源池
+
+这部分把“免费扩展 AI 圈博主 / 观点源池”和“中英文 AI 信息源扩展池”合并管理。它服务现有三大正文板块，不新增第四个日报大板块。
+
+使用口径：
+
+- 个人博客、长文、访谈和 Substack 优先作为 `观点判断`、`方法论` 或 `实践复盘`
+- 媒体、资讯整理、GitHub 项目动态、社区资源默认作为 `信息线索`
+- 论文、benchmark、eval、研究博客、开源实现或实验室动向优先进入 `AI 研究前沿`
+- 媒体和观点源不能替代官方事实来源；涉及产品、模型、价格、性能、榜单、版本或项目事实时，尽量补官方发布、文档、release、论文或原始项目链接
+- 中英文扩展源每天合计建议只选 2-4 条高价值社区 / 观点信号；没有高价值新增时可以省略正文，只在 `source_checks` 记录巡检结果
+
+#### 中文扩展源
+
+| 分组 | 来源 | 重点观察方向 | 日报口径 | 首选入口 / source group |
+| --- | --- | --- | --- | --- |
+| 中文媒体线索 | 量子位 | AI 产品、模型、产业动态 | `信息线索`，需补官方 / 原始链接 | [Website](https://www.qbitai.com/), RSS；`china_ai_media_signals` |
+| 中文媒体线索 | 机器之心 | 研究、产业、论文与公司动态 | `信息线索` 或研究解读辅助 | [Website](https://www.jiqizhixin.com/)；`china_ai_media_signals` |
+| 技术深度源 | 科学空间 / 苏剑林 | LLM、生成模型、数学与机制分析 | `方法论`、`观点判断`，自动访问受阻时标 `partial` | [Blog](https://kexue.fm/)；`china_research_community` |
+| 开源社区 | HelloGitHub | 中文开源项目发现 | 只收 AI 相关项目，标 `信息线索` | [Website](https://hellogithub.com/)；`china_ai_engineering_radar` |
+| 开源学习社区 | Datawhale | AI 学习、开源教程、社区项目 | `方法论`、`信息线索` | [GitHub](https://github.com/datawhalechina)；`china_ai_engineering_radar` |
+| 中文大模型开源 | OpenBMB | 开源大模型、工具链、研究实现 | `研究线索`、`实践复盘` | [GitHub](https://github.com/OpenBMB)；`china_research_community` |
+| 模型生态 | ModelScope | 中文模型、数据集、应用生态 | `信息线索`、工具动态 | [GitHub](https://github.com/modelscope)；`china_ai_engineering_radar` |
+| 评测生态 | OpenCompass | 大模型评测、benchmark、榜单变化 | `研究线索`、`方法论` | [GitHub](https://github.com/open-compass)；`china_research_community` |
+| 工程实践 | LLaMA-Factory | 微调、训练、模型适配实践 | `实践复盘`、工具动态 | [GitHub](https://github.com/hiyouga/LLaMA-Factory)；`china_ai_engineering_radar` |
+| AI 应用平台 | Dify | Agent、Workflow、AI 应用搭建 | 工具动态、`实践复盘` | [GitHub](https://github.com/langgenius/dify)；`china_ai_engineering_radar` |
+| RAG 工程 | RAGFlow | RAG、知识库、文档理解 | `实践复盘`、工具动态 | [GitHub](https://github.com/infiniflow/ragflow)；`china_ai_engineering_radar` |
+| AI 产品工程 | LobeChat、Cherry Studio、Chatbox | 中文 AI 客户端与产品体验 | 产品发现、工具动态 | [LobeChat](https://github.com/lobehub/lobe-chat), [Cherry Studio](https://github.com/CherryHQ/cherry-studio), [Chatbox](https://github.com/chatboxai/chatbox)；`china_ai_engineering_radar` |
+
+#### 英文扩展源
+
+| 分组 | 来源 | 重点观察方向 | 日报口径 | 首选入口 / source group |
+| --- | --- | --- | --- | --- |
+| AI 工程 / Agent 基础设施 | LangChain、LlamaIndex | Agent、RAG、应用框架、工程实践 | 工具动态、`实践复盘`、`方法论` | [LangChain Blog](https://blog.langchain.com/), [LlamaIndex Blog](https://www.llamaindex.ai/blog)；`english_agent_infra_radar` |
+| AI 工程 / Agent 基础设施 | DSPy、Pydantic AI、AutoGen、CrewAI | Agent 编排、结构化输出、评估、工作流 | 工程线索、`方法论` | [DSPy](https://github.com/stanfordnlp/dspy), [Pydantic AI](https://github.com/pydantic/pydantic-ai), [AutoGen](https://github.com/microsoft/autogen), [CrewAI](https://github.com/crewAIInc/crewAI)；`english_agent_infra_radar` |
+| AI 编程与本地模型工具 | Aider、Vercel AI SDK、Ollama、MLX、Unsloth | AI 编程、本地推理、训练 / 微调、SDK | 工具动态、`实践复盘` | [Aider](https://github.com/Aider-AI/aider), [Vercel AI SDK](https://github.com/vercel/ai), [Ollama](https://github.com/ollama/ollama), [MLX](https://github.com/ml-explore/mlx), [Unsloth](https://github.com/unslothai/unsloth)；`english_ai_engineering_radar` |
+| 推理服务 / 模型平台 | OpenRouter、Together AI、Fireworks AI、Groq、Cohere、Replicate | 模型路由、推理服务、部署平台、模型 API | `信息线索`，需补官方文档 / changelog | [OpenRouter Changelog](https://openrouter.ai/changelog), [Together Blog](https://www.together.ai/blog), [Fireworks Blog](https://fireworks.ai/blog), [Groq News](https://groq.com/news/), [Cohere Blog](https://cohere.com/blog), [Replicate Blog](https://replicate.com/blog)；`english_inference_platforms` |
+| 研究博客 | AI2、Stanford CRFM、Google Research、Lilian Weng、Andrej Karpathy、Transformer Circuits | 研究路线、机制解释、长文复盘 | 优先进入 `AI 研究前沿` | [AI2](https://allenai.org/blog), [CRFM](https://crfm.stanford.edu/blog.html), [Google Research](https://research.google/blog/), [Lilian Weng](https://lilianweng.github.io/), [Karpathy](https://karpathy.github.io/), [Transformer Circuits](https://transformer-circuits.pub/)；`english_research_blogs` |
+| 产业 / 安全 / 长访谈低频源 | SemiAnalysis、The Gradient、Dwarkesh、No Priors、GovAI、Apollo Research | 算力产业、研究访谈、安全治理、战略判断 | 低频高价值观点 / 研究信号 | [SemiAnalysis](https://semianalysis.com/), [The Gradient](https://thegradient.pub/), [Dwarkesh](https://www.dwarkeshpatel.com/), [No Priors](https://www.nopriors.com/), [GovAI](https://www.governance.ai/), [Apollo Research](https://www.apolloresearch.ai/)；`english_industry_analysis` / `english_safety_governance` |
+
+#### 暂缓 / partial 候选
+
+| 来源 | 暂缓原因 | 使用口径 |
+| --- | --- | --- |
+| PaperWeekly、新智元、Founder Park、极客公园 | 自动化入口或公开可复查入口不够稳定 | 先标 `partial`，只在有稳定公开原文、长文或关键判断时纳入 |
+| X-only 账号、需要登录的社群、付费墙内容 | 当前不接入登录态、付费 API 或私域内容 | 在 `source_checks` 中标 `blocked` 或 `partial`，不能当作 `miss` |
 
 ## 八、动态流 / 可订阅流
 

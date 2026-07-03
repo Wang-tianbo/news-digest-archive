@@ -73,6 +73,7 @@
 
 > 如果当天没有高价值线索或观点样本，省略本节，并在 `结构化索引` 中写 `opinion_sources: []` 和 `viewpoint_themes: []`。
 > 本节记录线索或观点样本，不能替代事实来源；资讯整理型博主提供的信息应标为 `信息线索`，并尽量补官方或原始项目链接。
+> 中英文扩展源池每天合计建议只选 2-4 条高价值社区 / 观点信号；媒体、资讯整理、GitHub 项目动态和社区资源默认标为 `信息线索`。
 
 ### 人物 / 观点主题
 
@@ -176,6 +177,26 @@ source_checks:
     checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
     result: miss
     note: no high-value clue included
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: partial
+    note: checked reproducible blogs/RSS/GitHub sources; access-limited entries marked partial or blocked
+  - source_id: china_ai_media_signals
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: miss
+    note: media signals used only as clues and require primary links when included
+  - source_id: china_ai_engineering_radar
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: miss
+    note: checked GitHub/RSS engineering sources for high-value AI project signals
+  - source_id: english_ai_engineering_radar
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: miss
+    note: checked English AI engineering and local model tool sources
+  - source_id: english_inference_platforms
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: miss
+    note: checked inference platform blogs/changelogs for material updates
   - source_id: research_frontier
     checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
     result: hit

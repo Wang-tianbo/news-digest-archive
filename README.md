@@ -178,6 +178,7 @@ ledgers/                长期议题台账
 - 每天 `09:35 Asia/Shanghai` 自动巡检日报是否已生成；如主任务静默失败，由 watchdog 兜底补跑
 - 自动化安装器会同时写入本地时钟和 UTC 时钟候选触发点，以兼容不同 Codex 版本的 cron 解释差异；任务正文会再次校验真实 `Asia/Shanghai` 窗口，窗口外只会 no-op
 - 每周 / 每月 / 每年自动生成高层总结
+- 每日 / 每周 / 每月 / 每年报告生成后，可选自动发送企业微信群机器人摘要提醒
 - 固定 watchlist 与动态流巡检规则
 - 评论 / 判断层沉淀机制
 - AI 圈博主观察机制
@@ -192,6 +193,7 @@ ledgers/                长期议题台账
 
 - 触发时间：每天 `09:05 Asia/Shanghai`
 - 兜底巡检：每天 `09:35 Asia/Shanghai`
+- 企业微信提醒：每天 `10:10 Asia/Shanghai`
 - 覆盖时间窗：前一日 `09:00` 到当日 `09:00`
 
 如果严格时间窗内高价值更新太少，允许补充最近几天仍在发酵的一手信息，但不能和前几日日报简单重复。
@@ -199,6 +201,32 @@ ledgers/                长期议题台账
 说明：日报错峰到 `09:05` 是为了避开本机多个 Codex automation 同时在 `09:00` 抢启动造成的静默结束风险；`09:35` watchdog 用来检查主任务是否真的落盘，避免后台 automation 静默结束后无人发现。报告的业务时间窗不变，仍按 `09:00-09:00 Asia/Shanghai` 归档。
 
 可靠性补充：Codex Desktop 的 cron 在不同版本里可能按本地时钟或 UTC 时钟解释 `BYHOUR`。安装器因此会写入两组候选触发时间；真正执行前，日报和 watchdog 都会读取当前 `Asia/Shanghai` 时间并检查当天文件是否已存在。只有“处于正确上海时间窗口且当天日报缺失”时才会写入仓库，其他候选触发会安全退出，不会重复生成日报。
+
+## 企业微信提醒
+
+企业微信提醒是可选功能，默认使用群机器人 webhook。它只发送报告摘要和 GitHub 链接，不发送完整报告正文：
+
+- 日报提醒：每天 `10:10 Asia/Shanghai`
+- 周报提醒：每周一 `10:15 Asia/Shanghai`
+- 月报提醒：每月 1 日 `10:20 Asia/Shanghai`
+- 年报提醒：每年 1 月 1 日 `10:25 Asia/Shanghai`
+
+配置方式是在仓库根目录创建本机私有文件：
+
+```bash
+mkdir -p .codex-run
+cat > .codex-run/wecom-notify.env <<'EOF'
+WECOM_WEBHOOK_URL=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY
+EOF
+```
+
+`.codex-run/` 已经被 Git 忽略，webhook 不应该提交到公开仓库。配置后可以先 dry-run 看摘要效果：
+
+```bash
+python3 scripts/send_wecom_report.py --kind daily --dry-run
+```
+
+如果 webhook 没配置，提醒任务会安全跳过，不影响日报、周报、月报、年报生成。
 
 ## 如何开始
 
@@ -208,7 +236,7 @@ ledgers/                长期议题台账
 2. 克隆你自己的仓库到本地
 3. 确保 Codex 已登录，且当前仓库具备 `git push` 权限
 4. 在仓库根目录运行 `python3 scripts/install_codex_daily_digest.py`
-5. 安装器会一次性写入日报、日报 watchdog、周报、月报、年报这五个 Codex 自动化任务
+5. 安装器会一次性写入日报、日报 watchdog、周报、月报、年报和企业微信提醒这九个 Codex 自动化任务
 
 详细说明见 [docs/portable-setup.md](docs/portable-setup.md)。
 
@@ -251,7 +279,7 @@ python3 scripts/check_archive_health.py --strict-template
 - 做专题索引，例如 Agent、开源模型、AI 编程、推理基础设施
 - 增加跨周期趋势追踪和年度回顾
 - 接入 RSS / Atom / 官方账号流
-- 增加推送提醒与摘要分发
+- 增加更多提醒渠道与更细粒度的摘要订阅
 - 基于 `结构化索引` 做自动聚合、检索和可视化
 
 ## 相关文档

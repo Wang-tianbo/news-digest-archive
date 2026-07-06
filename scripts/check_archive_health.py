@@ -18,6 +18,10 @@ AUTOMATION_IDS = [
     "weekly-ai-digest-summary",
     "monthly-ai-digest-summary",
     "yearly-ai-digest-summary",
+    "daily-ai-digest-notify",
+    "weekly-ai-digest-notify",
+    "monthly-ai-digest-notify",
+    "yearly-ai-digest-notify",
 ]
 REQUIRED_DAILY_SECTIONS = [
     "## 结构化快照",

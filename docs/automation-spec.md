@@ -39,6 +39,18 @@
 - 月报：`monthly/YYYY/YYYY-MM.md`
 - 年报：`yearly/YYYY/YYYY.md`
 
+## 企业微信提醒
+
+- 企业微信提醒使用群机器人 webhook，默认只发送报告摘要和 GitHub 链接，不发送完整报告正文
+- 日报提醒时间：每天 `10:10 Asia/Shanghai`
+- 周报提醒时间：每周一 `10:15 Asia/Shanghai`，发送刚完成的上一个完整周报
+- 月报提醒时间：每月 1 日 `10:20 Asia/Shanghai`，发送刚完成的上一个自然月月报
+- 年报提醒时间：每年 1 月 1 日 `10:25 Asia/Shanghai`，发送刚完成的上一年年报
+- 提醒任务必须在发送前确认对应报告已经存在于 `origin/main`
+- 同一报告同一远端 commit 只能发送一次，除非手动使用 `--force`
+- webhook 只能来自环境变量 `WECOM_WEBHOOK_URL` 或本机忽略文件 `.codex-run/wecom-notify.env`，不得提交到仓库或打印到日志
+- 如果 webhook 未配置，提醒任务必须安全跳过，不影响日报、周报、月报、年报生成
+
 ## 必查数据源
 
 - 先查 [docs/source-watchlist.md](source-watchlist.md) 中的 AI 编程代理专项源
@@ -102,9 +114,9 @@
 
 - 仓库内提供跨平台安装器 `scripts/install_codex_daily_digest.py`
 - macOS / Linux 另外提供便捷包装脚本 `scripts/install_codex_daily_digest.sh`
-- 脚本会一并安装日报、日报 watchdog、周报、月报、年报五个 Codex 自动化任务
+- 脚本会一并安装日报、日报 watchdog、周报、月报、年报和企业微信提醒九个 Codex 自动化任务
 - 脚本会把自动化配置写入 `${CODEX_HOME:-~/.codex}/automations/<automation-id>/automation.toml`
-- 脚本会根据当前电脑的本地时区，计算日报、周报、月报、年报各自对应的 `Asia/Shanghai` 本地触发时间，并额外写入 UTC 时钟候选触发时间
+- 脚本会根据当前电脑的本地时区，计算日报、周报、月报、年报和企业微信提醒各自对应的 `Asia/Shanghai` 本地触发时间，并额外写入 UTC 时钟候选触发时间
 - 如果仓库换了路径，或者系统时区发生变化，重跑一次安装脚本
 - 详细说明见 [docs/portable-setup.md](portable-setup.md)
 
@@ -112,5 +124,7 @@
 
 - 如果当天高价值更新很少，仍生成简版日报
 - 如果抓取过程受阻，保留已验证的重要信息，不用未经确认的内容凑数
+- 如果企业微信发送失败，只记录通知失败，不回滚或修改已经生成的报告
+- 如果企业微信 webhook 未配置，通知任务安全跳过
 - 如果自动化连续缺失日报，先运行 `python3 scripts/check_archive_health.py --fetch` 检查缺失日报、周报、月报、本机 automation、远端同步和最近提交状态
 - 如果 session 日志显示任务在 `17:xx Asia/Shanghai` 触发并因窗口校验 no-op，说明当前 Codex cron 正在按 UTC 时钟解释 `BYHOUR`；重跑 `python3 scripts/install_codex_daily_digest.py`，确认 RRULE 同时包含 `BYHOUR=1,9` 这类双候选小时

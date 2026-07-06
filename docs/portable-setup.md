@@ -1,6 +1,6 @@
 # 跨电脑恢复指南
 
-这份指南的目标很简单：不论你是换一台电脑，还是第一次 fork 这个项目，只要把仓库拉下来，再执行一次安装脚本，就能把这套 `日报 + 日报 watchdog + 周报 + 月报 + 年报` 自动化恢复到可运行状态。
+这份指南的目标很简单：不论你是换一台电脑，还是第一次 fork 这个项目，只要把仓库拉下来，再执行一次安装脚本，就能把这套 `日报 + 日报 watchdog + 周报 + 月报 + 年报 + 企业微信提醒` 自动化恢复到可运行状态。
 
 ## 最推荐的使用方式
 
@@ -10,7 +10,8 @@
 2. 把你自己的 fork 克隆到本地
 3. 登录 Codex
 4. 运行安装脚本
-5. 等待每天 / 每周 / 每月 / 每年自动生成报告并推送到你自己的仓库
+5. 可选配置企业微信群机器人 webhook
+6. 等待每天 / 每周 / 每月 / 每年自动生成报告并推送到你自己的仓库
 
 这样做的好处是：
 
@@ -53,7 +54,7 @@ bash scripts/install_codex_daily_digest.sh
 - 额外写入 UTC 时钟候选触发时间，用来兼容不同 Codex Desktop 版本对 cron `BYHOUR` 的解释差异
 - 生成本机可用的 Codex 自动化配置
 - 把仓库当前绝对路径写入自动化的 `cwds`
-- 写入日报、日报 watchdog、周报、月报、年报五个 automation 目录下的 `automation.toml`
+- 写入日报、日报 watchdog、周报、月报、年报和企业微信提醒九个 automation 目录下的 `automation.toml`
 
 安装器不会替你登录 Codex，也不会替你自动创建 GitHub fork；它负责的是把“这台电脑上的 Codex 自动化配置”恢复好。
 
@@ -82,6 +83,10 @@ bash scripts/install_codex_daily_digest.sh
 - 周报：每周一 `09:10 Asia/Shanghai`
 - 月报：每月 `1` 日 `09:15 Asia/Shanghai`
 - 年报：每年 `1` 月 `1` 日 `09:20 Asia/Shanghai`
+- 日报企业微信提醒：每天 `10:10 Asia/Shanghai`
+- 周报企业微信提醒：每周一 `10:15 Asia/Shanghai`
+- 月报企业微信提醒：每月 `1` 日 `10:20 Asia/Shanghai`
+- 年报企业微信提醒：每年 `1` 月 `1` 日 `10:25 Asia/Shanghai`
 
 日报晚 5 分钟触发，是为了避开本机多个 Codex automation 同时在 `09:00` 启动时可能出现的后台静默结束。报告归档仍按 `09:00-09:00 Asia/Shanghai` 计算，不会改变日报内容口径。
 
@@ -108,6 +113,10 @@ bash scripts/install_codex_daily_digest.sh
 - `${CODEX_HOME:-~/.codex}/automations/weekly-ai-digest-summary/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/monthly-ai-digest-summary/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/yearly-ai-digest-summary/automation.toml`
+- `${CODEX_HOME:-~/.codex}/automations/daily-ai-digest-notify/automation.toml`
+- `${CODEX_HOME:-~/.codex}/automations/weekly-ai-digest-notify/automation.toml`
+- `${CODEX_HOME:-~/.codex}/automations/monthly-ai-digest-notify/automation.toml`
+- `${CODEX_HOME:-~/.codex}/automations/yearly-ai-digest-notify/automation.toml`
 
 也可以按下面的清单自检：
 
@@ -115,12 +124,44 @@ bash scripts/install_codex_daily_digest.sh
 2. 运行 `git remote -v`，确认 `origin` 指向你自己的仓库
 3. 确认每天 09:05 Asia/Shanghai 之后，日报会写入 `daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
 4. 确认每天 09:35 Asia/Shanghai 的 watchdog automation 文件已经生成
-5. 确认周报 / 月报 / 年报的 automation 文件也已经生成
+5. 确认周报 / 月报 / 年报和企业微信提醒的 automation 文件也已经生成
 6. 运行 `python3 scripts/check_archive_health.py --fetch`，确认最近日报、已完成周报、已完成月报、本机 automation 和 Git 远端同步状态正常
 
 如果你只是想先验证安装器是否工作，不想等到第二天，也可以先检查自动化文件是否已经生成，再手动阅读里面的 `cwds` 和 `rrule` 是否符合预期。
 
 在中国时区机器上，日报主任务的 `rrule` 通常应同时包含 `BYHOUR=1,9;BYMINUTE=5`，watchdog 应同时包含 `BYHOUR=1,9;BYMINUTE=35`。其中 `9` 覆盖本地时钟解释，`1` 覆盖 UTC 时钟解释；真正写报告的仍只有上海时间 09 点窗口。
+
+## 企业微信提醒配置
+
+企业微信提醒默认使用群机器人 webhook。它只发送报告摘要和 GitHub 链接，不会把完整报告刷进群里。
+
+在仓库根目录创建本机私有配置：
+
+```bash
+mkdir -p .codex-run
+cat > .codex-run/wecom-notify.env <<'EOF'
+WECOM_WEBHOOK_URL=https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY
+EOF
+```
+
+注意：
+
+- `.codex-run/` 已被 Git 忽略，适合放本机密钥和通知状态
+- 不要把 webhook 写进 README、自动化模板或任何会提交的文件
+- 如果不配置 `WECOM_WEBHOOK_URL`，通知任务会安全跳过，不影响报告生成
+
+配置后可以先预览摘要，不发送真实消息：
+
+```bash
+python3 scripts/send_wecom_report.py --kind daily --dry-run
+python3 scripts/send_wecom_report.py --kind weekly --dry-run
+```
+
+如果需要手动补发，可以使用：
+
+```bash
+python3 scripts/send_wecom_report.py --kind daily --force
+```
 
 ## 常见问题
 

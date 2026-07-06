@@ -29,6 +29,18 @@ DAILY_TRIGGER_SECOND = 0
 WATCHDOG_TRIGGER_HOUR = 9
 WATCHDOG_TRIGGER_MINUTE = 35
 WATCHDOG_TRIGGER_SECOND = 0
+DAILY_NOTIFY_HOUR = 10
+DAILY_NOTIFY_MINUTE = 10
+DAILY_NOTIFY_SECOND = 0
+WEEKLY_NOTIFY_HOUR = 10
+WEEKLY_NOTIFY_MINUTE = 15
+WEEKLY_NOTIFY_SECOND = 0
+MONTHLY_NOTIFY_HOUR = 10
+MONTHLY_NOTIFY_MINUTE = 20
+MONTHLY_NOTIFY_SECOND = 0
+YEARLY_NOTIFY_HOUR = 10
+YEARLY_NOTIFY_MINUTE = 25
+YEARLY_NOTIFY_SECOND = 0
 AUTOMATIONS = [
     {
         "id": "daily-ai-digest-archive",
@@ -67,6 +79,47 @@ AUTOMATIONS = [
         "template": "yearly-ai-digest-summary.toml.template",
         "rrule_key": "__RRULE_YEARLY_JSON__",
         "schedule": lambda: yearly_rrule_for_shanghai_jan1(9, 20, 0),
+    },
+    {
+        "id": "daily-ai-digest-notify",
+        "template": "daily-ai-digest-notify.toml.template",
+        "rrule_key": "__RRULE_DAILY_NOTIFY_JSON__",
+        "schedule": lambda: daily_rrule_for_shanghai_clock(
+            DAILY_NOTIFY_HOUR,
+            DAILY_NOTIFY_MINUTE,
+            DAILY_NOTIFY_SECOND,
+        ),
+    },
+    {
+        "id": "weekly-ai-digest-notify",
+        "template": "weekly-ai-digest-notify.toml.template",
+        "rrule_key": "__RRULE_WEEKLY_NOTIFY_JSON__",
+        "schedule": lambda: weekly_rrule_for_shanghai_weekday(
+            0,
+            WEEKLY_NOTIFY_HOUR,
+            WEEKLY_NOTIFY_MINUTE,
+            WEEKLY_NOTIFY_SECOND,
+        ),
+    },
+    {
+        "id": "monthly-ai-digest-notify",
+        "template": "monthly-ai-digest-notify.toml.template",
+        "rrule_key": "__RRULE_MONTHLY_NOTIFY_JSON__",
+        "schedule": lambda: monthly_rrule_for_shanghai_first_day(
+            MONTHLY_NOTIFY_HOUR,
+            MONTHLY_NOTIFY_MINUTE,
+            MONTHLY_NOTIFY_SECOND,
+        ),
+    },
+    {
+        "id": "yearly-ai-digest-notify",
+        "template": "yearly-ai-digest-notify.toml.template",
+        "rrule_key": "__RRULE_YEARLY_NOTIFY_JSON__",
+        "schedule": lambda: yearly_rrule_for_shanghai_jan1(
+            YEARLY_NOTIFY_HOUR,
+            YEARLY_NOTIFY_MINUTE,
+            YEARLY_NOTIFY_SECOND,
+        ),
     },
 ]
 
@@ -437,6 +490,69 @@ def main() -> None:
             [datetime(year, 1, 1, 9, 20, 0, tzinfo=SHANGHAI_TZ)]
         )
     )
+    daily_notify_times = describe_clock_candidates(
+        clock_candidates_for_shanghai_datetimes(
+            shanghai_clock_samples(
+                year,
+                DAILY_NOTIFY_HOUR,
+                DAILY_NOTIFY_MINUTE,
+                DAILY_NOTIFY_SECOND,
+            )
+        )
+    )
+    weekly_notify_slots = describe_weekday_clock_candidates(
+        clock_candidates_for_shanghai_datetimes(
+            [
+                sample
+                + timedelta(days=(0 - sample.weekday()) % 7)
+                for sample in shanghai_clock_samples(
+                    year,
+                    WEEKLY_NOTIFY_HOUR,
+                    WEEKLY_NOTIFY_MINUTE,
+                    WEEKLY_NOTIFY_SECOND,
+                )
+            ]
+        )
+    )
+    monthly_notify_slots = describe_monthday_clock_candidates(
+        clock_candidates_for_shanghai_datetimes(
+            [
+                datetime(
+                    year,
+                    1,
+                    1,
+                    MONTHLY_NOTIFY_HOUR,
+                    MONTHLY_NOTIFY_MINUTE,
+                    MONTHLY_NOTIFY_SECOND,
+                    tzinfo=SHANGHAI_TZ,
+                ),
+                datetime(
+                    year,
+                    7,
+                    1,
+                    MONTHLY_NOTIFY_HOUR,
+                    MONTHLY_NOTIFY_MINUTE,
+                    MONTHLY_NOTIFY_SECOND,
+                    tzinfo=SHANGHAI_TZ,
+                ),
+            ]
+        )
+    )
+    yearly_notify_slots = describe_yearday_clock_candidates(
+        clock_candidates_for_shanghai_datetimes(
+            [
+                datetime(
+                    year,
+                    1,
+                    1,
+                    YEARLY_NOTIFY_HOUR,
+                    YEARLY_NOTIFY_MINUTE,
+                    YEARLY_NOTIFY_SECOND,
+                    tzinfo=SHANGHAI_TZ,
+                )
+            ]
+        )
+    )
 
     print("Installed Codex automations:")
     for automation_id, path in installed_files:
@@ -457,6 +573,14 @@ def main() -> None:
     print(f"Weekly trigger candidates for Asia/Shanghai Monday 09:10: {weekly_trigger_slots}")
     print(f"Monthly trigger candidates for Asia/Shanghai day 1 09:15: {monthly_trigger_slots}")
     print(f"Yearly trigger candidates for Asia/Shanghai January 1 09:20: {yearly_trigger_slots}")
+    print(
+        "Daily WeCom notify candidates for "
+        f"Asia/Shanghai {DAILY_NOTIFY_HOUR:02d}:{DAILY_NOTIFY_MINUTE:02d}: "
+        f"{daily_notify_times}"
+    )
+    print(f"Weekly WeCom notify candidates for Asia/Shanghai Monday 10:15: {weekly_notify_slots}")
+    print(f"Monthly WeCom notify candidates for Asia/Shanghai day 1 10:20: {monthly_notify_slots}")
+    print(f"Yearly WeCom notify candidates for Asia/Shanghai January 1 10:25: {yearly_notify_slots}")
     print(
         "RRULEs include both local-clock and UTC-clock candidates because Codex "
         "cron interpretation can vary by app version; prompts no-op outside the "

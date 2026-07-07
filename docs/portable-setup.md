@@ -83,7 +83,7 @@ bash scripts/install_codex_daily_digest.sh
 - 周报：每周一 `09:10 Asia/Shanghai`
 - 月报：每月 `1` 日 `09:15 Asia/Shanghai`
 - 年报：每年 `1` 月 `1` 日 `09:20 Asia/Shanghai`
-- 日报企业微信提醒：每天 `10:10 Asia/Shanghai`
+- 日报企业微信提醒：日报 push 成功后立即发送，另有每天 `10:10 Asia/Shanghai` 兜底检查
 - 周报企业微信提醒：每周一 `10:15 Asia/Shanghai`
 - 月报企业微信提醒：每月 `1` 日 `10:20 Asia/Shanghai`
 - 年报企业微信提醒：每年 `1` 月 `1` 日 `10:25 Asia/Shanghai`

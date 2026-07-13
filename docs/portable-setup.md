@@ -54,7 +54,7 @@ bash scripts/install_codex_daily_digest.sh
 - 额外写入 UTC 时钟候选触发时间，用来兼容不同 Codex Desktop 版本对 cron `BYHOUR` 的解释差异
 - 生成本机可用的 Codex 自动化配置
 - 把仓库当前绝对路径写入自动化的 `cwds`
-- 写入日报、日报 watchdog、周报、月报、年报和企业微信提醒九个 automation 目录下的 `automation.toml`
+- 写入日报、日报 watchdog、周报、月报、年报和企业微信提醒八个 automation 目录下的 `automation.toml`
 
 安装器不会替你登录 Codex，也不会替你自动创建 GitHub fork；它负责的是把“这台电脑上的 Codex 自动化配置”恢复好。
 
@@ -83,8 +83,8 @@ bash scripts/install_codex_daily_digest.sh
 - 周报：每周一 `09:10 Asia/Shanghai`
 - 月报：每月 `1` 日 `09:15 Asia/Shanghai`
 - 年报：每年 `1` 月 `1` 日 `09:20 Asia/Shanghai`
-- 日报企业微信提醒：日报 push 成功后立即发送，另有每天 `10:10 Asia/Shanghai` 兜底检查
-- 周报企业微信提醒：每周一 `10:15 Asia/Shanghai`
+- 日报企业微信提醒：不发送；日报只归档到 GitHub
+- 周报企业微信提醒：周报 push 成功后立即发送，另有每周一 `10:15 Asia/Shanghai` 兜底检查
 - 月报企业微信提醒：每月 `1` 日 `10:20 Asia/Shanghai`
 - 年报企业微信提醒：每年 `1` 月 `1` 日 `10:25 Asia/Shanghai`
 
@@ -113,7 +113,6 @@ bash scripts/install_codex_daily_digest.sh
 - `${CODEX_HOME:-~/.codex}/automations/weekly-ai-digest-summary/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/monthly-ai-digest-summary/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/yearly-ai-digest-summary/automation.toml`
-- `${CODEX_HOME:-~/.codex}/automations/daily-ai-digest-notify/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/weekly-ai-digest-notify/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/monthly-ai-digest-notify/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/yearly-ai-digest-notify/automation.toml`
@@ -153,14 +152,13 @@ EOF
 配置后可以先预览摘要，不发送真实消息：
 
 ```bash
-python3 scripts/send_wecom_report.py --kind daily --dry-run
 python3 scripts/send_wecom_report.py --kind weekly --dry-run
 ```
 
 如果需要手动补发，可以使用：
 
 ```bash
-python3 scripts/send_wecom_report.py --kind daily --force
+python3 scripts/send_wecom_report.py --kind weekly --force
 ```
 
 ## 常见问题

@@ -180,8 +180,9 @@ ledgers/                长期议题台账
 - 每天 `09:35 Asia/Shanghai` 自动巡检日报是否已生成；如主任务静默失败，由 watchdog 兜底补跑
 - 自动化安装器会同时写入本地时钟和 UTC 时钟候选触发点，以兼容不同 Codex 版本的 cron 解释差异；任务正文会再次校验真实 `Asia/Shanghai` 窗口，窗口外只会 no-op
 - 每周 / 每月 / 每年自动生成高层总结
-- 每日报告推送到 GitHub 后，同一轮自动发送企业微信群机器人摘要；每日 `10:10` 另有兜底通知检查
-- 每周 / 每月 / 每年报告生成后，可选自动发送企业微信群机器人摘要提醒
+- 日报只归档到 GitHub，不发送企业微信群消息
+- 周报生成并推送到 GitHub 后自动发送企业微信群机器人摘要；每周一 `10:15` 另有兜底通知检查
+- 月报 / 年报报告生成后，可选自动发送企业微信群机器人摘要提醒
 - 固定 watchlist 与动态流巡检规则
 - 评论 / 判断层沉淀机制
 - AI 圈博主观察机制
@@ -196,7 +197,7 @@ ledgers/                长期议题台账
 
 - 触发时间：每天 `09:05 Asia/Shanghai`
 - 兜底巡检：每天 `09:35 Asia/Shanghai`
-- 企业微信提醒：日报 push 成功后立即发送；每天 `10:10 Asia/Shanghai` 兜底检查
+- 企业微信提醒：日报不发送群消息，统一等周报汇总后提醒
 - 覆盖时间窗：前一日 `09:00` 到当日 `09:00`
 
 如果严格时间窗内高价值更新太少，允许补充最近几天仍在发酵的一手信息，但不能和前几日日报简单重复。
@@ -207,10 +208,10 @@ ledgers/                长期议题台账
 
 ## 企业微信提醒
 
-企业微信提醒是可选功能，默认使用群机器人 webhook。它只发送报告摘要和 GitHub 链接，不发送完整报告正文。日报主任务会在 `git push origin main` 成功后立即发送；`10:10` 的通知任务只作为兜底检查，同一报告同一远端 commit 不会重复发送：
+企业微信提醒是可选功能，默认使用群机器人 webhook。它只发送报告摘要和 GitHub 链接，不发送完整报告正文。日报不发群消息，周报会在 `git push origin main` 成功后立即发送；`10:15` 的周报通知任务只作为兜底检查，同一报告同一远端 commit 不会重复发送：
 
-- 日报提醒：日报 push 成功后立即发送；每天 `10:10 Asia/Shanghai` 兜底
-- 周报提醒：每周一 `10:15 Asia/Shanghai`
+- 日报提醒：不发送
+- 周报提醒：周报 push 成功后立即发送；每周一 `10:15 Asia/Shanghai` 兜底
 - 月报提醒：每月 1 日 `10:20 Asia/Shanghai`
 - 年报提醒：每年 1 月 1 日 `10:25 Asia/Shanghai`
 
@@ -226,7 +227,7 @@ EOF
 `.codex-run/` 已经被 Git 忽略，webhook 不应该提交到公开仓库。配置后可以先 dry-run 看摘要效果：
 
 ```bash
-python3 scripts/send_wecom_report.py --kind daily --dry-run
+python3 scripts/send_wecom_report.py --kind weekly --dry-run
 ```
 
 如果 webhook 没配置，提醒任务会安全跳过，不影响日报、周报、月报、年报生成。
@@ -239,7 +240,7 @@ python3 scripts/send_wecom_report.py --kind daily --dry-run
 2. 克隆你自己的仓库到本地
 3. 确保 Codex 已登录，且当前仓库具备 `git push` 权限
 4. 在仓库根目录运行 `python3 scripts/install_codex_daily_digest.py`
-5. 安装器会一次性写入日报、日报 watchdog、周报、月报、年报和企业微信提醒这九个 Codex 自动化任务
+5. 安装器会一次性写入日报、日报 watchdog、周报、月报、年报和企业微信提醒这八个 Codex 自动化任务
 
 详细说明见 [docs/portable-setup.md](docs/portable-setup.md)。
 

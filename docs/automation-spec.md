@@ -42,13 +42,13 @@
 ## 企业微信提醒
 
 - 企业微信提醒使用群机器人 webhook，默认只发送报告摘要和 GitHub 链接，不发送完整报告正文
-- 日报提醒时间：日报生成任务或 watchdog 成功 `push origin main` 后立即发送；每天 `10:10 Asia/Shanghai` 的独立通知任务作为兜底检查
-- 周报提醒时间：每周一 `10:15 Asia/Shanghai`，发送刚完成的上一个完整周报
+- 日报不发送企业微信群消息；日报只负责生成、提交并推送到 GitHub
+- 周报提醒时间：周报生成任务成功 `push origin main` 后立即发送；每周一 `10:15 Asia/Shanghai` 的独立通知任务作为兜底检查，发送刚完成的上一个完整周报
 - 月报提醒时间：每月 1 日 `10:20 Asia/Shanghai`，发送刚完成的上一个自然月月报
 - 年报提醒时间：每年 1 月 1 日 `10:25 Asia/Shanghai`，发送刚完成的上一年年报
 - 提醒任务必须在发送前确认对应报告已经存在于 `origin/main`
 - 同一报告同一远端 commit 只能发送一次，除非手动使用 `--force`
-- 日报生成任务与 watchdog 在推送成功后必须调用 `python3 scripts/send_wecom_report.py --kind daily --date YYYY-MM-DD`
+- 周报生成任务在推送成功后必须调用 `python3 scripts/send_wecom_report.py --kind weekly --date YYYY-MM-DD`
 - 企业微信发送失败不能回滚或修改已经推送到 GitHub 的报告，只能作为通知失败单独报告
 - webhook 只能来自环境变量 `WECOM_WEBHOOK_URL` 或本机忽略文件 `.codex-run/wecom-notify.env`，不得提交到仓库或打印到日志
 - 如果 webhook 未配置，提醒任务必须安全跳过，不影响日报、周报、月报、年报生成
@@ -119,7 +119,7 @@
 
 - 仓库内提供跨平台安装器 `scripts/install_codex_daily_digest.py`
 - macOS / Linux 另外提供便捷包装脚本 `scripts/install_codex_daily_digest.sh`
-- 脚本会一并安装日报、日报 watchdog、周报、月报、年报和企业微信提醒九个 Codex 自动化任务
+- 脚本会一并安装日报、日报 watchdog、周报、月报、年报和企业微信提醒八个 Codex 自动化任务
 - 脚本会把自动化配置写入 `${CODEX_HOME:-~/.codex}/automations/<automation-id>/automation.toml`
 - 脚本会根据当前电脑的本地时区，计算日报、周报、月报、年报和企业微信提醒各自对应的 `Asia/Shanghai` 本地触发时间，并额外写入 UTC 时钟候选触发时间
 - 如果仓库换了路径，或者系统时区发生变化，重跑一次安装脚本

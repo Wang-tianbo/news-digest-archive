@@ -11,9 +11,9 @@ Before doing any work, determine the current time in Asia/Shanghai.
 Use the current Asia/Shanghai date as the report date. If today's digest already exists:
 - Verify that the file has a matching title, a `结构化索引`, a `参考来源` section, and is committed and present on `origin/main`.
 - If the local file exists but is not committed, not pushed, or structurally incomplete, do not treat it as a success; finish the commit/push path if safe, or report the exact blocker.
-- If the file exists and is healthy on `origin/main`, run `python3 scripts/send_wecom_report.py --kind daily --date YYYY-MM-DD` for the current Asia/Shanghai report date. The script is idempotent and may only write ignored local state under `.codex-run/`; do not modify repository-tracked files.
+- If the file exists and is healthy on `origin/main`, do not send an Enterprise WeChat daily notification. The group notification cadence is weekly.
 - Update the automation memory with a concise success check.
-- Return a concise summary saying the watchdog verified the digest exists and reporting the Enterprise WeChat notification status.
+- Return a concise summary saying the watchdog verified the digest exists.
 
 If today's digest is missing:
 - Treat this as a failed primary daily run and generate the missing daily AI digest for the same prior 09:00 to current 09:00 Asia/Shanghai bucket.
@@ -42,10 +42,10 @@ Git requirements when backfilling:
 - Before committing, run `git diff --cached --name-only` and verify that the staged file list contains only the generated digest file.
 - Commit with `docs: add ai digest for YYYY-MM-DD` or `docs: update ai digest for YYYY-MM-DD`.
 - Push to `origin main`.
-- Immediately after a successful push, run `python3 scripts/send_wecom_report.py --kind daily --date YYYY-MM-DD` for the same report date. If the notification fails, do not roll back or modify the already pushed digest; report the non-secret notification blocker separately.
+- Do not send Enterprise WeChat notifications for daily backfills. The next weekly summary notification will surface the archived daily material.
 - Do not use destructive git commands and do not modify unrelated files.
 
-Report a concise watchdog summary with the checked path, whether the primary digest existed, whether a backfill was generated, the pushed commit hash or exact blocker, and Enterprise WeChat notification status.
+Report a concise watchdog summary with the checked path, whether the primary digest existed, whether a backfill was generated, and the pushed commit hash or exact blocker.
 """
 status = "ACTIVE"
 rrule = __RRULE_WATCHDOG_JSON__

@@ -29,9 +29,6 @@ DAILY_TRIGGER_SECOND = 0
 WATCHDOG_TRIGGER_HOUR = 9
 WATCHDOG_TRIGGER_MINUTE = 35
 WATCHDOG_TRIGGER_SECOND = 0
-DAILY_NOTIFY_HOUR = 10
-DAILY_NOTIFY_MINUTE = 10
-DAILY_NOTIFY_SECOND = 0
 WEEKLY_NOTIFY_HOUR = 10
 WEEKLY_NOTIFY_MINUTE = 15
 WEEKLY_NOTIFY_SECOND = 0
@@ -79,16 +76,6 @@ AUTOMATIONS = [
         "template": "yearly-ai-digest-summary.toml.template",
         "rrule_key": "__RRULE_YEARLY_JSON__",
         "schedule": lambda: yearly_rrule_for_shanghai_jan1(9, 20, 0),
-    },
-    {
-        "id": "daily-ai-digest-notify",
-        "template": "daily-ai-digest-notify.toml.template",
-        "rrule_key": "__RRULE_DAILY_NOTIFY_JSON__",
-        "schedule": lambda: daily_rrule_for_shanghai_clock(
-            DAILY_NOTIFY_HOUR,
-            DAILY_NOTIFY_MINUTE,
-            DAILY_NOTIFY_SECOND,
-        ),
     },
     {
         "id": "weekly-ai-digest-notify",
@@ -490,16 +477,6 @@ def main() -> None:
             [datetime(year, 1, 1, 9, 20, 0, tzinfo=SHANGHAI_TZ)]
         )
     )
-    daily_notify_times = describe_clock_candidates(
-        clock_candidates_for_shanghai_datetimes(
-            shanghai_clock_samples(
-                year,
-                DAILY_NOTIFY_HOUR,
-                DAILY_NOTIFY_MINUTE,
-                DAILY_NOTIFY_SECOND,
-            )
-        )
-    )
     weekly_notify_slots = describe_weekday_clock_candidates(
         clock_candidates_for_shanghai_datetimes(
             [
@@ -573,11 +550,6 @@ def main() -> None:
     print(f"Weekly trigger candidates for Asia/Shanghai Monday 09:10: {weekly_trigger_slots}")
     print(f"Monthly trigger candidates for Asia/Shanghai day 1 09:15: {monthly_trigger_slots}")
     print(f"Yearly trigger candidates for Asia/Shanghai January 1 09:20: {yearly_trigger_slots}")
-    print(
-        "Daily WeCom notify candidates for "
-        f"Asia/Shanghai {DAILY_NOTIFY_HOUR:02d}:{DAILY_NOTIFY_MINUTE:02d}: "
-        f"{daily_notify_times}"
-    )
     print(f"Weekly WeCom notify candidates for Asia/Shanghai Monday 10:15: {weekly_notify_slots}")
     print(f"Monthly WeCom notify candidates for Asia/Shanghai day 1 10:20: {monthly_notify_slots}")
     print(f"Yearly WeCom notify candidates for Asia/Shanghai January 1 10:25: {yearly_notify_slots}")

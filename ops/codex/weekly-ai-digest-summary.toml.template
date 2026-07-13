@@ -33,8 +33,10 @@ Git requirements:
 - Before committing, run `git diff --cached --name-only` and verify that the staged file list contains only the generated weekly report file.
 - Commit with `docs: add weekly ai digest for YYYY-Www` or `docs: update weekly ai digest for YYYY-Www`.
 - Push to `origin main`.
+- Immediately after a successful push, run `python3 scripts/send_wecom_report.py --kind weekly --date YYYY-MM-DD` using the current Asia/Shanghai run date. This sends the Enterprise WeChat summary from the same weekly run instead of waiting only for the later notifier. The script is idempotent; if it says the notification was already sent, treat that as success.
+- If Enterprise WeChat notification fails, do not roll back or modify the already pushed weekly report. Report the non-secret notification blocker separately from the weekly push result.
 - Do not modify unrelated files.
-- Report the report path, covered window, main themes, key judgments, and pushed commit hash or blocker.
+- Report the report path, covered window, main themes, key judgments, pushed commit hash or blocker, and Enterprise WeChat notification status.
 """
 status = "ACTIVE"
 rrule = __RRULE_WEEKLY_JSON__

@@ -7,6 +7,7 @@ Before doing any notification work, determine the current time in Asia/Shanghai.
 
 - If the current Asia/Shanghai time is not Monday between 10:15:00 and 10:29:59, exit immediately with a concise no-op note and make no repository-tracked file changes.
 - If it is within that window, run `python3 scripts/send_wecom_report.py --kind weekly` from the current workspace git repository.
+- The weekly summary task should already send immediately after a successful push; this notifier is a fallback check and an `already sent` result is healthy.
 - The script sends the latest completed weekly report before the current week. It may read `WECOM_WEBHOOK_URL` from the environment or `.codex-run/wecom-notify.env`; never print webhook URLs, tokens, secrets, cookies, SSH keys, or private environment variables.
 - Do not edit report files or other repository-tracked files. The notifier is only responsible for sending a concise Enterprise WeChat summary after the report has already been pushed.
 - Report only a concise notification result: sent, skipped because already sent, skipped because webhook is not configured, skipped because report is not ready, or the exact non-secret blocker.

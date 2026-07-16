@@ -205,6 +205,8 @@
 ## 四、开源与社区观察
 
 - GitHub Trending: [github.com/trending](https://github.com/trending)
+- `GitHub 热门项目` 栏目优先发现主线之外的新兴 AI 开源项目和关键基础设施；不要用 OpenAI、Anthropic Claude Code、GitHub Copilot 及其官方仓库、SDK、CLI、文档仓库占位
+- `GitHub 热门项目` 候选需要和最近 7 天日报去重；如果重复收录，必须有新的 release、架构变化、生态采用、star / trending 明显跃迁或生产使用证据
 - Hugging Face: [huggingface.co](https://huggingface.co/)
 - Hugging Face Blog: [huggingface.co/blog](https://huggingface.co/blog)
 - Anthropic GitHub 组织: [github.com/anthropics](https://github.com/anthropics)

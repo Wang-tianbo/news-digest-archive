@@ -105,6 +105,9 @@
 - 外围情报不是每期必写；如果当天没有高置信度外围变量，正文省略该模块，并在结构化索引里写 `peripheral_themes: []`
 - 使用 `fact_confidence` 表示事实来源可靠性，使用 `signal_strength` 表示当天信号强弱，避免把“事实可靠”误读成“今天信号很强”
 - 对 changelog、release、trending、stars、排名等易变化信息，优先引用具体条目，并尽量附带版本号、日期或快照时间
+- `GitHub 热门项目` 用来发现主线之外的新兴 AI 开源项目和关键基础设施，默认排除 OpenAI、Anthropic Claude Code、GitHub Copilot 及其官方仓库、SDK、CLI、文档仓库；这些官方主线项目的重要更新应写入 `AI 新闻` 或 `AI 编程代理`
+- `GitHub 热门项目` 尽量不要重复最近 7 天已经写过的项目；只有出现新的 release、架构变化、生态采用、star / trending 明显跃迁或生产使用证据时，才允许重复并写明新增信息
+- 如果当天没有足够新鲜且有信息增量的热门项目，可以省略 `GitHub 热门项目`，不要用 OpenAI、Claude Code、Copilot 等主线官方项目占位
 - 对主要来源组，必须在 `source_checks` 中记录是否巡检、巡检时间和 `hit` / `miss` / `blocked` / `partial` 结果；推荐分组包括 `ai_blogger_core_radar`、`ai_blogger_free_opinion_pool`、`china_ai_media_signals`、`china_ai_engineering_radar`、`china_research_community`、`english_ai_engineering_radar`、`english_agent_infra_radar`、`english_inference_platforms`、`english_research_blogs`、`english_industry_analysis`、`english_safety_governance`
 - 对核心条目，建议在 `evidence_items` 中记录来源角色、证据类型、条目日期、快照时间、一手链接和置信理由
 - 对不确定信息明确标注

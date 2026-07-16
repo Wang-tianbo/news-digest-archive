@@ -72,7 +72,7 @@
 - OpenAI / Anthropic / Google / Meta / xAI / Microsoft / GitHub
 - DeepSeek / Qwen / 智谱 / Kimi / MiniMax / 百度 / 腾讯 / 字节 / 01.AI / 商汤
 - Codex / Claude Code / Cursor / GitHub Copilot / Gemini CLI / Devin / Qwen Code / Z Code
-- GitHub 热门 AI 项目、MCP 生态、vLLM、SGLang、llama.cpp、Transformers 等关键基础设施
+- GitHub 热门 AI 项目、MCP 生态、vLLM、SGLang、llama.cpp、Transformers 等关键基础设施；`GitHub 热门项目` 栏目优先发现主线之外的新兴项目，不用 OpenAI、Claude Code、Copilot 等官方主线项目占位
 
 观点与方法论观察：
 

@@ -203,7 +203,7 @@ def section_lines(lines: list[str], headings: list[str]) -> list[str]:
 
 
 def extract_snapshot(lines: list[str], limit: int = 5) -> list[str]:
-    section = section_lines(lines, ["## 结构化快照"])
+    section = section_lines(lines, ["## 30 秒摘要", "## 结构化快照"])
     bullets: list[str] = []
     for line in section:
         stripped = line.strip()
@@ -216,7 +216,7 @@ def extract_snapshot(lines: list[str], limit: int = 5) -> list[str]:
 
 def extract_judgment(lines: list[str], kind: str) -> list[str]:
     headings = {
-        "daily": ["## 今日评论与判断", "## 主线判断"],
+        "daily": ["## 我的判断", "## 今日评论与判断", "## 主线判断"],
         "weekly": ["## 本周评论与判断", "## 本周主线"],
         "monthly": ["## 本月评论与判断", "## 本月结论"],
         "yearly": ["## 全年评论与判断", "## 全年结论"],
@@ -297,7 +297,7 @@ def build_markdown(root: Path, target: ReportTarget, content: str, commit: str |
         body.append(f"> 远端提交：`{commit[:12]}`")
 
     if snapshot:
-        body.append("\n**结构化快照**")
+        body.append("\n**摘要快照**")
         body.extend(snapshot)
 
     if judgments:

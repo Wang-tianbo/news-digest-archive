@@ -134,25 +134,26 @@ python3 scripts/update_signal_feedback.py --date YYYY-MM-DD
 
 默认日报会包含这些模块：
 
-- `结构化快照`
-- `主线判断`
-- `今日评论与判断`
+- `30 秒摘要`
+- `我的判断`
 - `AI 新闻`
 - `AI 圈博主`
 - `AI 研究前沿`
 - `GitHub 热门项目`
 - `AI 外围情报观察`
 - `值得继续跟踪`
+- `判断变化`
 - `结构化索引`
-- `今日结构化结论`
 - `参考来源`
 
 其中有两个点是这个项目很看重的：
 
-- 正文前部是给人看的 `结构化快照`
-- 文末附近保留可折叠的 `结构化索引`，方便后续周报、月报、年报和机器聚合
+- 正文前部是给人看的 `30 秒摘要` 和 `我的判断`，方便先读结论再看事实
+- 完整机器索引默认写入 `metadata/daily/YYYY/YYYY-MM/YYYY-MM-DD.yml`，正文 `结构化索引` 只保留轻量入口，方便后续周报、月报、年报和机器聚合
+- `AI 圈博主` 默认按 `中文来源` 和 `英文来源` 分组，目标仍是中文 2 条、英文 3 条
 
 参考模板见 [templates/daily-report-template.md](templates/daily-report-template.md)。
+元数据模板见 [templates/daily-metadata-template.yml](templates/daily-metadata-template.yml)。
 
 ## 周报 / 月报 / 年报如何沉淀
 
@@ -181,6 +182,7 @@ python3 scripts/update_signal_feedback.py --date YYYY-MM-DD
 
 ```text
 daily/                  每日日报
+metadata/               日报 sidecar 元数据
 weekly/                 每周周报
 monthly/                每月月报
 yearly/                 每年年报
@@ -195,6 +197,7 @@ ledgers/                长期议题台账
 默认路径约定：
 
 - 日报：`daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
+- 日报元数据：`metadata/daily/YYYY/YYYY-MM/YYYY-MM-DD.yml`
 - 周报：`weekly/YYYY/YYYY-Www.md`
 - 月报：`monthly/YYYY/YYYY-MM.md`
 - 年报：`yearly/YYYY/YYYY.md`
@@ -317,6 +320,7 @@ python3 scripts/check_archive_health.py --strict-template
 - 接入 RSS / Atom / 官方账号流
 - 增加更多提醒渠道与更细粒度的摘要订阅
 - 基于 `结构化索引` 做自动聚合、检索和可视化
+- 基于 `metadata/daily/` 的 sidecar YAML 做更稳定的周报 / 月报 / 年报自动聚合
 
 ## 相关文档
 
@@ -327,6 +331,7 @@ python3 scripts/check_archive_health.py --strict-template
 - [docs/portable-setup.md](docs/portable-setup.md)
 - [docs/trend-ledger.md](docs/trend-ledger.md)
 - [templates/daily-report-template.md](templates/daily-report-template.md)
+- [templates/daily-metadata-template.yml](templates/daily-metadata-template.yml)
 - [templates/weekly-report-template.md](templates/weekly-report-template.md)
 - [templates/monthly-report-template.md](templates/monthly-report-template.md)
 - [templates/yearly-report-template.md](templates/yearly-report-template.md)

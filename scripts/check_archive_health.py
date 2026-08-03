@@ -23,12 +23,11 @@ AUTOMATION_IDS = [
     "monthly-ai-digest-notify",
     "yearly-ai-digest-notify",
 ]
-REQUIRED_DAILY_SECTIONS = [
-    "## 结构化快照",
-    "## 主线判断",
-    "## 今日评论与判断",
-    "## 结构化索引",
-    "## 参考来源",
+REQUIRED_DAILY_SECTION_GROUPS = [
+    ("摘要", ["## 30 秒摘要", "## 结构化快照"]),
+    ("判断", ["## 我的判断", "## 今日评论与判断", "## 主线判断"]),
+    ("结构化索引", ["## 结构化索引"]),
+    ("参考来源", ["## 参考来源"]),
 ]
 DAILY_SECTION_ALIASES = [
     ("AI 新闻", ["## AI 新闻", "## 今日最重要"]),
@@ -79,6 +78,10 @@ def parse_date(value: str) -> date:
 
 def daily_path(root: Path, day: date) -> Path:
     return root / "daily" / f"{day:%Y}" / f"{day:%Y-%m}" / f"{day:%Y-%m-%d}.md"
+
+
+def daily_metadata_path(root: Path, day: date) -> Path:
+    return root / "metadata" / "daily" / f"{day:%Y}" / f"{day:%Y-%m}" / f"{day:%Y-%m-%d}.yml"
 
 
 def weekly_path(root: Path, day: date) -> Path:
@@ -244,18 +247,27 @@ def validate_daily_structure(root: Path, day: date, max_lines: int, strict_templ
         details.append(f"{rel} title mismatch; expected `{expected_title}`")
     if len(lines) > max_lines:
         details.append(f"{rel} has {len(lines)} lines, above threshold {max_lines}")
-    for section in REQUIRED_DAILY_SECTIONS:
-        if section not in content:
-            details.append(f"{rel} missing section `{section}`")
+    for label, aliases in REQUIRED_DAILY_SECTION_GROUPS:
+        if not any(alias in content for alias in aliases):
+            details.append(f"{rel} missing section `{label}` or a legacy equivalent")
     for label, aliases in DAILY_SECTION_ALIASES:
         if not any(alias in content for alias in aliases):
             details.append(f"{rel} missing section `{label}` or a legacy equivalent")
+    metadata_content = content
+    metadata_path = daily_metadata_path(root, day)
+    if "metadata/daily/" in content and not metadata_path.is_file():
+        details.append(f"{rel} references missing metadata sidecar `{metadata_path.relative_to(root)}`")
+    if metadata_path.is_file():
+        try:
+            metadata_content += "\n" + read_text(metadata_path)
+        except UnicodeDecodeError as exc:
+            details.append(f"{metadata_path.relative_to(root)} is not valid UTF-8: {exc}")
     for key in REQUIRED_DAILY_METADATA:
-        if key not in content:
+        if key not in metadata_content:
             details.append(f"{rel} missing metadata key `{key}`")
     if strict_template:
         for key in STRICT_DAILY_METADATA:
-            if key not in content:
+            if key not in metadata_content:
                 details.append(f"{rel} missing strict-template metadata key `{key}`")
     if "http://" not in content and "https://" not in content:
         details.append(f"{rel} has no clickable source link")

@@ -1,0 +1,88 @@
+date: YYYY-MM-DD
+window_start: YYYY-MM-DD 09:00 Asia/Shanghai
+window_end: YYYY-MM-DD 09:00 Asia/Shanghai
+supplemental_range: none
+themes:
+  - agent_api
+  - runtime_governance
+regions:
+  - us
+  - china
+companies:
+  - OpenAI
+  - Anthropic
+products:
+  - Codex
+  - Claude Code
+signals:
+  - API 化
+  - 团队治理
+opinion_sources:
+  - Simon Willison
+viewpoint_themes:
+  - AI 编程方法论
+research_sources:
+  - arXiv
+research_themes:
+  - agent_evaluation
+research_artifacts:
+  - paper
+research_interpretations:
+  - none
+peripheral_themes:
+  - 算力与半导体
+candidate_usage:
+  used_local_signal_inbox: false
+  review_path: null
+  adopted:
+    - candidate_id: sig_example
+      title: example candidate
+      adoption_reason: why it entered the digest
+  rejected_or_deferred:
+    - candidate_id: sig_example_deferred
+      status: 观察中
+      rejection_reason: why it stayed out of the digest
+source_checks:
+  - source_id: core_official_ai_news
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: hit
+    note: checked exact article/changelog/release page
+  - source_id: ai_blogger_core_radar
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: miss
+    note: no high-value clue included
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: partial
+    note: checked reproducible blogs/RSS/GitHub sources; access-limited entries marked partial or blocked
+  - source_id: china_ai_engineering_radar
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: miss
+    note: checked GitHub/RSS engineering sources for high-value AI project signals
+  - source_id: english_ai_engineering_radar
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: miss
+    note: checked English AI engineering and local model tool sources
+  - source_id: research_frontier
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: hit
+    note: original paper/research page retained when included
+  - source_id: local_signal_inbox
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: hit
+    note: optional local candidate review used as clue layer; not a replacement for primary sources
+evidence_items:
+  - item_id: news-1
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: YYYY-MM-DD
+    snapshot_time: YYYY-MM-DD HH:MM Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://example.com
+    confidence_reason: official release note with exact URL
+followups:
+  - GitHub 是否继续扩展 agent task API
+fact_confidence: high
+signal_strength: medium

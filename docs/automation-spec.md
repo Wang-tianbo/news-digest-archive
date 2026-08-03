@@ -28,12 +28,15 @@
 ## 报告要求
 
 - 输出文件路径：`daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
+- 元数据输出路径：`metadata/daily/YYYY/YYYY-MM/YYYY-MM-DD.yml`
 - 标题格式：`# AI 日报 - YYYY-MM-DD`
 - 必须包含可点击来源链接
 - 必须优先使用官方来源
 - 必须使用绝对日期，避免“今天”“昨天”
-- 必须包含独立的评论 / 判断模块
-- 建议包含一个简短的“结构化快照”，并在文末附近提供可折叠的完整 YAML 元数据，记录主题、公司、产品、信号、opinion_sources、viewpoint_themes、research_sources、research_themes、research_artifacts、research_interpretations、source_checks、evidence_items、followups、fact_confidence 和 signal_strength，便于后续周报 / 月报聚合
+- 必须包含独立的 `我的判断` 模块
+- 必须包含一个简短的 `30 秒摘要`
+- 完整 YAML 元数据默认写入 sidecar 文件，记录主题、公司、产品、信号、opinion_sources、viewpoint_themes、research_sources、research_themes、research_artifacts、research_interpretations、candidate_usage、source_checks、evidence_items、followups、fact_confidence 和 signal_strength，便于后续周报 / 月报聚合
+- 正文 `结构化索引` 只保留 sidecar 路径和轻量说明；只有 sidecar 无法生成时，才临时退回可折叠 YAML
 
 ## AI 信号候选收件箱
 
@@ -113,11 +116,11 @@
 - 媒体、资讯整理、GitHub 项目动态和社区资源进入 AI 圈博主时默认标为 `信息线索`，涉及事实时尽量补官方发布、论文原文、release 或原始项目链接
 - 中英文扩展源每天合计要求选 5 条社区 / 观点信号：中文来源 2 条、英文来源 3 条；无足够可复查信息增量时可少于 5 条，但必须在 `source_checks` 说明缺口，不机械凑数
 - 同一来源可以连续入选；判断依据是是否有新的、可复查的信息增量，而不是人为轮换来源
-- AI 圈博主默认每天写 5 条，中文来源 2 条、英文来源 3 条；只有在完成核心雷达、中文公开源、英文个人 / newsletter 源和工程社区源巡检后仍无足够可复查信息增量时，正文才可少于 5 条或省略该模块，并在结构化索引里写明缺口
+- AI 圈博主默认每天写 5 条，中文来源 2 条、英文来源 3 条，并在正文中按 `中文来源` / `英文来源` 分组；只有在完成核心雷达、中文公开源、英文个人 / newsletter 源和工程社区源巡检后仍无足够可复查信息增量时，正文才可少于 5 条或省略该模块，并在元数据 sidecar 的 `source_checks` 里写明缺口
 - AI 研究前沿条目必须标明 `类型：论文 / 研究博客 / benchmark / eval / 开源实现 / 实验室动向`，并保留原文链接
 - 权威解读只能作为辅助理解材料，不能替代论文或研究原文
-- AI 研究前沿不是每期必写；如果当天没有高价值论文或研究动向，正文省略该模块，并在结构化索引里写 `research_sources: []`、`research_themes: []`、`research_artifacts: []` 和 `research_interpretations: []`
-- 外围情报不是每期必写；如果当天没有高置信度外围变量，正文省略该模块，并在结构化索引里写 `peripheral_themes: []`
+- AI 研究前沿不是每期必写；如果当天没有高价值论文或研究动向，正文省略该模块，并在元数据 sidecar 里写 `research_sources: []`、`research_themes: []`、`research_artifacts: []` 和 `research_interpretations: []`
+- 外围情报不是每期必写；如果当天没有高置信度外围变量，正文省略该模块，并在元数据 sidecar 里写 `peripheral_themes: []`
 - 使用 `fact_confidence` 表示事实来源可靠性，使用 `signal_strength` 表示当天信号强弱，避免把“事实可靠”误读成“今天信号很强”
 - 对 changelog、release、trending、stars、排名等易变化信息，优先引用具体条目，并尽量附带版本号、日期或快照时间
 - `GitHub 热门项目` 用来发现主线之外的新兴 AI 开源项目和关键基础设施，默认排除 OpenAI、Anthropic Claude Code、GitHub Copilot 及其官方仓库、SDK、CLI、文档仓库；这些官方主线项目的重要更新应写入 `AI 新闻` 或 `AI 编程代理`
@@ -129,7 +132,7 @@
 
 ## Git 要求
 
-- 只提交本次生成或更新的日报文件
+- 只提交本次生成或更新的日报文件和对应元数据 sidecar
 - commit message 使用：`docs: add ai digest for YYYY-MM-DD`
 - 默认推送到 `main`
 

@@ -7,12 +7,12 @@ Before doing any research, determine the current time in Asia/Shanghai.
 
 - If the current Asia/Shanghai time is not between 09:00:00 and 09:14:59, exit immediately with a concise no-op note and make no file or git changes.
 - If it is within that window, run `git fetch origin main` before deciding whether today's digest already exists.
-- Compute today's digest path `daily/YYYY/YYYY-MM/YYYY-MM-DD.md` using the current Asia/Shanghai date. If `origin/main` already contains that path, sync the local branch if safe, exit with a concise no-op note, and make no report changes.
+- Compute today's digest path `daily/YYYY/YYYY-MM/YYYY-MM-DD.md` and metadata sidecar path `metadata/daily/YYYY/YYYY-MM/YYYY-MM-DD.yml` using the current Asia/Shanghai date. If `origin/main` already contains the digest path and either the matching metadata sidecar exists or the digest is a legacy embedded-YAML report without a sidecar reference, sync the local branch if safe, exit with a concise no-op note, and make no report changes. If the digest exists but references a missing sidecar, treat the run as incomplete and repair the metadata sidecar if safe.
 - Use a local untracked lock file under `.codex-run/` for today's report while generating. If a fresh lock from another run exists, exit with a concise no-op note and make no report changes.
-- If a local digest file already exists but is not committed and pushed to `origin/main`, do not treat it as complete. Validate its structure, then either finish the commit/push path or report the exact blocker.
+- If a local digest file or its referenced metadata sidecar already exists but is not committed and pushed to `origin/main`, do not treat it as complete. Validate the pair, then either finish the commit/push path or report the exact blocker.
 - If the file is missing locally and on `origin/main`, research and write the daily AI digest for the current scheduled run using the current workspace git repository as the archive.
 
-Determine the report date in Asia/Shanghai and cover the window from the previous 09:00:00 to the current 09:00:00 Asia/Shanghai bucket using the automation schedule time; if schedule metadata is unavailable, fall back to the previous 24 hours and state that fallback explicitly in the report. Create or update `daily/YYYY/YYYY-MM/YYYY-MM-DD.md` with title `# AI 日报 - YYYY-MM-DD`. Follow the repository guidance in `README.md`, `docs/coverage-map.md`, `docs/editorial-guidelines.md`, `docs/source-watchlist.md`, and `docs/automation-spec.md`.
+Determine the report date in Asia/Shanghai and cover the window from the previous 09:00:00 to the current 09:00:00 Asia/Shanghai bucket using the automation schedule time; if schedule metadata is unavailable, fall back to the previous 24 hours and state that fallback explicitly in the report. Create or update the human-readable digest at `daily/YYYY/YYYY-MM/YYYY-MM-DD.md` with title `# AI 日报 - YYYY-MM-DD`, and create or update the machine-readable metadata sidecar at `metadata/daily/YYYY/YYYY-MM/YYYY-MM-DD.yml`. Follow the repository guidance in `README.md`, `docs/coverage-map.md`, `docs/editorial-guidelines.md`, `docs/source-watchlist.md`, `docs/automation-spec.md`, `templates/daily-report-template.md`, and `templates/daily-metadata-template.yml`.
 
 Optional local signal inbox:
 - If `.codex-run/signal-reviews/YYYY-MM-DD.md` exists for the report date, read it as an auxiliary candidate review before broad research. Use candidates marked `已采用`, `观察中`, `补证据`, or high-scoring `待审` items as clue leads only.
@@ -49,7 +49,7 @@ Data-source requirements:
 - Use dynamic update streams where relevant: changelog pages, release notes pages, GitHub releases, recent org activity, and documentation update pages.
 - Prefer deep links to the exact changelog entry, release page, doc page, or article when possible instead of only top-level index pages.
 - Treat personal viewpoints and curated posts as clue or opinion samples, not as factual confirmation. Do not use a person's blog post, public comment, or curated roundup as the sole factual source for a news item; when practical, add the official source or original project link.
-- Record enough source-check context in the YAML metadata to make the run auditable, including key source groups checked, approximate `checked_at` time, and any important `hit`, `miss`, or `blocked` result.
+- Record enough source-check context in the metadata sidecar to make the run auditable, including key source groups checked, approximate `checked_at` time, and any important `hit`, `miss`, or `blocked` result.
 
 Content requirements:
 - Focus on global AI hotspots with priority on Chinese and US model companies.
@@ -58,43 +58,44 @@ Content requirements:
 - Expand beyond AI-only headlines when warranted, but keep the center of gravity on AI. Only include adjacent signals when they clearly feed back into AI competition, model deployment, developer workflows, governance, or adoption.
 - Include clickable source links for every major item and use absolute dates instead of relative wording.
 - Keep the digest concise and high signal.
-- Include a short human-readable `结构化快照` near the top of the report following the repository template.
-- Place the full machine-friendly YAML metadata in a `结构化索引` section later in the report, preferably inside a collapsible block, capturing at least date/window, supplemental range, themes, regions, companies, products, signals, opinion_sources, viewpoint_themes, research_sources, research_themes, research_artifacts, research_interpretations, followups, fact_confidence, and signal_strength.
-- Include `source_checks` metadata for the main source groups checked during the run. Each entry should record `source_id`, `checked_at`, `result: hit|miss|blocked|partial`, and a short note.
+- Include a short human-readable `30 秒摘要` near the top of the report following the repository template.
+- Include a dedicated `我的判断` section immediately after `30 秒摘要`. This section must synthesize the three radars (`AI 新闻`, `AI 圈博主`, and `AI 研究前沿`) and go beyond summarizing facts to capture the day's independent judgment about competitive dynamics, product momentum, technical direction, workflow change, weak signals versus real trends, and what is worth tracking next.
+- Make it explicit that the judgment section is based on the current report's sample of confirmed facts.
+- Place full machine-friendly YAML metadata in `metadata/daily/YYYY/YYYY-MM/YYYY-MM-DD.yml`, capturing at least date/window, supplemental range, themes, regions, companies, products, signals, opinion_sources, viewpoint_themes, research_sources, research_themes, research_artifacts, research_interpretations, candidate_usage, followups, fact_confidence, and signal_strength.
+- In the report's `结构化索引` section, only include the metadata sidecar path and a lightweight pointer to `source_checks`, `evidence_items`, and `candidate_usage`.
+- Include `source_checks` metadata in the sidecar for the main source groups checked during the run. Each entry should record `source_id`, `checked_at`, `result: hit|miss|blocked|partial`, and a short note.
 - If the optional local signal inbox was read, include a `source_checks` entry for `local_signal_inbox` with `hit`; if it was missing, use `miss` or omit it, but do not treat this as a digest failure.
-- Include `evidence_items` metadata for the major included items. Each entry should record `item_id`, `section`, `source_role: official|research|opinion|media|community`, `evidence_type`, `item_date`, `snapshot_time` when relevant, `verification_status`, `linked_primary_sources`, and a short `confidence_reason`.
-- If qualifying clues or opinion samples are included, add an `AI 圈博主` section with `类型：信息线索 / 观点判断 / 方法论 / 实践复盘`, `摘要`, `为什么值得记录`, `我的判断`, and `来源`. If no reproducible information-gain clue or opinion sample is found after the expanded scan, omit the body section and set `opinion_sources: []` and `viewpoint_themes: []` in YAML.
+- If the optional local signal inbox influenced inclusion or deferral, include `candidate_usage` in the sidecar with adopted and rejected/deferred candidate ids and concise adoption/rejection reasons; do not expose private local paths beyond the generic review path.
+- Include `evidence_items` metadata in the sidecar for the major included items. Each entry should record `item_id`, `section`, `source_role: official|research|opinion|media|community`, `evidence_type`, `item_date`, `snapshot_time` when relevant, `verification_status`, `linked_primary_sources`, and a short `confidence_reason`.
+- If qualifying clues or opinion samples are included, add an `AI 圈博主` section with `类型：信息线索 / 观点判断 / 方法论 / 实践复盘`, `摘要`, `为什么值得记录`, `我的判断`, and `来源`. If no reproducible information-gain clue or opinion sample is found after the expanded scan, omit the body section and set `opinion_sources: []` and `viewpoint_themes: []` in the metadata sidecar.
 - For `AI 圈博主`, media coverage, curated roundups, GitHub project activity, and community resource updates should default to `类型：信息线索`, and must not replace official sources. Across Chinese and English expanded sources, include 5 community/viewpoint signals: 2 Chinese-source items and 3 English-source items.
-- If high-value research frontier items are included, add an `AI 研究前沿` section with `类型：论文 / 研究博客 / benchmark / eval / 开源实现 / 实验室动向`, `研究问题`, `核心思路`, `为什么可能影响未来`, `局限 / 待验证点`, `研究成熟度`, `可复现状态`, `原文链接`, `权威解读`, and `我的判断`. If there are no high-value research frontier items, omit the body section and set `research_sources: []`, `research_themes: []`, `research_artifacts: []`, and `research_interpretations: []` in YAML.
-- When adjacent signals are included, record them under `peripheral_themes` in the YAML metadata and summarize them in an `AI 外围情报观察` section. If there are no high-confidence adjacent signals, omit the body section and set `peripheral_themes: []`.
+- If high-value research frontier items are included, add an `AI 研究前沿` section with `类型：论文 / 研究博客 / benchmark / eval / 开源实现 / 实验室动向`, `研究问题`, `核心思路`, `为什么可能影响未来`, `局限 / 待验证点`, `研究成熟度`, `可复现状态`, `原文链接`, `权威解读`, and `我的判断`. If there are no high-value research frontier items, omit the body section and set `research_sources: []`, `research_themes: []`, `research_artifacts: []`, and `research_interpretations: []` in the metadata sidecar.
+- When adjacent signals are included, record them under `peripheral_themes` in the metadata sidecar and summarize them in an `AI 外围情报观察` section. If there are no high-confidence adjacent signals, omit the body section and set `peripheral_themes: []`.
 - Use `fact_confidence` for source reliability and `signal_strength` for how important the day's signal is; do not use one generic confidence value for both.
 - Reuse stable labels for themes, companies, and products where possible so later weekly/monthly summaries can aggregate them consistently.
-- Include a dedicated `今日评论与判断` section. This section must synthesize the three radars (`AI 新闻`, `AI 圈博主`, and `AI 研究前沿`) and go beyond summarizing facts to capture the day's independent judgment about competitive dynamics, product momentum, technical direction, workflow change, weak signals versus real trends, and what is worth tracking next.
-- Make it explicit that the judgment section is based on the current report's sample of confirmed facts.
 - For changing metrics such as stars, trending position, release cadence, or similar snapshots, include a date, version number, or snapshot time when practical.
 - For the `GitHub 热门项目` section, prioritize emerging AI open-source projects and key infrastructure outside the already tracked official mainline. Do not use OpenAI, Anthropic Claude Code, GitHub Copilot, or their official repositories, SDKs, CLIs, and docs repos as filler in this section; put their material updates in `AI 新闻` or `AI 编程代理` instead.
 - Avoid repeating projects already covered in recent daily digests, especially within the last 7 days. Only repeat a project when there is a new release, architecture change, ecosystem adoption, clear star/trending jump, or production-use evidence, and state the new information explicitly.
 - If there is no fresh GitHub project with real information gain, omit `GitHub 热门项目` rather than filling it with mainline official projects.
 
 Recommended structure:
-- 结构化快照
-- 主线判断
-- 今日评论与判断
+- 30 秒摘要
+- 我的判断
 - AI 新闻, including the day's most important 3-5 official/company/model/product updates
-- AI 圈博主, when there is a reproducible AI clue, opinion sample, methodology note, practice review, tool discovery, or community signal with information gain
+- AI 圈博主, grouped by `中文来源` and `英文来源` when there is a reproducible AI clue, opinion sample, methodology note, practice review, tool discovery, or community signal with information gain
 - AI 研究前沿, only when there is a high-value paper or research signal
 - AI 外围情报观察, only when there is a high-confidence adjacent signal
 - GitHub 热门项目
 - 值得继续跟踪
+- 判断变化
 - 结构化索引
-- 今日结构化结论
 - 参考来源
 
 Git requirements:
 - Fetch `origin/main` before writing and before committing.
 - Do not generate a duplicate report if `origin/main` already contains today's digest path.
-- Stage only the generated digest file.
-- Before committing, run `git diff --cached --name-only` and verify that the staged file list contains only the generated digest file.
+- Stage only the generated digest file and its matching metadata sidecar.
+- Before committing, run `git diff --cached --name-only` and verify that the staged file list contains only the generated digest file and `metadata/daily/YYYY/YYYY-MM/YYYY-MM-DD.yml`.
 - Commit with `docs: add ai digest for YYYY-MM-DD` or `docs: update ai digest for YYYY-MM-DD` if the file already existed.
 - Push to `origin main`.
 - Do not send Enterprise WeChat notifications for daily reports. The group notification cadence is weekly, after the weekly summary is generated and pushed.

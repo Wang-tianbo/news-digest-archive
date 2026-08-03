@@ -23,6 +23,9 @@ except ImportError:  # pragma: no cover - Python < 3.9 fallback.
 
 SHANGHAI_TZ = timezone(timedelta(hours=8))
 RRULE_WEEKDAYS = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]
+SIGNAL_INBOX_TRIGGER_HOUR = 8
+SIGNAL_INBOX_TRIGGER_MINUTE = 40
+SIGNAL_INBOX_TRIGGER_SECOND = 0
 DAILY_TRIGGER_HOUR = 9
 DAILY_TRIGGER_MINUTE = 5
 DAILY_TRIGGER_SECOND = 0
@@ -39,6 +42,16 @@ YEARLY_NOTIFY_HOUR = 10
 YEARLY_NOTIFY_MINUTE = 25
 YEARLY_NOTIFY_SECOND = 0
 AUTOMATIONS = [
+    {
+        "id": "daily-ai-signal-inbox",
+        "template": "daily-ai-signal-inbox.toml.template",
+        "rrule_key": "__RRULE_SIGNAL_INBOX_JSON__",
+        "schedule": lambda: daily_rrule_for_shanghai_clock(
+            SIGNAL_INBOX_TRIGGER_HOUR,
+            SIGNAL_INBOX_TRIGGER_MINUTE,
+            SIGNAL_INBOX_TRIGGER_SECOND,
+        ),
+    },
     {
         "id": "daily-ai-digest-archive",
         "template": "daily-ai-digest-archive.toml.template",
@@ -446,6 +459,16 @@ def main() -> None:
             )
         )
     )
+    signal_inbox_trigger_times = describe_clock_candidates(
+        clock_candidates_for_shanghai_datetimes(
+            shanghai_clock_samples(
+                year,
+                SIGNAL_INBOX_TRIGGER_HOUR,
+                SIGNAL_INBOX_TRIGGER_MINUTE,
+                SIGNAL_INBOX_TRIGGER_SECOND,
+            )
+        )
+    )
     watchdog_trigger_times = describe_clock_candidates(
         clock_candidates_for_shanghai_datetimes(
             shanghai_clock_samples(
@@ -537,6 +560,11 @@ def main() -> None:
     print(f"Repository root: {root}")
     print(f"Git origin: {origin_url or 'not configured'}")
     print(f"Local timezone: {timezone_label}")
+    print(
+        "Daily signal inbox trigger candidates for "
+        f"Asia/Shanghai {SIGNAL_INBOX_TRIGGER_HOUR:02d}:{SIGNAL_INBOX_TRIGGER_MINUTE:02d}: "
+        f"{signal_inbox_trigger_times}"
+    )
     print(
         "Daily trigger candidates for "
         f"Asia/Shanghai {DAILY_TRIGGER_HOUR:02d}:{DAILY_TRIGGER_MINUTE:02d}: "

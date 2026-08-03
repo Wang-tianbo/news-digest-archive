@@ -1,6 +1,6 @@
 # 跨电脑恢复指南
 
-这份指南的目标很简单：不论你是换一台电脑，还是第一次 fork 这个项目，只要把仓库拉下来，再执行一次安装脚本，就能把这套 `日报 + 日报 watchdog + 周报 + 月报 + 年报 + 企业微信提醒` 自动化恢复到可运行状态。
+这份指南的目标很简单：不论你是换一台电脑，还是第一次 fork 这个项目，只要把仓库拉下来，再执行一次安装脚本，就能把这套 `候选收件箱 + 日报 + 日报 watchdog + 周报 + 月报 + 年报 + 企业微信提醒` 自动化恢复到可运行状态。
 
 ## 最推荐的使用方式
 
@@ -50,11 +50,11 @@ bash scripts/install_codex_daily_digest.sh
 
 - 检查当前目录是否像一个可用的 Git 仓库
 - 检查仓库里是否存在自动化模板文件
-- 计算当前电脑本地时间里，对应 `Asia/Shanghai 09:05` 的触发时间
+- 计算当前电脑本地时间里，对应 `Asia/Shanghai 08:40` 候选收件箱和 `09:05` 日报的触发时间
 - 额外写入 UTC 时钟候选触发时间，用来兼容不同 Codex Desktop 版本对 cron `BYHOUR` 的解释差异
 - 生成本机可用的 Codex 自动化配置
 - 把仓库当前绝对路径写入自动化的 `cwds`
-- 写入日报、日报 watchdog、周报、月报、年报和企业微信提醒八个 automation 目录下的 `automation.toml`
+- 写入候选收件箱、日报、日报 watchdog、周报、月报、年报和企业微信提醒九个 automation 目录下的 `automation.toml`
 
 安装器不会替你登录 Codex，也不会替你自动创建 GitHub fork；它负责的是把“这台电脑上的 Codex 自动化配置”恢复好。
 
@@ -79,6 +79,7 @@ bash scripts/install_codex_daily_digest.sh
 
 同时，安装器也会一并安装：
 
+- 候选收件箱：每天 `08:40 Asia/Shanghai`
 - 日报 watchdog：每天 `09:35 Asia/Shanghai`
 - 周报：每周一 `09:10 Asia/Shanghai`
 - 月报：每月 `1` 日 `09:15 Asia/Shanghai`
@@ -91,6 +92,8 @@ bash scripts/install_codex_daily_digest.sh
 日报晚 5 分钟触发，是为了避开本机多个 Codex automation 同时在 `09:00` 启动时可能出现的后台静默结束。报告归档仍按 `09:00-09:00 Asia/Shanghai` 计算，不会改变日报内容口径。
 
 日报 watchdog 是一层保险丝：它每天 `09:35` 检查当天日报文件是否已经存在。如果主日报任务正常完成，watchdog 不会修改仓库；如果主任务触发后静默失败或没有落盘，watchdog 会按同一日报规则补写并推送。
+
+候选收件箱任务每天 `08:40` 只生成 `.codex-run/signal-reviews/YYYY-MM-DD.md`，供 `09:05` 日报读取。它不修改 Git、不提交、不推送、不发通知；如果失败，日报仍会按原有 watchlist 规则生成。
 
 安装脚本不会直接假设“每台电脑都在中国时区”，而是会优先使用当前电脑的 IANA 本地时区规则，把日报、周报、月报、年报各自对应的 `Asia/Shanghai` 触发时刻换算成本地触发时间，再写入自动化配置。这样你在另一台电脑上恢复时，不需要手工改时间。
 
@@ -109,6 +112,7 @@ bash scripts/install_codex_daily_digest.sh
 安装完成后，可以检查下面这些文件是否已生成：
 
 - `${CODEX_HOME:-~/.codex}/automations/daily-ai-digest-archive/automation.toml`
+- `${CODEX_HOME:-~/.codex}/automations/daily-ai-signal-inbox/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/daily-ai-digest-watchdog/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/weekly-ai-digest-summary/automation.toml`
 - `${CODEX_HOME:-~/.codex}/automations/monthly-ai-digest-summary/automation.toml`
@@ -122,13 +126,14 @@ bash scripts/install_codex_daily_digest.sh
 1. 重新打开 Codex，确认自动化已经出现在本机配置里
 2. 运行 `git remote -v`，确认 `origin` 指向你自己的仓库
 3. 确认每天 09:05 Asia/Shanghai 之后，日报会写入 `daily/YYYY/YYYY-MM/YYYY-MM-DD.md`
-4. 确认每天 09:35 Asia/Shanghai 的 watchdog automation 文件已经生成
-5. 确认周报 / 月报 / 年报和企业微信提醒的 automation 文件也已经生成
-6. 运行 `python3 scripts/check_archive_health.py --fetch`，确认最近日报、已完成周报、已完成月报、本机 automation 和 Git 远端同步状态正常
+4. 确认每天 08:40 Asia/Shanghai 的候选收件箱 automation 文件已经生成
+5. 确认每天 09:35 Asia/Shanghai 的 watchdog automation 文件已经生成
+6. 确认周报 / 月报 / 年报和企业微信提醒的 automation 文件也已经生成
+7. 运行 `python3 scripts/check_archive_health.py --fetch`，确认最近日报、已完成周报、已完成月报、本机 automation 和 Git 远端同步状态正常
 
 如果你只是想先验证安装器是否工作，不想等到第二天，也可以先检查自动化文件是否已经生成，再手动阅读里面的 `cwds` 和 `rrule` 是否符合预期。
 
-在中国时区机器上，日报主任务的 `rrule` 通常应同时包含 `BYHOUR=1,9;BYMINUTE=5`，watchdog 应同时包含 `BYHOUR=1,9;BYMINUTE=35`。其中 `9` 覆盖本地时钟解释，`1` 覆盖 UTC 时钟解释；真正写报告的仍只有上海时间 09 点窗口。
+在中国时区机器上，候选收件箱的 `rrule` 通常应同时包含 `BYHOUR=0,8;BYMINUTE=40`，日报主任务应同时包含 `BYHOUR=1,9;BYMINUTE=5`，watchdog 应同时包含 `BYHOUR=1,9;BYMINUTE=35`。其中本地小时覆盖本地时钟解释，UTC 小时覆盖 UTC 时钟解释；真正写报告的仍只有上海时间业务窗口。
 
 ## 企业微信提醒配置
 

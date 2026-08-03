@@ -204,6 +204,7 @@ ledgers/                长期议题台账
 这个仓库当前已经具备：
 
 - 每天 `09:05 Asia/Shanghai` 自动触发日报生成，业务口径仍固定为 `09:00` 桶
+- 每天 `08:40 Asia/Shanghai` 预生成本地 `AI 信号候选收件箱` review，供 09:05 日报作为可选线索层读取
 - 每天 `09:35 Asia/Shanghai` 自动巡检日报是否已生成；如主任务静默失败，由 watchdog 兜底补跑
 - 自动化安装器会同时写入本地时钟和 UTC 时钟候选触发点，以兼容不同 Codex 版本的 cron 解释差异；任务正文会再次校验真实 `Asia/Shanghai` 窗口，窗口外只会 no-op
 - 每周 / 每月 / 每年自动生成高层总结
@@ -223,6 +224,7 @@ ledgers/                长期议题台账
 
 日报自动化的业务时间固定为：
 
+- 候选收件箱预生成：每天 `08:40 Asia/Shanghai`
 - 触发时间：每天 `09:05 Asia/Shanghai`
 - 兜底巡检：每天 `09:35 Asia/Shanghai`
 - 企业微信提醒：日报不发送群消息，统一等周报汇总后提醒
@@ -231,6 +233,8 @@ ledgers/                长期议题台账
 如果严格时间窗内高价值更新太少，允许补充最近几天仍在发酵的一手信息，但不能和前几日日报简单重复。
 
 说明：日报错峰到 `09:05` 是为了避开本机多个 Codex automation 同时在 `09:00` 抢启动造成的静默结束风险；`09:35` watchdog 用来检查主任务是否真的落盘，避免后台 automation 静默结束后无人发现。报告的业务时间窗不变，仍按 `09:00-09:00 Asia/Shanghai` 归档。
+
+`08:40` 的候选收件箱任务只写 `.codex-run/` 本地文件，不修改仓库、不提交、不推送、不发群消息。它失败时不会影响 `09:05` 日报，只是日报少一个本地候选 review 作为辅助线索。
 
 可靠性补充：Codex Desktop 的 cron 在不同版本里可能按本地时钟或 UTC 时钟解释 `BYHOUR`。安装器因此会写入两组候选触发时间；真正执行前，日报和 watchdog 都会读取当前 `Asia/Shanghai` 时间并检查当天文件是否已存在。只有“处于正确上海时间窗口且当天日报缺失”时才会写入仓库，其他候选触发会安全退出，不会重复生成日报。
 
@@ -268,7 +272,7 @@ python3 scripts/send_wecom_report.py --kind weekly --dry-run
 2. 克隆你自己的仓库到本地
 3. 确保 Codex 已登录，且当前仓库具备 `git push` 权限
 4. 在仓库根目录运行 `python3 scripts/install_codex_daily_digest.py`
-5. 安装器会一次性写入日报、日报 watchdog、周报、月报、年报和企业微信提醒这八个 Codex 自动化任务
+5. 安装器会一次性写入候选收件箱、日报、日报 watchdog、周报、月报、年报和企业微信提醒这九个 Codex 自动化任务
 
 详细说明见 [docs/portable-setup.md](docs/portable-setup.md)。
 

@@ -13,6 +13,7 @@ from pathlib import Path
 
 SHANGHAI_TZ = timezone(timedelta(hours=8))
 AUTOMATION_IDS = [
+    "daily-ai-signal-inbox",
     "daily-ai-digest-archive",
     "daily-ai-digest-watchdog",
     "weekly-ai-digest-summary",

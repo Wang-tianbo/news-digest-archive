@@ -12,6 +12,8 @@
 - 优先使用官方来源
 - 如果引用媒体报道，尽量补上一手来源
 - 每条重要信息都保留可点击来源链接
+- 本地 `AI 信号候选收件箱` 只作为候选线索入口，不能替代官方发布、论文原文、release、changelog 或原始项目链接
+- 候选 review 里的采用理由和未采用理由都要尽量短而具体，方便后续周报、月报、年报复盘
 
 ## 3. 选题方法
 
@@ -137,6 +139,8 @@
 - `source_checks` 用于记录本次运行实际巡检过的主要来源组，例如 `coding_agent_releases`、`china_model_officials`、`ai_blogger_core_radar`、`ai_blogger_free_opinion_pool`、`china_ai_media_signals`、`china_ai_engineering_radar`、`china_research_community`、`english_ai_engineering_radar`、`english_agent_infra_radar`、`english_inference_platforms`、`english_research_blogs`、`english_industry_analysis`、`english_safety_governance`、`research_frontier`
 - `source_checks.result` 建议使用 `hit`、`miss`、`blocked`、`partial`；访问受限、入口不稳定或只完成部分巡检时用 `partial`
 - `evidence_items` 用于记录核心条目的证据链，`source_role` 建议使用 `official`、`research`、`opinion`、`media`、`community`，`verification_status` 建议使用 `verified`、`partial`、`unverified`
+- 候选收件箱中的 `adoption_reason` 用于记录为什么值得进入日报，`rejection_reason` 用于记录为什么暂不写入；未采用理由同样是长期认知资产
+- 候选收件箱中的 `retrospective_status` 建议使用 `待验证`、`被强化`、`被削弱`、`被推翻`、`进入稳定现实`、`仍未明朗`
 - `companies`、`products` 尽量用统一命名，避免同一对象出现多个写法
 - `followups` 只记录短期可验证问题，不写空泛愿景
 - `fact_confidence` 表示事实来源可靠性，建议使用 `high`、`medium`、`low`
@@ -186,6 +190,7 @@
 - 为每个重要议题加一行状态：`升温 / 延续 / 转弱 / 待确认`
 - 单独保留“本周议题台账流转”，明确哪些主题准备升格、哪些继续跟踪、哪些开始降权
 - 如果本周外围变量开始明显反作用于 AI 主线，可单列“AI 外围情报观察”；如果没有高置信度外围变量，可整段省略
+- 如果本地候选收件箱存在，可参考一周内重复出现的 `trend_key`、`观察中` 候选、采用 / 未采用理由和 `retrospective_status`，但仍以已归档日报和一手来源为主
 
 ## 10. 月报方法
 
@@ -204,6 +209,7 @@
 - 用“本月议题台账”承接长期连续信号
 - 单独保留“本月议题台账流转”，回答哪些议题正式升格、哪些进入稳定期、哪些开始转弱
 - 月报应明显比周报更强调阶段性格局，而不是增加条目数量
+- 月报可以使用候选收件箱中的后验复盘字段，区分哪些候选线索后来被事实强化、削弱、推翻或进入稳定现实
 
 ## 11. 长期议题台账方法
 

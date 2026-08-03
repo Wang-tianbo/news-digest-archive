@@ -10,6 +10,7 @@
 - 重点产品：`Codex`、`Claude Code`、`GitHub Copilot`、`Qwen Code`
 - 圈博主来源：`opinion_sources` 为空时写“扩展巡检后无可复查信息增量”
 - 研究前沿：`research_sources` 为空时写“无高价值新增”
+- 候选池辅助：如果读取了 `.codex-run/signal-reviews/YYYY-MM-DD.md`，写“已参考本地候选 review”；没有则写“未使用本地候选池，不影响日报生成”
 - 今日信号：API 化、开发环境化、团队治理
 - 跟踪问题：GitHub 是否继续扩展 agent task API；Qwen Code 是否推进稳定版 runtime
 - 事实置信度：`high`
@@ -210,6 +211,10 @@ source_checks:
     checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
     result: hit
     note: original paper/research page retained when included
+  - source_id: local_signal_inbox
+    checked_at: YYYY-MM-DD HH:MM Asia/Shanghai
+    result: hit
+    note: optional local candidate review used as clue layer; not a replacement for primary sources
 evidence_items:
   - item_id: news-1
     section: AI 新闻

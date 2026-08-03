@@ -56,14 +56,40 @@
 
 它的工作方法大致是：
 
-1. 先扫 `AI 新闻` 源，确认官方动态、模型发布、产品更新和公司动作
-2. 再扫 `AI 圈博主` 源，捕捉社区体感、实践线索、观点分歧和方法论
-3. 再扫 `AI 研究前沿` 源，挑选能影响未来判断的论文、研究博客、benchmark、eval 和开源实现
-4. 只挑会改变格局、工作流、部署方式、技术路线或未来预判的高价值信息
-5. 在三条雷达之后追加当日评论与判断
-6. 用结构化元数据为周报、月报、年报和长期议题台账做索引
+1. 可选地先运行本地 `AI 信号候选收件箱`，把公开源中的候选信号整理成每日 Top 20 review 清单
+2. 先扫 `AI 新闻` 源，确认官方动态、模型发布、产品更新和公司动作
+3. 再扫 `AI 圈博主` 源，捕捉社区体感、实践线索、观点分歧和方法论
+4. 再扫 `AI 研究前沿` 源，挑选能影响未来判断的论文、研究博客、benchmark、eval 和开源实现
+5. 只挑会改变格局、工作流、部署方式、技术路线或未来预判的高价值信息
+6. 在三条雷达之后追加当日评论与判断
+7. 用结构化元数据、采用 / 未采用理由和后验复盘为周报、月报、年报和长期议题台账做索引
 
 你可以把它理解成一套带有编辑标准的 AI 情报生产线，而不是一份临时整理的链接清单。
+
+## AI 信号候选收件箱
+
+`AI 信号候选收件箱` 是日报前置的本地辅助层，不替代现有日报自动化。它的目标不是抓全网，而是把公开来源里可能值得写入 `AI 圈博主` 和 `AI 研究前沿` 的信号提前整理出来，降低 9 点日报前的筛选成本。
+
+第一版采用 `本地候选池 + Markdown 清单`：
+
+- 公开源登记在 [config/signal-sources.yml](config/signal-sources.yml)，只有 `source_tier: public` 会被自动扫描
+- SQLite、候选 JSONL、review Markdown 都写入 `.codex-run/`，不会提交到 GitHub
+- 每日 review 只展示 Top 20，分为 `今日必看`、`可补位`、`观察中`、`重复 / 低增量`
+- 每条候选都有 `adoption_reason`、`rejection_reason` 和 `retrospective_status`，用于后续周报、月报、年报复盘
+- 稳定候选结构命名为 `SignalCandidate`，信源基础画像命名为 `SourceProfile`
+- X、公众号、小红书、付费墙、私域社群等登录态来源不进入 v1 自动链路
+
+常用命令：
+
+```bash
+python3 scripts/collect_signal_candidates.py --date YYYY-MM-DD --dry-run
+python3 scripts/collect_signal_candidates.py --date YYYY-MM-DD
+python3 scripts/render_signal_review.py --date YYYY-MM-DD
+python3 scripts/update_signal_feedback.py --date YYYY-MM-DD --dry-run
+python3 scripts/update_signal_feedback.py --date YYYY-MM-DD
+```
+
+日报自动化会把 `.codex-run/signal-reviews/YYYY-MM-DD.md` 当作可选辅助材料：存在就参考，不存在也不会阻断日报生成。候选信号不能替代官方来源、论文原文、release、changelog 或原始项目链接。
 
 ## 当前覆盖范围
 
@@ -158,9 +184,10 @@ daily/                  每日日报
 weekly/                 每周周报
 monthly/                每月月报
 yearly/                 每年年报
+config/                 公开候选信号源配置
 docs/                   覆盖范围、写作规范、工作流说明
 templates/              日报、周报、月报、年报模板
-scripts/                安装与恢复脚本
+scripts/                安装、恢复、候选收件箱与检查脚本
 ops/                    Codex 自动化模板
 ledgers/                长期议题台账
 ```
@@ -187,6 +214,7 @@ ledgers/                长期议题台账
 - 评论 / 判断层沉淀机制
 - AI 圈博主观察机制
 - AI 研究前沿观察机制
+- AI 信号候选收件箱，用于在日报前整理公开源 Top 20 候选并沉淀采用 / 未采用 / 后验复盘
 - 结构化元数据模板
 - 周报 / 月报 / 年报模板
 - 长期议题台账模板与方法说明

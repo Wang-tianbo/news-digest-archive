@@ -1,0 +1,163 @@
+# AI signal candidate inbox public source registry.
+#
+# v1 intentionally keeps this file simple so it can be parsed without external
+# Python dependencies. Only source_tier: public entries are eligible for
+# unattended collection. Login-required, paid, or private sources belong in a
+# future isolated experimental zone and must not be added here as public.
+
+sources:
+  - source_id: simon_willison_blog
+    name: Simon Willison Blog
+    platform: rss
+    source_role: opinion
+    source_tier: public
+    source_type: rss_atom
+    url: https://simonwillison.net/atom/everything/
+    section_hint: AI 圈博主
+    item_type: 方法论
+    run_mode: auto
+    health_status: active
+
+  - source_id: latent_space_substack
+    name: Latent Space
+    platform: substack
+    source_role: opinion
+    source_tier: public
+    source_type: rss_atom
+    url: https://www.latent.space/feed
+    section_hint: AI 圈博主
+    item_type: 观点判断
+    run_mode: auto
+    health_status: active
+
+  - source_id: import_ai
+    name: Import AI
+    platform: rss
+    source_role: opinion
+    source_tier: public
+    source_type: rss_atom
+    url: https://importai.substack.com/feed
+    section_hint: AI 圈博主
+    item_type: 观点判断
+    run_mode: auto
+    health_status: active
+
+  - source_id: ai_snake_oil
+    name: AI Snake Oil
+    platform: substack
+    source_role: opinion
+    source_tier: public
+    source_type: rss_atom
+    url: https://www.aisnakeoil.com/feed
+    section_hint: AI 圈博主
+    item_type: 观点判断
+    run_mode: auto
+    health_status: active
+
+  - source_id: chip_huyen_blog
+    name: Chip Huyen Blog
+    platform: rss
+    source_role: opinion
+    source_tier: public
+    source_type: rss_atom
+    url: https://huyenchip.com/feed.xml
+    section_hint: AI 圈博主
+    item_type: 方法论
+    run_mode: auto
+    health_status: active
+
+  - source_id: lilian_weng_blog
+    name: Lilian Weng Blog
+    platform: rss
+    source_role: research
+    source_tier: public
+    source_type: rss_atom
+    url: https://lilianweng.github.io/index.xml
+    section_hint: AI 研究前沿
+    item_type: 研究博客
+    run_mode: auto
+    health_status: active
+
+  - source_id: google_research_blog
+    name: Google Research Blog
+    platform: rss
+    source_role: research
+    source_tier: public
+    source_type: rss_atom
+    url: https://research.google/blog/rss/
+    section_hint: AI 研究前沿
+    item_type: 研究博客
+    run_mode: auto
+    health_status: active
+
+  - source_id: huggingface_papers
+    name: Hugging Face Papers
+    platform: rss
+    source_role: research
+    source_tier: public
+    source_type: rss_atom
+    url: https://huggingface.co/papers/rss
+    section_hint: AI 研究前沿
+    item_type: 论文
+    run_mode: auto
+    health_status: active
+
+  - source_id: arxiv_ai_recent
+    name: arXiv AI Recent
+    platform: arxiv
+    source_role: research
+    source_tier: public
+    source_type: rss_atom
+    url: https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&max_results=25
+    section_hint: AI 研究前沿
+    item_type: 论文
+    run_mode: auto
+    health_status: active
+
+  - source_id: aider_releases
+    name: Aider Releases
+    platform: github
+    source_role: community
+    source_tier: public
+    source_type: github_releases
+    url: https://github.com/Aider-AI/aider
+    section_hint: AI 圈博主
+    item_type: 信息线索
+    run_mode: auto
+    health_status: active
+
+  - source_id: vercel_ai_releases
+    name: Vercel AI SDK Releases
+    platform: github
+    source_role: community
+    source_tier: public
+    source_type: github_releases
+    url: https://github.com/vercel/ai
+    section_hint: AI 圈博主
+    item_type: 信息线索
+    run_mode: auto
+    health_status: active
+
+  - source_id: dify_releases
+    name: Dify Releases
+    platform: github
+    source_role: community
+    source_tier: public
+    source_type: github_releases
+    url: https://github.com/langgenius/dify
+    section_hint: AI 圈博主
+    item_type: 信息线索
+    run_mode: auto
+    health_status: active
+
+  - source_id: opencompass_releases
+    name: OpenCompass Releases
+    platform: github
+    source_role: research
+    source_tier: public
+    source_type: github_releases
+    url: https://github.com/open-compass/opencompass
+    section_hint: AI 研究前沿
+    item_type: benchmark
+    run_mode: auto
+    health_status: active

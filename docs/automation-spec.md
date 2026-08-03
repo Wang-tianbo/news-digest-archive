@@ -33,6 +33,18 @@
 - 必须包含独立的评论 / 判断模块
 - 建议包含一个简短的“结构化快照”，并在文末附近提供可折叠的完整 YAML 元数据，记录主题、公司、产品、信号、opinion_sources、viewpoint_themes、research_sources、research_themes、research_artifacts、research_interpretations、source_checks、evidence_items、followups、fact_confidence 和 signal_strength，便于后续周报 / 月报聚合
 
+## AI 信号候选收件箱
+
+- 候选收件箱是日报前置辅助层，不替代日报自动化和人工判断
+- 日报消费的稳定候选结构称为 `SignalCandidate`，信源基础画像称为 `SourceProfile`
+- 公开候选源登记在 `config/signal-sources.yml`；只有 `source_tier: public`、`run_mode: auto`、`health_status: active` 的来源允许进入自动采集
+- 本地 SQLite、候选 JSONL、review Markdown 和手工导入 JSONL 必须写入 `.codex-run/`，不得提交到仓库
+- 可用 `python3 scripts/collect_signal_candidates.py --date YYYY-MM-DD` 采集公开源，用 `python3 scripts/render_signal_review.py --date YYYY-MM-DD` 生成 `.codex-run/signal-reviews/YYYY-MM-DD.md`
+- 日报任务如果发现 `.codex-run/signal-reviews/YYYY-MM-DD.md` 存在，可以读取其中 `已采用`、`观察中`、`补证据` 或仍为 `待审` 但分数较高的候选作为辅助线索；如果候选池不存在、为空或脚本失败，日报仍按既有规则继续生成
+- 候选信号只能作为线索入口，写入日报前仍需检查原始链接、官方来源、论文原文、release、changelog 或原始项目链接
+- review 中的 `adoption_reason`、`rejection_reason`、`retrospective_status` 用于周报、月报、年报复盘；未采用理由也应被视为长期认知资产
+- X、公众号、小红书、付费墙、私域社群、浏览器 Cookie 和登录态来源不进入 v1 自动链路；未来如需接入，只能放在独立实验区，人工触发、人工确认、只输出候选信号
+
 其他周期报告路径约定：
 
 - 周报：`weekly/YYYY/YYYY-Www.md`
@@ -55,6 +67,7 @@
 
 ## 必查数据源
 
+- 如果本地存在 `.codex-run/signal-reviews/YYYY-MM-DD.md`，先把它作为候选线索清单读取；不存在时不要报错，也不要为了生成候选池而阻塞日报
 - 先查 [docs/source-watchlist.md](source-watchlist.md) 中的 AI 编程代理专项源
 - 再查中国模型厂商专项源
 - 如果核心主线之外出现高价值外围变量，再查 AI 外围高相关情报源
@@ -132,6 +145,7 @@
 
 - 如果当天高价值更新很少，仍生成简版日报
 - 如果抓取过程受阻，保留已验证的重要信息，不用未经确认的内容凑数
+- 如果候选收件箱采集失败、review 缺失或为空，记录为辅助线索缺失，不影响日报、周报、月报、年报主链路
 - 如果企业微信发送失败，只记录通知失败，不回滚或修改已经生成的报告
 - 如果企业微信 webhook 未配置，通知任务安全跳过
 - 如果自动化连续缺失日报，先运行 `python3 scripts/check_archive_health.py --fetch` 检查缺失日报、周报、月报、本机 automation、远端同步和最近提交状态

@@ -1,0 +1,318 @@
+date: 2026-08-04
+window_start: "2026-08-03 09:00 Asia/Shanghai"
+window_end: "2026-08-04 09:00 Asia/Shanghai"
+supplemental_range: "2026-07-31 to 2026-08-03 Asia/Shanghai; only unrepeated research/community signals tied to agent runtime and enterprise document intelligence"
+themes:
+  - coding_agent_control_plane
+  - workspace_agent_permissions
+  - agent_runtime_governance
+  - enterprise_agent_workflow
+  - inference_engineering
+  - document_agent_evaluation
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Cursor
+  - Anthropic
+  - Qwen
+  - GitHub
+  - OpenAI
+  - Vercel
+  - Cherry Studio
+products:
+  - Cursor
+  - Google Workspace Plugins
+  - Claude Code
+  - Qwen Code
+  - Qwen Code Web Shell
+  - GitHub Copilot CLI
+  - GitHub managed settings
+  - Codex
+  - Vercel AI SDK
+  - Cherry Studio
+signals:
+  - Workspace 插件接管组织上下文
+  - sandbox credential masking
+  - Web Shell 稳定化
+  - worktree 与 managed settings 治理
+  - 异步多模态生成接口
+  - agent serving tokenization 瓶颈
+  - 企业文档抽取证据链
+opinion_sources:
+  - Qwen Code release notes
+  - Cherry Studio release notes
+  - Simon Willison
+  - Latent Space
+  - Vercel AI SDK release notes
+viewpoint_themes:
+  - coding agent runtime
+  - 中文 AI 客户端工程
+  - AI 输出验证责任
+  - inference engineering
+  - async generation workflow
+research_sources:
+  - arXiv:2607.29678 TokTier
+  - arXiv:2607.29677 ExtractBench
+research_themes:
+  - agent_serving
+  - stateful_tokenization
+  - prompt_cache_frontend
+  - document_extraction_benchmark
+  - grounded_enterprise_agents
+research_artifacts:
+  - paper
+  - benchmark
+research_interpretations: []
+peripheral_themes:
+  - 企业采用
+  - 权限与治理
+  - 开发者平台控制面
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-08-04.md"
+  adopted:
+    - candidate_id: sig_96cad8fa6f664f8b
+      title: "ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction"
+      adoption_reason: "entered AI research frontier as an enterprise document-agent benchmark with grounding and cost metrics"
+  rejected_or_deferred:
+    - candidate_id: sig_b8485e1abc62a0e5
+      status: 待审
+      rejection_reason: "AgentHPOBench is relevant but less connected to the day's confirmed product/runtime signals"
+    - candidate_id: sig_822c643db4c68a18
+      status: 待审
+      rejection_reason: "HVAC ontology paper is AI-adjacent but too domain-specific for this daily digest"
+    - candidate_id: sig_39962940a7d65076
+      status: 待审
+      rejection_reason: "Socratic tests paper deferred; lower immediate link to today's agent/product mainline"
+source_checks:
+  - source_id: runtime_gate
+    checked_at: "2026-08-04 09:05 Asia/Shanghai"
+    result: hit
+    note: "Asia/Shanghai time was inside the 09:00-09:14:59 execution window"
+  - source_id: origin_main_duplicate_check
+    checked_at: "2026-08-04 09:06 Asia/Shanghai"
+    result: miss
+    note: "origin/main did not contain daily/2026/2026-08/2026-08-04.md or matching sidecar before generation"
+  - source_id: local_signal_inbox
+    checked_at: "2026-08-04 09:08 Asia/Shanghai"
+    result: hit
+    note: "optional local candidate review read as clue layer; ExtractBench candidate adopted after arXiv verification"
+  - source_id: coding_agent_releases
+    checked_at: "2026-08-04 09:38 Asia/Shanghai"
+    result: hit
+    note: "checked Codex, Claude Code, Copilot CLI, Cursor, Gemini CLI, Qwen Code and related release/changelog streams"
+  - source_id: core_official_ai_news
+    checked_at: "2026-08-04 09:40 Asia/Shanghai"
+    result: hit
+    note: "official company/product pages and changelogs yielded Cursor, Claude Code, GitHub, Qwen and Vercel items"
+  - source_id: china_model_officials
+    checked_at: "2026-08-04 09:43 Asia/Shanghai"
+    result: partial
+    note: "checked Qwen, DeepSeek GitHub/org signals, Kimi, MiniMax, Baidu Qianfan, Tencent Hunyuan, Volcano Ark and Z.ai docs where accessible; some dynamic pages were noisy or access-limited"
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-08-04 09:45 Asia/Shanghai"
+    result: hit
+    note: "Simon Willison and Baoyu RSS/blogs checked; Simon 2026-08-03 methodology sample included, Baoyu recent posts were already covered/deferred"
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-08-04 09:46 Asia/Shanghai"
+    result: hit
+    note: "checked reproducible blogs/RSS/Substack/GitHub sources; five community/viewpoint items included across Chinese and English buckets"
+  - source_id: china_ai_media_signals
+    checked_at: "2026-08-04 09:47 Asia/Shanghai"
+    result: partial
+    note: "Chinese media-style sources were treated as auxiliary; no media-only item replaced primary sources"
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-08-04 09:48 Asia/Shanghai"
+    result: hit
+    note: "Qwen Code and Cherry Studio release/GitHub activity provided Chinese-source engineering signals"
+  - source_id: china_research_community
+    checked_at: "2026-08-04 09:48 Asia/Shanghai"
+    result: partial
+    note: "checked OpenBMB, ModelScope, OpenCompass and related GitHub/radar sources where rate limits allowed; no stronger unrepeated research item selected"
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-08-04 09:49 Asia/Shanghai"
+    result: hit
+    note: "Vercel AI SDK, Copilot CLI, OpenHands, pydantic-ai, Ollama/vLLM/SGLang/llama.cpp activity checked; Vercel selected"
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-08-04 09:50 Asia/Shanghai"
+    result: hit
+    note: "LangChain/LlamaIndex-style sources and agent framework releases checked; no stronger item than Vercel/TokTier selected"
+  - source_id: english_inference_platforms
+    checked_at: "2026-08-04 09:50 Asia/Shanghai"
+    result: hit
+    note: "Latent Space inference engineering item and OpenRouter/Perplexity-style changelog sources checked"
+  - source_id: english_research_blogs
+    checked_at: "2026-08-04 09:51 Asia/Shanghai"
+    result: partial
+    note: "Google Research, DeepMind, CRFM, Lilian Weng and arXiv/Hugging Face papers checked; selected arXiv papers as primary research sources"
+  - source_id: english_industry_analysis
+    checked_at: "2026-08-04 09:51 Asia/Shanghai"
+    result: hit
+    note: "Latent Space and Interconnects feeds checked; Latent Space included, Interconnects artifact hub deferred"
+  - source_id: english_safety_governance
+    checked_at: "2026-08-04 09:52 Asia/Shanghai"
+    result: partial
+    note: "AI Snake Oil/GovAI/Apollo-style sources checked at feed level; no unrepeated high-confidence safety item selected"
+  - source_id: research_frontier
+    checked_at: "2026-08-04 09:52 Asia/Shanghai"
+    result: hit
+    note: "arXiv cs.CL/cs.AI recent and Hugging Face Papers checked; TokTier and ExtractBench selected with original arXiv links"
+  - source_id: github_trending_ai
+    checked_at: "2026-08-04 09:53 Asia/Shanghai"
+    result: hit
+    note: "GitHub API/release snapshots checked; Cherry Studio selected as fresh non-mainline AI client project"
+evidence_items:
+  - item_id: news-cursor-workspace-plugins
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 09:40 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://cursor.com/changelog
+    confidence_reason: "official Cursor changelog lists Google Workspace Plugins dated 2026-08-03"
+  - item_id: news-claude-code-2-1-221
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-04 09:38 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.221
+    confidence_reason: "official Anthropic GitHub release with exact tag and timestamp"
+  - item_id: news-qwen-code-0-21-4
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 09:38 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.4
+    confidence_reason: "official QwenLM GitHub release with detailed release notes"
+  - item_id: news-copilot-cli-1-0-78
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 09:39 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/github/copilot-cli/releases/tag/v1.0.78
+      - https://github.blog/changelog/2026-08-03-enterprise-team-specialization-for-managed-settings
+    confidence_reason: "official GitHub release and changelog page align on enterprise agent governance direction"
+  - item_id: news-codex-vercel
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 09:39 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/codex/releases
+      - https://github.com/vercel/ai/releases/tag/ai%407.0.50
+    confidence_reason: "official GitHub releases; Codex alpha noted as activity signal only"
+  - item_id: opinion-qwen-code-release
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 09:48 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.4
+    confidence_reason: "official release used as Chinese engineering radar signal"
+  - item_id: opinion-cherry-studio-1-9-13
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 09:48 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/CherryHQ/cherry-studio/releases/tag/v1.9.13
+    confidence_reason: "public GitHub release with model/provider/agent client changes"
+  - item_id: opinion-simon-meat-proxy
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 09:45 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/3/dont-be-a-meat-proxy/
+    confidence_reason: "public blog post by named source; used only as methodology sample"
+  - item_id: opinion-latent-inference-engineering
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: newsletter_post
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 09:46 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.latent.space/p/inference-eng
+    confidence_reason: "public Latent Space post; used as community signal, not factual confirmation"
+  - item_id: opinion-vercel-async-video
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 09:49 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vercel/ai/releases/tag/ai%407.0.50
+    confidence_reason: "official open-source release note for AI SDK async video generation interface"
+  - item_id: research-toktier
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-07-31
+    snapshot_time: "2026-08-04 09:52 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2607.29678
+    confidence_reason: "original arXiv paper with exact identifier and abstract verified"
+  - item_id: research-extractbench
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-07-31
+    snapshot_time: "2026-08-04 09:52 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - https://arxiv.org/abs/2607.29677
+    confidence_reason: "original arXiv paper verified; dataset/code links mentioned by authors but not fully reproduced in this run"
+  - item_id: github-cherry-studio
+    section: GitHub 热门项目
+    source_role: community
+    evidence_type: github_release_snapshot
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 08:57 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/CherryHQ/cherry-studio
+      - https://github.com/CherryHQ/cherry-studio/releases/tag/v1.9.13
+    confidence_reason: "GitHub API snapshot recorded stars and official release tag"
+  - item_id: peripheral-github-managed-settings
+    section: AI 外围情报观察
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-04 09:52 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-03-enterprise-team-specialization-for-managed-settings
+    confidence_reason: "official GitHub changelog; relevance inferred from Copilot/agent managed settings governance"
+followups:
+  - "Cursor Workspace plugins是否补齐管理员权限、审计、撤销和数据边界说明"
+  - "Claude Code credential masking是否扩展到更多平台与敏感文件策略"
+  - "Qwen Code Web Shell是否进入团队协作、PR review和CI运行链路"
+  - "Copilot CLI worktree、usage_update和managed settings是否合并为统一企业控制面"
+  - "TokTier是否开源或进入vLLM/SGLang/TGI等主流serving框架"
+  - "ExtractBench数据和评测代码是否开放并被第三方复现"
+fact_confidence: high
+signal_strength: medium

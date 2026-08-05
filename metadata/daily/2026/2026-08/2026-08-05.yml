@@ -1,0 +1,354 @@
+date: 2026-08-05
+window_start: "2026-08-04 09:00 Asia/Shanghai"
+window_end: "2026-08-05 09:00 Asia/Shanghai"
+supplemental_range: "2026-08-04 00:00 to 2026-08-04 09:00 Asia/Shanghai; only unrepeated official/research/community signals tied to agent runtime and safety"
+themes:
+  - agent_runtime_governance
+  - workspace_agent_permissions
+  - coding_agent_control_plane
+  - ai_safety_evaluation
+  - multimodal_safety_classifier
+  - agent_cost_controls
+  - cross_session_agent_safety
+regions:
+  - us
+  - eu
+  - uk
+  - china
+  - global
+companies:
+  - OpenAI
+  - GitHub
+  - Microsoft
+  - Anthropic
+  - Qwen
+  - Mistral AI
+  - Cloudflare
+  - Cherry Studio
+  - Pydantic
+  - Unsloth
+products:
+  - ChatGPT Work
+  - Codex
+  - OpenAI Agents SDK
+  - GitHub Copilot cloud agent
+  - GitHub Spark
+  - GitHub Copilot CLI
+  - Claude Code
+  - Qwen Code
+  - Shieldstral
+  - Cherry Studio
+  - LLM
+  - Pydantic AI
+  - Unsloth
+  - Cloudflare Agents
+signals:
+  - agent 进入学习与组织工作流
+  - reasoning effort 可配置
+  - 评论触发 agent 自动化
+  - app builder 向集成开发环境收束
+  - safety eval 事件级披露
+  - 小型多模态 safety classifier
+  - tool guardrail 与 replay 防护
+  - 成本与 usage 显式化
+  - 跨会话滥用检测
+opinion_sources:
+  - Qwen Code release notes
+  - Cherry Studio release notes
+  - Simon Willison
+  - Latent Space
+  - Pydantic AI release notes
+viewpoint_themes:
+  - coding agent runtime
+  - 中文 AI 客户端工程
+  - LLM CLI workflow
+  - ChatGPT Work agent primitives
+  - agent cost governance
+research_sources:
+  - arXiv:2608.02499 SWE-Touch
+  - arXiv:2608.02518 Magnet
+  - arXiv:2607.25857 Shieldstral
+research_themes:
+  - coding_agent_evaluation
+  - shared_workspace_agents
+  - cross_session_agent_safety
+  - capability_accumulation_detection
+  - multimodal_safety_classification
+research_artifacts:
+  - paper
+  - benchmark
+  - safety_classifier
+research_interpretations: []
+peripheral_themes:
+  - agentic_internet_infrastructure
+  - browser_rendering_for_agents
+  - identity_and_wallets
+  - network_side_agent_governance
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-08-05.md"
+  adopted:
+    - candidate_id: sig_33a3635692334c6b
+      title: "SWE-Touch: Benchmarking Coding Agents When Users Touch the Code"
+      adoption_reason: "entered AI research frontier because it directly tests coding agents in shared mutable workspaces"
+    - candidate_id: sig_d4c52c577b8131f9
+      title: "Magnet: Detecting Cross-Session AI Misuse Through Capability Accumulation"
+      adoption_reason: "entered AI research frontier because it matches the day's safety/runtime governance theme"
+  rejected_or_deferred:
+    - candidate_id: sig_fa83da43a708887d
+      status: 待审
+      rejection_reason: "power-systems education framework was AI-adjacent but less connected to the day's agent/product mainline"
+    - candidate_id: sig_dcddc6378b222942
+      status: 待审
+      rejection_reason: "UEmbed is relevant to multimodal retrieval but deferred in favor of agent safety and coding-agent evaluation"
+    - candidate_id: sig_465fa7b54d486dcf
+      status: 待审
+      rejection_reason: "AtumAI was related to datacenter control-plane policies but lacked stronger product linkage for this daily digest"
+    - candidate_id: sig_52549c1d1127e81d
+      status: 待审
+      rejection_reason: "structured memory for edge language models was deferred; less immediate tie to today's confirmed product signals"
+    - candidate_id: sig_87a539db594ec04f
+      status: 待审
+      rejection_reason: "capability-gap taxonomy was broad; lower information gain than SWE-Touch and Magnet for this run"
+source_checks:
+  - source_id: runtime_gate
+    checked_at: "2026-08-05 09:07 Asia/Shanghai"
+    result: hit
+    note: "Asia/Shanghai time was inside the 09:00-09:14:59 execution window"
+  - source_id: origin_main_duplicate_check
+    checked_at: "2026-08-05 09:07 Asia/Shanghai"
+    result: miss
+    note: "origin/main did not contain daily/2026/2026-08/2026-08-05.md or matching sidecar before generation"
+  - source_id: local_signal_inbox
+    checked_at: "2026-08-05 09:08 Asia/Shanghai"
+    result: hit
+    note: "optional local candidate review read as clue layer; SWE-Touch and Magnet adopted after arXiv verification"
+  - source_id: coding_agent_releases
+    checked_at: "2026-08-05 09:13 Asia/Shanghai"
+    result: hit
+    note: "checked Codex, Claude Code, Copilot CLI, Gemini CLI, Qwen Code, OpenAI Agents SDK and related release/changelog streams"
+  - source_id: core_official_ai_news
+    checked_at: "2026-08-05 09:16 Asia/Shanghai"
+    result: hit
+    note: "OpenAI RSS/articles, GitHub Changelog, Mistral news and Cloudflare official posts yielded included items"
+  - source_id: china_model_officials
+    checked_at: "2026-08-05 09:18 Asia/Shanghai"
+    result: partial
+    note: "checked Qwen/Qwen Code, DeepSeek GitHub-style signals, Kimi/MiniMax/Tencent/Baidu/Volcano/Z.ai watchlist sources where reachable; Qwen Code selected, no stronger unrepeated official model-company release selected"
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-08-05 09:19 Asia/Shanghai"
+    result: hit
+    note: "Simon Willison RSS/blog checked and included; X-only Chinese sources treated as blocked/partial rather than miss"
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-08-05 09:20 Asia/Shanghai"
+    result: hit
+    note: "five reproducible community/viewpoint items included across Chinese GitHub engineering sources and English blog/release sources"
+  - source_id: china_ai_media_signals
+    checked_at: "2026-08-05 09:20 Asia/Shanghai"
+    result: partial
+    note: "Chinese media-style sources were treated as auxiliary; no media-only item replaced primary sources"
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-08-05 09:21 Asia/Shanghai"
+    result: hit
+    note: "Qwen Code and Cherry Studio release activity provided Chinese-source engineering signals"
+  - source_id: china_research_community
+    checked_at: "2026-08-05 09:21 Asia/Shanghai"
+    result: partial
+    note: "checked local arXiv candidate review plus Chinese research/engineering buckets; selected research items were global arXiv papers"
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-08-05 09:22 Asia/Shanghai"
+    result: hit
+    note: "Pydantic AI, Vercel AI SDK, Ollama, Unsloth, llama.cpp and related releases checked; Pydantic AI and Unsloth included"
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-08-05 09:22 Asia/Shanghai"
+    result: hit
+    note: "Pydantic AI and OpenAI Agents SDK releases selected as framework/runtime evidence"
+  - source_id: english_inference_platforms
+    checked_at: "2026-08-05 09:23 Asia/Shanghai"
+    result: partial
+    note: "checked OpenRouter/Together/Fireworks/Groq/Cohere/Replicate-style sources at feed/search level; no stronger high-confidence item selected"
+  - source_id: english_research_blogs
+    checked_at: "2026-08-05 09:23 Asia/Shanghai"
+    result: hit
+    note: "arXiv and Mistral research/blog links checked; SWE-Touch, Magnet and Shieldstral retained with primary links"
+  - source_id: english_industry_analysis
+    checked_at: "2026-08-05 09:24 Asia/Shanghai"
+    result: hit
+    note: "Latent Space feed checked and included as ChatGPT Work community interpretation"
+  - source_id: english_safety_governance
+    checked_at: "2026-08-05 09:24 Asia/Shanghai"
+    result: hit
+    note: "OpenAI/UK AISI incident, Mistral Shieldstral and Magnet paper checked as safety-governance evidence"
+  - source_id: research_frontier
+    checked_at: "2026-08-05 09:25 Asia/Shanghai"
+    result: hit
+    note: "arXiv cs.AI/cs.CL candidates verified; SWE-Touch and Magnet selected with original arXiv links"
+  - source_id: github_trending_ai
+    checked_at: "2026-08-05 09:25 Asia/Shanghai"
+    result: hit
+    note: "GitHub release/API snapshot checked; Unsloth selected as fresh non-mainline AI infrastructure project with about 69,570 stars"
+  - source_id: ai_peripheral_watchlist
+    checked_at: "2026-08-05 09:26 Asia/Shanghai"
+    result: hit
+    note: "Cloudflare Agents Week posts selected as agentic internet infrastructure signal"
+evidence_items:
+  - item_id: news-openai-learn-work-codex
+    section: AI 新闻
+    source_role: official
+    evidence_type: official_article
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 09:16 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://openai.com/index/learn-teach-chatgpt-work-codex
+    confidence_reason: "official OpenAI RSS/article URL with date in the current supplemental/strict boundary"
+  - item_id: news-openai-uk-aisi-cyber-eval
+    section: AI 新闻
+    source_role: official
+    evidence_type: incident_report
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 09:16 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://openai.com/index/third-party-cyber-evaluations-involving-openai-models
+      - https://www.gov.uk/government/publications/incident-report-unsanctioned-agent-behaviour-during-cyber-testing
+    confidence_reason: "OpenAI official article and UK AISI public incident report refer to the same cyber evaluation incident"
+  - item_id: news-github-copilot-cloud-agent
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-05 09:17 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent
+      - https://github.blog/changelog/2026-08-03-trigger-copilot-automations-with-comments
+      - https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com
+    confidence_reason: "GitHub changelog feed and exact pages confirm product changes and dates"
+  - item_id: news-mistral-shieldstral
+    section: AI 新闻
+    source_role: official
+    evidence_type: model_release
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 09:18 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://mistral.ai/news/introducing-shieldstral
+      - https://arxiv.org/abs/2607.25857
+    confidence_reason: "official Mistral release paired with arXiv paper"
+  - item_id: news-coding-agent-runtime-fixes
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 09:18 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.222
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.5
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.6-preview.0
+      - https://github.com/openai/openai-agents-python/releases/tag/v0.19.3
+      - https://github.com/github/copilot-cli/releases/tag/v1.0.79-1
+    confidence_reason: "official GitHub release notes with exact tags and timestamps"
+  - item_id: opinion-qwen-code-release
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.5
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.6-preview.0
+    confidence_reason: "official project release notes used as Chinese engineering community signal"
+  - item_id: opinion-cherry-studio-rc5
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/CherryHQ/cherry-studio/releases/tag/v2.0.0-rc.5
+    confidence_reason: "official project release notes used as Chinese AI client ecosystem signal"
+  - item_id: opinion-simon-llm-032
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 09:19 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/4/new-release-of-llm/#atom-everything
+    confidence_reason: "author blog/RSS entry documents the LLM CLI release and implementation details"
+  - item_id: opinion-latent-space-chatgpt-work
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: newsletter
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 09:24 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.latent.space/p/unpacking-chatgpt-work
+      - https://openai.com/index/learn-teach-chatgpt-work-codex
+    confidence_reason: "newsletter used as community interpretation, with official OpenAI link retained for factual anchor"
+  - item_id: opinion-pydantic-ai-223
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.23.0
+    confidence_reason: "official project release notes show cost and tool-availability control-plane changes"
+  - item_id: research-swe-touch
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-05 09:25 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.02499
+    confidence_reason: "arXiv abstract and submission metadata verified"
+  - item_id: research-magnet-cross-session
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-05 09:25 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.02518
+    confidence_reason: "arXiv abstract and submission metadata verified"
+  - item_id: github-unsloth-0152
+    section: GitHub 热门项目
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 08:52 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/unslothai/unsloth/releases/tag/v0.1.52-beta
+    confidence_reason: "official GitHub release plus API star snapshot around 69,570 stars"
+  - item_id: peripheral-cloudflare-agents-week
+    section: AI 外围情报观察
+    source_role: official
+    evidence_type: official_blog
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-05 09:26 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://blog.cloudflare.com/tag/agents-week/
+      - https://blog.cloudflare.com/browser-rendering-with-cloudflare-agents/
+      - https://blog.cloudflare.com/cloudflare-wallets/
+    confidence_reason: "official Cloudflare Agents Week pages describe agent infrastructure announcements"
+followups:
+  - "ChatGPT Work / Codex education updates 是否补充组织与学校管理员控制、审计和数据边界"
+  - "GitHub Spark 退场后 Copilot app / CLI / VS Code 是否承接 app-builder workflow"
+  - "Shieldstral 是否进入 Mistral API 或第三方 moderation workflow"
+  - "SWE-Touch 和 Magnet 是否开源或被主流 agent benchmark / safety benchmark 吸收"
+  - "Claude/Qwen/OpenAI/GitHub agent runtime 的工具权限、replay、费用和审计接口是否趋同"
+fact_confidence: high
+signal_strength: medium

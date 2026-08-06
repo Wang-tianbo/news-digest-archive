@@ -1,0 +1,299 @@
+date: 2026-08-06
+window_start: 2026-08-05 09:00 Asia/Shanghai
+window_end: 2026-08-06 09:00 Asia/Shanghai
+supplemental_range: 2026-08-03 to 2026-08-06, only unrepeated high-value official MiniMax H3 signal
+themes:
+  - coding_agent_runtime
+  - long_horizon_tool_use
+  - runtime_security
+  - desktop_agent_workspace
+  - open_video_model
+  - test_time_scaling
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Meta
+  - Anthropic
+  - Qwen
+  - OpenAI
+  - MiniMax
+  - Cherry Studio
+  - Vercel
+  - Pydantic
+products:
+  - Muse Code
+  - Muse Spark 1.2
+  - Claude Code
+  - Qwen Code
+  - Qwen Code Desktop
+  - OpenAI Agents SDK
+  - MiniMax H3
+  - Cherry Studio
+  - Vercel AI SDK
+  - Pydantic AI
+  - llama.cpp
+signals:
+  - 长序列工具调用
+  - 权限绕过修复
+  - 桌面 agent 工作台
+  - guardrail 与 session 可靠性
+  - 视频模型系统化开源
+  - 推理预算与评测协议显性化
+opinion_sources:
+  - Qwen Code release notes
+  - Cherry Studio release notes
+  - Simon Willison
+  - Pydantic AI release notes
+  - Vercel AI SDK release notes
+viewpoint_themes:
+  - coding agent runtime
+  - desktop agent workspace
+  - long-sequence agentic tool calling
+  - provider compatibility
+  - reasoning control
+research_sources:
+  - arXiv:2608.04007
+  - arXiv:2608.04001
+research_themes:
+  - tool_integrated_reasoning
+  - test_time_scaling
+  - agent_training_signal
+  - evaluation_reproducibility
+research_artifacts:
+  - paper
+research_interpretations: []
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-06.md
+  adopted:
+    - candidate_id: sig_f74cc2bea5891548
+      title: TurnSight
+      adoption_reason: directly relevant to tool-integrated reasoning and long-horizon agent training
+    - candidate_id: sig_0a5a098d6f2d01ba
+      title: Test-Time Scaling in Reasoning LLMs
+      adoption_reason: clarifies inference regimes and reproducibility for reasoning and agent benchmarks
+  rejected_or_deferred:
+    - candidate_id: sig_af08829140d82398
+      status: deferred
+      rejection_reason: relevant to compiler optimization, but lower priority than agent training and evaluation protocol today
+    - candidate_id: sig_aa9f3addc6b0fbb2
+      status: deferred
+      rejection_reason: promising multimodal agent paper, but MiniMax H3 already covered video-system signal in official source
+    - candidate_id: sig_f262dbb4dd3de681
+      status: deferred
+      rejection_reason: post-training idea remains early and less directly tied to today's product/runtime pattern
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-06 09:07 Asia/Shanghai
+    result: hit
+    note: optional local candidate review read as clue layer; research items reverified with arXiv
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-06 09:08 Asia/Shanghai
+    result: hit
+    note: checked Claude Code, Qwen Code, OpenAI Agents SDK, Gemini CLI, Copilot CLI, Vercel AI SDK release streams
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-06 09:09 Asia/Shanghai
+    result: hit
+    note: checked OpenAI, Anthropic, Google AI, GitHub changelog, Meta Research and MiniMax official sources; Meta Muse and MiniMax H3 included
+  - source_id: china_model_officials
+    checked_at: 2026-08-06 09:10 Asia/Shanghai
+    result: partial
+    note: checked DeepSeek, Qwen, Z.ai, Kimi, MiniMax and GitHub org/activity surfaces where reachable; MiniMax and Qwen had usable hits
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-06 09:10 Asia/Shanghai
+    result: hit
+    note: Simon Willison had a reproducible Muse Code viewpoint sample; X-only sources treated as blocked
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-06 09:10 Asia/Shanghai
+    result: hit
+    note: selected five reproducible community/engineering signals, two Chinese-source and three English-source
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-06 09:10 Asia/Shanghai
+    result: partial
+    note: broader media scan not used as factual source; official and GitHub links were sufficient
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-06 09:10 Asia/Shanghai
+    result: hit
+    note: checked Qwen Code, Cherry Studio, Dify, RAGFlow, LobeHub, ModelScope and LLaMA-Factory release streams
+  - source_id: china_research_community
+    checked_at: 2026-08-06 09:11 Asia/Shanghai
+    result: partial
+    note: checked public GitHub/research-adjacent sources; no separate Chinese research item included beyond MiniMax H3
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-06 09:11 Asia/Shanghai
+    result: hit
+    note: checked Pydantic AI, CrewAI, Vercel AI SDK, llama.cpp, vLLM, SGLang, Transformers
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-06 09:11 Asia/Shanghai
+    result: hit
+    note: Pydantic AI and Vercel AI SDK provided fresh agent-infra signals
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-06 09:11 Asia/Shanghai
+    result: partial
+    note: no higher-value inference-platform changelog item selected for body
+  - source_id: english_research_blogs
+    checked_at: 2026-08-06 09:11 Asia/Shanghai
+    result: partial
+    note: no new research blog outranked arXiv candidates in today's window
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-06 09:11 Asia/Shanghai
+    result: partial
+    note: Latent Space feed checked; not included because selected official and engineering sources were stronger
+  - source_id: english_safety_governance
+    checked_at: 2026-08-06 09:11 Asia/Shanghai
+    result: partial
+    note: no new separate governance item beyond Claude Code permissions and already-covered cyber eval reports
+  - source_id: research_frontier
+    checked_at: 2026-08-06 09:12 Asia/Shanghai
+    result: hit
+    note: arXiv candidates from local review verified via arXiv API; two research items included
+  - source_id: open_source_infra
+    checked_at: 2026-08-06 09:12 Asia/Shanghai
+    result: hit
+    note: llama.cpp had fresh b10285 and b10289 releases; vLLM, SGLang and Transformers had no new release in the strict bucket
+evidence_items:
+  - item_id: news-meta-muse-code
+    section: AI 新闻
+    source_role: official
+    evidence_type: research_blog
+    item_date: 2026-08-05
+    snapshot_time: 2026-08-06 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2
+    confidence_reason: official Meta Research article
+  - item_id: news-claude-code-2-1-223
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-06 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.223
+    confidence_reason: official Anthropic GitHub release with exact tag and timestamp
+  - item_id: news-qwen-code-0-21-6-desktop
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-05
+    snapshot_time: 2026-08-06 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.6
+      - https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.1.0
+    confidence_reason: official QwenLM GitHub releases with exact tags
+  - item_id: news-openai-agents-sdk-0-19-4
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-05
+    snapshot_time: 2026-08-06 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/openai-agents-python/releases/tag/v0.19.4
+    confidence_reason: official OpenAI GitHub release with exact tag
+  - item_id: news-minimax-h3
+    section: AI 新闻
+    source_role: official
+    evidence_type: official_announcement_and_repo
+    item_date: 2026-08-03
+    snapshot_time: 2026-08-06 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.minimax.io/news/minimax-h3-open-source
+      - https://github.com/MiniMax-AI/MiniMax-H3
+    confidence_reason: official MiniMax article plus official GitHub repository
+  - item_id: opinion-qwen-code-release
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-05
+    snapshot_time: 2026-08-06 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.6
+    confidence_reason: official release used as Chinese engineering-community signal
+  - item_id: opinion-cherry-studio-2
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-05
+    snapshot_time: 2026-08-06 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/CherryHQ/cherry-studio/releases/tag/v2.0.0
+    confidence_reason: official release note for Chinese AI client
+  - item_id: opinion-simon-muse-code
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-05
+    snapshot_time: 2026-08-06 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/5/muse-code-and-muse-spark-12/#atom-everything
+      - https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2
+    confidence_reason: personal viewpoint paired with official Meta source
+  - item_id: opinion-pydantic-ai-2-24
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-05
+    snapshot_time: 2026-08-06 09:11 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.24.0
+    confidence_reason: official GitHub release from agent framework project
+  - item_id: opinion-vercel-ai-7-0-54
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-06 09:11 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vercel/ai/releases/tag/ai%407.0.54
+    confidence_reason: official GitHub release from AI SDK project
+  - item_id: research-turnsight
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-05
+    snapshot_time: 2026-08-06 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.04007
+    confidence_reason: arXiv paper verified via arXiv API
+  - item_id: research-test-time-scaling
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-05
+    snapshot_time: 2026-08-06 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.04001
+    confidence_reason: arXiv paper verified via arXiv API
+  - item_id: github-llama-cpp
+    section: GitHub 热门项目
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-05
+    snapshot_time: 2026-08-06 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/ggml-org/llama.cpp/releases/tag/b10285
+      - https://github.com/ggml-org/llama.cpp/releases/tag/b10289
+    confidence_reason: official release tags; repeated project justified by new release-level changes
+followups:
+  - Meta Muse Code 是否公开更多 toolset、harness、日志和评测协议
+  - Claude Code 权限绕过修复是否推动更多 agent 产品披露安全边界
+  - Qwen Code Desktop 是否进入稳定团队协作和企业部署
+  - MiniMax H3 sparse attention、H3-Context-IR 和 2K workflow 是否继续开放
+  - TurnSight 与 test-time scaling protocol 是否出现代码或被主流 benchmark 采用
+fact_confidence: high
+signal_strength: medium

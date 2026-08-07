@@ -1,0 +1,267 @@
+date: 2026-08-07
+window_start: 2026-08-06 09:00 Asia/Shanghai
+window_end: 2026-08-07 09:00 Asia/Shanghai
+supplemental_range: none
+themes:
+  - model_distribution
+  - coding_agent_runtime
+  - open_weight_models
+  - ai_science_infrastructure
+  - consumer_ai_safety
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - GitHub
+  - Moonshot AI
+  - Qwen
+  - Google DeepMind
+  - Google
+  - Vercel
+  - Pydantic
+  - LobeHub
+products:
+  - ChatGPT
+  - GPT-5.6 Sol
+  - GPT-5.6 Luna
+  - GitHub Copilot
+  - Kimi K3
+  - Qwen Code
+  - Qwen Live Host
+  - Gemini CLI
+  - Copilot CLI
+  - WeatherNext
+  - Pydantic AI
+  - Vercel AI SDK
+  - LobeHub
+signals:
+  - 模型进入主流开发者入口
+  - 长任务 agent 边界继续变厚
+  - 开权重中文模型分发升温
+  - AI 科学模型开源可复查
+  - consumer AI 安全治理前置
+opinion_sources:
+  - Qwen Code release notes
+  - LobeHub release notes
+  - Copilot CLI release notes
+  - Pydantic AI release notes
+  - Vercel AI SDK release notes
+viewpoint_themes:
+  - coding agent runtime
+  - 多会话管理
+  - provider 兼容性
+  - batch agent workflow
+  - 中文 AI 客户端工作台
+research_sources:
+  - Google DeepMind
+  - Nature
+  - google-deepmind/weathernext
+research_themes:
+  - ai_weather_forecasting
+  - cyclone_forecasting
+  - ai_science_infrastructure
+research_artifacts:
+  - research_blog
+  - paper
+  - repo
+  - data_feed
+research_interpretations:
+  - Google DeepMind official explanation
+peripheral_themes:
+  - 安全与治理
+  - 心理健康
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-07.md
+  adopted: []
+  rejected_or_deferred:
+    - candidate_id: sig_410456543f831dcb
+      title: "Argus: A General-Purpose Agentic Runtime for Long-Horizon Reasoning"
+      status: 观察中
+      rejection_reason: strict-window official research signal from WeatherNext had stronger primary evidence; Argus remains a follow-up agent-runtime paper candidate
+    - candidate_id: sig_a0a859470205fccb
+      title: "OctoLong: Mid-Training On Cross-Repository Code Contexts Enhances Long-Context Modeling"
+      status: 观察中
+      rejection_reason: relevant to coding-agent long context, but outside the strongest strict-window news sample and not selected to keep the digest concise
+    - candidate_id: sig_e0c9385dbe44cd1e
+      title: "ABSeeker: Training Long-Horizon Search Agents via Answer-Backtracked Credit Assignment"
+      status: 补证据
+      rejection_reason: promising search-agent training paper; deferred until code, benchmark adoption, or stronger interpretation appears
+    - candidate_id: sig_73a3e253adbaf326
+      title: Item Response Theory for AI Safety
+      status: 补证据
+      rejection_reason: useful safety-eval methodology, but not enough room versus WeatherNext and consumer safety governance signals
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-07 09:06 Asia/Shanghai
+    result: hit
+    note: read optional local candidate review; used only as clue layer and did not expose local private paths beyond the generic review path
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: hit
+    note: checked Codex, Claude Code, Gemini CLI, Copilot CLI, Qwen Code, OpenAI Agents SDK and related release streams; selected Qwen Code, Gemini CLI and Copilot CLI
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: hit
+    note: checked OpenAI RSS/pages, GitHub Changelog, Google DeepMind RSS/blog and GitHub sources; selected OpenAI GPT-5.6, Kimi K3 in Copilot and WeatherNext
+  - source_id: china_model_officials
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: hit
+    note: checked Qwen, Moonshot/Kimi, DeepSeek, MiniMax, Z.ai, Tencent Hunyuan, Baidu Wenxin and Volcano Ark surfaces where reachable; Kimi K3 and Qwen Code selected
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: partial
+    note: checked Simon Willison and Baoyu RSS plus reproducible public sources; no stronger personal long-form item than engineering release signals selected
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: hit
+    note: "included five reproducible community/engineering signals: two Chinese-source items and three English-source items"
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: partial
+    note: used official Kimi/Qwen sources instead of secondary media; dynamic Chinese media pages not used as factual confirmation
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: hit
+    note: Qwen Code and LobeHub release streams provided Chinese engineering/community signals
+  - source_id: china_research_community
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: miss
+    note: no separate Chinese research-community item selected beyond Kimi K3 official model evidence
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: hit
+    note: Copilot CLI, Gemini CLI, Pydantic AI, Vercel AI SDK and Ollama releases checked; Copilot, Pydantic and Vercel selected for community section
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: hit
+    note: checked Pydantic AI, Vercel AI SDK, CrewAI, MCP registry and related release streams; selected Pydantic AI and Vercel AI SDK
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: partial
+    note: checked OpenRouter/Together/Fireworks/Groq/Cohere/Replicate-style feeds where reachable; no stronger platform item included
+  - source_id: english_research_blogs
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: hit
+    note: Google DeepMind WeatherNext research blog selected with Nature paper and GitHub repo
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: partial
+    note: newsletter feeds checked where accessible; no high-confidence unrepeated industry-analysis item selected
+  - source_id: english_safety_governance
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: hit
+    note: OpenAI APA partnership selected as consumer AI safety/governance peripheral signal
+  - source_id: research_frontier
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: hit
+    note: selected WeatherNext because original research page, paper pointer, GitHub repo and data feed were all available
+  - source_id: github_trending_ai
+    checked_at: 2026-08-07 09:10 Asia/Shanghai
+    result: partial
+    note: checked GitHub release/project snapshots; omitted GitHub 热门项目 section because strongest fresh repos were already official model/research sources
+evidence_items:
+  - item_id: news-openai-gpt-56-sol
+    section: AI 新闻
+    source_role: official
+    evidence_type: company_announcement
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-07 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt
+    confidence_reason: official OpenAI RSS/page title with exact URL and timestamp inside report window
+  - item_id: news-kimi-k3-copilot
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog_and_repo
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-07 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-06-kimi-k3-is-now-available-in-github-copilot
+      - https://github.com/MoonshotAI/Kimi-K3
+    confidence_reason: official GitHub changelog plus MoonshotAI official repository; rollout pause noted explicitly
+  - item_id: news-qwen-code-0217
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-07 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.7
+      - https://github.com/QwenLM/qwen-code/releases/tag/live-host-v0.1.0
+    confidence_reason: official QwenLM GitHub releases with detailed release notes in the report window
+  - item_id: news-gemini-copilot-cli-runtime
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-07 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/google-gemini/gemini-cli/releases/tag/v0.54.0
+      - https://github.com/github/copilot-cli/releases/tag/v1.0.79-5
+      - https://github.com/github/copilot-cli/releases/tag/v1.0.79-6
+    confidence_reason: official GitHub release pages with exact tags and timestamps
+  - item_id: research-weathernext
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: research_blog_paper_repo
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-07 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/
+      - https://github.com/google-deepmind/weathernext
+    confidence_reason: official Google DeepMind blog and official GitHub repo with Nature paper pointer
+  - item_id: opinion-lobehub-canary
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-07 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/lobehub/lobehub/releases/tag/v2.2.14-canary.35
+    confidence_reason: public GitHub release; marked as canary and not treated as stable capability
+  - item_id: opinion-pydantic-ai-2250
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-07 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.25.0
+    confidence_reason: public GitHub release from project maintainer repo
+  - item_id: opinion-vercel-ai-7055
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-07 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vercel/ai/releases/tag/ai%407.0.55
+    confidence_reason: public GitHub release from official Vercel AI SDK repo
+  - item_id: peripheral-openai-apa
+    section: AI 外围情报观察
+    source_role: official
+    evidence_type: partnership_announcement
+    item_date: 2026-08-06
+    snapshot_time: 2026-08-07 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai
+    confidence_reason: official OpenAI announcement inside report window
+followups:
+  - Kimi K3 在 GitHub Copilot 的 rollout 暂停是否恢复，以及是否披露 Actions incident 后续
+  - GPT-5.6 Sol / Luna 是否进入 OpenAI API、Codex 或企业管理员控制面
+  - Qwen Code review-context manifest 是否与 CI / PR review / team policy 结合
+  - WeatherNext 是否出现第三方复现、机构采用或云平台产品化案例
+fact_confidence: high
+signal_strength: high

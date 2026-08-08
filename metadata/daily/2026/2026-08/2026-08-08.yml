@@ -1,0 +1,331 @@
+date: 2026-08-08
+window_start: "2026-08-07 09:00 Asia/Shanghai"
+window_end: "2026-08-08 09:00 Asia/Shanghai"
+supplemental_range: "2026-08-02 to 2026-08-08 Asia/Shanghai; only unrepeated research/community signals tied to agent evaluation, context trust, and runtime governance"
+themes:
+  - agent_runtime_governance
+  - enterprise_agent_control_plane
+  - cyber_capability_governance
+  - coding_agent_plugins
+  - agent_observability
+  - agent_evaluation
+  - context_trust
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - GitHub
+  - Anthropic
+  - Qwen
+  - LobeHub
+  - Pydantic
+  - Vercel
+products:
+  - Codex
+  - GitHub Copilot
+  - Copilot CLI
+  - Claude Code
+  - Qwen Code
+  - LobeHub
+  - Pydantic AI
+  - Vercel AI SDK
+signals:
+  - critical cyber capabilities governance
+  - agent app activity metrics
+  - Copilot ROI measurement
+  - code review effort levels
+  - self-hosted coding agent runners
+  - portable Agent Plugins
+  - cross-session agent messaging
+  - review context manifest
+  - selective context trust
+  - long-trajectory agent debugging
+opinion_sources:
+  - Qwen Code release notes
+  - LobeHub release notes
+  - Simon Willison
+  - Pydantic AI release notes
+  - Vercel AI SDK release notes
+viewpoint_themes:
+  - coding agent runtime
+  - agent safety incident timeline
+  - tool visibility and cancellation
+  - multimodal SDK idempotency
+  - Chinese AI desktop agent workspace
+research_sources:
+  - arXiv:2608.06377
+  - arXiv:2608.06346
+  - arXiv:2608.06362
+research_themes:
+  - selective_context_trust
+  - rag_robustness
+  - long_horizon_agent_debugging
+  - agent_eval_cost
+  - anytime_valid_evaluation
+research_artifacts:
+  - paper
+  - benchmark
+  - eval
+research_interpretations:
+  - none
+peripheral_themes:
+  - 安全与治理
+  - 企业采用
+  - 开发者平台控制面
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-08-08.md"
+  adopted:
+    - candidate_id: sig_9cbd57e54bf502d1
+      title: "Learning When to Trust via Selective Context Preference Optimization"
+      adoption_reason: "adopted because selective context trust directly affects RAG, browser agents, and enterprise knowledge agents"
+    - candidate_id: sig_f6ced634007517ce
+      title: "TRAJDEBUG: Tracing Error Lifecycle to Identify Critical Failures in Long-Horizon Agent Trajectories"
+      adoption_reason: "adopted because trajectory debugging matches today's runtime governance and observability theme"
+    - candidate_id: sig_d40e3db04b98d4ca
+      title: "AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games"
+      adoption_reason: "adopted as an agent-evaluation cost methodology signal after arXiv verification"
+  rejected_or_deferred:
+    - candidate_id: sig_13c3fc26b72c4640
+      title: "Tracing the Heart: An Evidence-Linked Pipeline for Heart-Failure Feature Engineering"
+      status: deferred
+      rejection_reason: "high-scoring but domain-specific clinical feature-engineering paper; weaker tie to today's AI-agent/product mainline"
+    - candidate_id: sig_bab7b4b7c1d33878
+      title: "Investigating Artificial Intelligence Digital Sovereignty in Mobile Shopping Apps"
+      status: deferred
+      rejection_reason: "AI governance adjacent but less directly connected to model competition or agent workflow"
+    - candidate_id: sig_7b16ffe70ac1c096
+      title: "The Low Frequency Trap: Video Language Models Fail at Simple Event Bookkeeping"
+      status: deferred
+      rejection_reason: "relevant VLM eval paper but lower fit than context trust and agent trajectory debugging for this run"
+    - candidate_id: sig_4ceef3ef6ad464e0
+      title: "Benchmarking the Benchmarks: Evaluating Benchmarks for Conversational Agents"
+      status: deferred
+      rejection_reason: "useful benchmark-quality paper, deferred to keep research section concise after selecting TRAJDEBUG and AV-AIVAT"
+source_checks:
+  - source_id: runtime_gate
+    checked_at: "2026-08-08 09:07 Asia/Shanghai"
+    result: hit
+    note: "Asia/Shanghai time was inside the 09:00:00-09:14:59 execution window"
+  - source_id: origin_main_duplicate_check
+    checked_at: "2026-08-08 09:07 Asia/Shanghai"
+    result: miss
+    note: "origin/main did not contain daily/2026/2026-08/2026-08-08.md or matching sidecar before generation"
+  - source_id: local_signal_inbox
+    checked_at: "2026-08-08 09:08 Asia/Shanghai"
+    result: hit
+    note: "optional local candidate review read as clue layer; adopted research items reverified with arXiv"
+  - source_id: coding_agent_releases
+    checked_at: "2026-08-08 09:20 Asia/Shanghai"
+    result: hit
+    note: "checked Codex, Claude Code, Copilot CLI, Gemini CLI, Qwen Code, OpenAI Agents SDK and related release streams"
+  - source_id: core_official_ai_news
+    checked_at: "2026-08-08 09:22 Asia/Shanghai"
+    result: hit
+    note: "OpenAI RSS and GitHub Changelog yielded critical cyber capabilities, Copilot agent metrics, ROI, review effort and weekly releases"
+  - source_id: china_model_officials
+    checked_at: "2026-08-08 09:24 Asia/Shanghai"
+    result: partial
+    note: "checked Qwen/Qwen Code, Kimi/Moonshot blog, MiniMax news, ZCode docs, Tencent Hunyuan, Volcano Ark, DeepSeek and Baidu surfaces where reachable; Qwen Code provided strongest fresh China-side signal"
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-08-08 09:30 Asia/Shanghai"
+    result: hit
+    note: "Simon Willison RSS/blog had a same-window OpenAI incident timeline; Baoyu/Kexue feeds checked but recent items were older or already covered"
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-08-08 09:31 Asia/Shanghai"
+    result: hit
+    note: "included five reproducible community/engineering signals: two Chinese-source items and three English-source items"
+  - source_id: china_ai_media_signals
+    checked_at: "2026-08-08 09:31 Asia/Shanghai"
+    result: partial
+    note: "QbitAI RSS checked as auxiliary clue stream; no media-only factual item replaced official sources"
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-08-08 09:32 Asia/Shanghai"
+    result: hit
+    note: "Qwen Code and LobeHub release streams provided Chinese-source engineering/community signals; Cherry Studio also checked"
+  - source_id: china_research_community
+    checked_at: "2026-08-08 09:33 Asia/Shanghai"
+    result: partial
+    note: "Kexue feed and Chinese engineering/research GitHub sources checked; no separate China research item selected"
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-08-08 09:35 Asia/Shanghai"
+    result: hit
+    note: "Pydantic AI and Vercel AI SDK releases selected; Gemini CLI, Copilot CLI and OpenAI Agents SDK release streams also checked"
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-08-08 09:35 Asia/Shanghai"
+    result: hit
+    note: "checked Pydantic AI, Vercel AI SDK, LangChain/LlamaIndex-style feeds and agent framework releases; selected Pydantic AI and Vercel"
+  - source_id: english_inference_platforms
+    checked_at: "2026-08-08 09:36 Asia/Shanghai"
+    result: partial
+    note: "checked OpenRouter, Perplexity and related changelog pages where accessible; no stronger inference-platform item selected"
+  - source_id: english_research_blogs
+    checked_at: "2026-08-08 09:37 Asia/Shanghai"
+    result: hit
+    note: "Hugging Face, Google Research, DeepMind and arXiv sources checked; arXiv papers selected as primary research sources"
+  - source_id: english_industry_analysis
+    checked_at: "2026-08-08 09:38 Asia/Shanghai"
+    result: partial
+    note: "Latent Space, Interconnects and AI Snake Oil/Normal Technology feeds checked; Simon and release sources had stronger direct fit"
+  - source_id: english_safety_governance
+    checked_at: "2026-08-08 09:38 Asia/Shanghai"
+    result: hit
+    note: "OpenAI critical cyber capabilities and Simon incident timeline selected as safety/governance signals"
+  - source_id: research_frontier
+    checked_at: "2026-08-08 09:40 Asia/Shanghai"
+    result: hit
+    note: "arXiv original abstract pages verified for selected research items"
+  - source_id: github_trending_ai
+    checked_at: "2026-08-08 09:42 Asia/Shanghai"
+    result: partial
+    note: "checked release/project snapshots; omitted GitHub 热门项目 section because strongest fresh project signals were already official product/community sources or repeated recent projects"
+  - source_id: ai_peripheral_watchlist
+    checked_at: "2026-08-08 09:43 Asia/Shanghai"
+    result: hit
+    note: "selected safety/governance and enterprise adoption/control-plane connection as peripheral observation"
+evidence_items:
+  - item_id: news-openai-critical-cyber
+    section: AI 新闻
+    source_role: official
+    evidence_type: company_announcement
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-08 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://openai.com/index/responding-next-frontier-critical-cyber-capabilities
+    confidence_reason: "official OpenAI RSS/page entry with exact URL and timestamp inside report window"
+  - item_id: news-github-copilot-metrics-review
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-08 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity
+      - https://github.blog/changelog/2026-08-07-copilot-impact-dashboard-adds-a-return-on-investment-section
+      - https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available
+      - https://github.blog/changelog/2026-08-07-github-copilot-weekly-releases-august-3
+    confidence_reason: "official GitHub Changelog entries with same-day timestamps"
+  - item_id: news-claude-code-2-1-224
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-08 09:20 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.224
+    confidence_reason: "official Anthropic GitHub release with exact tag and release notes"
+  - item_id: news-codex-0-147-0
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-08 09:20 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/codex/releases/tag/rust-v0.147.0
+    confidence_reason: "official OpenAI Codex GitHub release with exact tag and release notes"
+  - item_id: news-qwen-code-nightly-20260808
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-08
+    snapshot_time: "2026-08-08 09:20 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.7-nightly.20260808.4ec0371e6
+    confidence_reason: "official QwenLM GitHub release inside report window"
+  - item_id: opinion-qwen-code-release
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-08
+    snapshot_time: "2026-08-08 09:32 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.7-nightly.20260808.4ec0371e6
+    confidence_reason: "official release used as Chinese engineering-community signal"
+  - item_id: opinion-lobehub-canary-39
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-08 09:32 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/lobehub/lobehub/releases/tag/v2.2.14-canary.39
+    confidence_reason: "public GitHub canary release used as Chinese client-ecosystem signal, explicitly caveated as canary"
+  - item_id: opinion-simon-openai-timeline
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-08 09:30 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/7/openai-timeline/
+      - https://openai.com/index/responding-next-frontier-critical-cyber-capabilities
+    confidence_reason: "Simon post is treated as interpretation/timeline clue; factual governance source remains OpenAI official page"
+  - item_id: opinion-pydantic-ai-2-26
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-08 09:35 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.26.0
+    confidence_reason: "official GitHub release with exact tag and release notes"
+  - item_id: opinion-vercel-ai-sdk-7-0-58
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-08 09:35 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vercel/ai/releases/tag/ai%407.0.58
+      - https://github.com/vercel/ai/releases/tag/ai%407.0.56
+    confidence_reason: "official Vercel AI SDK GitHub releases inside report window"
+  - item_id: research-selective-context-trust
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-08-06
+    snapshot_time: "2026-08-08 09:40 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.06377
+    confidence_reason: "arXiv abstract page verified with title, authors, submitted date and abstract"
+  - item_id: research-trajdebug
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper_benchmark
+    item_date: 2026-08-06
+    snapshot_time: "2026-08-08 09:40 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.06346
+    confidence_reason: "arXiv abstract page verified with benchmark details and agent trajectory failure scope"
+  - item_id: research-av-aivat
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper_eval_method
+    item_date: 2026-08-06
+    snapshot_time: "2026-08-08 09:40 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.06362
+    confidence_reason: "arXiv abstract page verified with anytime-valid evaluation and cost-reduction claims"
+followups:
+  - GitHub Copilot agent app activity 是否能细分 partner agent、repo、PR、任务类型和成本
+  - Claude Code self-hosted runner 是否扩展出企业 runner 池和审计策略
+  - Codex portable Agent Plugins 与 MCP、skills、remote catalog 的边界是否稳定
+  - Qwen Code nightly 的 review context、memory writes 和 channel runtime 是否进入稳定版
+  - SCOPE、TrajDebug、AV-AIVAT 是否出现代码、第三方复现或框架采用
+fact_confidence: high
+signal_strength: medium

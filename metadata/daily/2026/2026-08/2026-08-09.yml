@@ -1,0 +1,292 @@
+date: 2026-08-09
+window_start: "2026-08-08 09:00 Asia/Shanghai"
+window_end: "2026-08-09 09:00 Asia/Shanghai"
+generated_at: "2026-08-09 09:16 Asia/Shanghai"
+supplemental_range: "2026-08-02 to 2026-08-08; recent high-value official updates and public community samples not used as repeated filler"
+themes:
+  - agent_runtime_governance
+  - coding_agent_enterprise_workflow
+  - workspace_agent
+  - model_safety_evals
+  - context_trust
+  - agent_trajectory_debugging
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - Cursor
+  - GitHub
+  - Microsoft
+  - Qwen
+  - MiniMax
+products:
+  - ChatGPT
+  - GPT-5.6 Sol
+  - GPT-5.6 Luna
+  - Cursor
+  - GitHub Copilot
+  - Qwen3.8-Max
+  - Qwen Code
+  - MiniMax H3
+signals:
+  - "高风险能力安全评估前置"
+  - "办公系统进入 agent 工作流"
+  - "代码审查强度和 ROI 度量产品化"
+  - "中文模型与 coding agent 同步推进"
+  - "agent 评测从结果打分转向过程诊断"
+opinion_sources:
+  - "量子位"
+  - "Simon Willison"
+viewpoint_themes:
+  - "中文模型社区反馈"
+  - "agent 安全复盘"
+  - "AI 编程可观察性"
+  - "视频模型开源生态"
+research_sources:
+  - "Learning When to Trust via Selective Context Preference Optimization"
+  - "TRAJDEBUG: Tracing Error Lifecycle to Identify Critical Failures in Long-Horizon Agent Trajectories"
+  - "Benchmarking the Benchmarks: Evaluating Benchmarks for Conversational Agents"
+research_themes:
+  - context_trust
+  - agent_debugging
+  - benchmark_quality
+  - process_evaluation
+research_artifacts:
+  - paper
+research_interpretations: []
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-08-09.md"
+  adopted:
+    - candidate_id: sig_9cbd57e54bf502d1
+      title: "Learning When to Trust via Selective Context Preference Optimization"
+      adoption_reason: "directly supports context-trust question for RAG and agent workflows"
+    - candidate_id: sig_f6ced634007517ce
+      title: "TRAJDEBUG"
+      adoption_reason: "high relevance to long-horizon agent debugging and runtime evidence"
+    - candidate_id: sig_4ceef3ef6ad464e0
+      title: "Benchmarking the Benchmarks"
+      adoption_reason: "useful corrective signal for agent benchmark quality"
+  rejected_or_deferred:
+    - candidate_id: sig_d40e3db04b98d4ca
+      status: "补证据"
+      rejection_reason: "promising agent-eval cost signal, deferred to avoid overloading research section"
+    - candidate_id: sig_485722b0f4b82fc2
+      status: "观察中"
+      rejection_reason: "agentic retrieval angle is relevant but less central than context-trust and trajectory debugging today"
+    - candidate_id: sig_13c3fc26b72c4640
+      status: "观察中"
+      rejection_reason: "clinical feature-engineering topic is high quality but too vertical for today's main line"
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: "2026-08-09 09:08 Asia/Shanghai"
+    result: hit
+    note: "optional local review existed and was used only as clue layer for research candidates"
+  - source_id: core_official_ai_news
+    checked_at: "2026-08-09 09:12 Asia/Shanghai"
+    result: hit
+    note: "checked OpenAI, Anthropic, Cursor, GitHub, Qwen official news/changelog pages"
+  - source_id: coding_agent_releases
+    checked_at: "2026-08-09 09:13 Asia/Shanghai"
+    result: hit
+    note: "checked Codex, Claude Code, Copilot, Cursor, Gemini CLI, Qwen Code release/changelog surfaces; included Cursor, Copilot, Qwen Code"
+  - source_id: china_model_officials
+    checked_at: "2026-08-09 09:13 Asia/Shanghai"
+    result: hit
+    note: "checked Qwen, MiniMax, DeepSeek, Kimi, Zhipu and related official surfaces; included Qwen and MiniMax signals"
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-08-09 09:14 Asia/Shanghai"
+    result: partial
+    note: "checked reproducible blog/newsletter/public article routes; X-only core accounts treated as blocked, not misses"
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-08-09 09:14 Asia/Shanghai"
+    result: hit
+    note: "included 2 Chinese-source information clues and 3 English-source public posts"
+  - source_id: china_ai_media_signals
+    checked_at: "2026-08-09 09:15 Asia/Shanghai"
+    result: hit
+    note: "used 量子位 as information clue only, with official links retained for factual claims"
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-08-09 09:15 Asia/Shanghai"
+    result: hit
+    note: "checked Qwen Code and Chinese open-source/model tooling signals"
+  - source_id: china_research_community
+    checked_at: "2026-08-09 09:15 Asia/Shanghai"
+    result: partial
+    note: "no separate Chinese research-community item included; Qwen/MiniMax official and media clues covered relevant current Chinese signals"
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-08-09 09:15 Asia/Shanghai"
+    result: hit
+    note: "checked Simon Willison and engineering tool release signals; included LLM 0.32 methodology item"
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-08-09 09:15 Asia/Shanghai"
+    result: partial
+    note: "checked agent/RAG/tooling surfaces; no separate LangChain/LlamaIndex item selected over current safety and observability samples"
+  - source_id: english_inference_platforms
+    checked_at: "2026-08-09 09:15 Asia/Shanghai"
+    result: miss
+    note: "no high-confidence inference-platform update selected for the body"
+  - source_id: english_research_blogs
+    checked_at: "2026-08-09 09:15 Asia/Shanghai"
+    result: partial
+    note: "no research-blog item included; research section used original arXiv papers"
+  - source_id: english_industry_analysis
+    checked_at: "2026-08-09 09:15 Asia/Shanghai"
+    result: partial
+    note: "no separate industry-analysis longform selected within time budget"
+  - source_id: english_safety_governance
+    checked_at: "2026-08-09 09:15 Asia/Shanghai"
+    result: hit
+    note: "included OpenAI/Anthropic safety sources and Simon Willison safety incident analysis"
+  - source_id: research_frontier
+    checked_at: "2026-08-09 09:16 Asia/Shanghai"
+    result: hit
+    note: "selected three arXiv originals from candidate leads after avoiding repeated 2026-08-08 research items where possible"
+evidence_items:
+  - item_id: news-1-safety-evals
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: company_blog
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-09 09:12 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/"
+      - "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards"
+    confidence_reason: "official company pages with dated safety/update posts"
+  - item_id: news-2-openai-chatgpt-models
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: company_blog
+    item_date: 2026-08-06
+    snapshot_time: "2026-08-09 09:12 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/"
+    confidence_reason: "official OpenAI product update"
+  - item_id: news-3-cursor-workspace-plugins
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-09 09:13 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://cursor.com/changelog/google-workspace-plugins"
+    confidence_reason: "official Cursor changelog entry"
+  - item_id: news-4-copilot-weekly
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-09 09:13 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.blog/changelog/2026-08-07-github-copilot-weekly-releases-august-3/"
+    confidence_reason: "official GitHub changelog entry"
+  - item_id: news-5-qwen-model-code
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-08
+    snapshot_time: "2026-08-09 09:13 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://qwen.ai/blog?id=qwen3.8"
+      - "https://github.com/QwenLM/qwen-code/releases"
+    confidence_reason: "official Qwen model blog plus official GitHub release stream"
+  - item_id: opinion-cn-1-minimax-h3
+    section: "AI 圈博主"
+    source_role: media
+    evidence_type: public_article
+    item_date: 2026-08-08
+    snapshot_time: "2026-08-09 09:15 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://www.qbitai.com/2026/08/467270.html"
+      - "https://www.minimax.io/news/minimax-h3-open-source"
+    confidence_reason: "media clue paired with official MiniMax source"
+  - item_id: opinion-cn-2-qwen38
+    section: "AI 圈博主"
+    source_role: media
+    evidence_type: public_article
+    item_date: 2026-08-03
+    snapshot_time: "2026-08-09 09:15 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://www.qbitai.com/2026/08/465641.html"
+      - "https://qwen.ai/blog?id=qwen3.8"
+    confidence_reason: "media clue paired with official Qwen release page"
+  - item_id: opinion-en-1-simon-hf-incident
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: public_blog
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-09 09:14 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Aug/7/openai-timeline/"
+    confidence_reason: "public technical blog used as interpretation and timeline clue, not sole factual authority"
+  - item_id: opinion-en-2-simon-incident
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: public_blog
+    item_date: 2026-08-05
+    snapshot_time: "2026-08-09 09:14 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Aug/5/third-party-cyber-evaluations/"
+      - "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/"
+    confidence_reason: "blog interpretation paired with OpenAI primary source"
+  - item_id: opinion-en-3-simon-llm-032
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: public_blog
+    item_date: 2026-08-04
+    snapshot_time: "2026-08-09 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Aug/4/new-release-of-llm/"
+      - "https://github.com/simonw/llm"
+    confidence_reason: "author blog and project repository align"
+  - item_id: research-1-context-trust
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-09 09:16 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2608.06377"
+    confidence_reason: "arXiv original paper retained"
+  - item_id: research-2-trajdebug
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-09 09:16 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2608.06346"
+    confidence_reason: "arXiv original paper retained"
+  - item_id: research-3-benchmarking-benchmarks
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-07
+    snapshot_time: "2026-08-09 09:16 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2608.06329"
+    confidence_reason: "arXiv original paper retained"
+followups:
+  - "Copilot impact dashboard 是否和 agent activity、review effort 形成可复查指标闭环"
+  - "Cursor Google Workspace Plugins 是否补组织权限和审计日志"
+  - "Qwen Code 是否继续把 review、memory、telemetry 和 runtime governance 稳定发布"
+  - "context-trust 与 trajectory-debugging 论文是否出现开源实现或第三方复现"
+fact_confidence: high
+signal_strength: medium

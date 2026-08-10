@@ -1,0 +1,262 @@
+date: 2026-08-10
+window_start: 2026-08-09 09:00 Asia/Shanghai
+window_end: 2026-08-10 09:00 Asia/Shanghai
+supplemental_range: 2026-08-04 to 2026-08-09
+themes:
+  - agent_runtime_governance
+  - coding_agent_autonomy
+  - agent_metrics
+  - review_runtime
+  - agent_evaluation
+  - open_source_agent_infra
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Anthropic
+  - Alibaba
+  - GitHub
+  - Microsoft
+  - ModelScope
+  - Pydantic
+  - Prime Intellect
+products:
+  - Claude Code
+  - Qwen Code
+  - GitHub Copilot
+  - Copilot usage metrics API
+  - EvalScope
+  - Pydantic AI
+  - prime-agent
+signals:
+  - auto mode 默认化
+  - review context manifest
+  - agent app activity metrics
+  - workspace trust hardening
+  - agent benchmark 成本下降
+  - provider compaction and observability
+opinion_sources:
+  - Simon Willison
+  - Nathan Lambert / Interconnects
+  - Pydantic AI release community
+  - Qwen Code release community
+  - ModelScope EvalScope release community
+viewpoint_themes:
+  - AI 编程安全边界
+  - agent 自治与确认疲劳
+  - agent 度量和组织采用
+  - 中文 agent 工程生态
+  - agent 框架可观测性
+research_sources:
+  - arXiv:2608.06362
+research_themes:
+  - agent_evaluation
+  - anytime_valid_stopping
+  - evaluation_cost_reduction
+research_artifacts:
+  - paper
+research_interpretations:
+  - none
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/YYYY-MM-DD.md
+  adopted:
+    - candidate_id: sig_d40e3db04b98d4ca
+      title: "AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games"
+      adoption_reason: 与本期 agent 自治、评测成本和过程度量主线直接相关，且有 arXiv 原文可核验。
+  rejected_or_deferred:
+    - candidate_id: sig_9cbd57e54bf502d1
+      status: deferred
+      rejection_reason: 已在 2026-08-09 日报采用，本期避免重复。
+    - candidate_id: sig_f6ced634007517ce
+      status: deferred
+      rejection_reason: 已在 2026-08-09 日报采用，本期避免重复。
+    - candidate_id: sig_4ceef3ef6ad464e0
+      status: deferred
+      rejection_reason: 已在 2026-08-09 日报采用，本期避免重复。
+source_checks:
+  - source_id: runtime_gate
+    checked_at: 2026-08-10 09:06 Asia/Shanghai
+    result: hit
+    note: Asia/Shanghai time was inside 09:00:00-09:14:59 generation window.
+  - source_id: origin_main_duplicate_check
+    checked_at: 2026-08-10 09:07 Asia/Shanghai
+    result: hit
+    note: origin/main did not contain daily/2026/2026-08/2026-08-10.md or matching sidecar.
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-10 09:08 Asia/Shanghai
+    result: hit
+    note: Optional local review existed and was used only as clue layer; adopted one arXiv candidate after primary verification.
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: Checked Claude Code official blog/docs, Qwen Code releases, Gemini CLI releases, Codex releases, Copilot CLI releases, and GitHub Copilot changelog.
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: partial
+    note: OpenAI RSS had no new strict-window post; Anthropic/Claude and GitHub supplemental official updates were used.
+  - source_id: china_model_officials
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: partial
+    note: Qwen blog feed had no strict-window blog post; Qwen GitHub releases supplied a verified coding-agent update.
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: Simon Willison and Interconnects had reproducible public posts within recent 7-day window.
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: Included five reproducible community/viewpoint signals, two Chinese-source and three English-source items.
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: partial
+    note: No high-confidence new media item used; Chinese quota filled by reproducible official/community engineering releases.
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: Qwen Code and ModelScope EvalScope release activity provided information-gain signals.
+  - source_id: china_research_community
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: EvalScope release added agent, automation, browser, deep-search, and document-understanding benchmark support.
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: Pydantic AI, Vercel AI SDK, Gemini CLI, Copilot CLI, and GitHub trending were checked; Pydantic and prime-agent were included.
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: Pydantic AI v2.27.0 was included as an agent framework signal.
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: partial
+    note: Vercel AI SDK provider package patch was checked but treated as secondary package-churn context, not headline news.
+  - source_id: english_research_blogs
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: Interconnects post was included as viewpoint sample; research section still relies on arXiv original.
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: Interconnects provided a high-value industry/safety viewpoint on recent agent security events.
+  - source_id: english_safety_governance
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: Claude auto mode and Simon/Interconnects safety analysis were checked; X-only links were not used as primary evidence.
+  - source_id: research_frontier
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: arXiv candidate AV-AIVAT was included; prior adopted candidates were skipped to avoid duplicate coverage.
+  - source_id: github_trending_ai
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: hit
+    note: PrimeIntellect-ai/prime-agent selected as non-mainline emerging AI project; GitHub API snapshot recorded.
+  - source_id: ai_peripheral_watchlist
+    checked_at: 2026-08-10 09:13 Asia/Shanghai
+    result: miss
+    note: No high-confidence adjacent compute, policy, or enterprise adoption signal added beyond agent governance already in main sections.
+evidence_items:
+  - item_id: news-1-claude-code-auto-mode
+    section: AI 新闻
+    source_role: official
+    evidence_type: product_blog_and_docs
+    item_date: 2026-08-07
+    snapshot_time: 2026-08-10 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://claude.com/blog/auto-mode-default-in-claude-code
+      - https://code.claude.com/docs/en/auto-mode-config
+    confidence_reason: Official Claude blog and docs describe auto mode defaultization and configuration.
+  - item_id: news-2-qwen-code-0218
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-09
+    snapshot_time: 2026-08-10 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.8
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.8-nightly.20260810.55e20db328
+    confidence_reason: Official GitHub releases include timestamps, highlights, and PR-linked change list.
+  - item_id: news-3-copilot-agent-metrics
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-07
+    snapshot_time: 2026-08-10 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity/
+      - https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available/
+      - https://github.blog/changelog/2026-08-07-copilot-impact-dashboard-adds-a-return-on-investment-section/
+    confidence_reason: GitHub Changelog entries provide official dates and implementation details.
+  - item_id: news-4-evalscope-110
+    section: AI 新闻
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-04
+    snapshot_time: 2026-08-10 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/modelscope/evalscope/releases/tag/v1.10.0
+    confidence_reason: ModelScope GitHub release lists exact benchmark and feature additions.
+  - item_id: opinion-1-simon-auto-mode
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-08
+    snapshot_time: 2026-08-10 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/8/auto-mode/
+      - https://claude.com/blog/auto-mode-default-in-claude-code
+    confidence_reason: Public blog post links back to official Claude announcement; used as viewpoint, not sole fact source.
+  - item_id: opinion-2-interconnects-lessons
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: newsletter_post
+    item_date: 2026-08-09
+    snapshot_time: 2026-08-10 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.interconnects.ai/p/lessons-from-the-hacks
+    confidence_reason: Public Substack post with dated RSS entry; included as opinion sample.
+  - item_id: opinion-3-pydantic-ai-227
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-08
+    snapshot_time: 2026-08-10 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.27.0
+    confidence_reason: Official GitHub release includes exact feature and bug-fix list.
+  - item_id: research-1-av-aivat
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-08-07
+    snapshot_time: 2026-08-10 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.06362
+    confidence_reason: Original arXiv abstract page used; candidate review only supplied clue.
+  - item_id: github-1-prime-agent
+    section: GitHub 热门项目
+    source_role: community
+    evidence_type: github_repo_snapshot
+    item_date: 2026-08-10
+    snapshot_time: 2026-08-10 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/PrimeIntellect-ai/prime-agent
+    confidence_reason: GitHub Trending and API snapshot showed active non-mainline AI agent repository.
+followups:
+  - Claude Code auto mode 默认化后是否出现第三方复验或企业禁用策略。
+  - Qwen Code review context manifest、workspace trust 和 autofix caps 是否进入稳定企业控制面。
+  - Copilot usage metrics API 的 agent app activity 是否被用于多 agent 采用比较。
+  - EvalScope 和 AV-AIVAT 是否被真实 agent regression pipeline 采用。
+fact_confidence: high
+signal_strength: medium

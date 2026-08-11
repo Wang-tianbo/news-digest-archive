@@ -1,0 +1,317 @@
+date: 2026-08-11
+window_start: "2026-08-10 09:00 Asia/Shanghai"
+window_end: "2026-08-11 09:00 Asia/Shanghai"
+supplemental_range: none
+themes:
+  - agent_runtime_governance
+  - coding_agent_control_plane
+  - local_open_weights
+  - agent_skills
+  - agent_memory
+  - enterprise_adoption
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - GitHub
+  - Qwen
+  - Google
+  - Hugging Face
+  - Ollama
+  - Cherry Studio
+  - Meta
+products:
+  - Claude Code
+  - Copilot
+  - Qwen Code
+  - Muse Glimmer
+  - Transformers
+  - vLLM
+  - Ollama
+  - Google Ads
+  - Google Analytics
+signals:
+  - 运行时治理继续前移
+  - 本地 agent 模型开始可用
+  - workspace trust 与审计细节下沉
+  - 技能与记忆成为显式研究主题
+  - 企业增长工具开始 agent 化
+opinion_sources:
+  - Simon Willison
+  - Nathan Lambert / Interconnects
+  - Qwen Code release notes
+  - Cherry Studio release notes
+  - Ollama release notes
+viewpoint_themes:
+  - AI 编程工作流
+  - 本地开放模型部署
+  - post-training 方法论
+  - 桌面 agent 体验
+research_sources:
+  - arXiv:2608.07449
+  - arXiv:2608.07429
+research_themes:
+  - agent_skills
+  - agent_memory
+research_artifacts:
+  - paper
+research_interpretations:
+  - skills and memory management are becoming first-class agent runtime concerns
+peripheral_themes:
+  - 企业采用
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-11.md
+  adopted:
+    - candidate_id: sig_5e0c187e01177da2
+      title: "SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent"
+      adoption_reason: direct fit for agent skill reuse and runtime evolution
+    - candidate_id: sig_5f034dc04429563f
+      title: "TEPA: Revoking Stale Memories for Conflict-Robust Language Agents"
+      adoption_reason: direct fit for long-horizon memory lifecycle and conflict handling
+  rejected_or_deferred:
+    - candidate_id: sig_31c4f15b7f2130ce
+      status: 观察中
+      rejection_reason: creativity-diversity training is interesting but less tied to today's runtime theme
+    - candidate_id: sig_ac90d732aad851eb
+      status: 观察中
+      rejection_reason: long-context RAG efficiency is useful but secondary to skills and memory today
+    - candidate_id: sig_ac6667c20bd4caef
+      status: 观察中
+      rejection_reason: predictive memory management overlaps with TEPA but is deferred for this digest
+source_checks:
+  - source_id: runtime_gate
+    checked_at: "2026-08-11 09:05 Asia/Shanghai"
+    result: hit
+    note: Asia/Shanghai time was inside the 09:00:00-09:14:59 generation window.
+  - source_id: origin_main_duplicate_check
+    checked_at: "2026-08-11 09:06 Asia/Shanghai"
+    result: miss
+    note: origin/main did not contain daily/2026/2026-08/2026-08-11.md or matching sidecar before generation.
+  - source_id: local_signal_inbox
+    checked_at: "2026-08-11 09:06 Asia/Shanghai"
+    result: hit
+    note: optional local review read as clue layer; used only after primary verification.
+  - source_id: core_official_ai_news
+    checked_at: "2026-08-11 09:08 Asia/Shanghai"
+    result: hit
+    note: OpenAI RSS, GitHub Changelog, Claude Code release, Qwen Code release and Hugging Face release stream yielded included items.
+  - source_id: coding_agent_releases
+    checked_at: "2026-08-11 09:08 Asia/Shanghai"
+    result: hit
+    note: Claude Code, Copilot, Qwen Code and related release/changelog streams were checked.
+  - source_id: china_model_officials
+    checked_at: "2026-08-11 09:08 Asia/Shanghai"
+    result: partial
+    note: Qwen Code provided the only strict-window China-side official hit; other model-company pages were quiet or low-yield.
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-08-11 09:09 Asia/Shanghai"
+    result: hit
+    note: Simon Willison, Nathan Lambert and reproducible release/blog sources were checked.
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-08-11 09:09 Asia/Shanghai"
+    result: hit
+    note: five reproducible community/viewpoint signals were included across Chinese and English buckets.
+  - source_id: china_ai_media_signals
+    checked_at: "2026-08-11 09:09 Asia/Shanghai"
+    result: miss
+    note: no Chinese media-only item was needed; primary official and release sources were sufficient.
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-08-11 09:09 Asia/Shanghai"
+    result: hit
+    note: Qwen Code and Cherry Studio release streams provided Chinese-source engineering signals.
+  - source_id: china_research_community
+    checked_at: "2026-08-11 09:09 Asia/Shanghai"
+    result: partial
+    note: local candidate review helped surface research leads, but final picks were verified on arXiv.
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-08-11 09:10 Asia/Shanghai"
+    result: hit
+    note: Ollama, Transformers, vLLM and related engineering streams were checked.
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-08-11 09:10 Asia/Shanghai"
+    result: hit
+    note: Claude Code, Copilot and agent-runtime release streams were checked.
+  - source_id: english_inference_platforms
+    checked_at: "2026-08-11 09:10 Asia/Shanghai"
+    result: hit
+    note: Ollama release and model-platform chatter provided a fresh inference-platform signal.
+  - source_id: english_research_blogs
+    checked_at: "2026-08-11 09:10 Asia/Shanghai"
+    result: hit
+    note: Simon Willison and Interconnects were read for viewpoint and methodology signals.
+  - source_id: english_industry_analysis
+    checked_at: "2026-08-11 09:10 Asia/Shanghai"
+    result: hit
+    note: Interconnects provided a usable post-training methodology signal.
+  - source_id: english_safety_governance
+    checked_at: "2026-08-11 09:10 Asia/Shanghai"
+    result: hit
+    note: OpenAI cyber/infrastructure posts and Simon's safety-adjacent commentary were checked.
+  - source_id: research_frontier
+    checked_at: "2026-08-11 09:10 Asia/Shanghai"
+    result: hit
+    note: arXiv candidates were verified against original abstracts.
+  - source_id: github_release_stream
+    checked_at: "2026-08-11 09:10 Asia/Shanghai"
+    result: hit
+    note: GitHub release streams for Qwen Code, Claude Code, Copilot CLI, Cherry Studio, Ollama and vLLM were checked.
+  - source_id: ai_peripheral_watchlist
+    checked_at: "2026-08-11 09:10 Asia/Shanghai"
+    result: hit
+    note: Google Ads/Analytics AI tooling was selected as an enterprise-adoption adjacent signal.
+evidence_items:
+  - item_id: news-openai-cyber-infra
+    section: AI 新闻
+    source_role: official
+    evidence_type: official_blog
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://openai.com/news/rss.xml
+      - https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands/
+      - https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/
+      - https://openai.com/index/responsible-ai-infrastructure-texas/
+    confidence_reason: official OpenAI RSS and article URLs on the same date.
+  - item_id: news-claude-code-2-1-227
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.227
+    confidence_reason: official Anthropic GitHub release with exact tag and timestamp.
+  - item_id: news-copilot-web-controls
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-10-copilot-on-web-expands-conversation-controls/
+    confidence_reason: official GitHub changelog entry with same-day publication.
+  - item_id: news-qwen-code-0219
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.9
+    confidence_reason: official QwenLM release with detailed notes.
+  - item_id: news-transformers-5150
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/huggingface/transformers/releases/tag/v5.15.0
+    confidence_reason: official Hugging Face release introduces Muse Glimmer and related model support.
+  - item_id: opinion-qwen-code-0219
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.9
+    confidence_reason: release notes are a reproducible engineering signal, not a standalone fact claim.
+  - item_id: opinion-cherry-studio-203
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/CherryHQ/cherry-studio/releases/tag/v2.0.3
+    confidence_reason: release notes show concrete agent-runtime and MCP changes.
+  - item_id: opinion-simon-muse-glimmer
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/10/introducing-muse-glimmer/
+      - https://github.com/huggingface/transformers/releases/tag/v5.15.0
+    confidence_reason: public blog post plus official release link; used as viewpoint sample.
+  - item_id: opinion-nathan-post-training
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: newsletter_post
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.interconnects.ai/p/5-useful-things-youll-learn-in-my
+    confidence_reason: public Substack-style post explaining post-training methods and history.
+  - item_id: opinion-ollama-muse-glimmer
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/ollama/ollama/releases/tag/v0.32.7
+    confidence_reason: release note directly shows Muse Glimmer entering local-agent runtime paths.
+  - item_id: research-skillprox
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-08
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.07449
+    confidence_reason: arXiv original retained and matches local candidate review.
+  - item_id: research-tepa
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-08
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.07429
+    confidence_reason: arXiv original retained and matches local candidate review.
+  - item_id: project-vllm-0270
+    section: GitHub 热门项目
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vllm-project/vllm/releases/tag/v0.27.0
+    confidence_reason: large official release with clear model and serving changes.
+  - item_id: peripheral-google-ads-ai
+    section: AI 外围情报观察
+    source_role: official
+    evidence_type: official_blog
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-11 09:11 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/
+    confidence_reason: official Google blog post on agentic marketing tools and summaries.
+followups:
+  - Qwen Code 是否把 Local Control pairing 继续做成企业默认策略
+  - Claude Code 与 Copilot 是否继续把会话恢复和 token 可见性做深
+  - Muse Glimmer 是否快速进入 vLLM 和更多本地栈
+  - SkillProx 与 TEPA 是否会被 agent 框架吸收成技能和记忆接口
+fact_confidence: high
+signal_strength: medium

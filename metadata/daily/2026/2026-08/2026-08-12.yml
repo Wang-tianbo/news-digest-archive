@@ -1,0 +1,326 @@
+date: 2026-08-12
+window_start: "2026-08-11 09:00 Asia/Shanghai"
+window_end: "2026-08-12 09:00 Asia/Shanghai"
+supplemental_range: "2026-08-09 to 2026-08-12 for unrepeated public community/viewpoint signals only"
+themes:
+  - agent_runtime_governance
+  - ai_monetization
+  - enterprise_agent_control_plane
+  - local_model_provider
+  - agent_safety_harness
+  - medical_multimodal_agents
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - GitHub
+  - Microsoft
+  - Anthropic
+  - Qwen
+  - Google
+  - Ollama
+  - Amazon Web Services
+products:
+  - ChatGPT
+  - Daybreak
+  - GitHub Copilot
+  - MAI-Code-1.1-Flash
+  - OpenAI Agents SDK
+  - Claude Code
+  - Qwen Code
+  - Ollama
+  - AMIE
+  - Amazon Bedrock
+signals:
+  - ChatGPT 广告测试
+  - Daybreak AWS 分发
+  - Copilot memory and Ollama provider
+  - MAI-Code 模型池轮换
+  - MCP v2 and RunState durable input
+  - skills and sandbox hardening
+  - agent safety harness evolution
+  - medical audio-visual consultation agent
+opinion_sources:
+  - Qwen Code release notes
+  - 苏剑林 / 科学空间
+  - Simon Willison
+  - Import AI
+  - Ollama release notes
+viewpoint_themes:
+  - AI 编程运行时控制
+  - LM 训练目标方法论
+  - reasoning trace 安全边界
+  - automated AI R&D governance
+  - 本地 agent 模型运行路径
+research_sources:
+  - arXiv:2608.09885
+  - Google Research AMIE
+research_themes:
+  - agent_safety
+  - harness_evolution
+  - multimodal_medical_agents
+  - high_risk_ai_evaluation
+research_artifacts:
+  - paper
+  - research_blog
+research_interpretations:
+  - Google Research AMIE blog
+peripheral_themes:
+  - 云平台与推理成本治理
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-12.md
+  adopted:
+    - candidate_id: sig_04e9018721db2118
+      title: "SHE: Trajectory-driven Safety Harness Evolution for LLM Agents"
+      adoption_reason: 直接对应本期 agent runtime、skills、MCP、权限和安全 harness 主线，且有 arXiv 原文。
+    - candidate_id: sig_695b538e38b8d190
+      title: "Advancing AMIE towards expert-level audio-visual clinical consultations"
+      adoption_reason: Google Research 一手研究博客，代表多模态 agent 进入高风险专业交互评测。
+  rejected_or_deferred:
+    - candidate_id: sig_ac20a2718acb54b9
+      status: 观察中
+      rejection_reason: multimodal model diffing 有价值，但本期主线更偏 agent runtime 与高风险交互评测。
+    - candidate_id: sig_e4382cb602c9831c
+      status: 观察中
+      rejection_reason: TTS evaluator benchmark 有研究价值，但与本期产品 / agent 主线相关性较弱。
+    - candidate_id: sig_2c3919282c36e78a
+      status: 观察中
+      rejection_reason: ArchAgent v2 可作为 automated design 后续线索，本期篇幅优先给 SHE 和 AMIE。
+source_checks:
+  - source_id: runtime_gate
+    checked_at: "2026-08-12 09:06 Asia/Shanghai"
+    result: hit
+    note: Asia/Shanghai time was inside 09:00:00-09:14:59 generation window.
+  - source_id: origin_main_duplicate_check
+    checked_at: "2026-08-12 09:07 Asia/Shanghai"
+    result: miss
+    note: origin/main did not contain daily/2026/2026-08/2026-08-12.md or matching sidecar before generation.
+  - source_id: local_signal_inbox
+    checked_at: "2026-08-12 09:08 Asia/Shanghai"
+    result: hit
+    note: Optional local review existed and was used only as clue layer; adopted SHE and AMIE after primary verification.
+  - source_id: core_official_ai_news
+    checked_at: "2026-08-12 09:22 Asia/Shanghai"
+    result: hit
+    note: OpenAI RSS, GitHub Changelog, Claude Code release, Qwen Code release, OpenAI Agents SDK release and Google Research yielded included items.
+  - source_id: coding_agent_releases
+    checked_at: "2026-08-12 09:22 Asia/Shanghai"
+    result: hit
+    note: Checked Codex/openai-agents-python, Claude Code, GitHub Copilot changelog, Gemini CLI, Qwen Code, Cursor and related GitHub release streams.
+  - source_id: china_model_officials
+    checked_at: "2026-08-12 09:24 Asia/Shanghai"
+    result: partial
+    note: Qwen Code supplied the main China-side official engineering hit; DeepSeek, Zhipu, Kimi, MiniMax, Hunyuan, Wenxin and Doubao checks had no stronger strict-window official model update selected.
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-08-12 09:28 Asia/Shanghai"
+    result: hit
+    note: Simon Willison, Import AI, 科学空间 and engineering release streams had reproducible public items; X-only sources were not used.
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-08-12 09:28 Asia/Shanghai"
+    result: hit
+    note: Included five reproducible community/viewpoint signals, two Chinese-source and three English-source items.
+  - source_id: china_ai_media_signals
+    checked_at: "2026-08-12 09:29 Asia/Shanghai"
+    result: partial
+    note: QbitAI and 机器之心 feeds/pages were unstable or low-yield in this run; no media-only fact was used.
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-08-12 09:29 Asia/Shanghai"
+    result: hit
+    note: Qwen Code release activity provided the included Chinese engineering signal; LobeChat, Dify, RAGFlow and related streams were checked for freshness.
+  - source_id: china_research_community
+    checked_at: "2026-08-12 09:29 Asia/Shanghai"
+    result: hit
+    note: 科学空间 public RSS supplied a recent LM-loss methodology post; OpenBMB/OpenCompass/ModelScope checks did not produce a stronger item.
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-08-12 09:31 Asia/Shanghai"
+    result: hit
+    note: Ollama, Vercel AI SDK, Pydantic AI, vLLM, llama.cpp and related release streams were checked; Ollama was included due to new Copilot linkage.
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-08-12 09:31 Asia/Shanghai"
+    result: hit
+    note: OpenAI Agents SDK, Claude Code, Copilot, Gemini CLI, Pydantic AI and Vercel AI SDK were checked.
+  - source_id: english_inference_platforms
+    checked_at: "2026-08-12 09:31 Asia/Shanghai"
+    result: hit
+    note: Ollama and Bedrock-related updates provided local/provider and cost-governance signals; OpenRouter/Replicate checks were low-yield.
+  - source_id: english_research_blogs
+    checked_at: "2026-08-12 09:32 Asia/Shanghai"
+    result: hit
+    note: Google Research AMIE was included; CRFM/AI2 and other research blog checks had no stronger item for this issue.
+  - source_id: english_industry_analysis
+    checked_at: "2026-08-12 09:32 Asia/Shanghai"
+    result: hit
+    note: Import AI #468 provided a public industry/safety governance signal on automated AI R&D and PostTrainBench.
+  - source_id: english_safety_governance
+    checked_at: "2026-08-12 09:32 Asia/Shanghai"
+    result: hit
+    note: SHE paper, Claude skills hardening, OpenAI sandbox release notes and Import AI safety discussion were checked.
+  - source_id: research_frontier
+    checked_at: "2026-08-12 09:33 Asia/Shanghai"
+    result: hit
+    note: arXiv and Google Research candidates were verified against original pages; SHE and AMIE were selected.
+  - source_id: github_trending_ai
+    checked_at: "2026-08-12 09:33 Asia/Shanghai"
+    result: partial
+    note: GitHub trending page was low-yield via text fetch; selected Ollama because it had a new release plus official Copilot integration signal.
+  - source_id: ai_peripheral_watchlist
+    checked_at: "2026-08-12 09:34 Asia/Shanghai"
+    result: hit
+    note: Amazon Bedrock document history supplied a high-confidence cloud cost-governance adjacent signal.
+evidence_items:
+  - item_id: news-1-openai-daybreak-ads
+    section: AI 新闻
+    source_role: official
+    evidence_type: rss_and_official_article_urls
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:22 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - https://openai.com/news/rss.xml
+      - https://openai.com/index/daybreak-models-are-now-available-on-aws
+      - https://openai.com/index/testing-ads-in-chatgpt
+    confidence_reason: Official OpenAI RSS lists titles, URLs and dates; article body fetch was blocked by JavaScript/cookie gate, so interpretation is constrained to title-level facts.
+  - item_id: news-2-copilot-jetbrains-memory-ollama
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/
+    confidence_reason: Official GitHub Changelog entry provides exact feature list and publication date.
+  - item_id: news-3-mai-code-1-1-flash
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-11-mai-code-1-1-flash-available-in-github-copilot/
+      - https://github.blog/changelog/2026-08-11-upcoming-deprecation-of-mai-code-1-flash/
+    confidence_reason: Official GitHub Changelog gives model availability, deprecation date and pricing multiplier details.
+  - item_id: news-4-openai-agents-sdk-0200
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:23 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/openai-agents-python/releases/tag/v0.20.0
+    confidence_reason: Official GitHub release includes tag, date, highlights and PR-linked change list.
+  - item_id: news-5-claude-qwen-runtime
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:24 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.228
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.10
+    confidence_reason: Official GitHub release notes list runtime, skill, Remote Control, reasoning effort and Desktop/Web Shell changes.
+  - item_id: opinion-1-qwen-code-02110
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:29 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.10
+    confidence_reason: Release notes are reproducible engineering signal and not used as independent factual confirmation beyond the release itself.
+  - item_id: opinion-2-kexue-lm-loss
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-09
+    snapshot_time: "2026-08-12 09:29 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://kexue.fm/archives/11854
+    confidence_reason: Public RSS/blog post with date; used only as methodology viewpoint.
+  - item_id: opinion-3-simon-reasoning-traces
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:30 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/#atom-everything
+    confidence_reason: Public blog/RSS item; included as viewpoint sample, not sole fact source.
+  - item_id: opinion-4-import-ai-468
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: newsletter_post
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-12 09:30 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://importai.substack.com/p/import-ai-468-23-rsi-ideas-posttrainbench
+    confidence_reason: Public dated newsletter post; used as community/industry signal and not as primary factual source.
+  - item_id: opinion-5-ollama-0329
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:31 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/ollama/ollama/releases/tag/v0.32.9
+    confidence_reason: Official release note lists Nemotron 3 architecture and Muse Glimmer parser fix.
+  - item_id: research-1-she
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-08-10
+    snapshot_time: "2026-08-12 09:33 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.09885
+    confidence_reason: Original arXiv abstract page used; candidate review only supplied clue.
+  - item_id: research-2-google-amie
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: research_blog
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:33 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://research.google/blog/advancing-amie-towards-expert-level-audio-visual-clinical-consultations/
+    confidence_reason: Google Research original blog post includes title, date, authors and paper quick link.
+  - item_id: github-1-ollama
+    section: GitHub 热门项目
+    source_role: community
+    evidence_type: github_release_and_official_changelog
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:33 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/ollama/ollama/releases/tag/v0.32.9
+      - https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/
+    confidence_reason: Repeated project has new release plus new official Copilot integration signal.
+  - item_id: peripheral-1-bedrock-cost-allocation
+    section: AI 外围情报观察
+    source_role: official
+    evidence_type: documentation_history
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-12 09:34 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html
+    confidence_reason: AWS documentation history provides exact dated change for Bedrock Mantle IAM principal cost allocation.
+followups:
+  - ChatGPT 广告测试是否扩大，并改变 ChatGPT 产品入口和商业化节奏。
+  - Daybreak on AWS 是否带来更多 cyber/defense 模型分发、权限和审计说明。
+  - Copilot Ollama provider、memory、Codex workflows 和 managed settings 是否扩展到更多 IDE 与 cloud agent。
+  - Claude skills 同步安全、OpenAI sandbox acknowledgement 和 Qwen reasoning effort 是否形成跨平台 agent 安全默认项。
+  - SHE 和 AMIE 是否出现代码、第三方复验或进入真实产品评测。
+fact_confidence: high
+signal_strength: medium

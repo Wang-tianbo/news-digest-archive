@@ -1,0 +1,316 @@
+date: 2026-08-13
+window_start: "2026-08-12 09:00 Asia/Shanghai"
+window_end: "2026-08-13 09:00 Asia/Shanghai"
+supplemental_range: "2026-08-06 to 2026-08-13 for unrepeated public community/viewpoint signals only"
+themes:
+  - agent_plugin_protocol
+  - enterprise_ai_adoption
+  - coding_agent_runtime
+  - local_agent_security
+  - agent_observability
+  - parametric_factuality
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Microsoft
+  - GitHub
+  - Anthropic
+  - Qwen
+  - Google
+  - Pydantic
+products:
+  - Agent Plugins
+  - GitHub Copilot
+  - Copilot CLI
+  - Codex
+  - ChatGPT
+  - GPT-5.6
+  - Claude Code
+  - Qwen Code
+  - Qwen Code Desktop
+  - Pydantic AI
+  - Gemini CLI
+  - Vertex AI
+signals:
+  - Agent Plugins 1.0 public preview
+  - enterprise ChatGPT and Codex adoption cases
+  - Claude Code remote control and plugin marketplace hardening
+  - Qwen Code Agent Plugins v1 and Desktop runtime
+  - local agent web UI security vulnerability
+  - Gemini CLI caretaker agent workflow
+  - factual recall bottleneck research
+  - reasoning trace extraction risk
+opinion_sources:
+  - Qwen Code release notes
+  - 机器之心
+  - Simon Willison
+  - Pydantic AI release notes
+  - Gemini CLI release notes
+viewpoint_themes:
+  - 跨工具插件协议
+  - 中文 coding-agent 工程线
+  - VLM 空间推理评测
+  - local agent server security
+  - agent workflow automation
+research_sources:
+  - Google Research factual recall blog
+  - arXiv:2608.09867
+  - Microsoft Research MindTopo
+research_themes:
+  - parametric_factuality
+  - factual_recall
+  - reasoning_trace_security
+  - agent_observability
+research_artifacts:
+  - research_blog
+  - paper
+research_interpretations:
+  - Google Research blog
+  - Simon Willison
+peripheral_themes:
+  - 云平台与企业部署
+candidate_usage:
+  used_local_signal_inbox: false
+  review_path: null
+  adopted: []
+  rejected_or_deferred: []
+source_checks:
+  - source_id: runtime_gate
+    checked_at: "2026-08-13 09:07 Asia/Shanghai"
+    result: hit
+    note: Asia/Shanghai time was inside 09:00:00-09:14:59 generation window.
+  - source_id: origin_main_duplicate_check
+    checked_at: "2026-08-13 09:07 Asia/Shanghai"
+    result: miss
+    note: origin/main did not contain daily/2026/2026-08/2026-08-13.md or matching sidecar before generation.
+  - source_id: local_signal_inbox
+    checked_at: "2026-08-13 09:08 Asia/Shanghai"
+    result: miss
+    note: Optional local signal review .codex-run/signal-reviews/2026-08-13.md was missing; normal source scan continued.
+  - source_id: core_official_ai_news
+    checked_at: "2026-08-13 09:18 Asia/Shanghai"
+    result: hit
+    note: OpenAI, GitHub Changelog, Claude Code, Qwen Code, Pydantic AI, Gemini CLI and Google Research yielded included items.
+  - source_id: coding_agent_releases
+    checked_at: "2026-08-13 09:20 Asia/Shanghai"
+    result: hit
+    note: Checked Codex/openai-agents-python, Claude Code, GitHub Copilot changelog, Gemini CLI, Qwen Code, Cursor, Pydantic AI and related release streams.
+  - source_id: china_model_officials
+    checked_at: "2026-08-13 09:23 Asia/Shanghai"
+    result: partial
+    note: Qwen Code supplied the China-side official engineering hit; DeepSeek, Zhipu, Kimi, MiniMax, Hunyuan, Wenxin and Doubao checks had no stronger strict-window official model update selected.
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-08-13 09:26 Asia/Shanghai"
+    result: hit
+    note: Simon Willison and engineering release streams had reproducible public items; X-only sources were not used.
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-08-13 09:27 Asia/Shanghai"
+    result: hit
+    note: Included five reproducible community/viewpoint signals, two Chinese-source and three English-source items.
+  - source_id: china_ai_media_signals
+    checked_at: "2026-08-13 09:28 Asia/Shanghai"
+    result: partial
+    note: Checked QbitAI and 机器之心 style public sources; only 机器之心 MindTopo clue was retained with primary-source caveat.
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-08-13 09:28 Asia/Shanghai"
+    result: hit
+    note: Qwen Code release activity supplied the included Chinese engineering signal; Dify, RAGFlow, LobeChat, Cherry Studio and related streams were checked for freshness.
+  - source_id: china_research_community
+    checked_at: "2026-08-13 09:29 Asia/Shanghai"
+    result: partial
+    note: Checked Chinese research/community sources; MindTopo entered as a media clue with Microsoft Research primary link.
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-08-13 09:30 Asia/Shanghai"
+    result: hit
+    note: Pydantic AI, Gemini CLI, Codex, llama.cpp, vLLM, Transformers and related release streams were checked; Pydantic AI and Gemini CLI were included.
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-08-13 09:30 Asia/Shanghai"
+    result: hit
+    note: Agent Plugins, Pydantic AI, Claude Code, Qwen Code, Copilot and Gemini CLI provided included agent-infra signals.
+  - source_id: english_inference_platforms
+    checked_at: "2026-08-13 09:31 Asia/Shanghai"
+    result: partial
+    note: Checked OpenRouter, Together, Fireworks, Groq, Cohere, Replicate and cloud model-platform sources; no stronger item selected.
+  - source_id: english_research_blogs
+    checked_at: "2026-08-13 09:31 Asia/Shanghai"
+    result: hit
+    note: Google Research factual recall post was included; other research blogs had no stronger strict-window item selected.
+  - source_id: english_industry_analysis
+    checked_at: "2026-08-13 09:32 Asia/Shanghai"
+    result: partial
+    note: Checked public English newsletters and industry-analysis sources; no new unrepeated high-confidence long-form industry item was selected.
+  - source_id: english_safety_governance
+    checked_at: "2026-08-13 09:32 Asia/Shanghai"
+    result: hit
+    note: Pydantic AI security advisory and reasoning trace extraction discussion supplied safety-governance signals.
+  - source_id: research_frontier
+    checked_at: "2026-08-13 09:33 Asia/Shanghai"
+    result: hit
+    note: Google Research factual recall and reasoning-trace extraction were selected as high-value research signals; arXiv lists were used only as leads.
+  - source_id: github_trending_ai
+    checked_at: "2026-08-13 09:34 Asia/Shanghai"
+    result: partial
+    note: GitHub release streams were higher signal than trending text fetch; Pydantic AI was selected due to a new release plus security advisory.
+  - source_id: ai_peripheral_watchlist
+    checked_at: "2026-08-13 09:35 Asia/Shanghai"
+    result: hit
+    note: Vertex AI generative AI release notes were checked and included as a cloud deployment variable, not as a core headline.
+evidence_items:
+  - item_id: news-1-agent-plugins-1-0
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog_and_spec
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:18 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app/
+      - https://agent-plugins.org/
+    confidence_reason: Official GitHub changelog and public spec site provide exact product and ecosystem details.
+  - item_id: news-2-openai-enterprise-ai
+    section: AI 新闻
+    source_role: official
+    evidence_type: official_article
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:19 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://openai.com/index/how-enterprises-put-ai-to-work/
+    confidence_reason: Official OpenAI article lists enterprise cases and products; treated as vendor-supplied adoption narrative.
+  - item_id: news-3-claude-code-21229
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:20 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.229
+    confidence_reason: Official GitHub release notes provide exact runtime, plugin, MCP, sandbox and runner changes.
+  - item_id: news-4-qwen-code-agent-plugins-desktop
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11-preview.0
+      - https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.2.1
+    confidence_reason: Official GitHub release notes list Agent Plugins v1, Desktop, ACP, OpenTelemetry and resource-boundary changes.
+  - item_id: news-5-pydantic-ai-security
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release_and_security_advisory
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.28.0
+      - https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-h4xc-3qfq-jf93
+    confidence_reason: Official release and advisory describe vulnerability, impact and patched versions.
+  - item_id: opinion-1-qwen-code-agent-plugins
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:28 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11-preview.0
+      - https://agent-plugins.org/
+    confidence_reason: Reproducible release signal; used as engineering/community clue with official protocol source.
+  - item_id: opinion-2-jiqizhixin-mindtopo
+    section: AI 圈博主
+    source_role: media
+    evidence_type: community_media_clue
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:29 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - https://www.jiqizhixin.com/
+      - https://www.microsoft.com/en-us/research/blog/mindtopo-reveals-vlms-spatial-reasoning-abilities/
+    confidence_reason: Included as a Chinese research-community clue; Microsoft Research primary blog verifies the MindTopo date and research framing.
+  - item_id: opinion-3-simon-agent-plugins
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:30 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/12/agent-plugins/
+      - https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app/
+    confidence_reason: Public blog item is used as community radar; factual claim is backed by official GitHub changelog.
+  - item_id: opinion-4-pydantic-ai-security
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release_and_security_advisory
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:31 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.28.0
+      - https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-h4xc-3qfq-jf93
+    confidence_reason: Official project release and advisory provide reproducible security signal.
+  - item_id: opinion-5-gemini-cli-caretaker
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-13 09:31 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/google-gemini/gemini-cli/releases/tag/v0.56.0-preview.1
+    confidence_reason: Official release notes show caretaker triage, eval and Cloud Run workflow changes; interpreted cautiously as preview signal.
+  - item_id: research-1-google-factual-recall
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: research_blog
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:33 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality/
+    confidence_reason: Google Research primary blog post; code and paper details still need follow-up.
+  - item_id: research-2-reasoning-trace-extraction
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper_and_technical_blog
+    item_date: 2026-08-11
+    snapshot_time: "2026-08-13 09:33 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.09867
+      - https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/#atom-everything
+    confidence_reason: Public arXiv paper and reputable technical blog interpretation; no attack code was executed.
+  - item_id: github-1-pydantic-ai
+    section: GitHub 热门项目
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:34 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.28.0
+    confidence_reason: Selected due to fresh release plus security impact rather than generic popularity.
+  - item_id: peripheral-1-vertex-ai-release-notes
+    section: AI 外围情报观察
+    source_role: official
+    evidence_type: release_notes
+    item_date: 2026-08-12
+    snapshot_time: "2026-08-13 09:35 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - https://cloud.google.com/vertex-ai/generative-ai/docs/release-notes
+    confidence_reason: Official release notes page checked; included only as cloud deployment variable, not as a core product headline.
+followups:
+  - Agent Plugins 1.0 是否获得 Codex、Cursor、Claude Code、Qwen Code、Vercel 和第三方插件生态持续采用。
+  - Pydantic AI 漏洞是否引发其他 local agent web UI / IDE extension 的同类安全修复。
+  - OpenAI enterprise adoption cases 是否继续披露 Codex 和 ChatGPT Work 的可量化使用指标。
+  - Google factual recall 研究是否发布论文、代码或 benchmark，并影响 RAG 与 long-context 工程取舍。
+fact_confidence: high
+signal_strength: medium

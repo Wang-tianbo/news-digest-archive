@@ -1,0 +1,264 @@
+date: 2026-08-14
+window_start: 2026-08-13 09:00 Asia/Shanghai
+window_end: 2026-08-14 09:00 Asia/Shanghai
+generated_at: 2026-08-14 09:39 Asia/Shanghai
+generator: daily-ai-digest-watchdog
+generation_reason: primary daily automation did not produce the digest file by 2026-08-14 09:35 Asia/Shanghai
+supplemental_range: 2026-08-12 to 2026-08-14 for unrepeated public AI blogger and research signals
+themes:
+  - agent_runtime
+  - low_latency_inference
+  - model_routing
+  - multi_agent_workflow
+  - mcp_migration
+  - agent_evaluation
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - GitHub
+  - Google
+  - Anthropic
+  - Qwen
+  - Pydantic
+  - Cherry Studio
+products:
+  - GPT-5.6 Sol
+  - OpenAI Ultrafast
+  - Responses API
+  - GitHub Copilot
+  - Gemini 3.7 Flash
+  - Claude Code
+  - Qwen Code
+  - Pydantic AI
+  - Cherry Studio
+signals:
+  - 低延迟 agent API
+  - 多模型 Copilot 路由
+  - 跨会话 subagent 协作
+  - review 证据链
+  - MCP SDK v2 迁移
+  - 企业 tool-use policy 评测
+opinion_sources:
+  - Qwen Code releases
+  - Cherry Studio releases
+  - Simon Willison
+  - Latent Space AINews
+  - Pydantic AI releases
+viewpoint_themes:
+  - AI 编程实践复盘
+  - 中文 AI 桌面工作台
+  - agent 工程兼容性
+  - 模型价格与 agentic performance 社区线索
+research_sources:
+  - arXiv:2608.12282
+research_themes:
+  - agent_evaluation
+  - tool_use_policy
+  - api_retrieval_reasoning
+research_artifacts:
+  - benchmark
+  - paper
+  - repo
+  - dataset
+research_interpretations:
+  - none
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-14.md
+  adopted:
+    - candidate_id: sig_89abbce62db52680
+      title: "VAKRA: Evaluating Multi-Hop Reasoning Across APIs and Retrieval Under Tool-Use Policies"
+      adoption_reason: "Agent benchmark directly matches current runtime/tool-policy theme; included as supplemental research after arXiv verification."
+  rejected_or_deferred:
+    - candidate_id: sig_ca76524f6edb9c56
+      title: "AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses"
+      status: "观察中"
+      rejection_reason: "High-value harness signal, but VAKRA was more directly aligned with enterprise API/retrieval policy evaluation for this issue."
+    - candidate_id: sig_695b538e38b8d190
+      title: "Advancing AMIE towards expert-level audio-visual clinical consultations"
+      status: "重复 / 已覆盖"
+      rejection_reason: "Google Research AMIE was already covered in the 2026-08-12 digest."
+source_checks:
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-14 09:40 Asia/Shanghai
+    result: hit
+    note: "Checked OpenAI RSS, GitHub Changelog RSS, Claude Code releases, Qwen Code releases, and Pydantic AI releases."
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-14 09:40 Asia/Shanghai
+    result: hit
+    note: "Claude Code, Qwen Code, Gemini CLI, Pydantic AI, and Cherry Studio releases reviewed; material items included selectively."
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-14 09:43 Asia/Shanghai
+    result: hit
+    note: "Checked Simon Willison, Latent Space, Interconnects, and public GitHub release feeds; selected reproducible non-X-only items."
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-14 09:43 Asia/Shanghai
+    result: partial
+    note: "Primary Chinese quota was satisfied through reproducible GitHub release sources; unstable webpage-only media sources were not used as factual confirmation."
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-14 09:42 Asia/Shanghai
+    result: hit
+    note: "Checked Qwen Code, Cherry Studio, Dify, RAGFlow, and ModelScope releases; Qwen Code and Cherry Studio provided current information gain."
+  - source_id: china_research_community
+    checked_at: 2026-08-14 09:42 Asia/Shanghai
+    result: partial
+    note: "Local review was research-heavy; no separate Chinese research community item was promoted beyond the arXiv benchmark."
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-14 09:43 Asia/Shanghai
+    result: hit
+    note: "Checked Aider, Simon Willison, Pydantic AI, and related engineering feeds; selected Simon and Pydantic AI."
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-14 09:43 Asia/Shanghai
+    result: hit
+    note: "Pydantic AI MCP/FastMCP and Claude Code subagent/cross-session updates were included."
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-14 09:41 Asia/Shanghai
+    result: hit
+    note: "OpenAI Ultrafast and Copilot model routing were included; xAI release-notes page was unstable/404-like and not used as primary evidence."
+  - source_id: english_research_blogs
+    checked_at: 2026-08-14 09:44 Asia/Shanghai
+    result: partial
+    note: "Checked Google/OpenAI/Anthropic research search and local review; included arXiv VAKRA rather than repeating recently covered AMIE."
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-14 09:43 Asia/Shanghai
+    result: hit
+    note: "Latent Space AINews used only as community signal, not as primary model fact confirmation."
+  - source_id: english_safety_governance
+    checked_at: 2026-08-14 09:43 Asia/Shanghai
+    result: partial
+    note: "No new high-confidence governance item promoted; Claude Code permissions and GitLab redaction noted under engineering updates."
+  - source_id: research_frontier
+    checked_at: 2026-08-14 09:44 Asia/Shanghai
+    result: hit
+    note: "VAKRA arXiv original retained; code/dataset links noted from abstract but not executed."
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-14 09:38 Asia/Shanghai
+    result: hit
+    note: "Optional local candidate review read as clue layer; VAKRA adopted after original-source verification."
+evidence_items:
+  - item_id: news-openai-ultrafast
+    section: AI 新闻
+    source_role: official
+    evidence_type: rss_entry
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-14 09:40 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://openai.com/news/rss.xml
+      - https://openai.com/index/previewing-ultrafast
+    confidence_reason: "Official OpenAI RSS entry with exact title, publication time, and article URL."
+  - item_id: news-openai-builder-guide
+    section: AI 新闻
+    source_role: official
+    evidence_type: rss_entry
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-14 09:40 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://openai.com/index/builders-guide-to-gpt-5-6
+    confidence_reason: "Official OpenAI RSS entry and article URL."
+  - item_id: news-copilot-gemini-37
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-14 09:41 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot
+    confidence_reason: "Official GitHub Changelog item with rollout and admin-policy details."
+  - item_id: news-claude-code-232
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-14 09:40 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.232
+    confidence_reason: "Official GitHub release under Anthropic Claude Code repository."
+  - item_id: news-qwen-pydantic-runtime
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-14 09:42 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.12-preview.1
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11-nightly.20260814.45c2e73080
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.29.0
+    confidence_reason: "Official GitHub releases with exact tags and timestamps."
+  - item_id: blogger-qwen-review-ledger
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-14
+    snapshot_time: 2026-08-14 09:42 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11-nightly.20260814.45c2e73080
+    confidence_reason: "Reproducible GitHub project activity; used as information clue."
+  - item_id: blogger-cherry-studio-205
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-14 09:42 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/CherryHQ/cherry-studio/releases/tag/v2.0.5
+    confidence_reason: "Reproducible GitHub release from Chinese AI desktop client project."
+  - item_id: blogger-simon-alchemy-utils
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-12
+    snapshot_time: 2026-08-14 09:43 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/12/alchemy-utils/
+      - https://github.com/simonw/alchemy-utils
+    confidence_reason: "Public blog practice note and associated project link; treated as practice review, not factual market proof."
+  - item_id: blogger-latent-ainews
+    section: AI 圈博主
+    source_role: community
+    evidence_type: newsletter
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-14 09:43 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://www.latent.space/p/ainews-spacexai-grok-46-and-grok
+    confidence_reason: "Public Substack recap used as community signal; embedded X-only claims not treated as primary evidence."
+  - item_id: blogger-pydantic-mcp
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-14 09:43 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.29.0
+    confidence_reason: "Official GitHub release, used as engineering community signal."
+  - item_id: research-vakra
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-14 09:44 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.12282
+    confidence_reason: "Original arXiv entry verified; code/data links present in abstract but not executed."
+followups:
+  - "OpenAI Ultrafast 是否披露更具体 pricing、rate limit、tool calling 和 production case。"
+  - "Copilot 的 Gemini 3.7 Flash policy 是否扩展为更细粒度的企业模型路由。"
+  - "Claude Code subagent forking 默认开启后是否出现权限、消息治理或上下文继承的安全说明。"
+  - "Qwen Code review witness / ledger 是否进入正式版并形成稳定审计模式。"
+  - "VAKRA 是否被 agent 框架或企业 eval suite 采用。"
+fact_confidence: high
+signal_strength: medium

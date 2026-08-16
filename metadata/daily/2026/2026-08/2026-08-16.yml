@@ -1,0 +1,296 @@
+date: 2026-08-16
+window_start: 2026-08-15 09:00 Asia/Shanghai
+window_end: 2026-08-16 09:00 Asia/Shanghai
+supplemental_range: 2026-08-13 to 2026-08-16; only high-value items not covered in recent daily digests
+themes:
+  - agent_harness
+  - runtime_governance
+  - deterministic_agent_testing
+  - model_routing
+  - coding_agent_evaluation
+  - agent_event_streams
+regions:
+  - china
+  - us
+  - global
+companies:
+  - DeepSeek
+  - OpenAI
+  - Anthropic
+  - Qwen
+  - GitHub
+  - xAI
+  - Z.ai
+  - Pydantic
+products:
+  - DeepSeek Harness
+  - OpenAI Agents SDK
+  - Claude Code
+  - Qwen Code
+  - GitHub Copilot
+  - Grok 4.6
+  - GLM-5.3
+  - Pydantic AI
+signals:
+  - agent harness 插件化
+  - agent workflow 可测试性
+  - 运行时身份与资源治理
+  - Copilot 多模型路由
+  - AG-UI 事件流与 fallback tracing
+  - 命令路径与形式化可信评测
+opinion_sources:
+  - 量子位
+  - Qwen Code releases
+  - Latent Space
+  - Simon Willison
+  - Interconnects
+viewpoint_themes:
+  - 中文 agent harness 社区热度
+  - coding-agent review/autofix 工作流
+  - agent harness 设计方法
+  - LLM 产品方法论
+  - 中国模型竞争观察
+research_sources:
+  - arXiv:2608.13547
+  - arXiv:2608.13522
+research_themes:
+  - coding_agent_evaluation
+  - command_path_reliability
+  - verified_code_generation
+research_artifacts:
+  - benchmark
+  - paper
+research_interpretations:
+  - none
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-16.md
+  adopted:
+    - candidate_id: sig_8114f6e20588b0dc
+      title: "QuoteBench: How Matched Scores Can Hide Command-Path Failures"
+      adoption_reason: Directly relevant to coding-agent reliability and command transport verification.
+    - candidate_id: sig_24ca87822440d5d3
+      title: "Vero: Can AI Agents Build Formally Verified Software Repositories?"
+      adoption_reason: Strong fit for AI coding-agent trust and future evaluation direction.
+  rejected_or_deferred:
+    - candidate_id: sig_f3bdbd4bba52ffe4
+      status: deferred
+      rejection_reason: Interesting harness research, but Flue and DeepSeek Harness gave stronger primary-source product signals today.
+    - candidate_id: sig_0c0691567cb12b58
+      status: deferred
+      rejection_reason: Broad AI scientist topic; less directly connected to the day's agent-runtime evidence.
+    - candidate_id: sig_748f91bd2b6294bb
+      status: deferred
+      rejection_reason: Robotics benchmark is relevant but outside today's coding-agent and model-company center of gravity.
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-16 09:08 Asia/Shanghai
+    result: hit
+    note: Read local candidate review as clue layer; adopted only arXiv items verified with primary links.
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-16 09:12 Asia/Shanghai
+    result: hit
+    note: Checked Codex, OpenAI Agents SDK, Claude Code, Qwen Code, Gemini CLI, Copilot CLI, Pydantic AI releases.
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-16 09:12 Asia/Shanghai
+    result: hit
+    note: Checked OpenAI, GitHub Changelog, xAI release notes, Pydantic AI releases, Z.ai official material.
+  - source_id: china_model_officials
+    checked_at: 2026-08-16 09:12 Asia/Shanghai
+    result: hit
+    note: DeepSeek Harness, Qwen Code and Z.ai GLM-5.3 supplied confirmed China-model-company signals; MiniMax docs/news were checked but not included after link verification.
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-16 09:11 Asia/Shanghai
+    result: hit
+    note: Simon Willison and Interconnects had recent reproducible public posts; X-only sources treated as unavailable.
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-16 09:11 Asia/Shanghai
+    result: hit
+    note: Included Latent Space and QbitAI as clue/opinion/community signals with primary-source backstops.
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-16 09:10 Asia/Shanghai
+    result: hit
+    note: QbitAI RSS had 2026-08-15 AI model and agent-harness posts; selected DeepSeek Harness item with official repo verification.
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-16 09:10 Asia/Shanghai
+    result: hit
+    note: Checked Qwen Code, Cherry Studio, LobeHub, RAGFlow, ModelScope, OpenCompass; included Qwen Code only.
+  - source_id: china_research_community
+    checked_at: 2026-08-16 09:10 Asia/Shanghai
+    result: partial
+    note: Checked 科学空间 and OpenCompass-style sources; no newer high-value item than already covered recent material.
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-16 09:11 Asia/Shanghai
+    result: hit
+    note: Checked Vercel AI SDK, Pydantic AI, Flue, Gemini CLI, Copilot CLI; used Pydantic and Flue mainly as context/community signals.
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-16 09:11 Asia/Shanghai
+    result: hit
+    note: Flue, OpenAI Agents SDK and Pydantic AI all showed agent infrastructure movement.
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-16 09:11 Asia/Shanghai
+    result: partial
+    note: Checked xAI and selected GitHub Copilot/xAI routing signal; did not include lower-signal provider patch releases.
+  - source_id: english_research_blogs
+    checked_at: 2026-08-16 09:11 Asia/Shanghai
+    result: hit
+    note: Interconnects provided China-model competition interpretation; research items still use arXiv primary sources.
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-16 09:11 Asia/Shanghai
+    result: hit
+    note: Interconnects and Latent Space supplied reproducible public analysis/community samples.
+  - source_id: english_safety_governance
+    checked_at: 2026-08-16 09:11 Asia/Shanghai
+    result: partial
+    note: No fresh governance headline included; coding-agent reliability research partially overlaps with safety/governance concerns.
+  - source_id: research_frontier
+    checked_at: 2026-08-16 09:09 Asia/Shanghai
+    result: hit
+    note: Local arXiv candidates verified against original arXiv links; included QuoteBench and Vero.
+evidence_items:
+  - item_id: news-deepseek-harness
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_repository
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-16 09:14 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/deepseek-ai/deepseek-harness
+      - https://github.com/deepseek-ai/deepseek-harness/blob/master/README.md
+    confidence_reason: Official DeepSeek GitHub repository and README; GitHub API snapshot checked locally.
+  - item_id: news-openai-agents-sdk-021
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-15
+    snapshot_time: 2026-08-16 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/openai-agents-python/releases/tag/v0.21.0
+    confidence_reason: Official OpenAI GitHub release with version and release notes.
+  - item_id: news-claude-qwen-runtime
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-14 to 2026-08-16
+    snapshot_time: 2026-08-16 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.233
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11-nightly.20260816.5677823abb
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.12-preview.5
+    confidence_reason: Official GitHub releases for both tools.
+  - item_id: news-copilot-grok46
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-14
+    snapshot_time: 2026-08-16 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot/
+      - https://docs.x.ai/developers/release-notes
+    confidence_reason: GitHub official changelog plus xAI official release notes.
+  - item_id: news-pydantic-ai-231
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-15
+    snapshot_time: 2026-08-16 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.31.0
+    confidence_reason: Official Pydantic AI GitHub release with version and release notes.
+  - item_id: opinion-qbitai-deepseek-harness
+    section: AI 圈博主
+    source_role: media
+    evidence_type: community_signal
+    item_date: 2026-08-15
+    snapshot_time: 2026-08-16 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.qbitai.com/2026/08/473597.html
+      - https://github.com/deepseek-ai/deepseek-harness
+    confidence_reason: Media item used only as community signal; factual claims backstopped by official repo.
+  - item_id: opinion-qwen-code-release
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-16
+    snapshot_time: 2026-08-16 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11-nightly.20260816.5677823abb
+    confidence_reason: Official project release notes used as engineering/community signal.
+  - item_id: opinion-latent-flue
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: public_article
+    item_date: 2026-08-15
+    snapshot_time: 2026-08-16 09:11 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.latent.space/p/flue-2
+      - https://github.com/withastro/flue
+    confidence_reason: Public article paired with original project repository.
+  - item_id: opinion-simon-method
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: public_blog
+    item_date: 2026-08-14
+    snapshot_time: 2026-08-16 09:11 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/14/dont-classify-hallucinate/
+    confidence_reason: Author's public blog; used only as methodology sample.
+  - item_id: opinion-interconnects-glm53
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: public_analysis
+    item_date: 2026-08-14
+    snapshot_time: 2026-08-16 09:11 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://www.interconnects.ai/p/glm-53-how-chinese-labs-keep-stride
+      - https://z.ai/blog/glm-5.3
+    confidence_reason: Opinion source paired with official Z.ai model material; interpretation remains opinion.
+  - item_id: research-quotebench
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-08-14
+    snapshot_time: 2026-08-16 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.13547
+    confidence_reason: Original arXiv page verified; no local reproduction performed.
+  - item_id: research-vero
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-08-14
+    snapshot_time: 2026-08-16 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.13522
+    confidence_reason: Original arXiv page verified; no local reproduction performed.
+  - item_id: github-deepseek-harness
+    section: GitHub 热门项目
+    source_role: official
+    evidence_type: github_repository_snapshot
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-16 09:14 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/deepseek-ai/deepseek-harness
+    confidence_reason: Official repo snapshot checked through GitHub API.
+followups:
+  - DeepSeek Harness 是否出现高质量第三方 dsh-plugin 和安全边界说明。
+  - OpenAI Agents SDK testing APIs 是否被主流 CI/eval/replay 工作流吸收。
+  - Claude Code forward_user_identity 和 tool memory cgroup limit 是否成为企业 gateway 默认能力。
+  - Qwen Code autofix footprint gate 和 benchmark smoke release 是否进入正式版。
+  - Copilot 中 Grok 4.6 的企业 policy 和真实 coding-agent 表现。
+fact_confidence: high
+signal_strength: medium

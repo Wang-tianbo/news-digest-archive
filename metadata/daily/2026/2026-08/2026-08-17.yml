@@ -1,0 +1,256 @@
+date: 2026-08-17
+window_start: 2026-08-16 09:00 Asia/Shanghai
+window_end: 2026-08-17 09:00 Asia/Shanghai
+supplemental_range: 2026-08-13 to 2026-08-17, only unrepeated official China-model and community/research signals
+themes:
+  - agent_runtime
+  - sandbox_governance
+  - coding_agent_workflow
+  - heterogeneous_agent_runtime
+  - multimodal_generation
+  - meta_harness_optimization
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Alibaba Qwen
+  - MiniMax
+  - LobeHub
+  - JiuWen Intelligence
+products:
+  - OpenAI Agents SDK
+  - Qwen Code
+  - LobeHub
+  - MiniMax Music 3.0
+  - WorkSwarm
+  - llama.cpp
+signals:
+  - sandbox 前置
+  - 审批精度
+  - 异构 coding-agent runtime
+  - 本地桌面 agent 工作台
+  - 生成音乐创作系统
+  - harness 优化
+opinion_sources:
+  - Qwen Code releases
+  - QbitAI
+  - Simon Willison
+  - OpenAI Agents SDK releases
+  - llama.cpp releases
+viewpoint_themes:
+  - AI 编程运行时治理
+  - 办公 agent 团队化
+  - 推理预算与过度思考
+  - 本地 agent 底座稳定性
+research_sources:
+  - arXiv:2608.13560
+research_themes:
+  - meta_harness_optimization
+  - agentic_design
+  - long_horizon_agents
+research_artifacts:
+  - paper
+research_interpretations:
+  - none
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-17.md
+  adopted:
+    - candidate_id: sig_f3bdbd4bba52ffe4
+      title: "AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design"
+      adoption_reason: "Directly matched today's agent harness/runtime theme and was verified against arXiv."
+  rejected_or_deferred:
+    - candidate_id: sig_0c0691567cb12b58
+      title: "OmniScientist: An Omni-Modal Omni-Discipline AI Scientist"
+      status: 观察中
+      rejection_reason: "High-level AI scientist framing was less directly connected to today's confirmed product/runtime signals."
+    - candidate_id: sig_8114f6e20588b0dc
+      title: "QuoteBench: How Matched Scores Can Hide Command-Path Failures"
+      status: 已采用
+      rejection_reason: "Already covered in the 2026-08-16 digest; not repeated without new evidence."
+    - candidate_id: sig_24ca87822440d5d3
+      title: "Vero: Can AI Agents Build Formally Verified Software Repositories?"
+      status: 已采用
+      rejection_reason: "Already covered in the 2026-08-16 digest; not repeated without new evidence."
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-17 09:06 Asia/Shanghai
+    result: hit
+    note: "Read optional local candidate review; used only as clue layer and verified selected research against arXiv."
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-17 09:08 Asia/Shanghai
+    result: hit
+    note: "Checked Codex, OpenAI Agents SDK, Claude Code, Qwen Code, Gemini CLI, Copilot/GitHub changelog, Pydantic AI and related release streams; included OpenAI Agents SDK, Qwen Code and LobeHub."
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-17 09:09 Asia/Shanghai
+    result: partial
+    note: "OpenAI, Google AI/DeepMind, GitHub and Hugging Face RSS had no strict-window major company-blog hit; MiniMax Music 3.0 was included as unrepeated supplemental official signal."
+  - source_id: china_model_officials
+    checked_at: 2026-08-17 09:09 Asia/Shanghai
+    result: hit
+    note: "Checked Qwen, DeepSeek, MiniMax, Z.ai, Kimi/Moonshot, Tencent Hunyuan, Baidu Wenxin and Volcano Ark surfaces where reachable; selected Qwen Code and MiniMax Music 3.0."
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-17 09:09 Asia/Shanghai
+    result: hit
+    note: "Simon Willison had strict-window Qwen 3.8 27B practice note; Chinese X-only sources were not used."
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-17 09:09 Asia/Shanghai
+    result: hit
+    note: "Checked reproducible Chinese media, English blogs/newsletters and engineering feeds; included 2 Chinese-source and 3 English-source signals."
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-17 09:10 Asia/Shanghai
+    result: hit
+    note: "QbitAI RSS had strict-window WorkSwarm signal; product facts were paired with official WorkSwarm page."
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-17 09:10 Asia/Shanghai
+    result: hit
+    note: "Checked Qwen Code, LobeHub, RAGFlow, Dify, Cherry Studio and ModelScope streams; selected Qwen Code and LobeHub."
+  - source_id: china_research_community
+    checked_at: 2026-08-17 09:10 Asia/Shanghai
+    result: partial
+    note: "Checked Kexue, OpenCompass and ModelScope-style sources; no stronger unrepeated strict-window Chinese research item selected."
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-17 09:10 Asia/Shanghai
+    result: hit
+    note: "Checked llama.cpp, Gemini CLI, Aider, Ollama, Vercel AI SDK and related streams; selected llama.cpp due to fresh local-inference boundary fixes."
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-17 09:10 Asia/Shanghai
+    result: hit
+    note: "OpenAI Agents SDK release supplied the strongest strict-window agent infrastructure signal."
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-17 09:10 Asia/Shanghai
+    result: miss
+    note: "Checked OpenRouter/Together/Fireworks/Groq/Cohere/Replicate-style surfaces where reachable; no higher-value strict-window item promoted."
+  - source_id: english_research_blogs
+    checked_at: 2026-08-17 09:10 Asia/Shanghai
+    result: partial
+    note: "Checked AI2/Google Research/DeepMind/Hugging Face/Sebastian-style feeds where reachable; research item selected from arXiv instead."
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-17 09:10 Asia/Shanghai
+    result: partial
+    note: "Checked Latent Space, Interconnects, The Batch and related feeds; strict-window major unrepeated industry item was limited."
+  - source_id: english_safety_governance
+    checked_at: 2026-08-17 09:10 Asia/Shanghai
+    result: miss
+    note: "Checked safety/governance watchlist at a light level; no high-confidence adjacent governance item included."
+  - source_id: research_frontier
+    checked_at: 2026-08-17 09:10 Asia/Shanghai
+    result: hit
+    note: "Local arXiv candidates reviewed; selected AutoDesign and linked the original arXiv page."
+evidence_items:
+  - item_id: news-1-openai-agents-sdk-0211
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-16
+    snapshot_time: 2026-08-17 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/openai-agents-python/releases/tag/v0.21.1
+    confidence_reason: "Official OpenAI GitHub release with exact version and timestamp."
+  - item_id: news-2-lobehub-2214
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-16
+    snapshot_time: 2026-08-17 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/lobehub/lobehub/releases/tag/v2.2.14
+      - https://github.com/lobehub/lobehub/releases/tag/v2.2.15-canary.8
+    confidence_reason: "Official LobeHub GitHub releases with exact version notes; canary treated as unstable follow-up context."
+  - item_id: news-3-qwen-code-nightly-20260817
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-17 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11-nightly.20260817.195128a17a
+    confidence_reason: "Official QwenLM GitHub release with exact nightly tag and notes; interpreted as continuation rather than new stable capability."
+  - item_id: news-4-minimax-music-30
+    section: AI 新闻
+    source_role: official
+    evidence_type: official_announcement
+    item_date: 2026-08-13
+    snapshot_time: 2026-08-17 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://ir.minimax.io/news-events/new-releases/detail/5/minimax-launches-music-3-0-a-new-generation-of-ai-music
+    confidence_reason: "Official MiniMax announcement; included as unrepeated supplemental China-model signal."
+  - item_id: opinion-cn-1-qwen-code-runtime
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release_signal
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-17 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.11-nightly.20260817.195128a17a
+    confidence_reason: "Official release used as Chinese engineering-community signal."
+  - item_id: opinion-cn-2-workswarm
+    section: AI 圈博主
+    source_role: media
+    evidence_type: media_clue_plus_official_page
+    item_date: 2026-08-16
+    snapshot_time: 2026-08-17 09:10 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://www.qbitai.com/2026/08/473972.html
+      - https://openjiuwen.com/blogs-page
+    confidence_reason: "QbitAI provides dated public clue; official WorkSwarm page confirms product positioning, but maturity claims remain unverified."
+  - item_id: opinion-en-1-simon-qwen-38
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: practice_note
+    item_date: 2026-08-16
+    snapshot_time: 2026-08-17 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/16/qwen-38-27b/
+      - https://qwen.ai/blog?id=qwen3.8
+    confidence_reason: "Reproducible public practice note paired with official Qwen model source; treated as viewpoint, not benchmark proof."
+  - item_id: opinion-en-2-openai-agents-sdk
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release_signal
+    item_date: 2026-08-16
+    snapshot_time: 2026-08-17 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/openai-agents-python/releases/tag/v0.21.1
+    confidence_reason: "Official release used as English agent-infra community signal."
+  - item_id: opinion-en-3-llama-cpp
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release_signal
+    item_date: 2026-08-16
+    snapshot_time: 2026-08-17 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/ggml-org/llama.cpp/releases/tag/b10452
+      - https://github.com/ggml-org/llama.cpp/releases/tag/b10451
+      - https://github.com/ggml-org/llama.cpp/releases/tag/b10453
+    confidence_reason: "Official llama.cpp releases with exact build tags and notes."
+  - item_id: research-1-autodesign
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-14
+    snapshot_time: 2026-08-17 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.13560
+    confidence_reason: "Original arXiv paper linked; no implementation was executed or independently reproduced in this run."
+followups:
+  - "OpenAI Agents SDK sandbox defaults and exact approval decisions是否进入主流生产样板。"
+  - "LobeHub异构 coding-agent runtime是否出现真实长任务复盘。"
+  - "Qwen Code autofix footprint gate和review subcommands是否进入稳定版。"
+  - "MiniMax Music 3.0是否披露API、商用授权和创作者工作流。"
+  - "AutoDesign是否发布代码或第三方复现。"
+fact_confidence: high
+signal_strength: medium

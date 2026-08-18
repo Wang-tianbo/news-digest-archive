@@ -1,0 +1,320 @@
+date: 2026-08-18
+window_start: 2026-08-17 09:00 Asia/Shanghai
+window_end: 2026-08-18 09:00 Asia/Shanghai
+supplemental_range: 2026-08-11 to 2026-08-18 for unrepeated opinion, research, and GitHub project signals
+themes:
+  - coding_agent_platform
+  - code_hosting_agent_workflow
+  - runtime_governance
+  - review_autofix_governance
+  - remote_control_security
+  - discovery_evaluation
+  - multimodal_health_ai
+  - agent_memory_cloud
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Anysphere
+  - Anthropic
+  - Qwen
+  - OpenAI
+  - Google
+  - Amazon
+  - DeepSeek
+  - Cherry Studio
+products:
+  - Cursor Origin
+  - Claude Code
+  - Qwen Code
+  - OpenAI News
+  - Google PhotoScan
+  - Amazon Bedrock AgentCore Memory
+  - DeepSeek Harness
+  - Cherry Studio
+  - Cumora
+signals:
+  - 代码托管与 agent 工作流合流
+  - 远程控制和权限预览安全加固
+  - PR 审查证据链和 autofix 接管治理
+  - 中文桌面 AI workspace 接入 DeepSeek Harness
+  - discovery benchmark 开始关注未知规则探索
+  - 手机多模态健康 AI 接近专业测量替代场景
+opinion_sources:
+  - Qwen Code release notes
+  - Cherry Studio release notes
+  - Simon Willison
+  - Interconnects
+  - Import AI
+viewpoint_themes:
+  - AI 编程代理治理
+  - 中文 agent 工程生态
+  - 开放模型经济闭环
+  - 小模型可用性
+  - discovery evaluation
+research_sources:
+  - DiG-bench
+  - arXiv:2608.12593
+  - Google Research
+research_themes:
+  - agent_discovery_evaluation
+  - scientific_discovery_benchmark
+  - multimodal_health_ai
+  - optical_phenotyping
+research_artifacts:
+  - benchmark
+  - paper
+  - research_blog
+  - repo
+research_interpretations:
+  - Import AI #469
+  - Google Research original post
+peripheral_themes:
+  - 云平台与 agent 记忆
+  - AI 基础设施与政策
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-18.md
+  adopted:
+    - candidate_id: sig_f987f977374481b4
+      title: "Seeing beyond BMI: Estimating cardiometabolic risk with smartphone imagery"
+      adoption_reason: Google Research original post fell inside strict window and offered high-value multimodal health AI signal.
+  rejected_or_deferred:
+    - candidate_id: sig_a7a521734664ebca
+      status: deferred
+      rejection_reason: Archaeology/sex-attribution paper was less central to AI competition and agent/product radar.
+    - candidate_id: sig_58012f0f5d0bc040
+      status: deferred
+      rejection_reason: Game world model paper was adjacent, but DiG-bench had stronger agent-discovery relevance and original sources.
+    - candidate_id: sig_09ed56aa21759c57
+      status: deferred
+      rejection_reason: Session handover topic remained relevant but no stronger corroborating source was found in this run.
+    - candidate_id: sig_f9097a06885539ed
+      status: deferred
+      rejection_reason: Test-time world-model agent idea was related but overlapped with recent agent harness coverage; kept for follow-up.
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-18 09:08 Asia/Shanghai
+    result: hit
+    note: Optional local candidate review existed and was used only as a clue layer; Google Research candidate adopted after primary verification.
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-18 09:11 Asia/Shanghai
+    result: hit
+    note: Checked Claude Code, Qwen Code, Gemini CLI, OpenAI Agents SDK, Cursor changelog, Copilot changelog; selected Cursor, Claude, and Qwen.
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-18 09:12 Asia/Shanghai
+    result: hit
+    note: OpenAI RSS and Google official feeds checked; OpenAI direct pages returned 403 so only RSS title/date/description were used.
+  - source_id: china_model_officials
+    checked_at: 2026-08-18 09:13 Asia/Shanghai
+    result: partial
+    note: Checked Qwen official blog/GitHub, DeepSeek GitHub org, MiniMax news, Kimi platform blog; Qwen Code and DeepSeek-related ecosystem activity selected, other official pages had no stronger strict-window item.
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-18 09:13 Asia/Shanghai
+    result: hit
+    note: Checked Simon Willison, Interconnects, Import AI, Latent Space, Baoyu and other reproducible feeds; selected three English items and used Chinese engineering releases as community signals.
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-18 09:13 Asia/Shanghai
+    result: hit
+    note: "Coverage-first scan found five reproducible community/viewpoint signals: two Chinese-source and three English-source items."
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-18 09:13 Asia/Shanghai
+    result: partial
+    note: QbitAI/Jiqizhixin-style web search and prior-review scan were checked; no stronger media-only item selected because official/project sources were better.
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-18 09:13 Asia/Shanghai
+    result: hit
+    note: Checked Qwen Code, Cherry Studio, Dify, RAGFlow, ModelScope, LLaMA-Factory, OpenCompass; selected Qwen Code and Cherry Studio.
+  - source_id: china_research_community
+    checked_at: 2026-08-18 09:13 Asia/Shanghai
+    result: partial
+    note: Checked OpenBMB, OpenCompass, Qwen GitHub org, Kimi blog and related sources; no separate research item promoted.
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-18 09:14 Asia/Shanghai
+    result: hit
+    note: Checked Vercel AI SDK, llama.cpp, Gemini CLI, Aider, Hugging Face blog and GitHub search; selected Cumora as fresh non-mainline project and Vercel/llama.cpp as context only.
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-18 09:14 Asia/Shanghai
+    result: hit
+    note: Checked LangChain/LlamaIndex-style feeds, Vercel AI SDK, Decionis agent-safe-pipeline, Agent Skills-related repos; Cumora and DiG-bench provided stronger included signals.
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-18 09:14 Asia/Shanghai
+    result: partial
+    note: Checked OpenRouter/Together/Fireworks/Groq/Cohere/Replicate-style sources where reachable; no high-confidence official platform update promoted.
+  - source_id: english_research_blogs
+    checked_at: 2026-08-18 09:14 Asia/Shanghai
+    result: hit
+    note: Checked Google Research, Hugging Face Blog, Import AI and research feeds; selected Google PhotoScan and DiG-bench.
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-18 09:14 Asia/Shanghai
+    result: hit
+    note: Interconnects and Import AI had current long-form analysis relevant to open-model economics and discovery evaluation.
+  - source_id: english_safety_governance
+    checked_at: 2026-08-18 09:14 Asia/Shanghai
+    result: partial
+    note: Checked OpenAI security/policy RSS, Anthropic news availability, AI Snake Oil and governance-oriented sources; OpenAI policy/security RSS used with direct-page body blocked.
+  - source_id: research_frontier
+    checked_at: 2026-08-18 09:15 Asia/Shanghai
+    result: hit
+    note: Verified DiG-bench via official site/GitHub/arXiv and Google PhotoScan via Google Research; Faraday/Replica lead deferred because original lookup was unstable.
+  - source_id: ai_peripheral_watchlist
+    checked_at: 2026-08-18 09:15 Asia/Shanghai
+    result: hit
+    note: Checked Amazon Bedrock doc history, Gemini API changelog, Vertex release notes and OpenAI infrastructure RSS; selected Bedrock AgentCore Memory as adjacent signal.
+  - source_id: github_trending_ai
+    checked_at: 2026-08-18 09:15 Asia/Shanghai
+    result: hit
+    note: GitHub search/API snapshots checked for fresh non-mainline AI projects; selected yetone/cumora created in strict window with README architecture details and ~1263 stars.
+evidence_items:
+  - item_id: news-cursor-origin
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://cursor.com/changelog/origin-code-hosting
+      - https://cursor.com/docs/origin
+    confidence_reason: Official Cursor changelog and docs with exact product page.
+  - item_id: news-claude-code-2-1-234
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:11 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.234
+    confidence_reason: Official Anthropic GitHub release with published_at timestamp and release body.
+  - item_id: news-qwen-code-0-21-13
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:11 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.13
+      - https://github.com/QwenLM/qwen-code/releases/tag/dsw-eas-full-20260817-r3
+    confidence_reason: Official Qwen GitHub release and benchmark run record; quarantined status explicitly retained.
+  - item_id: news-openai-2026-08-17-rss
+    section: AI 新闻
+    source_role: official
+    evidence_type: rss_item
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:12 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://openai.com/news/rss.xml
+      - https://openai.com/index/the-defenders-window
+      - https://openai.com/index/openai-joins-ports-pike-project
+      - https://openai.com/index/new-policy-ideas-for-the-intelligence-age
+    confidence_reason: Official RSS confirmed titles, URLs, dates and descriptions; direct article bodies returned 403 during this run.
+  - item_id: opinion-qwen-code-release
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.13
+    confidence_reason: Public official GitHub release used as Chinese engineering/community signal.
+  - item_id: opinion-cherry-studio-2-0-7
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/CherryHQ/cherry-studio/releases/tag/v2.0.7
+      - https://github.com/deepseek-ai/deepseek-harness
+    confidence_reason: Public GitHub release lists DeepSeek Harness runtime integration and related fixes.
+  - item_id: opinion-simon-qwen-3-8-score
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/17/qwen-38-27b-scores-52/
+      - https://qwen.ai/blog?id=qwen3.8
+    confidence_reason: Reproducible blog post with official Qwen model blog as factual anchor.
+  - item_id: opinion-interconnects-open-model-economics
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: newsletter
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.interconnects.ai/p/teaching-everyone-to-fish-for-tokens
+    confidence_reason: Public long-form analysis used only as viewpoint sample.
+  - item_id: opinion-import-ai-469
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: newsletter
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:14 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://importai.substack.com/p/import-ai-469-science-ai-rsi-simulator
+      - https://digbench.ai
+      - https://github.com/discos-research/dig-bench
+      - https://arxiv.org/abs/2608.12593
+    confidence_reason: Newsletter used as radar; only DiG-bench claims backed by original sources were adopted.
+  - item_id: research-dig-bench
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: benchmark_paper_repo
+    item_date: 2026-08-11
+    snapshot_time: 2026-08-18 09:15 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://digbench.ai
+      - https://github.com/discos-research/dig-bench
+      - https://arxiv.org/abs/2608.12593
+    confidence_reason: Official benchmark site, GitHub repository and arXiv abstract align on scope and public/private split.
+  - item_id: research-google-photoscan
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: research_blog
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://research.google/blog/seeing-beyond-bmi-estimating-cardiometabolic-risk-with-smartphone-imagery/
+    confidence_reason: Google Research original post with methods, cohorts and reported metrics.
+  - item_id: peripheral-bedrock-agentcore-memory
+    section: AI 外围情报观察
+    source_role: official
+    evidence_type: doc_history
+    item_date: 2026-08-15
+    snapshot_time: 2026-08-18 09:15 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html
+    confidence_reason: Official AWS Bedrock document history entry.
+  - item_id: github-cumora
+    section: GitHub 热门项目
+    source_role: community
+    evidence_type: github_repo_snapshot
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-18 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/yetone/cumora
+    confidence_reason: GitHub API snapshot provided creation/update time and star count; README describes architecture and BYOA paths.
+followups:
+  - Cursor Origin 是否补出 agent-native repo / PR / CI / deployment 闭环。
+  - Claude Code 的 Windows path hardening、permission-preview relay 和 MCP secret redaction 是否被其他工具跟进。
+  - Qwen Code review ledger、autofix takeover pool 和 external context provider profile 是否进入稳定团队策略。
+  - Cherry Studio 的 DeepSeek Harness runtime 集成是否带动更多第三方 DSH desktop/workspace。
+  - DiG-bench 是否获得主流模型和 agent harness 的公开可比评测。
+  - Cumora 是否出现真实团队采用、安全边界说明和 BYOA 生产复盘。
+fact_confidence: high
+signal_strength: medium

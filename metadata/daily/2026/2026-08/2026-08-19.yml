@@ -1,0 +1,212 @@
+date: 2026-08-19
+window_start: 2026-08-18 09:00 Asia/Shanghai
+window_end: 2026-08-19 09:00 Asia/Shanghai
+supplemental_range: 2026-08-16 至 2026-08-18（仅补入最近日报未覆盖、仍发酵且有原始来源的 Stripe-OpenRouter 并购与 DeepSeek 调价信号）
+themes:
+  - frontier_safety_alignment
+  - ai_infra_routing
+  - open_source_toolchain
+  - gui_agent
+  - enterprise_governance
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Stripe
+  - OpenRouter
+  - Modular
+  - ByteDance
+  - GitHub
+  - MiniMax
+  - Zhipu
+  - DeepSeek
+  - Tencent
+products:
+  - OpenAI Astra
+  - OpenRouter
+  - Mojo
+  - Doubao
+  - GitHub Copilot
+  - MiniMax Code
+signals:
+  - 前沿模型安全节奏前置
+  - 模型路由层被并购定价
+  - 开源 AI 语言与工具链
+  - 操作系统级 GUI agent
+  - 企业 agent 治理
+opinion_sources:
+  - Simon Willison
+  - Latent Space
+  - 机器之心
+  - 腾讯研究院
+viewpoint_themes:
+  - 模型路由与成本
+  - 开源 AI 工具链
+  - 中文 GUI agent 信号
+  - 模型定价与估值
+research_sources:
+  - arXiv
+research_themes:
+  - ai_for_algorithms
+  - embodied_agent_harness
+research_artifacts:
+  - paper
+research_interpretations:
+  - none
+peripheral_themes:
+  - 政策与治理
+  - 资本市场与估值
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-19.md
+  adopted:
+    - candidate_id: sig_bc4b22b3dbc1d98c
+      title: Improving the matrix multiplication exponent with modern optimization and AlphaEvolve
+      adoption_reason: AI 改进基础算法（AlphaEvolve 优化 ω 上界），与 AI 主线直接相关，已回 arXiv 原文核验
+    - candidate_id: sig_c97dfca25c28a2c9
+      title: Don't Drop the BATON
+      adoption_reason: 长程 agent 的子任务探索与过渡感知记忆，与本期 agent harness 主题同向
+  rejected_or_deferred:
+    - candidate_id: sig_f99cc90635b9d2ab
+      status: 待审
+      rejection_reason: AutoSR 属符号回归研究线索，本期信息增量有限，未纳入
+    - candidate_id: sig_64d6b35fe7cf98b0
+      status: 待审
+      rejection_reason: 计算溯源属安全研究线索，本期未回原文复核，先 defer
+    - candidate_id: sig_6dedf3d8688503e1
+      status: 待审
+      rejection_reason: compliance detector 审计属安全治理线索，本期主线已足够，暂不纳入
+source_checks:
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-19 09:10 Asia/Shanghai
+    result: hit
+    note: OpenAI News RSS、GitHub Changelog、Modular blog 命中；Anthropic/Meta/Google 首页或 RSS 为 JS 或空，严格窗口内未取得新增
+  - source_id: ai_coding_agent_watchlist
+    checked_at: 2026-08-19 09:10 Asia/Shanghai
+    result: hit
+    note: Claude Code v2.1.235、Qwen Code v0.21.14-preview.0、GitHub Copilot JetBrains changelog 命中；Cursor changelog JS 渲染未直接解析
+  - source_id: china_model_company_watchlist
+    checked_at: 2026-08-19 09:12 Asia/Shanghai
+    result: partial
+    note: 豆包虚拟桌面、MiniMax Code、DeepSeek 调价、GLM-5.3 市场反应命中；官网多为 JS 页面，部分依赖媒体/社区镜像
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-19 09:12 Asia/Shanghai
+    result: hit
+    note: Simon Willison 命中 Mojo 开源；Interconnects/Import AI 最新仍为 08-17 已覆盖内容
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-19 09:12 Asia/Shanghai
+    result: hit
+    note: Latent Space Glean routing 与 AINews Stripe-OpenRouter 命中
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-19 09:13 Asia/Shanghai
+    result: hit
+    note: 机器之心豆包、腾讯研究院 AI 速递（搜狐镜像）命中
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-19 09:13 Asia/Shanghai
+    result: partial
+    note: MiniMax Code npm 与 DeepSeek Harness rc.7 有更新；其余中国工程源 JS/访问受限
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-19 09:13 Asia/Shanghai
+    result: miss
+    note: 严格窗口内未取得新的英文工程/本地模型工具高价值信号
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-19 09:13 Asia/Shanghai
+    result: partial
+    note: 通过 Stripe-OpenRouter 与 Latent Space 侧证，未直接解析 OpenRouter 官方 changelog
+  - source_id: english_research_blogs
+    checked_at: 2026-08-19 09:13 Asia/Shanghai
+    result: miss
+    note: 严格窗口内未取得新的英文研究博客高价值信号
+  - source_id: research_frontier
+    checked_at: 2026-08-19 09:14 Asia/Shanghai
+    result: hit
+    note: arXiv:2608.16884 与 2608.16889 入选，已保留原文链接
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-19 09:14 Asia/Shanghai
+    result: hit
+    note: 读取 .codex-run/signal-reviews/2026-08-19.md，仅作线索层
+evidence_items:
+  - item_id: news-1
+    section: AI 新闻
+    source_role: official
+    evidence_type: official_blog
+    item_date: 2026-08-18
+    snapshot_time: 2026-08-19 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://openai.com/index/pacing-model-development-cyber-capabilities
+    confidence_reason: OpenAI 官方发布页，含具体训练暂停与监控开销描述
+  - item_id: news-2
+    section: AI 新闻
+    source_role: media
+    evidence_type: merger_report
+    item_date: 2026-08-16
+    snapshot_time: 2026-08-19 09:11 Asia/Shanghai
+    verification_status: partially_verified
+    linked_primary_sources:
+      - https://finance.yahoo.com/technology/ai/articles/stripes-7-billion-openrouter-deal-155429171.html
+      - https://www.rte.ie/news/business/2026/0818/1588319-stripe-openrouter-ai/
+    confidence_reason: Bloomberg 报道口径，官方联合声明尚未核验
+  - item_id: news-3
+    section: AI 新闻
+    source_role: official
+    evidence_type: official_blog
+    item_date: 2026-08-18
+    snapshot_time: 2026-08-19 09:11 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.modular.com/blog/mojo-open-source
+      - https://github.com/modular/modular
+    confidence_reason: Modular 官方博客与官方仓库
+  - item_id: news-4
+    section: AI 新闻
+    source_role: media
+    evidence_type: product_update
+    item_date: 2026-08-18
+    snapshot_time: 2026-08-19 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.jiqizhixin.com/articles/2026-08-18-9
+      - https://www.bjnews.com.cn/detail-1787031438129399.html
+    confidence_reason: 媒体引用豆包官方产品更新；官方安全文档未单独核验
+  - item_id: news-5
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-18
+    snapshot_time: 2026-08-19 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-18-enterprise-managed-settings-in-github-copilot-for-jetbrains
+    confidence_reason: GitHub Changelog 官方条目
+  - item_id: research-1
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-19 09:14 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.16884
+    confidence_reason: arXiv 原文标题与摘要核验
+  - item_id: research-2
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-17
+    snapshot_time: 2026-08-19 09:14 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.16889
+    confidence_reason: arXiv 原文标题与摘要核验
+followups:
+  - OpenAI Astra 的 Critical cyber 评估与 RL 训练恢复节奏
+  - Stripe-OpenRouter 官方联合确认与模型中立性/定价变化
+  - 豆包虚拟桌面的授权、审计与敏感操作边界
+  - MiniMax Code TUI 稳定发布与真实采用
+  - 中国大模型公司港股估值是否继续回落
+  - AlphaEvolve 改进 ω 上界是否被独立复现
+fact_confidence: high
+signal_strength: high

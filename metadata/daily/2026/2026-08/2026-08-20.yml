@@ -1,0 +1,304 @@
+date: 2026-08-20
+window_start: 2026-08-19 09:00 Asia/Shanghai
+window_end: 2026-08-20 09:00 Asia/Shanghai
+supplemental_range: none
+themes:
+  - ai_coding_agent_infra
+  - agent_harness
+  - runtime_governance
+  - open_source_weights
+  - china_mega_model_scale
+  - agent_workspace_contract
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Cursor
+  - Anthropic
+  - DeepSeek
+  - Zhipu
+  - ByteDance
+  - Tencent
+  - OpenAI
+products:
+  - Cursor Cloud Agents
+  - Claude Code
+  - DeepSeek Harness
+  - GLM-5.3
+  - ZCode
+  - GLM Coding Plan
+signals:
+  - 编码 agent 订阅化与后台执行
+  - 统一 harness 编排竞品 agent
+  - 编码 agent 运行时治理
+  - 中文开源权重节奏
+  - 超大规模基模组织调整
+  - agent 工作区版本契约
+opinion_sources:
+  - 腾讯研究院
+  - 机器之心
+  - Simon Willison
+  - Another Daily AI Newsletter
+  - The New Stack
+viewpoint_themes:
+  - 算力与核能 AI 工厂
+  - benchmark harness 时代
+  - 沙箱与可扩展软件
+  - 生产级 agent 需求
+  - 异步协作与后台执行
+research_sources:
+  - arXiv
+research_themes:
+  - agent_workspace_contract
+  - self_improving_agent_reliability
+research_artifacts:
+  - paper
+research_interpretations:
+  - none
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-20.md
+  adopted:
+    - candidate_id: sig_3ce6bcd612e98803
+      title: "StagedWorkspace: A Versioned Workspace for Knowledge-Work Agents"
+      adoption_reason: agent 工作区版本契约直接支撑编码 agent 执行基础设施主线，已回 arXiv 原文核验
+    - candidate_id: sig_564dcf01fc63d29c
+      title: "On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification"
+      adoption_reason: 自改进 agent 的可靠性评估与本期 agent 评测/治理主线同向，作者开源可复现
+  rejected_or_deferred:
+    - candidate_id: sig_a8829c00bbbd7a3d
+      status: 待审
+      rejection_reason: 图像生成数据设计研究，与本期主线关联弱，未纳入
+    - candidate_id: sig_c74978cb26649785
+      status: 待审
+      rejection_reason: 约会推荐 agent 委托不对称，与本期主线关联弱，未纳入
+    - candidate_id: sig_c8456cfcc0969b92
+      status: 待审
+      rejection_reason: 动态 MRI 重建，非 AI 主线，未纳入
+    - candidate_id: sig_3a25cadbceb5b300
+      status: 待审
+      rejection_reason: 航空安全事件解释，非 AI 主线，未纳入
+    - candidate_id: sig_3167098a6216ede9
+      status: 待审
+      rejection_reason: 混合 RL agent 奖励塑形，与本期主线增量有限，未纳入
+    - candidate_id: sig_7e911efb6dc37456
+      status: 待审
+      rejection_reason: 超声舌部分割，医学细分方向，未纳入
+    - candidate_id: sig_93f341b6ed9f4307
+      status: 待审
+      rejection_reason: 日志异常检测校准，安全细分方向，未纳入
+    - candidate_id: sig_c97dfca25c28a2c9
+      status: 待审
+      rejection_reason: 长程机器人操作，外围信号，本期研究配额已满，未纳入
+    - candidate_id: sig_bc4b22b3dbc1d98c
+      status: 待审
+      rejection_reason: AlphaEvolve 矩阵乘法指数，已在 08-19 日报覆盖，本期不重复
+    - candidate_id: sig_f99cc90635b9d2ab
+      status: 待审
+      rejection_reason: 符号回归 AutoSR，本期信息增量有限，未纳入
+    - candidate_id: sig_64d6b35fe7cf98b0
+      status: 待审
+      rejection_reason: 计算溯源安全研究，未回原文复核，先 defer
+    - candidate_id: sig_6dedf3d8688503e1
+      status: 待审
+      rejection_reason: compliance detector 审计安全治理，本期主线已足够，未纳入
+    - candidate_id: sig_8196744f9ed1aa40
+      status: 待审
+      rejection_reason: 长上下文记忆激活，与本期主线增量有限，未纳入
+    - candidate_id: sig_0b84d0fa9fed8456
+      status: 待审
+      rejection_reason: 人形机器人 VLA，外围信号，本期不展开
+    - candidate_id: sig_1c1223381badbb98
+      status: 待审
+      rejection_reason: model hypnosis 安全研究，未回原文复核，先 defer
+    - candidate_id: sig_adff11be3f73730f
+      status: 待审
+      rejection_reason: in-context RL 后训练，本期研究配额已满，未纳入
+    - candidate_id: sig_0973233aae6428b4
+      status: 待审
+      rejection_reason: 视频世界模型校准基准，外围信号，未纳入
+    - candidate_id: sig_c616074910c03be3
+      status: 待审
+      rejection_reason: 知识图谱治理存储，与本期主线关联弱，未纳入
+source_checks:
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-20 09:10 Asia/Shanghai
+    result: hit
+    note: Cursor changelog、Claude Code release、DeepSeek Harness release 命中；OpenAI/Meta/Google 首页或 RSS 多为 JS/空，严格窗口内未取得新增
+  - source_id: ai_coding_agent_watchlist
+    checked_at: 2026-08-20 09:11 Asia/Shanghai
+    result: hit
+    note: Cursor、Claude Code、DeepSeek Harness 命中；Codex 通过 The New Stack 侧证
+  - source_id: china_model_company_watchlist
+    checked_at: 2026-08-20 09:12 Asia/Shanghai
+    result: partial
+    note: GLM-5.3 开放、字节 Seed 架构调整命中（后者媒体口径）；官网多为 JS 页面，部分依赖媒体镜像
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-20 09:12 Asia/Shanghai
+    result: hit
+    note: Simon Willison smolvm 实测命中；Interconnects 等仍为前几日已覆盖内容
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-20 09:12 Asia/Shanghai
+    result: hit
+    note: Another Daily AI Newsletter、The New Stack Codex 异步消息命中
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-20 09:13 Asia/Shanghai
+    result: hit
+    note: 腾讯研究院 AI 速递、机器之心 HarnessEval 命中
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-20 09:13 Asia/Shanghai
+    result: partial
+    note: DeepSeek Harness rc.8 更新命中；其余中国工程源 JS/访问受限
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-20 09:13 Asia/Shanghai
+    result: partial
+    note: Simon Willison smolvm 实测命中；未发现其他新的英文工程高价值信号
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-20 09:13 Asia/Shanghai
+    result: partial
+    note: Cursor/Claude Code/DeepSeek Harness 侧证；X-only 源未使用
+  - source_id: english_research_blogs
+    checked_at: 2026-08-20 09:13 Asia/Shanghai
+    result: miss
+    note: 严格窗口内未取得新的英文研究博客高价值信号
+  - source_id: research_frontier
+    checked_at: 2026-08-20 09:14 Asia/Shanghai
+    result: hit
+    note: arXiv:2608.18050 与 2608.18066 入选，已保留原文链接并核验摘要
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-20 09:14 Asia/Shanghai
+    result: hit
+    note: 读取 .codex-run/signal-reviews/2026-08-20.md，仅作线索层，未替代主源核验
+evidence_items:
+  - item_id: news-1
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://cursor.com/changelog/08-19-26
+    confidence_reason: 官方 changelog 精确链接，含 subscriptions/Custom modes/subagent VM/steering 具体描述
+  - item_id: news-2
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.236
+    confidence_reason: 官方 GitHub release，含 ANTHROPIC_DEFAULT_MODEL/notify_when_idle 等具体改动
+  - item_id: news-3
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:11 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.1.0-rc.8
+    confidence_reason: 官方 GitHub release，含多模态/Profile Bundle/Windows PTY/SQLite 不兼容说明
+  - item_id: news-4
+    section: AI 新闻
+    source_role: media
+    evidence_type: product_announcement
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:12 Asia/Shanghai
+    verification_status: partially_verified
+    linked_primary_sources:
+      - https://www.aastocks.com/tc/mobile/news.aspx?newsid=NOW.1539144&newstype=71&newssource=AAFN
+    confidence_reason: 财经媒体口径，第三方指数分数待权重开源后独立复现
+  - item_id: news-5
+    section: AI 新闻
+    source_role: media
+    evidence_type: company_report
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:12 Asia/Shanghai
+    verification_status: partially_verified
+    linked_primary_sources:
+      - https://www.ithome.com/0/991/856.htm
+    confidence_reason: 晚点 LatePost 报道经 IT之家转述，字节官方尚未确认，标为媒体口径
+  - item_id: blogger-cn-1
+    section: AI 圈博主
+    source_role: media
+    evidence_type: curated_roundup
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://m.x-techcon.com/article/176371.html
+    confidence_reason: 腾讯研究院 AI 速递镜像页，命中当天算力/产品线索；具体事实待回官方源
+  - item_id: blogger-cn-2
+    section: AI 圈博主
+    source_role: media
+    evidence_type: curated_roundup
+    item_date: 2026-08-18
+    snapshot_time: 2026-08-20 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.jiqizhixin.com/articles/2026-08-18-11
+    confidence_reason: 机器之心原创报道页，HarnessEval 项目本身未在本期复核
+  - item_id: blogger-en-1
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: hands_on_test
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/aug/19/smolmachines-untrusted-sandbox/
+      - https://github.com/smolmachines/smolvm
+    confidence_reason: 作者实测含版本号与指标，可复现
+  - item_id: blogger-en-2
+    section: AI 圈博主
+    source_role: community
+    evidence_type: newsletter
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.anothercodingblog.com/p/another-daily-ai-newsletter-august-87a
+    confidence_reason: 资讯整合型线索，需逐条回官方源
+  - item_id: blogger-en-3
+    section: AI 圈博主
+    source_role: media
+    evidence_type: article
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://thenewstack.io/codex-async-developer-messaging/
+    confidence_reason: 媒体文章，指向 Codex 公共仓库合并记录；仅作线索源
+  - item_id: research-1
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:14 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.18050
+    confidence_reason: arXiv 原文摘要核验，含 benchmark 与量化结果
+  - item_id: research-2
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-20 09:14 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.18066
+      - https://github.com/SalesforceAIResearch/self-improve-fragility
+    confidence_reason: arXiv 原文摘要核验，作者开源代码与数据集
+followups:
+  - GLM-5.3 权重是否 2026-08-28 如期开源
+  - DeepSeek Harness 正式版跨 agent 编排规范
+  - Cursor Cloud Agents subscriptions 定价与稳定性
+  - 字节 Seed 超 5T 参数模型官方进展
+  - StagedWorkspace 是否放出代码并被评测社区采用
+fact_confidence: high
+signal_strength: high

@@ -1,0 +1,291 @@
+date: 2026-08-21
+window_start: 2026-08-20 09:00 Asia/Shanghai
+window_end: 2026-08-21 09:00 Asia/Shanghai
+supplemental_range: 2026-08-19 to 2026-08-21; limited to recent official/product/release/community signals not covered in recent daily digests
+themes:
+  - ai_coding_agent_runtime
+  - agent_session_queue
+  - remote_control_and_self_hosting
+  - prompt_caching_observability
+  - china_coding_agent_tools
+  - long_context_agentic_models
+  - agent_training_environments
+  - multi_agent_safety
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - Alibaba
+  - MiniMax
+  - LobeHub
+  - CherryHQ
+  - AWS
+  - NVIDIA
+  - Vercel
+products:
+  - OpenAI API
+  - Prompt Caching dashboard
+  - gpt-image-2
+  - Codex
+  - Claude Code
+  - Qwen Code
+  - qwen3.8-max
+  - MiniMax M3
+  - LobeHub Desktop
+  - Cherry Studio
+signals:
+  - 编码 agent 队列化与可寻址 session
+  - self-hosted runner 与企业代理网络治理
+  - Web Shell 附件与审查恢复
+  - prompt caching 成本可观测
+  - 中文模型公司绑定 coding agent、1M context 与多模态
+  - agent 自生成可执行训练环境
+  - latent 多 agent 通信安全
+opinion_sources:
+  - LobeHub GitHub Releases
+  - Cherry Studio GitHub Releases
+  - Simon Willison
+  - Latent Space
+  - Another Daily AI Newsletter
+viewpoint_themes:
+  - agent 工具 UI 与桌面体验
+  - 多模型桌面客户端安全边界
+  - AI 搜索查询行为
+  - 长任务 agent planning 方法论
+  - team places 中的 agent 工具
+research_sources:
+  - arXiv
+  - SPADE project page
+  - SPADE GitHub
+research_themes:
+  - self_play_agent_training
+  - executable_environment_generation
+  - multi_agent_latent_communication_detection
+  - agent_safety_evaluation
+research_artifacts:
+  - paper
+  - project_page
+  - code
+research_interpretations:
+  - SPADE project page
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-21.md
+  adopted:
+    - candidate_id: sig_afc58074ae98a29f
+      title: "SPADE: Self-Play in Adaptive Synthetic Executable Environments"
+      adoption_reason: 与 agent 训练、可执行环境和评测主线高度相关，已回 arXiv / 项目页 / GitHub 核验
+    - candidate_id: sig_7eb4828b30370d5a
+      title: "Beyond the Transcript: Detecting Covert Coordination in Latent Multi-Agent Communication"
+      adoption_reason: 与多 agent、cross-session messaging 和运行时安全治理主线相关，已回 arXiv 原文核验
+  rejected_or_deferred:
+    - candidate_id: sig_64bae30ff0bef819
+      status: 观察中
+      rejection_reason: GC-OPD 长上下文蒸馏与本期 agent runtime 主线关联较弱，留待后续模型训练专题
+    - candidate_id: sig_782ddd25dad9e2b5
+      status: 观察中
+      rejection_reason: AI PC 分布式推理属于外围推理系统，本期未形成足够主线联动
+    - candidate_id: other_local_arxiv_candidates
+      status: 待审
+      rejection_reason: 本期已有两条高相关研究项，其余候选未在严格窗口内形成更高信息增量
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-21 09:06 Asia/Shanghai
+    result: hit
+    note: optional local candidate review existed and was used only as clue layer; included papers were verified against arXiv/project sources
+  - source_id: ai_coding_agent_watchlist
+    checked_at: 2026-08-21 09:10 Asia/Shanghai
+    result: hit
+    note: Codex rust-v0.149.0, Claude Code v2.1.238, Qwen Code v0.21.15 hit; Cursor latest public item was already covered; Gemini CLI preview/nightly checked but not included
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-21 09:10 Asia/Shanghai
+    result: hit
+    note: OpenAI API changelog and official GitHub releases supplied primary evidence for major items
+  - source_id: china_model_company_watchlist
+    checked_at: 2026-08-21 09:11 Asia/Shanghai
+    result: hit
+    note: Qwen Code release and MiniMax M3 official page hit; Qwen blog stale, Kimi public page had no strict-window hit
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-21 09:11 Asia/Shanghai
+    result: partial
+    note: quick public web scan did not produce higher-confidence strict-window Chinese media item than official release/project sources
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-21 09:12 Asia/Shanghai
+    result: hit
+    note: LobeHub canary and Cherry Studio v2.0.8 releases checked; RAGFlow v0.27.0, Dify and Chatbox checked but not selected
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-21 09:12 Asia/Shanghai
+    result: hit
+    note: selected 2 Chinese engineering/community items and 3 English reproducible public items; X-only sources were not used
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-21 09:13 Asia/Shanghai
+    result: hit
+    note: Simon Willison and Another Daily AI Newsletter produced reproducible engineering/search/agent clues
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-21 09:13 Asia/Shanghai
+    result: hit
+    note: Latent Space /wayfinder and official agent tool links contributed planning/runtime clues
+  - source_id: english_research_blogs
+    checked_at: 2026-08-21 09:13 Asia/Shanghai
+    result: partial
+    note: no separate research blog item selected; research section uses original arXiv/project sources
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-21 09:13 Asia/Shanghai
+    result: partial
+    note: industry/community newsletter used only as clue source with original links retained
+  - source_id: english_safety_governance
+    checked_at: 2026-08-21 09:13 Asia/Shanghai
+    result: hit
+    note: latent multi-agent communication paper selected as safety/governance research signal
+  - source_id: research_frontier
+    checked_at: 2026-08-21 09:13 Asia/Shanghai
+    result: hit
+    note: arXiv:2608.19197 and arXiv:2608.19161 selected; GC-OPD and AI PC inference deferred
+  - source_id: ai_peripheral_watchlist
+    checked_at: 2026-08-21 09:13 Asia/Shanghai
+    result: partial
+    note: AWS Bedrock doc history and AI PC inference were checked but not included as separate peripheral body items
+  - source_id: blocked_or_partial_sources
+    checked_at: 2026-08-21 09:12 Asia/Shanghai
+    result: partial
+    note: Tencent Hunyuan and Volcano/Ark web pages were client-rendered or bot-gated during this run; not treated as misses
+evidence_items:
+  - item_id: news-openai-api
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-20
+    snapshot_time: 2026-08-21 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://developers.openai.com/api/docs/changelog
+    confidence_reason: official API changelog contained the Prompt Caching dashboard and gpt-image-2 transparent background entries
+  - item_id: news-codex-0149
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-20
+    snapshot_time: 2026-08-21 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/codex/releases/tag/rust-v0.149.0
+    confidence_reason: official GitHub release with exact tag and published timestamp
+  - item_id: news-claude-code-21238
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-20
+    snapshot_time: 2026-08-21 09:10 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.238
+    confidence_reason: official GitHub release with self-hosted runner, proxy, Remote Control and MCP changes
+  - item_id: news-qwen-code-02115
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-20
+    snapshot_time: 2026-08-21 09:11 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.15
+    confidence_reason: official GitHub release with English and Chinese notes, exact feature list and timestamp
+  - item_id: news-minimax-m3
+    section: AI 新闻
+    source_role: official
+    evidence_type: product_page
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-21 09:11 Asia/Shanghai
+    verification_status: partially_verified
+    linked_primary_sources:
+      - https://www.minimax.io/models/text/m3
+    confidence_reason: official product page verified; benchmark and open-weight claims require future third-party replication
+  - item_id: blogger-cn-lobehub
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-20
+    snapshot_time: 2026-08-21 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/lobehub/lobehub/releases/tag/v2.2.15-canary.32
+    confidence_reason: GitHub release page; canary status explicitly noted
+  - item_id: blogger-cn-cherry
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-21 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/CherryHQ/cherry-studio/releases/tag/v2.0.8
+    confidence_reason: GitHub release page; supplemental-range item not covered in recent memory
+  - item_id: blogger-en-simon-search
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_observation
+    item_date: 2026-08-20
+    snapshot_time: 2026-08-21 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/20/chatgpt-search-now-uses-the-siteoperator-at-scale/
+    confidence_reason: reproducible public blog observation; treated as clue not sole factual proof of architecture
+  - item_id: blogger-en-latent-wayfinder
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: methodology_post
+    item_date: 2026-08-20
+    snapshot_time: 2026-08-21 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.latent.space/p/wayfinder-skill
+      - https://github.com/mattpocock/skills
+    confidence_reason: public long-form post plus original skills repository retained
+  - item_id: blogger-en-another-daily
+    section: AI 圈博主
+    source_role: community
+    evidence_type: newsletter
+    item_date: 2026-08-20
+    snapshot_time: 2026-08-21 09:13 Asia/Shanghai
+    verification_status: partially_verified
+    linked_primary_sources:
+      - https://www.anothercodingblog.com/p/another-daily-ai-newsletter-august-939
+      - https://vercel.com/blog/introducing-vercel-for-slack
+      - https://aws.amazon.com/blogs/machine-learning/domain-and-publish-date-filters-for-web-search-on-agentcore
+      - https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator
+      - https://arxiv.org/abs/2608.19197
+    confidence_reason: newsletter treated as clue; original project/company/research links retained for factual claims
+  - item_id: research-spade
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper_and_code
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-21 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.19197
+      - https://spade-rl.github.io
+      - https://github.com/spade-rl/spade
+    confidence_reason: arXiv paper, project page and repository checked; claims still require third-party replication
+  - item_id: research-vla
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-21 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.19161
+    confidence_reason: arXiv paper checked; code availability not verified in this run
+followups:
+  - Watch whether Codex queue, Claude Code Remote Control and Qwen Code review resume converge into common agent session patterns
+  - Recheck MiniMax M3 HuggingFace/GitHub open-weight availability and third-party benchmark replication
+  - Track SPADE code adoption in agent training or benchmark repositories
+  - Track latent multi-agent communication detection on larger models and real collaboration tools
+  - Revisit OpenAI Prompt Caching dashboard for team-level cost governance use cases
+fact_confidence: high
+signal_strength: high

@@ -1,26 +1,28 @@
 date: 2026-08-22
 window_start: 2026-08-21 09:00 Asia/Shanghai
 window_end: 2026-08-22 09:00 Asia/Shanghai
-supplemental_range: 2026-08-19 to 2026-08-21
+supplemental_range: 2026-08-19 to 2026-08-21; used only for community clues outside the strict window, without repeating recent daily digests
 themes:
-  - agent_runtime
-  - enterprise_collaboration
-  - tool_use
-  - session_governance
-  - research_evaluation
-  - workflow_isolation
+  - agent_collaboration_entrypoints
+  - runtime_governance
+  - coding_agent_releases
+  - research_grounding
+  - computer_use_traces
+  - tool_use_data_synthesis
+  - voice_infrastructure
 regions:
   - us
   - china
   - global
 companies:
   - OpenAI
-  - Anthropic
+  - Microsoft
   - GitHub
+  - Anthropic
   - Google
   - Qwen
   - LobeHub
-  - ModelScope
+  - FunASR
 products:
   - Codex
   - Claude Code
@@ -29,25 +31,28 @@ products:
   - Lobe Chat
   - FunASR
 signals:
-  - 企业协作入口外溢
-  - 数据驻留与权限边界
-  - 会话恢复与审查
-  - 语音链路产品化
-  - trace-to-task 研究
+  - 企业协作入口前移
+  - 受控执行与恢复
+  - 远程 agent 权限边界
+  - 语音链路工程化
+  - computer-use 轨迹建模
 opinion_sources:
-  - Simon Willison
+  - LobeHub GitHub Releases
+  - FunASR GitHub Releases
+  - Simon Willison blog
 viewpoint_themes:
-  - AI 编程方法论
-  - 沙箱与执行隔离
-  - 搜索代理
-  - 终端 UX 争议
+  - AI 编程工具形态
+  - 远程操作权限边界
+  - 搜索型 agent 行为
+  - 终端 UI 争议
+  - 语音链路工程化
 research_sources:
   - Google Research Blog
   - arXiv
 research_themes:
-  - agent_tool_use
+  - place_grounding
   - computer_use_traces
-  - mid_training_data_synthesis
+  - agentic_tool_use_training
 research_artifacts:
   - research_blog
   - paper
@@ -59,226 +64,223 @@ candidate_usage:
   adopted:
     - candidate_id: sig_e1b962a17419559b
       title: How mobility gives language models a deeper understanding of place
-      adoption_reason: official research blog with direct grounding signal
+      adoption_reason: 与地点 grounding 主线直接相关，且是可复查研究博客
     - candidate_id: sig_dc94525dcacf636b
       title: Inducing Task Models from Computer-Use Traces
-      adoption_reason: directly relevant to agent trace-to-task infrastructure
+      adoption_reason: 与 computer-use 轨迹到任务模型的 agent 基建主线直接相关
     - candidate_id: sig_56fa4ad922690ca8
       title: "MidTool: Mid-training Data Synthesis for Agentic Tool Use"
-      adoption_reason: useful route signal for tool-use training data
+      adoption_reason: 与 tool-use 数据合成和 mid-training 设计直接相关
   rejected_or_deferred:
     - candidate_id: sig_6307133702148d12
-      status: deferred
-      rejection_reason: domain-specific biomarker work; lower direct relevance than agent runtime signals
-    - candidate_id: sig_b66967fb022b7a94
-      status: deferred
-      rejection_reason: medical-report interpretation is valuable but less central today
+      status: 观察中
+      rejection_reason: 生物标志物工具更偏医疗研究，和今日主线联动不足
     - candidate_id: sig_8eaa80cbb5a93fba
-      status: deferred
-      rejection_reason: adjacent data-collection workflow, but not a direct AI product signal
+      status: 观察中
+      rejection_reason: 行为建模与天气需求预测更偏垂直应用，本期不如已选研究项贴近主线
     - candidate_id: sig_e06c60c7b2e8744f
-      status: deferred
-      rejection_reason: important benchmark, but lower immediate actionability than current workflow signals
+      status: 观察中
+      rejection_reason: RSI benchmark 重要，但本期没有比已选研究项更强的信息增量
 source_checks:
-  - source_id: coding_agent_releases
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: hit
-    note: verified OpenAI, Anthropic, GitHub and Qwen release/changelog pages within the window
-  - source_id: china_model_officials
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: partial
-    note: checked DeepSeek, Qwen, Z.ai, Kimi, MiniMax, Tencent, Baidu and ByteDance official pages; no fresh flagship model launch surfaced
-  - source_id: ai_blogger_core_radar
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: hit
-    note: Simon feed produced 3 usable items; one needed supplemental range
-  - source_id: ai_blogger_free_opinion_pool
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: hit
-    note: public blogs/RSS/GitHub/community pages checked; no X-only sources used
-  - source_id: china_ai_media_signals
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: miss
-    note: qbitai/jiqizhixin searches did not yield fresh reproducible items in the window
-  - source_id: china_ai_engineering_radar
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: hit
-    note: Lobe Chat canary and FunASR release were fresh and reproducible
-  - source_id: china_research_community
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: miss
-    note: no Chinese research-community item beat the threshold
-  - source_id: english_ai_engineering_radar
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: hit
-    note: Simon technical posts and GitHub community updates supplied the English community sample
-  - source_id: english_agent_infra_radar
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: hit
-    note: Copilot Slack/Teams, Claude Code and Qwen Code all updated
-  - source_id: english_inference_platforms
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: miss
-    note: no fresh OpenRouter/Together/Fireworks/Groq/Cohere/Replicate item used
-  - source_id: english_research_blogs
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: hit
-    note: Google Research RSS yielded recent research blogs
-  - source_id: english_industry_analysis
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: miss
-    note: no SemiAnalysis/Dwarkesh/No Priors item used
-  - source_id: english_safety_governance
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: partial
-    note: OpenAI zero-data-retention was covered in core news, so no separate peripheral section was needed
-  - source_id: research_frontier
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
-    result: hit
-    note: arXiv and Google Research original links were retained for included research items
   - source_id: local_signal_inbox
-    checked_at: 2026-08-22 09:10 Asia/Shanghai
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
     result: hit
-    note: ".codex-run/signal-reviews/2026-08-22.md used as clue layer; no private paths copied into the report"
+    note: optional local candidate review was used as a clue layer; selected research items were verified against original pages
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: hit
+    note: OpenAI, GitHub, Anthropic, and Qwen official pages supplied the main news items
+  - source_id: ai_coding_agent_watchlist
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: hit
+    note: Codex, Claude Code, Copilot, and Qwen Code were all checked at the release/changelog level
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: hit
+    note: public blog and release clues yielded 2 Chinese and 3 English community items
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: hit
+    note: reproducible public blogs and GitHub releases were used; X-only sources were excluded
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: hit
+    note: LobeHub and FunASR release signals were selected from Chinese engineering sources
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: miss
+    note: no higher-confidence media item beat the official/release sources in this window
+  - source_id: china_research_community
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: miss
+    note: no Chinese research-community source met the bar this run
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: hit
+    note: Simon Willison public posts provided reproducible engineering and workflow clues
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: partial
+    note: agent infra discussion was present, but the final picks stayed closer to workflow/opinion clues
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: miss
+    note: no inference-platform item added today
+  - source_id: english_research_blogs
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: hit
+    note: Google Research Blog supplied the selected research-blog item
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: partial
+    note: public analysis/newsletter style signals were scanned, but no item beat the selected sources
+  - source_id: english_safety_governance
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: miss
+    note: no safety/governance item with enough information gain this run
+  - source_id: research_frontier
+    checked_at: 2026-08-22 09:36 Asia/Shanghai
+    result: hit
+    note: Google Research and arXiv originals were retained for all research items
 evidence_items:
-  - item_id: news-openai-enterprise-codex
+  - item_id: news-openai-futures-asana
     section: AI 新闻
     source_role: official
-    evidence_type: blog_post
-    item_date: 2026-08-20
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    evidence_type: official_blog
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://openai.com/index/introducing-ai-futures
       - https://openai.com/index/asana
-    confidence_reason: official OpenAI pages with matching dates and direct enterprise case study
+    confidence_reason: official OpenAI posts with concrete enterprise framing and case evidence
   - item_id: news-openai-zdr
     section: AI 新闻
     source_role: official
-    evidence_type: blog_post
-    item_date: 2026-08-20
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    evidence_type: policy_update
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://openai.com/index/offering-zero-data-retention-for-frontier-models
-    confidence_reason: official product policy page with explicit data-retention control
+    confidence_reason: official policy update with direct enterprise relevance
   - item_id: news-github-copilot-slack-teams
     section: AI 新闻
     source_role: official
     evidence_type: changelog
     item_date: 2026-08-21
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack
       - https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams
-    confidence_reason: GitHub changelog entries with public-preview details and permission notes
-  - item_id: news-claude-code-v2139
+    confidence_reason: GitHub changelog entries on the same day show the same capability moving into two collaboration surfaces
+  - item_id: news-claude-code-21239
     section: AI 新闻
     source_role: official
     evidence_type: release_note
     item_date: 2026-08-21
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://github.com/anthropics/claude-code/releases/tag/v2.1.239
-    confidence_reason: release body lists concrete runtime and governance changes
-  - item_id: news-qwen-code-v0215
+    confidence_reason: official release with explicit runtime-governance and recovery changes
+  - item_id: news-qwen-code-02115
     section: AI 新闻
     source_role: official
     evidence_type: release_note
-    item_date: 2026-08-20
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://github.com/QwenLM/qwen-code/releases/tag/v0.21.15
-    confidence_reason: release body lists session isolation, review resume and Web Shell changes
-  - item_id: community-cn-lobechat-canary
+    confidence_reason: official release with exact version and feature list
+  - item_id: blogger-cn-lobechat-canary
     section: AI 圈博主
     source_role: community
-    evidence_type: release_page
-    item_date: 2026-08-22
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    evidence_type: github_release
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://github.com/lobehub/lobe-chat/releases/tag/v2.2.15-canary.42
-    confidence_reason: public canary page with commit delta and agent auth changes
-  - item_id: community-cn-funasr
+    confidence_reason: public release note with reproducible permission and keep-alive changes
+  - item_id: blogger-cn-funasr-v143
     section: AI 圈博主
     source_role: community
-    evidence_type: release_note
+    evidence_type: github_release
     item_date: 2026-08-21
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://github.com/modelscope/FunASR/releases/tag/v1.4.3
-    confidence_reason: release note includes runtime artifacts and speech-pipeline changes
-  - item_id: community-en-simon-sandbox
+    confidence_reason: public release note with concrete runtime and VAD changes
+  - item_id: blogger-en-simon-sandbox
     section: AI 圈博主
     source_role: opinion
-    evidence_type: opinion_post
+    evidence_type: blog_observation
     item_date: 2026-08-19
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://simonwillison.net/2026/Aug/19/smolmachines-untrusted-sandbox/
-    confidence_reason: public blog post with direct commentary on sandboxing for untrusted code
-  - item_id: community-en-simon-siteoperator
+    confidence_reason: reproducible public blog post used as a clue, not sole factual proof
+  - item_id: blogger-en-simon-search
     section: AI 圈博主
     source_role: opinion
-    evidence_type: opinion_post
+    evidence_type: blog_observation
     item_date: 2026-08-20
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://simonwillison.net/2026/Aug/20/chatgpt-search-now-uses-the-siteoperator-at-scale/
-    confidence_reason: public commentary on search-agent mechanics
-  - item_id: community-en-simon-tuis
+    confidence_reason: reproducible public blog post about search behavior at scale
+  - item_id: blogger-en-simon-tuis
     section: AI 圈博主
     source_role: opinion
-    evidence_type: opinion_post
+    evidence_type: blog_observation
     item_date: 2026-08-21
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://simonwillison.net/2026/Aug/21/stop-making-tuis/
-    confidence_reason: public view on AI tool interface direction
+    confidence_reason: public opinion post on agent tool form factor and workflow direction
   - item_id: research-google-mobility
     section: AI 研究前沿
     source_role: research
     evidence_type: research_blog
     item_date: 2026-08-21
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/
-    confidence_reason: original Google Research blog retained as the primary source
+    confidence_reason: official research blog with an original page and a clear grounding angle
   - item_id: research-computer-use-traces
     section: AI 研究前沿
     source_role: research
     evidence_type: paper
     item_date: 2026-08-21
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://arxiv.org/abs/2608.20319
-    confidence_reason: original arXiv abstract retained as the primary source
+    confidence_reason: original arXiv page retained for a computer-use / agent task-model signal
   - item_id: research-midtool
     section: AI 研究前沿
     source_role: research
     evidence_type: paper
     item_date: 2026-08-21
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://arxiv.org/abs/2608.20314
-    confidence_reason: original arXiv abstract retained as the primary source
+    confidence_reason: original arXiv page retained for agentic tool-use training signal
   - item_id: github-lobechat-canary
     section: GitHub 热门项目
     source_role: community
     evidence_type: release_page
-    item_date: 2026-08-22
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://github.com/lobehub/lobe-chat/releases/tag/v2.2.15-canary.42
@@ -288,14 +290,14 @@ evidence_items:
     source_role: community
     evidence_type: release_note
     item_date: 2026-08-21
-    snapshot_time: 2026-08-22 09:10 Asia/Shanghai
+    snapshot_time: 2026-08-22 09:36 Asia/Shanghai
     verification_status: verified
     linked_primary_sources:
       - https://github.com/modelscope/FunASR/releases/tag/v1.4.3
     confidence_reason: release note details runtime packaging and speech pipeline changes
 followups:
-  - Copilot Slack/Teams adoption telemetry
-  - Claude Code and Qwen Code session-governance follow-up
-  - trace-based agent training and null-baseline evaluation follow-up
+  - Verify whether agent collaboration surfaces keep replacing IDE-first entry points
+  - Watch whether runtime governance remains the main moat for coding agents
+  - Recheck whether computer-use trace models and mid-training tool synthesis turn into reproducible code or products
 fact_confidence: high
 signal_strength: high

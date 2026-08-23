@@ -1,0 +1,270 @@
+date: 2026-08-23
+window_start: 2026-08-22 09:00 Asia/Shanghai
+window_end: 2026-08-23 09:00 Asia/Shanghai
+supplemental_range: 2026-08-18 to 2026-08-22
+themes:
+  - agent_runtime_governance
+  - agent_session_infrastructure
+  - cost_and_access_controls
+  - agent_api_building_blocks
+  - tool_use_training
+  - computer_use_traces
+  - test_time_compute
+  - model_harness
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - Google
+  - Qwen
+  - LobeHub
+  - CherryHQ
+products:
+  - OpenAI API
+  - Claude Code
+  - Qwen Code
+  - LobeHub Desktop Canary
+  - Cherry Studio
+signals:
+  - 区域处理粒度下放
+  - agent 构建块补齐
+  - 会话与审查边界加厚
+  - 依赖与发布卫生暴露
+  - 轨迹到任务模型
+  - 自适应推理算力分配
+opinion_sources:
+  - Simon Willison
+  - Latent Space
+  - Another Daily AI Newsletter
+  - LobeHub release feed
+  - Cherry Studio release feed
+viewpoint_themes:
+  - agent harness
+  - release hygiene
+  - dependency fragility
+  - model transparency
+  - tooling reliability
+research_sources:
+  - Google Research Blog
+  - arXiv
+research_themes:
+  - wearable_grounding
+  - computer_use_traces
+  - adaptive_reasoning
+  - agent_tool_use_training
+research_artifacts:
+  - research_blog
+  - paper
+research_interpretations: []
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-23.md
+  adopted:
+    - candidate_id: sig_6307133702148d12
+      title: An AI tool for prioritizing candidate biomarkers from wearable sensor data
+      adoption_reason: official Google Research blog; clear research-frontier relevance
+    - candidate_id: sig_dc94525dcacf636b
+      title: Inducing Task Models from Computer-Use Traces
+      adoption_reason: direct fit for agent runtime and trace-to-task modeling
+    - candidate_id: sig_b71a691ef290bbbb
+      title: "Learning When to Think: Adaptive Reasoning for Test-Time Compute Allocation"
+      adoption_reason: fits compute allocation and reasoning control
+    - candidate_id: sig_56fa4ad922690ca8
+      title: "MidTool: Mid-training Data Synthesis for Agentic Tool Use"
+      adoption_reason: strong match for tool-use training direction
+  rejected_or_deferred:
+    - candidate_id: sig_e1b962a17419559b
+      status: deferred
+      rejection_reason: interesting but less directly tied to today's agent/runtime mainline
+    - candidate_id: sig_b66967fb022b7a94
+      status: rejected
+      rejection_reason: vertical medical application; lower competitive information gain for core AI mainline
+    - candidate_id: sig_4a6f3bc763ebcf1b
+      status: rejected
+      rejection_reason: crypto-fraud application is too far from the day's AI core themes
+source_checks:
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: hit
+    note: checked OpenAI changelog, Anthropic agent API announcement, Claude Code release, and Qwen Code release
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: hit
+    note: checked core public blogs/newsletters and kept only reproducible AI-relevant items
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: hit
+    note: reproducible blogs/newsletters used; Simon Willison, Latent Space, and Another Daily AI were all public and linkable
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: hit
+    note: LobeHub and Cherry Studio GitHub releases provided fresh Chinese community signals
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: hit
+    note: engineering/community posts used for agent harness and dependency hygiene signals
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: hit
+    note: newsletter-style aggregation used only as a clue layer
+  - source_id: english_research_blogs
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: hit
+    note: Latent Space and Google Research blog were checked directly
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: miss
+    note: no high-value Chinese media-only signal was needed after official/community checks
+  - source_id: china_research_community
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: miss
+    note: no separate Chinese research-community item cleared the bar
+  - source_id: research_frontier
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: hit
+    note: original paper/research page retained for every research item
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-23 09:18 Asia/Shanghai
+    result: hit
+    note: optional local candidate review used as clue layer only
+evidence_items:
+  - item_id: news-1
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog_entry
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://developers.openai.com/api/docs/changelog
+    confidence_reason: official changelog with dated entry and direct product implications
+  - item_id: news-2
+    section: AI 新闻
+    source_role: official
+    evidence_type: product_announcement
+    item_date: 2026-08-20
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.anthropic.com/news/agent-capabilities-api
+    confidence_reason: official Anthropic announcement for new agent-building APIs
+  - item_id: news-3
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.240
+    confidence_reason: official GitHub release with versioned patch notes
+  - item_id: news-4
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.22.0
+    confidence_reason: official release page for versioned Qwen Code update
+  - item_id: comm-cn-1
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://github.com/lobehub/lobe-chat/releases
+    confidence_reason: public GitHub release feed with fresh canary information
+  - item_id: comm-cn-2
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/CherryHQ/cherry-studio/releases/tag/v2.0.8
+    confidence_reason: direct release tag with feature and security deltas
+  - item_id: comm-en-1
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/21/llm/
+    confidence_reason: public long-form post with concrete dependency-impact signal
+  - item_id: comm-en-2
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://www.latent.space/p/attention-interface
+    confidence_reason: public long-form viewpoint on agent harness and workflow design
+  - item_id: comm-en-3
+    section: AI 圈博主
+    source_role: community
+    evidence_type: newsletter_roundup
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://www.anothercodingblog.com/p/another-daily-ai-newsletter-august-939
+    confidence_reason: public newsletter with reproducible source chain and model-supply-chain clue
+  - item_id: res-1
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: research_blog
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data
+    confidence_reason: official Google Research blog with clear original research link
+  - item_id: res-2
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.20319
+    confidence_reason: original arXiv paper link retained
+  - item_id: res-3
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.20256
+    confidence_reason: original arXiv paper link retained
+  - item_id: res-4
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-23 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.20314
+    confidence_reason: original arXiv paper link retained
+followups:
+  - OpenAI 的区域处理和定价控制是否会继续扩展到更多模型和地理组合
+  - Anthropic 和 Qwen Code 的 session / review / permission 接口是否继续收敛
+  - 匿名模型和社区转述链是否会越来越影响模型竞品判断
+fact_confidence: high
+signal_strength: high

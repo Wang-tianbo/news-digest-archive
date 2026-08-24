@@ -1,0 +1,228 @@
+date: 2026-08-24
+window_start: 2026-08-23 09:00 Asia/Shanghai
+window_end: 2026-08-24 09:00 Asia/Shanghai
+supplemental_range: 2026-08-19 to 2026-08-23
+themes:
+  - agent_api
+  - runtime_governance
+  - prompt_caching
+  - agent_harness
+  - self_improvement_eval
+  - test_time_compute
+  - document_knowledge_internalization
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - Qwen
+  - OpenBMB
+  - infiniflow
+products:
+  - OpenAI API
+  - Claude Code
+  - Qwen Code
+  - StaffDeck
+  - RAGFlow
+signals:
+  - 请求级数据处理
+  - Prompt 缓存可观测性
+  - 会话与审查收口
+  - harness 硬化
+  - 自我改进评测
+  - 训练内化知识
+opinion_sources:
+  - Simon Willison
+viewpoint_themes:
+  - AI 编程方法论
+  - 代码审查
+  - conceptual_integrity
+research_sources:
+  - arXiv:2608.20318
+  - arXiv:2608.20290
+  - arXiv:2608.20281
+research_themes:
+  - recursive_self_improvement
+  - measured_null_audit
+  - retrieval_free_internalization
+research_artifacts:
+  - paper
+research_interpretations: []
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-24.md
+  adopted:
+    - candidate_id: sig_e06c60c7b2e8744f
+      title: AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement
+      adoption_reason: Directly matches the day's self-improvement and routing-control theme.
+    - candidate_id: sig_6c6f3f1e5695e02e
+      title: Phantom Gains: Auditing Self-Improvement Against a Measured Null
+      adoption_reason: Gives the necessary audit lens for self-improvement claims.
+    - candidate_id: sig_c8b319a4e6300993
+      title: Inject, Align, Recover: Staged Post-Training for Retrieval-Free Document Knowledge Internalization
+      adoption_reason: Strong fit for training-time knowledge internalization and doc workflows.
+  rejected_or_deferred:
+    - candidate_id: sig_dc94525dcacf636b
+      status: deferred
+      rejection_reason: Already covered in 2026-08-23 digest; no new angle today.
+    - candidate_id: sig_b71a691ef290bbbb
+      status: deferred
+      rejection_reason: Already covered in 2026-08-23 digest; no new angle today.
+    - candidate_id: sig_477f749974d3677c
+      status: deferred
+      rejection_reason: Interesting, but less direct than the adopted self-improvement items.
+source_checks:
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-24 09:31 Asia/Shanghai
+    result: hit
+    note: OpenAI changelog, Claude Code release, and Qwen Code release checked.
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-24 09:31 Asia/Shanghai
+    result: hit
+    note: Simon Willison blog posts checked and used as reproducible opinion samples.
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-24 09:31 Asia/Shanghai
+    result: hit
+    note: OpenBMB StaffDeck and RAGFlow release pages checked.
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-24 09:31 Asia/Shanghai
+    result: hit
+    note: Simon Willison release notes and coding-agent commentary checked.
+  - source_id: research_frontier
+    checked_at: 2026-08-24 09:31 Asia/Shanghai
+    result: hit
+    note: arXiv original pages retained for all included research items.
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-24 09:31 Asia/Shanghai
+    result: hit
+    note: Optional local candidate review used as clue layer.
+evidence_items:
+  - item_id: news-1
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://developers.openai.com/api/docs/changelog
+    confidence_reason: Official changelog records request-level regional processing and price change.
+  - item_id: news-2
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://developers.openai.com/api/docs/changelog
+    confidence_reason: Same changelog records Prompt Caching Dashboard.
+  - item_id: news-3
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.240
+    confidence_reason: Release page explicitly says bug fixes and reliability improvements.
+  - item_id: news-4
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.22.0
+    confidence_reason: Release page documents the Web Shell/review/session changes.
+  - item_id: community-cn-1
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/OpenBMB/StaffDeck/releases
+    confidence_reason: Release page shows v0.5.0 and the harness/session recovery changes.
+  - item_id: community-cn-2
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/infiniflow/ragflow/releases
+    confidence_reason: Release page lists v0.27.0 and a broad set of model/provider and workflow fixes.
+  - item_id: community-en-1
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/22/llm/
+    confidence_reason: Original blog post with explicit release notes and links.
+  - item_id: community-en-2
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/21/llm-openrouter/
+    confidence_reason: Original blog post summarizing tool/runtime additions.
+  - item_id: community-en-3
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-19
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/
+    confidence_reason: Original transcript-based post with a clear engineering judgment.
+  - item_id: research-1
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.20318v1
+    confidence_reason: Original arXiv page retained; only abstract-level verification used.
+  - item_id: research-2
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.20290v1
+    confidence_reason: Original arXiv page retained; no replication evidence yet.
+  - item_id: research-3
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-24 09:31 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.20281v1
+    confidence_reason: Original arXiv page retained; still at abstract stage.
+followups:
+  - Watch whether request-level regional processing becomes a stable enterprise control surface.
+  - Watch whether agent session/review/recovery primitives keep converging across vendors.
+  - Watch whether self-improvement benchmarks get follow-up code or replications.
+fact_confidence: high
+signal_strength: high

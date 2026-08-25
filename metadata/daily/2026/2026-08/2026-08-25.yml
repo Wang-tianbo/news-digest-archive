@@ -1,0 +1,284 @@
+date: 2026-08-25
+window_start: 2026-08-24 09:00 Asia/Shanghai
+window_end: 2026-08-25 09:00 Asia/Shanghai
+supplemental_range: 2026-08-21 to 2026-08-25
+themes:
+  - runtime_governance
+  - agent_harness
+  - multi_agent_workflow
+  - skill_mcp_plugins
+  - memory_safety
+  - inference_infrastructure
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Anthropic
+  - OpenAI
+  - Google
+  - Qwen
+  - Vercel
+products:
+  - Claude Code
+  - Codex
+  - Gemini CLI
+  - Qwen Code
+  - Qwen-MM-Plugins
+  - Vercel AI SDK
+  - SGLang
+signals:
+  - 组织级治理
+  - subagent 可观测性
+  - workflow 显式授权
+  - 跨 harness 多模态能力包
+  - 持久记忆污染
+  - 大模型推理栈优化
+opinion_sources:
+  - LobeHub Releases
+  - Cherry Studio Releases
+  - Vercel AI SDK Releases
+  - Gemini CLI Releases
+  - SGLang Releases
+viewpoint_themes:
+  - agent runtime
+  - AI 编程工具工程化
+  - tool error semantics
+  - 多模态 skill
+  - serving infrastructure
+research_sources:
+  - arXiv:2608.21230
+  - arXiv:2608.21292
+research_themes:
+  - agent_memory_safety
+  - skill_optimization
+  - agent_training
+research_artifacts:
+  - paper
+research_interpretations: []
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-25.md
+  adopted:
+    - candidate_id: sig_298673682ee4fd67
+      title: "Utility Under Attack: Agent Memory Poisoning and the Limits of Content Screening and Provenance Ranking"
+      adoption_reason: Directly matches persistent memory risk in agent runtimes; not covered in recent digests.
+    - candidate_id: sig_b9cff61068b80d10
+      title: "AUSO: Action-Level Unified Skill Optimization from Internalization to Utilization"
+      adoption_reason: Connects product-side skills/plugins to research-side skill lifecycle optimization.
+  rejected_or_deferred:
+    - candidate_id: sig_07f17d24eb0b344f
+      status: deferred
+      rejection_reason: Strong optimization paper, but less directly tied to today's AI product and agent theme.
+    - candidate_id: sig_0259627c5d040074
+      status: deferred
+      rejection_reason: Interesting life-sciences VQA benchmark, but weaker fit than agent memory and skills today.
+    - candidate_id: sig_3eaa8f3372ea2ab0
+      status: deferred
+      rejection_reason: Potentially relevant verification theme; needs fuller primary-source review before inclusion.
+    - candidate_id: sig_dc94525dcacf636b
+      status: deferred
+      rejection_reason: Already covered in recent digests; no material new angle in this run.
+    - candidate_id: sig_e06c60c7b2e8744f
+      status: deferred
+      rejection_reason: Already covered on 2026-08-24; no new follow-up today.
+source_checks:
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: hit
+    note: Checked OpenAI/Codex, Anthropic/Claude Code, GitHub Copilot, Cursor, Gemini CLI, and Qwen Code release/changelog streams; fresh hits were Codex, Claude Code, Gemini CLI, and Qwen Code.
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: hit
+    note: GitHub release APIs checked for openai/codex, anthropics/claude-code, google-gemini/gemini-cli, QwenLM/qwen-code, and CognitionAI org activity.
+  - source_id: china_model_officials
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: partial
+    note: Checked Qwen blog/org, DeepSeek org/releases, MiniMax news, Tencent Hunyuan product updates, and selected China model repos; strong fresh official artifact was Qwen-MM-Plugins, while many org updated_at hits were timestamp-only.
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: partial
+    note: X-only entries not used; reproducible blog/RSS output was sparse in strict window, so community GitHub releases supplied information-signal entries.
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: hit
+    note: Used reproducible community/project release signals as AI 圈博主 items; no X/Twitter-only sources used.
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: partial
+    note: Chinese media sources were not used as factual proof; official GitHub release artifacts were preferred.
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: hit
+    note: LobeHub and Cherry Studio strict-window releases included as Chinese-source community engineering signals.
+  - source_id: china_research_community
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: partial
+    note: OpenBMB, OpenCompass, ModelScope, and related repos checked; no stronger non-repeated item selected.
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: hit
+    note: Vercel AI SDK and Gemini CLI release streams checked and included; Gemini CLI nightly after the 09:00 bucket was excluded.
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: hit
+    note: LangChain, Pydantic AI, MCP repos, and related agent-infra streams checked; Vercel AI SDK had the clearest strict-window tool-error semantic signal.
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: hit
+    note: SGLang v0.5.18 used as supplemental inference-platform signal because it was not covered in recent daily digests.
+  - source_id: english_research_blogs
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: partial
+    note: Google Research and other research blogs checked; recent Google items were already covered, so none added.
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: partial
+    note: No high-confidence non-repeated industry-analysis item included.
+  - source_id: english_safety_governance
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: partial
+    note: Safety/governance signal came from original arXiv memory-poisoning paper rather than commentary sources.
+  - source_id: research_frontier
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: hit
+    note: Local candidate review plus arXiv original pages checked; adopted two non-repeated supplemental papers.
+  - source_id: github_hot_projects
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: hit
+    note: SGLang v0.5.18 selected as non-mainline infrastructure project with deployment relevance.
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-25 09:17 Asia/Shanghai
+    result: hit
+    note: Optional local candidate review used as clue layer only; no private local paths or candidate database details exposed.
+evidence_items:
+  - item_id: news-1
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-24
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.243
+    confidence_reason: Official GitHub release with detailed changelog and publication timestamp.
+  - item_id: news-2
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-24
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/codex/releases/tag/rust-v0.150.0-alpha.8
+      - https://github.com/openai/codex/compare/rust-v0.150.0-alpha.7...rust-v0.150.0-alpha.8
+    confidence_reason: Official Codex release and compare view show the selected runtime, sandbox, task, and approval changes.
+  - item_id: news-3
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.22.0-nightly.20260825.22bb5e8b9f
+    confidence_reason: Official Qwen Code release records WebShell, review, workflow, auth, and Computer Use changes.
+  - item_id: news-4
+    section: AI 新闻
+    source_role: official
+    evidence_type: repository_docs_and_commit
+    item_date: 2026-08-24
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/Qwen-MM-Plugins
+      - https://github.com/QwenLM/Qwen-MM-Plugins/commit/10e1aacea3055efe930e3cad3356b649e399cd2e
+    confidence_reason: Official Qwen repository README and strict-window commit verify the cross-harness multimodal plugin signal.
+  - item_id: community-cn-1
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-24
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/lobehub/lobehub/releases/tag/v2.2.15-canary.64
+    confidence_reason: Public GitHub release gives exact canary version, timestamp, and commit summary.
+  - item_id: community-cn-2
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-24
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/CherryHQ/cherry-studio/releases/tag/v2.0.9
+    confidence_reason: Public GitHub release lists skill, provider, approval, citation, and privacy changes.
+  - item_id: community-en-1
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-24
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vercel/ai/releases/tag/ai%407.0.78
+    confidence_reason: Official Vercel AI SDK release notes describe model-visible tool error behavior.
+  - item_id: community-en-2
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-24
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/google-gemini/gemini-cli/releases/tag/v0.57.0-preview.1
+    confidence_reason: Official Gemini CLI preview release gives exact version and timestamp inside the reporting bucket.
+  - item_id: community-en-3
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/sgl-project/sglang/releases/tag/v0.5.18
+    confidence_reason: Official SGLang release contains detailed model support and measured serving optimizations.
+  - item_id: research-1
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.21230
+    confidence_reason: Original arXiv page checked; claims are abstract-level and await independent replication.
+  - item_id: research-2
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-21
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.21292
+    confidence_reason: Original arXiv page checked; benchmark claims remain early research.
+  - item_id: github-1
+    section: GitHub 热门项目
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-22
+    snapshot_time: 2026-08-25 09:17 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/sgl-project/sglang/releases/tag/v0.5.18
+    confidence_reason: Public release note provides versioned infrastructure changes and measured performance deltas.
+followups:
+  - Watch whether Claude Code organization-managed runtime controls become default enterprise primitives.
+  - Watch whether Codex stabilizes task TUI, local automation gate, subagent ownership, and structured approval reviews.
+  - Watch whether Qwen Code and Qwen-MM-Plugins converge into a cross-harness Chinese agent ecosystem.
+  - Track follow-up replications or code availability for agent memory poisoning defenses.
+fact_confidence: high
+signal_strength: high

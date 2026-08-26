@@ -1,0 +1,308 @@
+date: 2026-08-26
+window_start: 2026-08-25 09:00 Asia/Shanghai
+window_end: 2026-08-26 09:00 Asia/Shanghai
+supplemental_range: 2026-08-24 to 2026-08-26
+themes:
+  - agent_runtime_governance
+  - mcp_skill_ecosystem
+  - coding_agent_control_plane
+  - workflow_recovery
+  - agent_evaluation
+  - enterprise_code_governance
+regions:
+  - us
+  - china
+  - global
+companies:
+  - GitHub
+  - Anthropic
+  - OpenAI
+  - Google
+  - LobeHub
+  - OpenBMB
+  - Vercel
+  - Pydantic
+  - LangChain
+products:
+  - GitHub Copilot
+  - Claude Code
+  - Codex
+  - Gemini CLI
+  - LobeHub
+  - StaffDeck
+  - Vercel AI SDK
+  - Pydantic AI
+  - LangChain
+signals:
+  - Copilot 扩展入口 GA
+  - MCP / Skill / Canvas 产品化
+  - 权限与审批控制面加厚
+  - 后台会话和非交互恢复
+  - workflow stream 状态语义
+  - 整仓迁移评测
+opinion_sources:
+  - LobeHub Releases
+  - OpenBMB StaffDeck Releases
+  - Vercel AI SDK Releases
+  - Pydantic AI Releases
+  - LangChain Releases
+viewpoint_themes:
+  - agent runtime
+  - AI 编程工具工程化
+  - 企业 agent handoff
+  - HITL rejection semantics
+  - provider adapter stability
+research_sources:
+  - arXiv:2608.23564
+  - arXiv:2608.23552
+  - Google Research AgentHands
+research_themes:
+  - coding_agent_evaluation
+  - long_horizon_agents
+  - agent_harness
+  - embodied_multimodal_agents
+research_artifacts:
+  - benchmark
+  - paper
+  - research_blog
+research_interpretations: []
+peripheral_themes:
+  - 企业代码治理
+  - ruleset_governance
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-26.md
+  adopted:
+    - candidate_id: sig_006d9e5e67998cc0
+      title: "SWE Refactor Bench: Can Coding Agents Complete a Long-Horizon, Whole-Repository Stack Migration?"
+      adoption_reason: Directly matches coding-agent long-horizon evaluation and was not covered in recent digests.
+    - candidate_id: sig_f4ff8bb0012d40d1
+      title: "Prime Agent: A Self-Improving RLM Harness"
+      adoption_reason: Connects product-side harness control planes with research-side persistent agent scaffolds.
+    - candidate_id: sig_b10425dbb6909dfa
+      title: "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR"
+      adoption_reason: High-quality official research-blog signal for embodied multimodal agent UX beyond 2D overlays.
+  rejected_or_deferred:
+    - candidate_id: sig_0f43f9497ffc0f4f
+      status: deferred
+      rejection_reason: Strong post-training paper, but less directly tied to today's agent runtime and coding-agent control-plane theme.
+    - candidate_id: sig_a820a6d6b2eb0c4c
+      status: deferred
+      rejection_reason: Relevant multi-agent caveat, but omitted to keep research section concise after adopting SWE Refactor Bench and Prime Agent.
+    - candidate_id: sig_deb3bbb800b55e30
+      status: deferred
+      rejection_reason: Useful scientific-agent benchmark, but weaker fit for today's coding-agent and runtime mainline.
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-26 09:08 Asia/Shanghai
+    result: hit
+    note: Optional local candidate review used as clue layer only; selected items were verified against original research or release pages.
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: hit
+    note: Checked OpenAI/Codex, Anthropic/Claude Code, GitHub Copilot, Google/Gemini, Cursor, and related changelog/release streams.
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: hit
+    note: Fresh strict-window hits included Claude Code v2.1.246, Codex alpha.9-.11, Gemini CLI v0.57.0/v0.58.0-preview.0, and Copilot Customize GA.
+  - source_id: china_model_officials
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: partial
+    note: Targeted checks covered Qwen, DeepSeek, Kimi, MiniMax, Tencent Hunyuan/TokenHub, and related GitHub/org streams; no stronger strict-window model launch displaced the agent-runtime theme.
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: partial
+    note: X-only entries were not used; reproducible release/project signals supplied today's community entries.
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: hit
+    note: Included two Chinese-source and three English-source reproducible community/engineering signals; no X/Twitter-only sources used.
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: partial
+    note: Chinese media was not used as factual proof; official GitHub release artifacts were preferred.
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: hit
+    note: LobeHub canary .65 and StaffDeck v0.5.1 selected as Chinese-source engineering signals.
+  - source_id: china_research_community
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: partial
+    note: OpenBMB and related project streams checked; StaffDeck had the clearest strict-window handoff/harness signal.
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: hit
+    note: Vercel AI SDK, Pydantic AI, LangChain, Gemini CLI, and related engineering release streams checked.
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: hit
+    note: Agent framework releases contributed workflow stream, provider adapter, tool retry, and HITL rejection semantics signals.
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: partial
+    note: No stronger non-repeated inference-platform item selected for today's body.
+  - source_id: english_research_blogs
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: hit
+    note: Google Research AgentHands selected as official research-blog item.
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: partial
+    note: No high-confidence non-repeated industry-analysis item included; official sources were stronger.
+  - source_id: english_safety_governance
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: partial
+    note: No separate safety-governance body item selected; safety-adjacent governance appeared through GitHub ruleset controls.
+  - source_id: research_frontier
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: hit
+    note: Local candidate review plus arXiv and Google Research original pages checked; adopted three non-repeated research/frontier items.
+  - source_id: github_hot_projects
+    checked_at: 2026-08-26 09:25 Asia/Shanghai
+    result: hit
+    note: StaffDeck v0.5.1 selected as non-mainline enterprise agent workflow project with strict-window release evidence.
+evidence_items:
+  - item_id: news-1
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available
+    confidence_reason: Official GitHub changelog with exact date and feature description.
+  - item_id: news-2
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.246
+    confidence_reason: Official Claude Code release notes list permissions, MCP, plugin, recovery, and sandbox changes.
+  - item_id: news-3
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note_and_compare
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/codex/releases/tag/rust-v0.150.0-alpha.9
+      - https://github.com/openai/codex/releases/tag/rust-v0.150.0-alpha.10
+      - https://github.com/openai/codex/releases/tag/rust-v0.150.0-alpha.11
+      - https://github.com/openai/codex/compare/rust-v0.150.0-alpha.8...rust-v0.150.0-alpha.11
+    confidence_reason: Official Codex releases and compare view show strict-window release cadence and inspected commit themes.
+  - item_id: news-4
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/google-gemini/gemini-cli/releases/tag/v0.57.0
+      - https://github.com/google-gemini/gemini-cli/releases/tag/v0.58.0-preview.0
+    confidence_reason: Official Gemini CLI releases list sandbox, rollback, retry, eval, and subagent-boundary changes.
+  - item_id: community-cn-1
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/lobehub/lobehub/releases/tag/v2.2.15-canary.65
+    confidence_reason: Public GitHub canary release gives exact version, timestamp, and commit summary.
+  - item_id: community-cn-2
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/OpenBMB/StaffDeck/releases/tag/v0.5.1
+      - https://github.com/OpenBMB/StaffDeck/compare/v0.5.0...v0.5.1
+    confidence_reason: Public GitHub release and compare view identify handoff, channel, skill lifecycle, and cleanup changes.
+  - item_id: community-en-1
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vercel/ai/releases/tag/ai%407.0.79
+      - https://github.com/vercel/ai/releases/tag/%40ai-sdk%2Fworkflow%402.0.9
+    confidence_reason: Official GitHub releases document workflow stream normalization and batch webhook changes.
+  - item_id: community-en-2
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.34.0
+    confidence_reason: Official release lists GLM-5.3 support and provider/tool-call fixes.
+  - item_id: community-en-3
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.17
+    confidence_reason: Official LangChain release records the HITL rejection reason framing change.
+  - item_id: research-1
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-24
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.23564
+    confidence_reason: arXiv original page contains benchmark design and reported results; independent replication not yet checked.
+  - item_id: research-2
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-24
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.23552
+    confidence_reason: arXiv original page describes Prime Agent harness and reported evaluations; code/reproduction not verified.
+  - item_id: research-3
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: research_blog
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr
+    confidence_reason: Official Google Research blog provides project details and study framing; generalization remains limited.
+  - item_id: peripheral-1
+    section: AI 外围情报观察
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-26 09:25 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-25-rule-insights-dashboard-generally-available
+      - https://github.blog/changelog/2026-08-25-push-rules-in-rulesets-now-support-path-exceptions
+    confidence_reason: Official GitHub changelog entries document governance dashboard GA and push-rule path exceptions.
+followups:
+  - Copilot Customize tab 是否形成团队级 MCP / Skill / canvas 管理入口
+  - Claude Code 权限与后台会话修复是否推动其他 agent CLI 采用同类语义
+  - Codex 0.150 alpha 的 thread history / turn settings / approval evidence 是否进入稳定版
+  - SWE Refactor Bench 是否被主流 coding-agent 厂商用于整仓迁移评测
+fact_confidence: high
+signal_strength: high

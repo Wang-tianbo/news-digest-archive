@@ -1,0 +1,320 @@
+date: 2026-08-27
+window_start: 2026-08-26 09:00 Asia/Shanghai
+window_end: 2026-08-27 09:00 Asia/Shanghai
+supplemental_range: 2026-08-20 to 2026-08-27
+themes:
+  - agent_runtime
+  - runtime_governance
+  - multi_agent_workflow
+  - open_weight_models
+  - inference_efficiency
+  - model_evaluation
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - GitHub
+  - Alibaba Qwen
+  - Z.ai
+  - MiniMax
+products:
+  - Codex
+  - Claude Code
+  - GitHub Copilot
+  - Qwen Code
+  - Qwen3.8-Flash-Next
+  - GLM-5.3-Flash
+  - vLLM
+  - OpenCompass
+signals:
+  - agent 任务对象化
+  - 组织级模型治理
+  - workflow 显式授权
+  - review contract
+  - 低激活 MoE 开放权重
+  - 推理框架快速适配
+opinion_sources:
+  - LobeHub
+  - 见路非道
+  - Vercel AI SDK
+  - Pydantic AI
+  - Unsloth
+  - NVIDIA Developer Forum
+viewpoint_themes:
+  - AI workspace 新模型接入
+  - 本地模型部署体感
+  - agent workflow 错误语义
+  - capability 状态语义
+  - 社区推理适配
+research_sources:
+  - OpenCompass
+  - arXiv
+research_themes:
+  - multimodal_evaluation
+  - multi_round_evaluation
+  - agentic_rl
+  - asynchronous_tool_use
+research_artifacts:
+  - benchmark
+  - open_source_release
+  - paper
+research_interpretations:
+  - none
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-27.md
+  adopted:
+    - candidate_id: sig_8a2bac86a1fc3bc1
+      title: OpenCompass 0.5.4
+      adoption_reason: strict-window release; directly improves multimodal and multi-round evaluation coverage
+    - candidate_id: sig_e545a3ec0e18ae1d
+      title: SPO++ Stream-Aligned Policy Optimization
+      adoption_reason: relevant supplemental research for asynchronous tool-use and agentic RL
+  rejected_or_deferred:
+    - candidate_id: sig_b10425dbb6909dfa
+      status: deferred
+      rejection_reason: AgentHands was already covered in 2026-08-26 digest; no material new follow-up
+    - candidate_id: sig_05cc66113318e80d
+      status: deferred
+      rejection_reason: high-quality Google health research but less connected to today's agent/model competition mainline
+    - candidate_id: sig_be521f206c52ffa2
+      status: deferred
+      rejection_reason: overlaps prior recursive agent/self-improvement coverage; kept for follow-up only
+    - candidate_id: sig_dcc43835725631d9
+      status: deferred
+      rejection_reason: KGQA governance angle is relevant but weaker than OpenCompass and SPO++ for this run
+    - candidate_id: sig_d9107308447aca77
+      status: deferred
+      rejection_reason: large video dataset signal requires stronger license/provenance review before inclusion
+    - candidate_id: sig_ef379add50ec17a8
+      status: deferred
+      rejection_reason: domain-specific financial workflow paper; not central enough for this digest
+    - candidate_id: sig_31306ee0ff96ccca
+      status: deferred
+      rejection_reason: assessment similarity paper lacks immediate AI competitive-landscape impact
+    - candidate_id: sig_035f448b31b8e74e
+      status: deferred
+      rejection_reason: KGQA grounding paper kept as research backlog, not high-value today
+    - candidate_id: sig_c7a76c26b5c346cf
+      status: deferred
+      rejection_reason: video anomaly detection is peripheral and not selected for concise report
+    - candidate_id: sig_666f85efd473c338
+      status: deferred
+      rejection_reason: model-card automation is useful governance work but lower signal than included items
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-27 09:07 Asia/Shanghai
+    result: hit
+    note: optional local candidate review read first; used only as clue layer
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-27 09:15 Asia/Shanghai
+    result: hit
+    note: checked Codex, Claude Code, Gemini CLI, Qwen Code, Cursor, Copilot and related release/changelog streams
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-27 09:18 Asia/Shanghai
+    result: hit
+    note: official GitHub, OpenAI/Codex, Anthropic, Qwen, Z.ai and Copilot sources verified for included items
+  - source_id: china_model_officials
+    checked_at: 2026-08-27 09:18 Asia/Shanghai
+    result: hit
+    note: Qwen and Z.ai model pages and weight repositories produced high-value model signals; DeepSeek/Tencent/Baidu/ByteDance checks had no stronger confirmed item
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: partial
+    note: public blog/RSS-style sources checked where accessible; X-only sources treated as blocked, not misses
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: hit
+    note: included reproducible community/engineering signals from LobeHub, CNBlogs, Vercel, Pydantic, Unsloth and NVIDIA forum
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: partial
+    note: used public Chinese community/blog signal only when paired with primary model source
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: hit
+    note: LobeHub canary and Qwen Code release used as China engineering signals
+  - source_id: china_research_community
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: hit
+    note: OpenCompass v0.5.4 selected as benchmark/research infrastructure item
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: hit
+    note: Vercel AI SDK and Pydantic AI releases included as agent framework signals
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: hit
+    note: checked framework releases for workflow, tool-call, capability and approval semantics
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: hit
+    note: vLLM v0.28.0 selected for inference stack support of Chinese open models and speculative decoding
+  - source_id: english_research_blogs
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: partial
+    note: Google Research candidates checked; AgentHands was not repeated because it was already covered
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: miss
+    note: no high-confidence adjacent industry-analysis item selected after verification
+  - source_id: english_safety_governance
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: partial
+    note: governance angle represented through Copilot model policy and agent runtime permission releases
+  - source_id: research_frontier
+    checked_at: 2026-08-27 09:19 Asia/Shanghai
+    result: hit
+    note: OpenCompass release and SPO++ paper retained with primary links
+evidence_items:
+  - item_id: news-codex-0150
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-27 09:15 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/codex/releases/tag/rust-v0.150.0
+    confidence_reason: official OpenAI Codex GitHub release with exact tag and changelog
+  - item_id: news-claude-code-2147
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-27 09:15 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.247
+    confidence_reason: official Anthropic Claude Code GitHub release
+  - item_id: news-qwen-code-0222
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-26
+    snapshot_time: 2026-08-27 09:15 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.22.2
+    confidence_reason: official QwenLM release with exact tag
+  - item_id: news-qwen-glm-open-weights
+    section: AI 新闻
+    source_role: official
+    evidence_type: model_page
+    item_date: 2026-08-26
+    snapshot_time: 2026-08-27 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://qwen.ai/research
+      - https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+      - https://github.com/QwenLM/Qwen3.8-Flash-Next
+      - https://z.ai/blog/glm-5.3-flash
+      - https://huggingface.co/zai-org/GLM-5.3-Flash
+    confidence_reason: official research/model pages and organization-owned weight repositories
+  - item_id: news-copilot-global-model-policy
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-26
+    snapshot_time: 2026-08-27 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-26-global-model-policy-generally-available/
+    confidence_reason: official GitHub Changelog article with publication timestamp
+  - item_id: opinion-lobehub-73
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-27 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/lobehub/lobehub/releases/tag/v2.2.15-canary.73
+      - https://huggingface.co/zai-org/GLM-5.3-Flash
+    confidence_reason: public GitHub canary release plus primary GLM model repository
+  - item_id: opinion-cnblogs-qwen38
+    section: AI 圈博主
+    source_role: community
+    evidence_type: blog_post
+    item_date: 2026-08-26
+    snapshot_time: 2026-08-27 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.cnblogs.com/sing1ee
+      - https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+    confidence_reason: public blog index showed dated post; factual claims cross-checked against Qwen model repository
+  - item_id: opinion-vercel-ai-7083
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-27 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vercel/ai/releases/tag/ai%407.0.83
+      - https://github.com/vercel/ai/releases/tag/%40ai-sdk/workflow%402.0.13
+    confidence_reason: official Vercel AI SDK GitHub release tags
+  - item_id: opinion-pydantic-ai-2350
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-26
+    snapshot_time: 2026-08-27 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.35.0
+    confidence_reason: official Pydantic AI GitHub release
+  - item_id: opinion-unsloth-nvidia-qwen
+    section: AI 圈博主
+    source_role: community
+    evidence_type: community_docs
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-27 09:19 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://unsloth.ai/docs/models/qwen3.8
+      - https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF
+      - https://forums.developer.nvidia.com/t/qwen3-8-flash-next/381228
+      - https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+    confidence_reason: community deployment sources are public and reproducible, but performance claims require later benchmark validation
+  - item_id: research-opencompass-054
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: benchmark_release
+    item_date: 2026-08-26
+    snapshot_time: 2026-08-27 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/open-compass/opencompass/releases/tag/0.5.4
+    confidence_reason: official OpenCompass release notes with exact version
+  - item_id: research-spopp
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-08-26
+    snapshot_time: 2026-08-27 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.24870v1
+    confidence_reason: original arXiv paper page retained; no secondary source needed
+  - item_id: github-vllm-028
+    section: GitHub 热门项目
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-26
+    snapshot_time: 2026-08-27 09:15 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vllm-project/vllm/releases/tag/v0.28.0
+    confidence_reason: official vLLM release with exact version, commit count and model-support highlights
+followups:
+  - Codex task mentions and Interrupt hooks是否会形成跨任务自动化接口
+  - Claude Code成本优化和Admin API skill是否扩展为企业agent ops默认工具
+  - Qwen Code的MCP Apps、DingTalk channel、typed review contract是否进入稳定企业工作流
+  - Qwen3.8-Flash-Next和GLM-5.3-Flash是否获得稳定量化、推理框架适配和OpenCompass评测
+fact_confidence: high
+signal_strength: high

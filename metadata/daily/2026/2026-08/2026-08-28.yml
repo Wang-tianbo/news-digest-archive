@@ -1,0 +1,312 @@
+date: 2026-08-28
+window_start: 2026-08-27 09:00 Asia/Shanghai
+window_end: 2026-08-28 09:00 Asia/Shanghai
+supplemental_range: 2026-08-21 to 2026-08-28
+themes:
+  - agent_runtime
+  - runtime_governance
+  - code_review_agents
+  - repo_less_agents
+  - remote_control
+  - mcp_security
+  - visual_reasoning
+  - inference_efficiency
+regions:
+  - us
+  - china
+  - global
+companies:
+  - GitHub
+  - Cursor
+  - Anthropic
+  - Moonshot AI
+  - Google
+  - LobeHub
+  - LangGenius
+  - Vercel
+  - Pydantic
+products:
+  - GitHub Copilot
+  - Cursor Cloud Agents
+  - Cursor Origin
+  - Claude Code
+  - Kimi Code
+  - Gemini CLI
+  - LobeHub
+  - Dify
+  - Vercel AI SDK
+  - Pydantic AI
+  - Model Hardware Standard
+signals:
+  - bot-authored PR review
+  - repo-less cloud agent workflow
+  - restricted agent execution
+  - remote-control coding agent
+  - multi-agent tower orchestration
+  - MCP OAuth SSRF hardening
+  - durable tool execution
+  - long-inference cost reduction
+  - verifiable visual reasoning
+opinion_sources:
+  - LobeHub Releases
+  - Dify Releases
+  - Simon Willison
+  - Vercel AI SDK Releases
+  - Pydantic AI Releases
+viewpoint_themes:
+  - AI workspace runtime
+  - agent sandbox and skill management
+  - auto mode safety
+  - tool-call schema reliability
+  - safe download and durable execution
+research_sources:
+  - arXiv
+  - GitHub
+research_themes:
+  - long_context_inference
+  - test_time_scaling
+  - native_visual_reasoning
+  - verifiable_benchmarks
+research_artifacts:
+  - paper
+  - open_source_implementation
+  - benchmark
+research_interpretations:
+  - none
+peripheral_themes:
+  - physical_agent_safety
+  - hardware_operation_standards
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-08-28.md
+  adopted:
+    - candidate_id: sig_f4646b9142325ca8
+      title: Prefix Sliding
+      adoption_reason: "selected after primary-source verification because it directly connects long-reasoning cost to agent deployment"
+    - candidate_id: sig_820f2715599fcaee
+      title: VBVR-Pro
+      adoption_reason: "selected after arXiv verification because it provides a new visual-reasoning benchmark with claimed open artifacts"
+  rejected_or_deferred:
+    - candidate_id: sig_8a2bac86a1fc3bc1
+      title: OpenCompass 0.5.4
+      status: deferred
+      rejection_reason: "already covered in the 2026-08-27 digest; no material follow-up found in this run"
+    - candidate_id: sig_b10425dbb6909dfa
+      title: AgentHands
+      status: deferred
+      rejection_reason: "relevant Google Research item but lower information gain than Prefix Sliding and VBVR-Pro for today's agent/runtime focus"
+    - candidate_id: sig_c5b24f7b84897b1a
+      title: Planetary prediction engine
+      status: deferred
+      rejection_reason: "high-quality Google Research signal but less central than included coding-agent and visual-reasoning items"
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-08-28 09:08 Asia/Shanghai
+    result: hit
+    note: "optional local candidate review read first; used only as clue layer"
+  - source_id: coding_agent_releases
+    checked_at: 2026-08-28 09:20 Asia/Shanghai
+    result: hit
+    note: "checked Codex, Claude Code, Cursor, Copilot, Gemini CLI, Devin, Qwen Code, Kimi Code and Z Code-related official release/changelog surfaces; selected Copilot, Cursor, Claude, Kimi and Gemini"
+  - source_id: core_official_ai_news
+    checked_at: 2026-08-28 09:20 Asia/Shanghai
+    result: hit
+    note: "official GitHub, Cursor, Anthropic, Google and Moonshot pages yielded included strict-window items"
+  - source_id: china_model_officials
+    checked_at: 2026-08-28 09:23 Asia/Shanghai
+    result: partial
+    note: "checked DeepSeek, Qwen, Zhipu/Z.ai, Kimi, MiniMax, Tencent Hunyuan, Baidu Wenxin and ByteDance/Doubao/Volcano surfaces; many model items were recent repeats, Kimi Code was selected as the freshest non-duplicate product signal"
+  - source_id: ai_peripheral_watchlist
+    checked_at: 2026-08-28 09:24 Asia/Shanghai
+    result: hit
+    note: "Anthropic Model Hardware Standard selected as adjacent physical-agent safety/deployment signal"
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-08-28 09:32 Asia/Shanghai
+    result: partial
+    note: "checked reproducible public blog/RSS/GitHub/community sources; X-only sources treated as blocked rather than misses"
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-08-28 09:32 Asia/Shanghai
+    result: hit
+    note: "included two Chinese-source and three English-source reproducible community/engineering signals"
+  - source_id: china_ai_media_signals
+    checked_at: 2026-08-28 09:32 Asia/Shanghai
+    result: partial
+    note: "no media-only Chinese item selected; used public GitHub/community releases with primary evidence"
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-08-28 09:32 Asia/Shanghai
+    result: hit
+    note: "LobeHub canary and Dify release provided Chinese-source engineering signals"
+  - source_id: china_research_community
+    checked_at: 2026-08-28 09:31 Asia/Shanghai
+    result: partial
+    note: "OpenCompass candidate checked but deferred as repeat from 2026-08-27"
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-08-28 09:32 Asia/Shanghai
+    result: hit
+    note: "Vercel AI SDK and Pydantic AI releases selected as framework/runtime signals"
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-08-28 09:32 Asia/Shanghai
+    result: hit
+    note: "checked agent framework releases for tool-call validation, approval outcomes, durable execution and safe download semantics"
+  - source_id: english_inference_platforms
+    checked_at: 2026-08-28 09:31 Asia/Shanghai
+    result: partial
+    note: "checked inference and long-context research signals; Prefix Sliding selected over repeat vLLM/OpenCompass items"
+  - source_id: english_research_blogs
+    checked_at: 2026-08-28 09:31 Asia/Shanghai
+    result: hit
+    note: "Google Research candidates checked; none selected over stronger agent/security/reasoning items"
+  - source_id: english_industry_analysis
+    checked_at: 2026-08-28 09:32 Asia/Shanghai
+    result: partial
+    note: "Latent Space and Simon Willison-style public long-form sources checked; one Simon security/methodology sample selected"
+  - source_id: english_safety_governance
+    checked_at: 2026-08-28 09:32 Asia/Shanghai
+    result: hit
+    note: "Simon Willison auto-mode post, Gemini CLI SSRF fix, Claude restricted mode and Anthropic MHS represented safety/governance signals"
+  - source_id: research_frontier
+    checked_at: 2026-08-28 09:31 Asia/Shanghai
+    result: hit
+    note: "arXiv and research-blog candidates checked; Prefix Sliding and VBVR-Pro retained with primary links"
+evidence_items:
+  - item_id: news-copilot-code-review-20260827
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-28 09:20 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/
+    confidence_reason: "official GitHub Changelog article with exact product changes"
+  - item_id: news-cursor-start-from-scratch
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-28 09:20 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://cursor.com/changelog/start-from-scratch
+    confidence_reason: "official Cursor changelog entry"
+  - item_id: news-claude-code-2148
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-28
+    snapshot_time: 2026-08-28 09:20 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.248
+    confidence_reason: "official Anthropic Claude Code GitHub release with exact tag"
+  - item_id: news-kimi-code-0390
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-28 09:23 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://moonshotai.github.io/kimi-code/en/release-notes/changelog.html
+    confidence_reason: "official Kimi Code changelog page"
+  - item_id: news-gemini-cli-ssrf
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-28 09:20 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/google-gemini/gemini-cli/releases/tag/v0.59.0-nightly.20260827.g3c311beac
+    confidence_reason: "official Gemini CLI GitHub release tag"
+  - item_id: opinion-lobehub-76
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-28
+    snapshot_time: 2026-08-28 09:32 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/lobehub/lobehub/releases/tag/v2.2.15-canary.76
+    confidence_reason: "public GitHub canary release with timestamp and commit summary"
+  - item_id: opinion-dify-1170
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-25
+    snapshot_time: 2026-08-28 09:32 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/langgenius/dify/releases/tag/1.17.0
+    confidence_reason: "public LangGenius Dify GitHub release; included as supplemental non-repeat"
+  - item_id: opinion-simon-claude-auto-mode
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-28 09:32 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Aug/27/breaking-claude-code-opus-5-auto-mode
+      - https://github.com/anthropics/claude-code/releases
+    confidence_reason: "public technical blog used as methodology/opinion sample and paired with official Claude Code release stream"
+  - item_id: opinion-vercel-ai-60271
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-28
+    snapshot_time: 2026-08-28 09:32 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vercel/ai/releases/tag/ai%406.0.271
+      - https://github.com/vercel/ai/releases/tag/%40ai-sdk%2Fxai%404.0.48
+    confidence_reason: "official Vercel AI SDK GitHub releases"
+  - item_id: opinion-pydantic-ai-2353
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release_note
+    item_date: 2026-08-28
+    snapshot_time: 2026-08-28 09:32 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.35.3
+    confidence_reason: "official Pydantic AI GitHub release with exact tag"
+  - item_id: research-prefix-sliding
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper_and_code
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-28 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.26070v1
+      - https://github.com/Muennighoff/prefix-sliding
+    confidence_reason: "arXiv paper and author-linked GitHub repository; code not executed"
+  - item_id: research-vbvr-pro
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper_and_benchmark
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-28 09:31 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.26105v1
+    confidence_reason: "arXiv paper with linked open-source artifacts; artifacts not independently run"
+  - item_id: peripheral-anthropic-mhs
+    section: AI 外围情报观察
+    source_role: official
+    evidence_type: research_preview
+    item_date: 2026-08-27
+    snapshot_time: 2026-08-28 09:24 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.anthropic.com/news/model-hardware-standard-research-preview
+    confidence_reason: "official Anthropic news post describing research preview"
+followups:
+  - "Copilot bot-authored PR review 是否进入 enterprise policy / audit log / branch protection 默认流程"
+  - "Cursor Origin repo 与 Vercel publish 是否补出权限、回滚和企业 SCM 集成说明"
+  - "Claude Code restricted mode 与 Kimi Code tower mode 是否从 experimental 进入稳定配置面"
+  - "MCP/OAuth/tool-schema 安全修复是否在 Gemini CLI、Pydantic AI、Vercel AI SDK 之外扩散到更多 agent framework"
+  - "Prefix Sliding 和 VBVR-Pro 是否出现第三方复现或被主流 agent benchmark / inference stack 采用"
+fact_confidence: high
+signal_strength: medium

@@ -1,0 +1,267 @@
+date: "2026-08-29"
+window_start: "2026-08-28 09:00 Asia/Shanghai"
+window_end: "2026-08-29 09:00 Asia/Shanghai"
+supplemental_range: none
+themes:
+  - copilot_control_plane
+  - agent_runtime_governance
+  - coding_agent_workflow
+  - multimodal_moe
+  - code_review_benchmark
+  - agentic_rl
+  - execution_security
+regions:
+  - us
+  - china
+companies:
+  - GitHub
+  - Anthropic
+  - Zhipu
+  - Qwen
+  - LobeHub
+  - Microsoft
+products:
+  - GitHub Copilot
+  - Claude Code
+  - GLM-5.3-Flash
+  - Qwen Code
+  - LobeHub Desktop
+signals:
+  - 企业计费治理
+  - 多入口统一
+  - 默认审查力度
+  - 持久任务
+  - 低激活多模态
+  - 运行时可观测性
+opinion_sources:
+  - QwenLM/qwen-code
+  - LobeHub releases
+  - DeepSeek Harness discussion #4911
+  - Braintrust DeepSeek Harness Plugin #4960
+  - dsh web hangs at startup #4944
+viewpoint_themes:
+  - AI 编程运行时
+  - 任务持久化
+  - 可观测性
+  - 可靠性排障
+  - 安全与权限
+research_sources:
+  - arXiv
+research_themes:
+  - code_review_benchmark
+  - agentic_rl
+  - execution_security
+research_artifacts:
+  - benchmark
+  - paper
+research_interpretations: []
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-08-29.md"
+  adopted:
+    - candidate_id: sig_20c8e133433cf06f
+      title: From Static to Dynamic: Benchmarking Real-World Code Review with MCR-Bench
+      adoption_reason: 直接补强代码审查评测，和 Copilot / Claude 运行时主线同向
+    - candidate_id: sig_fcb96f3b51dcc8f9
+      title: SWE-Prime: Fewer Trajectories, Better Performance
+      adoption_reason: 说明异步 agentic RL 的训练效率，和长任务编排相关
+    - candidate_id: sig_df495fa3f9675b07
+      title: RedEvoAgent: Automatic Red-Teaming Agent with Experience-Driven Skill Evolution
+      adoption_reason: 从安全与工具执行风险的角度补足 agent 治理观察
+  rejected_or_deferred:
+    - candidate_id: sig_8a2bac86a1fc3bc1
+      title: 0.5.4
+      status: deferred
+      rejection_reason: OpenCompass 值得跟踪，但今天优先保留更贴近 coding-agent 主线的 8/28 论文
+    - candidate_id: sig_b10425dbb6909dfa
+      title: AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR
+      status: deferred
+      rejection_reason: 与本期 coding-agent 与评测主线关联较弱
+    - candidate_id: sig_e0cf5db5b3ddeef5
+      title: WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution
+      status: deferred
+      rejection_reason: 方向重要但与今天的评测/治理信号相比优先级略低
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: hit
+    note: read .codex-run/signal-reviews/2026-08-29.md as clue layer only
+  - source_id: coding_agent_releases
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: hit
+    note: checked GitHub Copilot and Claude Code release/changelog pages for same-day updates
+  - source_id: china_model_officials
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: hit
+    note: checked GLM and Qwen Code official pages/releases
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: hit
+    note: checked reproducible blog/community and release-driven signals
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: hit
+    note: community discussions and GitHub release activity yielded fresh usable clues
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: hit
+    note: Qwen Code and LobeHub release activity had new task/runtime signals
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: hit
+    note: DeepSeek Harness discussions and agent-framework releases showed fresh runtime/observability signals
+  - source_id: english_research_blogs
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: miss
+    note: no new high-value research blog beyond paper/release items
+  - source_id: english_industry_analysis
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: miss
+    note: no fresh high-value market analysis used
+  - source_id: english_safety_governance
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: hit
+    note: safety and permissions surfaced in Claude Code and DeepSeek Harness threads
+  - source_id: research_frontier
+    checked_at: "2026-08-29 09:21 Asia/Shanghai"
+    result: hit
+    note: paper/benchmark originals retained for included research items
+evidence_items:
+  - item_id: news-1
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing/
+    confidence_reason: GitHub changelog with explicit rollout dates and policy details
+  - item_id: news-2
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24/
+    confidence_reason: GitHub changelog aggregating same-day product updates across Copilot surfaces
+  - item_id: news-3
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/
+    confidence_reason: official Visual Studio update with concrete enterprise controls and Git review
+  - item_id: news-4
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.251
+    confidence_reason: GitHub release page with specific hooks, security fixes, and runtime controls
+  - item_id: news-5
+    section: AI 新闻
+    source_role: official
+    evidence_type: product_update
+    item_date: "2026-08-29"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://autoclaw.z.ai/blog/model/glm-5.3-flash/
+    confidence_reason: official model page with architecture, weights, and deployment details
+  - item_id: opinion-1
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases
+    confidence_reason: release notes expose new persistent session and task management behavior
+  - item_id: opinion-2
+    section: AI 圈博主
+    source_role: community
+    evidence_type: release
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/lobehub/lobehub/releases
+    confidence_reason: canary release shows trace, preview, and goal-graph instrumentation changes
+  - item_id: opinion-3
+    section: AI 圈博主
+    source_role: community
+    evidence_type: discussion
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/deepseek-ai/deepseek-harness/discussions/4911
+    confidence_reason: live-process evidence with concrete sampling and resolver state
+  - item_id: opinion-4
+    section: AI 圈博主
+    source_role: community
+    evidence_type: discussion
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/deepseek-ai/deepseek-harness/discussions/4960
+    confidence_reason: plugin announcement directly improves agent observability in practice
+  - item_id: opinion-5
+    section: AI 圈博主
+    source_role: community
+    evidence_type: discussion
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/deepseek-ai/deepseek-harness/discussions/4944
+    confidence_reason: reproducible startup hang report with clear runtime symptoms
+  - item_id: research-1
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.27442v1
+    confidence_reason: paper targets real-world code review, directly relevant to coding agents
+  - item_id: research-2
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.27449v1
+    confidence_reason: paper addresses asynchronous agentic RL efficiency, a current bottleneck
+  - item_id: research-3
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-29 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2608.27439v1
+    confidence_reason: paper connects red-teaming to skill evolution, relevant to agent governance
+followups:
+  - 9/28 前后 Copilot 统一体验和 Balanced review 默认值是否真正常态化
+  - Claude Code hooks / Remote Control 是否继续下沉成稳定默认项
+  - GLM-5.3-Flash 与 Qwen Code 的可部署性和第三方接入速度
+  - MCR-Bench / SWE-Prime / RedEvoAgent 是否被后续主流评测或框架采用
+fact_confidence: high
+signal_strength: high

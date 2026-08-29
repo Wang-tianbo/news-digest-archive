@@ -61,13 +61,13 @@ candidate_usage:
   review_path: ".codex-run/signal-reviews/2026-08-29.md"
   adopted:
     - candidate_id: sig_20c8e133433cf06f
-      title: From Static to Dynamic: Benchmarking Real-World Code Review with MCR-Bench
+      title: "From Static to Dynamic: Benchmarking Real-World Code Review with MCR-Bench"
       adoption_reason: 直接补强代码审查评测，和 Copilot / Claude 运行时主线同向
     - candidate_id: sig_fcb96f3b51dcc8f9
-      title: SWE-Prime: Fewer Trajectories, Better Performance
+      title: "SWE-Prime: Fewer Trajectories, Better Performance"
       adoption_reason: 说明异步 agentic RL 的训练效率，和长任务编排相关
     - candidate_id: sig_df495fa3f9675b07
-      title: RedEvoAgent: Automatic Red-Teaming Agent with Experience-Driven Skill Evolution
+      title: "RedEvoAgent: Automatic Red-Teaming Agent with Experience-Driven Skill Evolution"
       adoption_reason: 从安全与工具执行风险的角度补足 agent 治理观察
   rejected_or_deferred:
     - candidate_id: sig_8a2bac86a1fc3bc1
@@ -75,11 +75,11 @@ candidate_usage:
       status: deferred
       rejection_reason: OpenCompass 值得跟踪，但今天优先保留更贴近 coding-agent 主线的 8/28 论文
     - candidate_id: sig_b10425dbb6909dfa
-      title: AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR
+      title: "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR"
       status: deferred
       rejection_reason: 与本期 coding-agent 与评测主线关联较弱
     - candidate_id: sig_e0cf5db5b3ddeef5
-      title: WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution
+      title: "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution"
       status: deferred
       rejection_reason: 方向重要但与今天的评测/治理信号相比优先级略低
 source_checks:

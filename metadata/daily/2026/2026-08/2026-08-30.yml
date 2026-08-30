@@ -1,0 +1,307 @@
+date: "2026-08-30"
+window_start: "2026-08-29 09:00 Asia/Shanghai"
+window_end: "2026-08-30 09:00 Asia/Shanghai"
+supplemental_range: "2026-08-23 to 2026-08-30; only non-duplicative high-value official/research/community signals"
+themes:
+  - agent_runtime_governance
+  - mcp_security
+  - workspace_trust
+  - model_supply_chain
+  - persistent_agent_memory
+  - planner_executor_split
+  - open_weight_models
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Google
+  - Tencent
+  - Alibaba Qwen
+  - LobeHub
+  - Pydantic
+  - Cursor
+products:
+  - Codex
+  - Gemini CLI
+  - Cursor
+  - Hy4-preview
+  - Qwen Code
+  - LobeHub Desktop
+  - Pydantic AI
+  - OpenContext
+  - Jeffy Loop
+signals:
+  - "Codex exposes MCP-result interception and strengthens sandbox/permission correctness"
+  - "Gemini CLI moves workspace trust toward fail-closed restricted-mode behavior"
+  - "OpenAI RSS indicates Cursor model-supply contract wind-down after SpaceX acquisition"
+  - "Tencent Hy4-preview ships open weights with 770B total parameters and 1M context"
+  - "Community tooling focuses on persistent memory and completion proof"
+opinion_sources:
+  - "LobeHub GitHub releases"
+  - "Qwen Code GitHub releases"
+  - "Simon Willison"
+  - "Pydantic AI GitHub releases"
+  - "Jeffy Loop GitHub repository"
+  - "Neurometric Blog"
+  - "OpenContext"
+viewpoint_themes:
+  - agent_completion_evidence
+  - agent_memory
+  - tool_call_specialization
+  - china_open_weight_models
+  - durable_agent_execution
+research_sources:
+  - "arXiv:2608.27454"
+  - "arXiv:2608.26788"
+research_themes:
+  - skill_evolution
+  - persistent_knowledge_base
+  - embodied_agent_architecture
+  - planner_controller_decoupling
+research_artifacts:
+  - paper
+  - project_page
+research_interpretations:
+  - "WikiSkill aligns with community persistent-memory signals but still needs third-party reproduction."
+  - "Instruct-to-Act supports the broader planner/executor split visible in tool-calling infrastructure."
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-08-30.md"
+  adopted:
+    - candidate_id: "sig_e0cf5db5b3ddeef5"
+      title: "WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution"
+      adoption_reason: "补强本期 agent memory / skill evolution 主线，且未进入最近日报正文"
+  rejected_or_deferred:
+    - candidate_id: "sig_8a2bac86a1fc3bc1"
+      title: "OpenCompass 0.5.4"
+      status: deferred
+      rejection_reason: "高价值但 2026-08-29 已作为候选出现；本期 strict-window agent runtime 信号优先"
+    - candidate_id: "sig_b10425dbb6909dfa"
+      title: "AgentHands"
+      status: deferred
+      rejection_reason: "XR gesture research 与本期 coding-agent runtime 主线关联较弱"
+    - candidate_id: "sig_fcb96f3b51dcc8f9"
+      title: "SWE-Prime"
+      status: deferred
+      rejection_reason: "已在 2026-08-29 日报正文采用，避免重复"
+    - candidate_id: "sig_20c8e133433cf06f"
+      title: "MCR-Bench"
+      status: deferred
+      rejection_reason: "已在 2026-08-29 日报正文采用，避免重复"
+    - candidate_id: "sig_df495fa3f9675b07"
+      title: "RedEvoAgent"
+      status: deferred
+      rejection_reason: "已在 2026-08-29 日报正文采用，避免重复"
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: "2026-08-30 09:07 Asia/Shanghai"
+    result: hit
+    note: "Read optional local candidate review as clue layer only; primary links verified separately."
+  - source_id: coding_agent_releases
+    checked_at: "2026-08-30 09:23 Asia/Shanghai"
+    result: hit
+    note: "Checked Codex, Gemini CLI, Qwen Code, LobeHub and Pydantic AI release streams; selected material updates."
+  - source_id: core_official_ai_news
+    checked_at: "2026-08-30 09:28 Asia/Shanghai"
+    result: hit
+    note: "OpenAI RSS hit on Cursor contract item; direct article page was Cloudflare-blocked, RSS metadata retained."
+  - source_id: china_model_officials
+    checked_at: "2026-08-30 09:28 Asia/Shanghai"
+    result: hit
+    note: "Checked Tencent Hy4-preview official model repository and Hugging Face model card; Qwen/DeepSeek/Z.ai streams had no stronger non-repeated strict-window model item."
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-08-30 09:21 Asia/Shanghai"
+    result: hit
+    note: "Selected reproducible public blog/project/release signals; no X/Twitter-only sources used."
+  - source_id: china_ai_media_signals
+    checked_at: "2026-08-30 09:21 Asia/Shanghai"
+    result: partial
+    note: "Chinese public blog candidates were available, but release/project sources had stronger verification for the 2 Chinese quota items."
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-08-30 09:22 Asia/Shanghai"
+    result: hit
+    note: "LobeHub and Qwen Code GitHub releases supplied Chinese engineering signals."
+  - source_id: china_research_community
+    checked_at: "2026-08-30 09:22 Asia/Shanghai"
+    result: partial
+    note: "Candidate pool included Chinese-adjacent research leads; only WikiSkill selected due to tighter agent-memory fit."
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-08-30 09:24 Asia/Shanghai"
+    result: hit
+    note: "Pydantic AI, Jeffy Loop and OpenContext supplied reproducible engineering/community items."
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-08-30 09:24 Asia/Shanghai"
+    result: hit
+    note: "OpenContext, Jeffy Loop and Neurometric showed agent memory, completion proof and tool-call specialization."
+  - source_id: english_inference_platforms
+    checked_at: "2026-08-30 09:24 Asia/Shanghai"
+    result: partial
+    note: "Neurometric/TrustedRouter item used as opinion and architecture signal, not sole factual confirmation for broad market claims."
+  - source_id: english_research_blogs
+    checked_at: "2026-08-30 09:25 Asia/Shanghai"
+    result: hit
+    note: "Simon Willison feed supplied Hy4 interpretation with official model-card cross-check."
+  - source_id: english_industry_analysis
+    checked_at: "2026-08-30 09:25 Asia/Shanghai"
+    result: partial
+    note: "Latent Space/OpenAI-Cursor clue was cross-checked against official OpenAI RSS; third-party writeups not used as sole proof."
+  - source_id: english_safety_governance
+    checked_at: "2026-08-30 09:25 Asia/Shanghai"
+    result: hit
+    note: "Codex and Gemini CLI release notes supplied runtime safety/governance evidence."
+  - source_id: research_frontier
+    checked_at: "2026-08-30 09:26 Asia/Shanghai"
+    result: hit
+    note: "Original arXiv pages retained for included research items; recent repeated MCR-Bench/SWE-Prime/RedEvoAgent deferred."
+  - source_id: github_hot_projects
+    checked_at: "2026-08-30 09:26 Asia/Shanghai"
+    result: partial
+    note: "Jeffy Loop/OpenContext were included as community signals; no separate GitHub 热门项目 section added to avoid duplicative filler."
+evidence_items:
+  - item_id: news-codex-01510
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note
+    item_date: "2026-08-29"
+    snapshot_time: "2026-08-30 09:23 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/openai/codex/releases/tag/rust-v0.151.0"
+    confidence_reason: "Official GitHub release/Atom feed provided exact tag, update time and changelog."
+  - item_id: news-gemini-cli-trust
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note
+    item_date: "2026-08-29"
+    snapshot_time: "2026-08-30 09:23 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/google-gemini/gemini-cli/releases/tag/v0.59.0-nightly.20260829.g0bd1d4397"
+    confidence_reason: "Official GitHub release/Atom feed lists fail-closed workspace trust and restricted-mode mcpServers filtering."
+  - item_id: news-openai-cursor-contract
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: rss_entry
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-30 09:28 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - "https://openai.com/news/rss.xml"
+      - "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex"
+    confidence_reason: "Official RSS contains title, summary, canonical link and pubDate; direct article fetch returned Cloudflare 403."
+  - item_id: news-tencent-hy4-preview
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: model_card
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-30 09:28 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://huggingface.co/tencent/Hy4-preview"
+      - "https://github.com/Tencent-Hunyuan/Hy4-preview"
+    confidence_reason: "Official Tencent Hunyuan model card and repository list model specs, links, license and deployment recipes."
+  - item_id: community-lobehub-canary
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: release_note
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-30 09:23 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/lobehub/lobehub/releases/tag/v2.2.16-canary.6"
+      - "https://github.com/lobehub/lobehub/releases/tag/v2.2.16-canary.7"
+    confidence_reason: "Official project releases show exact canary versions and commit summaries."
+  - item_id: community-qwen-code-nightly
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: release_note
+    item_date: "2026-08-29"
+    snapshot_time: "2026-08-30 09:23 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.22.3-nightly.20260829.e5cb60ad48"
+    confidence_reason: "Official Qwen Code release feed lists review fan-out workflow and ask_user_question gating changes."
+  - item_id: community-simon-hy4
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-30 09:28 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Aug/29/hy4/"
+      - "https://huggingface.co/tencent/Hy4-preview"
+    confidence_reason: "Blog observation is cross-checked with official Tencent model card."
+  - item_id: community-pydantic-ai-2360
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: release_note
+    item_date: "2026-08-29"
+    snapshot_time: "2026-08-30 09:23 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/pydantic/pydantic-ai/releases/tag/v2.36.0"
+    confidence_reason: "Official GitHub release feed lists MCP config, durable operation and stable instruction-part changes."
+  - item_id: community-jeffy-loop
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: github_repository
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-30 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/lenamonj/jeffy-loop"
+    confidence_reason: "Public repository metadata and README describe the autonomous control-loop goal."
+  - item_id: community-neurometric-tool-calling
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-30 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://blog.neurometric.ai/p/introducing-a-task-specific-tool"
+    confidence_reason: "Public Substack article exposes publication time and architecture/pricing claims; used as viewpoint sample."
+  - item_id: community-opencontext
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: project_page
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-30 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://www.opencntx.dev/"
+      - "https://github.com/slxca/opencontext"
+    confidence_reason: "Public project page and GitHub repository describe project-local MCP memory."
+  - item_id: research-wikiskill
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-08-27"
+    snapshot_time: "2026-08-30 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2608.27454"
+    confidence_reason: "arXiv page provides submitted date, title, authors and abstract."
+  - item_id: research-instruct-to-act
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-08-27"
+    snapshot_time: "2026-08-30 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2608.26788"
+      - "https://zinengtang.github.io/instruct-to-act/"
+    confidence_reason: "arXiv page lists COLM 2026 paper status and project page."
+followups:
+  - "Codex MCP result interception 是否出现企业策略、审计日志或扩展安全说明。"
+  - "Gemini CLI workspace trust fail-closed 是否进入稳定版。"
+  - "Cursor 是否回应 OpenAI 模型供应变化并公开替代模型路线。"
+  - "Hy4-preview 是否获得第三方长上下文、coding 和部署成本评测。"
+  - "OpenContext / WikiSkill 类持久记忆能否进入主流 agent 产品或插件协议。"
+fact_confidence: high
+signal_strength: medium-high

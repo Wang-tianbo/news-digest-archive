@@ -1,0 +1,297 @@
+date: "2026-08-31"
+window_start: "2026-08-30 09:00 Asia/Shanghai"
+window_end: "2026-08-31 09:00 Asia/Shanghai"
+supplemental_range: "2026-08-24 to 2026-08-31; only non-duplicative high-value public sources because strict-window official hits were thin"
+themes:
+  - agent_runtime_governance
+  - tool_choice_enforcement
+  - mcp_interoperability
+  - enterprise_rag_connectors
+  - agent_skill_evolution
+  - execution_audit
+  - model_artifact_security
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Google
+  - Vercel
+  - LangChain
+  - InfinityFlow
+  - Anthropic
+  - Warp
+  - LobeHub
+products:
+  - Codex
+  - Gemini CLI
+  - Vercel AI SDK
+  - LangChain
+  - MCPAdapter
+  - RAGFlow
+  - ChatGPT Work
+  - LobeHub Desktop
+  - Claude
+signals:
+  - "Codex and Gemini CLI shipped strict-window releases with thin public changelog detail."
+  - "Vercel AI SDK now rejects generateText responses that violate required or selected tool choice."
+  - "LangChain previewed a first-party MCP adapter for turning MCP servers into agent tools."
+  - "RAGFlow expanded enterprise connectors, search providers and deep-research reliability fixes."
+  - "Community and research sources converged on audited execution, skill evolution and security coverage."
+opinion_sources:
+  - "宝玉"
+  - "LobeHub GitHub releases"
+  - "Simon Willison"
+  - "Vercel AI SDK GitHub releases"
+  - "LangChain GitHub releases"
+viewpoint_themes:
+  - agent_skill_evolution
+  - chatgpt_work_security_boundary
+  - tool_choice_error_recovery
+  - mcp_framework_interoperability
+  - heterogeneous_agent_workspace
+research_sources:
+  - "arXiv:2608.27427"
+  - "arXiv:2608.27424"
+research_themes:
+  - execution_audit
+  - persona_execution_separation
+  - ai_model_security_scanning
+  - eval_methodology
+research_artifacts:
+  - paper
+  - eval
+research_interpretations:
+  - "Persona-Execution Separation maps product-side permission and audit concerns into a trust-domain architecture pattern."
+  - "Beyond F1 argues scanner evaluation should separate judgment accuracy from judgment availability and failure recovery."
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-08-31.md"
+  adopted:
+    - candidate_id: "sig_2819d6ebb9dd317f"
+      title: "Persona-Execution Separation: An Architecture Pattern for Evolving LLM Agents under Execution Audit"
+      adoption_reason: "Non-repeated research item tightly aligned with agent execution audit and enterprise governance."
+    - candidate_id: "sig_d34e393a32a2726b"
+      title: "Beyond F1: Evaluating Coverage and Failure Recovery in AI Model Security Scanners"
+      adoption_reason: "Non-repeated security eval item relevant to model artifact governance and scanner failure modes."
+  rejected_or_deferred:
+    - candidate_id: "sig_8a2bac86a1fc3bc1"
+      title: "OpenCompass 0.5.4"
+      status: deferred
+      rejection_reason: "Already covered on 2026-08-27; no new material update found for this run."
+    - candidate_id: "sig_b10425dbb6909dfa"
+      title: "AgentHands"
+      status: deferred
+      rejection_reason: "High-quality Google Research item but less central to today's coding-agent runtime and governance thread."
+    - candidate_id: "sig_e0cf5db5b3ddeef5"
+      title: "WikiSkill"
+      status: deferred
+      rejection_reason: "Already adopted on 2026-08-30; avoid repeat without new follow-up."
+    - candidate_id: "sig_fcb96f3b51dcc8f9"
+      title: "SWE-Prime"
+      status: deferred
+      rejection_reason: "Already covered on 2026-08-29; no new follow-up found."
+    - candidate_id: "sig_20c8e133433cf06f"
+      title: "MCR-Bench"
+      status: deferred
+      rejection_reason: "Already covered on 2026-08-29; no new follow-up found."
+    - candidate_id: "sig_df495fa3f9675b07"
+      title: "RedEvoAgent"
+      status: deferred
+      rejection_reason: "Already covered on 2026-08-29; no new follow-up found."
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: "2026-08-31 09:15 Asia/Shanghai"
+    result: hit
+    note: "Read optional local candidate review as clue layer only; primary research links verified separately."
+  - source_id: ai_coding_agent_watchlist
+    checked_at: "2026-08-31 09:17 Asia/Shanghai"
+    result: hit
+    note: "Checked Codex, Gemini CLI, Qwen Code, Claude Code, Cursor, Copilot, Kimi Code and LobeHub release/changelog streams; Codex/Gemini/LobeHub supplied usable non-repeated signals."
+  - source_id: core_official_ai_news
+    checked_at: "2026-08-31 09:18 Asia/Shanghai"
+    result: hit
+    note: "Official release pages and Atom feeds supplied Codex, Gemini CLI, Vercel AI SDK, LangChain and RAGFlow evidence."
+  - source_id: china_model_company_watchlist
+    checked_at: "2026-08-31 09:19 Asia/Shanghai"
+    result: partial
+    note: "Checked Qwen, DeepSeek, Z.ai/GLM, Kimi, Tencent Hunyuan and related pages; no stronger non-repeated strict-window model-company item selected."
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-08-31 09:20 Asia/Shanghai"
+    result: hit
+    note: "Selected 5 reproducible community/viewpoint signals: 2 Chinese-source and 3 English-source items; no X/Twitter-only sources used."
+  - source_id: china_ai_media_signals
+    checked_at: "2026-08-31 09:20 Asia/Shanghai"
+    result: hit
+    note: "宝玉 article used as Chinese methodology/opinion sample with original Anthropic/Warp source."
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-08-31 09:20 Asia/Shanghai"
+    result: hit
+    note: "LobeHub canary releases used as Chinese engineering/community signal; RAGFlow release used in AI 新闻."
+  - source_id: china_research_community
+    checked_at: "2026-08-31 09:21 Asia/Shanghai"
+    result: partial
+    note: "Local candidate pool included several China-adjacent or general AI research candidates; selected globally relevant agent/security papers due tighter fit."
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-08-31 09:21 Asia/Shanghai"
+    result: hit
+    note: "Vercel AI SDK and LangChain release pages supplied framework-level engineering signals."
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-08-31 09:21 Asia/Shanghai"
+    result: hit
+    note: "LangChain MCP adapter, Vercel tool-choice enforcement and Simon's ChatGPT Work analysis all touch agent infrastructure."
+  - source_id: english_inference_platforms
+    checked_at: "2026-08-31 09:21 Asia/Shanghai"
+    result: partial
+    note: "No fresh non-repeated inference-platform item selected; Vercel Gateway image-generation cost fix recorded under agent framework."
+  - source_id: english_research_blogs
+    checked_at: "2026-08-31 09:22 Asia/Shanghai"
+    result: hit
+    note: "Simon Willison post selected and cross-checked against official OpenAI Learn documentation."
+  - source_id: english_industry_analysis
+    checked_at: "2026-08-31 09:22 Asia/Shanghai"
+    result: partial
+    note: "Latent Space and other recent roundup sources were checked only as clues; repeated OpenAI/Cursor material excluded."
+  - source_id: english_safety_governance
+    checked_at: "2026-08-31 09:22 Asia/Shanghai"
+    result: hit
+    note: "ChatGPT Work safety discussion, Vercel tool-choice violation handling and arXiv scanner eval supplied governance signals."
+  - source_id: research_frontier
+    checked_at: "2026-08-31 09:22 Asia/Shanghai"
+    result: hit
+    note: "Original arXiv pages retained for selected Persona-Execution Separation and Beyond F1 items; recent repeated candidates deferred."
+  - source_id: ai_peripheral_watchlist
+    checked_at: "2026-08-31 09:22 Asia/Shanghai"
+    result: miss
+    note: "No high-confidence adjacent compute/policy/enterprise-adoption item selected; section omitted."
+  - source_id: github_hot_projects
+    checked_at: "2026-08-31 09:23 Asia/Shanghai"
+    result: partial
+    note: "GitHub unauthenticated API rate limit was exhausted; used Atom/release pages and omitted separate GitHub 热门项目 to avoid filler."
+evidence_items:
+  - item_id: "news-codex-gemini-thin-cadence"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: "release_note_atom"
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-31 09:17 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/openai/codex/releases/tag/rust-v0.152.0-alpha.4"
+      - "https://github.com/google-gemini/gemini-cli/releases/tag/v0.59.0-nightly.20260830.g0bd1d4397"
+    confidence_reason: "Official GitHub release/Atom feeds provide exact tags and update times; release bodies are thin, so interpretation is limited to cadence."
+  - item_id: "news-vercel-ai-sdk-tool-choice"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-31 09:18 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/vercel/ai/releases/tag/ai%406.0.272"
+      - "https://github.com/vercel/ai/releases/tag/ai%407.0.85"
+    confidence_reason: "Official release pages list ToolChoiceViolationError, tool approval secrets, Gateway image cost and image call changes."
+  - item_id: "news-langchain-mcp-adapter"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-31 09:18 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.0a2"
+    confidence_reason: "Official release page explains langchain.mcp MCPAdapter behavior, FastMCP integration and supported targets."
+  - item_id: "news-ragflow-0271"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-31 09:19 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/infiniflow/ragflow/releases/tag/v0.27.1"
+    confidence_reason: "Official GitHub release page lists connector, search provider, deep-research and logging fixes."
+  - item_id: "community-baoyu-warp-skills"
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-31 09:20 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://baoyu.io/blog/2026-08-28/warp-self-improving-agents"
+      - "https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude"
+    confidence_reason: "Chinese article includes publication date and links to original Claude/Warp article; used as methodology sample."
+  - item_id: "community-lobehub-canary-11-12"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: release_note
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-31 09:20 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/lobehub/lobehub/releases/tag/v2.2.16-canary.11"
+      - "https://github.com/lobehub/lobehub/releases/tag/v2.2.16-canary.12"
+    confidence_reason: "Official project release Atom feed includes exact commit summaries and warns canary builds are unstable."
+  - item_id: "community-simon-chatgpt-work"
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-31 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/"
+      - "https://learn.chatgpt.com/docs/get-started-with-work"
+    confidence_reason: "Public post provides date and links official OpenAI Learn docs; OpenAI marketing page was Cloudflare-blocked but Learn page was fetchable."
+  - item_id: "community-vercel-ai-sdk"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: release_note
+    item_date: "2026-08-30"
+    snapshot_time: "2026-08-31 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/vercel/ai/releases/tag/ai%406.0.272"
+      - "https://github.com/vercel/ai/releases/tag/ai%407.0.85"
+    confidence_reason: "Official release pages are used as reproducible English engineering signal."
+  - item_id: "community-langchain-mcp"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: release_note
+    item_date: "2026-08-28"
+    snapshot_time: "2026-08-31 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.0a2"
+    confidence_reason: "Official release page is used as reproducible English framework/community signal."
+  - item_id: "research-persona-execution-separation"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-08-27"
+    snapshot_time: "2026-08-31 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2608.27427v1"
+    confidence_reason: "arXiv page provides submitted date, title, author and abstract."
+  - item_id: "research-beyond-f1-model-security-scanners"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: eval_paper
+    item_date: "2026-08-27"
+    snapshot_time: "2026-08-31 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2608.27424v1"
+    confidence_reason: "arXiv page provides submitted date, title, authors and abstract with benchmark details."
+followups:
+  - "Codex 0.152.0 stable/preview release 是否补出实质 changelog。"
+  - "Gemini CLI v0.59 nightly 是否在 preview/stable 聚合出 workspace trust / MCP / sandbox 更新。"
+  - "Vercel ToolChoiceViolationError 是否被上层 agent 应用用于审计和重试策略。"
+  - "LangChain MCPAdapter 是否进入稳定版并被多 server enterprise agent 应用采用。"
+  - "ChatGPT Work 是否公开 browser/filesystem/Sites/scheduled automation 的更细安全边界。"
+fact_confidence: high
+signal_strength: medium

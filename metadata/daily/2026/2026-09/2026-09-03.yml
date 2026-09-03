@@ -1,0 +1,316 @@
+date: "2026-09-03"
+window_start: "2026-09-02 09:00 Asia/Shanghai"
+window_end: "2026-09-03 09:00 Asia/Shanghai"
+supplemental_range: "2026-09-01 to 2026-09-03; non-duplicative high-value official and community signals because recent daily reports stopped at 2026-08-31"
+themes:
+  - frontier_model_release
+  - trusted_access_safeguards
+  - agent_runtime_governance
+  - code_review_approval
+  - workspace_permission_boundary
+  - workflow_durability
+  - trajectory_aware_evaluation
+  - agent_lifecycle_reasoning
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Anthropic
+  - Google
+  - GitHub
+  - Microsoft
+  - OpenAI
+  - Qwen
+  - LobeHub
+  - Vercel
+products:
+  - Claude Fable 5.1
+  - Claude Mythos 5.1
+  - Gemini 3.8 Flash
+  - Gemini 3.8 Flash Cyber
+  - GitHub Copilot code review
+  - Qwen Code
+  - Codex
+  - Gemini CLI
+  - LobeHub Desktop
+  - Vercel AI SDK
+signals:
+  - "Anthropic released Claude Fable 5.1 and trusted-access Claude Mythos 5.1 with Enterprise Frontier Safeguards."
+  - "Google released Gemini 3.8 Flash and Gemini 3.8 Flash Cyber with agentic coding and cyber-defense positioning."
+  - "GitHub Copilot code review can submit approvals when admins enable it and can be scoped by file paths."
+  - "Qwen Code live-host-v0.2.0 forces out-of-workspace writes back to manual approval in AUTO mode."
+  - "Fresh arXiv work focused on SWE agent trajectory evaluation, dynamic agent harness lifecycle reasoning and verbal feedback taxonomies."
+opinion_sources:
+  - "Qwen Code GitHub releases"
+  - "LobeHub GitHub releases"
+  - "Simon Willison"
+  - "Latent Space"
+  - "Vercel AI SDK GitHub releases"
+viewpoint_themes:
+  - approval_and_review_governance
+  - artifact_generation_observation
+  - open_source_agent_factory
+  - workflow_durable_evidence
+  - desktop_agent_model_adoption
+research_sources:
+  - "arXiv:2609.01603"
+  - "arXiv:2609.01600"
+  - "arXiv:2609.01597"
+research_themes:
+  - swe_agent_evaluation
+  - trajectory_aware_subset_selection
+  - dynamic_agent_harness
+  - component_lifecycle_reasoning
+  - verbal_reinforcement_learning
+  - agent_feedback_loop
+research_artifacts:
+  - paper
+  - benchmark
+  - taxonomy
+research_interpretations:
+  - "PTA-IRT reframes expensive SWE agent evaluation as trajectory-aware calibration subset selection."
+  - "CordisBench treats runtime component lifecycle reasoning as a separate agent benchmark target."
+  - "Verbal Reinforcement Learning separates language feedback into grounding, deliberative and learning roles."
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-09-03.md"
+  adopted:
+    - candidate_id: "sig_2a91d0d40065366a"
+      title: "Efficient SWE Agent Benchmarking via Trajectory-Aware Evaluation"
+      adoption_reason: "Fresh non-repeated coding-agent eval paper, directly tied to benchmark cost and trajectory evidence."
+    - candidate_id: "sig_17414959dbae312c"
+      title: "CordisBench: Can Language Models Reason About Component Lifecycles in Dynamic Agent Harnesses?"
+      adoption_reason: "Fresh benchmark aligned with plugin/runtime lifecycle risks in agent harnesses."
+    - candidate_id: "sig_d54d32279355b64d"
+      title: "The Rise of Verbal Reinforcement Learning"
+      adoption_reason: "Useful taxonomy for interpreting review, approval and feedback loops in agent products."
+  rejected_or_deferred:
+    - candidate_id: "sig_7ddec4f68fb67273"
+      title: "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation"
+      status: deferred
+      rejection_reason: "Relevant repository-code paper, but lower fit than trajectory evaluation and lifecycle reasoning for today's governance thread."
+    - candidate_id: "sig_3408ddccbb7866bb"
+      title: "Mechanism Design for Alignment and Control"
+      status: deferred
+      rejection_reason: "High-level alignment/control framing; kept out to avoid overloading the research section."
+    - candidate_id: "sig_a181b8283066cdd0"
+      title: "Selective Agent Guidance via Entropy"
+      status: deferred
+      rejection_reason: "Embodied/VLM policy direction is valuable but less central to today's coding-agent/runtime sample."
+    - candidate_id: "sig_e0cf5db5b3ddeef5"
+      title: "WikiSkill"
+      status: deferred
+      rejection_reason: "Already adopted on 2026-08-30; no material new follow-up found."
+    - candidate_id: "sig_fcb96f3b51dcc8f9"
+      title: "SWE-Prime"
+      status: deferred
+      rejection_reason: "Already covered on 2026-08-29; avoided repeat without new evidence."
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: "2026-09-03 09:08 Asia/Shanghai"
+    result: hit
+    note: "Read optional local candidate review as clue layer; selected arXiv research items were verified against original arXiv pages."
+  - source_id: ai_coding_agent_watchlist
+    checked_at: "2026-09-03 09:18 Asia/Shanghai"
+    result: hit
+    note: "Checked Codex, Gemini CLI, Claude Code, GitHub Copilot, Qwen Code, LobeHub and Vercel release/changelog streams; selected non-repeated governance signals."
+  - source_id: core_official_ai_news
+    checked_at: "2026-09-03 09:20 Asia/Shanghai"
+    result: hit
+    note: "Official Anthropic, Google, GitHub, OpenAI/GitHub Atom, Gemini CLI Atom and Qwen release sources supplied main items."
+  - source_id: china_model_company_watchlist
+    checked_at: "2026-09-03 09:21 Asia/Shanghai"
+    result: partial
+    note: "Checked Qwen and China-side engineering/model signals; selected Qwen Code and LobeHub. No stronger DeepSeek/Kimi/MiniMax/Tencent/Baidu item was selected."
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-09-03 09:22 Asia/Shanghai"
+    result: hit
+    note: "Selected Simon Willison as reproducible English personal-source sample; X-only sources remained out of scope."
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-09-03 09:23 Asia/Shanghai"
+    result: hit
+    note: "Selected 5 reproducible community/viewpoint signals: 2 Chinese-source and 3 English-source items."
+  - source_id: china_ai_media_signals
+    checked_at: "2026-09-03 09:23 Asia/Shanghai"
+    result: partial
+    note: "No separate Chinese media item selected; Chinese quota filled by public engineering release streams with direct primary links."
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-09-03 09:23 Asia/Shanghai"
+    result: hit
+    note: "Qwen Code live-host and LobeHub canary releases supplied China-side engineering signals."
+  - source_id: china_research_community
+    checked_at: "2026-09-03 09:23 Asia/Shanghai"
+    result: partial
+    note: "No China-specific research community item selected; global arXiv agent/eval papers were stronger fit."
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-09-03 09:24 Asia/Shanghai"
+    result: hit
+    note: "Vercel AI SDK workflow releases and Gemini/Codex CLI release streams supplied engineering signals."
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-09-03 09:24 Asia/Shanghai"
+    result: hit
+    note: "Qwen approval semantics, Vercel workflow durability, Gemini web fetch validation and Copilot approval all map to agent infrastructure governance."
+  - source_id: english_inference_platforms
+    checked_at: "2026-09-03 09:24 Asia/Shanghai"
+    result: partial
+    note: "No separate inference-platform item selected; Google Flash pricing/cost positioning recorded under AI 新闻."
+  - source_id: english_research_blogs
+    checked_at: "2026-09-03 09:24 Asia/Shanghai"
+    result: hit
+    note: "Simon Willison article selected as artifact-generation observation and cross-checked against Anthropic source."
+  - source_id: english_industry_analysis
+    checked_at: "2026-09-03 09:24 Asia/Shanghai"
+    result: hit
+    note: "Latent Space PRs NOT Welcome selected as open-source agent-factory community signal."
+  - source_id: english_safety_governance
+    checked_at: "2026-09-03 09:25 Asia/Shanghai"
+    result: hit
+    note: "Anthropic and Google trusted-access/cyber model releases plus Copilot/Qwen approval boundaries supplied governance signals."
+  - source_id: research_frontier
+    checked_at: "2026-09-03 09:25 Asia/Shanghai"
+    result: hit
+    note: "Original arXiv pages retained for PTA-IRT, CordisBench and Verbal Reinforcement Learning."
+  - source_id: ai_peripheral_watchlist
+    checked_at: "2026-09-03 09:25 Asia/Shanghai"
+    result: miss
+    note: "No separate high-confidence compute/policy/enterprise-adoption peripheral item selected; section omitted."
+  - source_id: github_hot_projects
+    checked_at: "2026-09-03 09:25 Asia/Shanghai"
+    result: partial
+    note: "GitHub REST API rate limit was exhausted; used public Atom/release pages and omitted separate GitHub 热门项目 to avoid filler."
+evidence_items:
+  - item_id: "news-anthropic-fable-mythos-51"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: official_announcement
+    item_date: "2026-09-01"
+    snapshot_time: "2026-09-03 09:20 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    confidence_reason: "Official Anthropic page lists model split, trusted access, Enterprise Frontier Safeguards, safety and benchmark context."
+  - item_id: "news-google-gemini-38-flash"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: official_announcement
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-03 09:20 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber"
+    confidence_reason: "Official Google blog page provides product names, price positioning, agent/coding claims and cyber trusted-defender framing."
+  - item_id: "news-copilot-review-approval"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: changelog
+    item_date: "2026-09-01"
+    snapshot_time: "2026-09-03 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests/"
+    confidence_reason: "Official GitHub changelog describes approval assessment, admin enablement, required-approval counting and path scoping."
+  - item_id: "news-qwen-code-live-host-020"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-03 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/live-host-v0.2.0"
+    confidence_reason: "Official GitHub Atom/release page lists AUTO-mode manual approval fallback, Goal dialog, workflow cockpit and MCP/workspace changes."
+  - item_id: "news-codex-gemini-cli-cadence"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note_atom
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-03 09:22 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - "https://github.com/openai/codex/releases/tag/rust-v0.153.0"
+      - "https://github.com/openai/codex/releases/tag/rust-v0.153.0-alpha.6"
+      - "https://github.com/google-gemini/gemini-cli/releases/tag/v0.59.0-nightly.20260902.g4963a4456"
+    confidence_reason: "GitHub Atom feeds expose exact tags and timestamps; Codex body is thin, while Gemini CLI body contains web fetch validation change."
+  - item_id: "community-lobehub-canary-23"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: release_note_atom
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-03 09:23 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/lobehub/lobehub/releases/tag/v2.2.16-canary.23"
+      - "https://github.com/lobehub/lobehub/releases/tag/v2.2.16-canary.22"
+    confidence_reason: "Public GitHub release stream lists Gemini 3.8 Flash, artifact preview, devdock metrics and OIDC/resource fixes."
+  - item_id: "community-simon-fable-artifact"
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-03 09:23 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Sep/1/claude-fable-5-1/"
+      - "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    confidence_reason: "Personal blog is used as reproducible artifact-observation sample and official Anthropic page confirms underlying model announcement."
+  - item_id: "community-latent-space-pr-not-welcome"
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: newsletter_post
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-03 09:24 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://www.latent.space/p/pr-not-welcome"
+      - "https://vercel.com/blog/building-a-software-factory-for-ai-sdk"
+    confidence_reason: "Latent Space article is used as viewpoint sample and links to Vercel's original software-factory post."
+  - item_id: "community-vercel-workflow-2021"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: release_note_atom
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-03 09:24 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/vercel/ai/releases/tag/%40ai-sdk%2Fworkflow%402.0.21"
+      - "https://github.com/vercel/ai/releases/tag/%40ai-sdk%2Fworkflow%402.0.22"
+    confidence_reason: "Official public release stream lists workflow step, durable agent result, message history and tool result fixes."
+  - item_id: "research-pta-irt"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-09-01"
+    snapshot_time: "2026-09-03 09:25 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.01603v1"
+    confidence_reason: "Original arXiv page provides title, submitted date, abstract and method summary."
+  - item_id: "research-cordisbench"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: benchmark
+    item_date: "2026-09-01"
+    snapshot_time: "2026-09-03 09:25 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.01600v1"
+    confidence_reason: "Original arXiv page describes the 1,200-question lifecycle reasoning benchmark and reported limitations."
+  - item_id: "research-verbal-rl"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-09-01"
+    snapshot_time: "2026-09-03 09:25 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.01597v1"
+    confidence_reason: "Original arXiv page provides taxonomy around grounding, deliberative feedback and learning signal."
+followups:
+  - "Claude Mythos 5.1 and Gemini 3.8 Flash Cyber trusted-access programs: adoption, eligibility and enterprise deployment details."
+  - "Copilot approval integration with branch protection, path policy, audit logs and required reviewer rules."
+  - "Qwen Code manual approval fallback and workspace-scoped MCP management in a stable release."
+  - "Whether PTA-IRT or CordisBench gets adopted by coding-agent benchmark suites."
+fact_confidence: high
+signal_strength: high

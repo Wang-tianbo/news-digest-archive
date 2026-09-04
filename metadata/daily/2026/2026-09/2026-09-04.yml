@@ -1,0 +1,318 @@
+date: "2026-09-04"
+window_start: "2026-09-03 09:00 Asia/Shanghai"
+window_end: "2026-09-04 09:00 Asia/Shanghai"
+supplemental_range: "2026-09-02 to 2026-09-04; non-duplicative Cursor/community/research context used where strict-window official items benefited from background"
+themes:
+  - frontier_model_release
+  - cyber_safety_access
+  - agent_runtime_governance
+  - permission_policy
+  - self_hosted_agents
+  - workspace_memory
+  - workflow_control
+  - skill_distillation
+  - web_agent_world_models
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - Qwen
+  - Cursor
+  - LobeHub
+  - Vercel
+  - vLLM
+products:
+  - GPT-6 Astra
+  - Daybreak for Frontline Defenders
+  - Claude Code
+  - Qwen Code
+  - Cursor Cloud Agents
+  - Codex
+  - LobeHub Desktop
+  - vLLM
+signals:
+  - "OpenAI published GPT-6 Astra safety context and a $1B Daybreak program for essential-service cyber defenders."
+  - "Claude Code v2.1.260 fixed permission, sandbox, managed settings, Fable 5.1 cache and remote-control edge cases."
+  - "Qwen Code v0.23.0 added workspace-scoped memory, workflow execution controls, scheduled task sessions and MCP argument-aware AUTO-mode classification."
+  - "Cursor self-hosted machines keep code, build outputs and secrets on customer infrastructure while Cloud Agents execute tool calls locally."
+  - "Fresh research focused on web-agent world models, harness-policy safety evolution and repository-to-skill distillation."
+opinion_sources:
+  - "Qwen Code GitHub releases"
+  - "LobeHub GitHub releases"
+  - "Simon Willison"
+  - "Latent Space"
+  - "Import AI"
+viewpoint_themes:
+  - agent_runtime_control
+  - model_release_benchmark_interpretation
+  - self_hosted_execution
+  - cyber_access_policy
+  - task_evidence_ui
+research_sources:
+  - "arXiv:2609.02885"
+  - "arXiv:2609.02786"
+  - "arXiv:2609.02749"
+research_themes:
+  - web_agent_world_model
+  - action_ranking
+  - agent_safety_alignment
+  - harness_policy_co_evolution
+  - skill_distillation
+  - research_agent_operational_knowledge
+research_artifacts:
+  - paper
+  - benchmark
+  - skill_library
+research_interpretations:
+  - "Discriminative world models reframe web-agent prediction around action-discriminative future states."
+  - "SafeEvolve links trajectory-derived safety evidence to reversible harness artifacts and policy learning."
+  - "Repo-To-Skill turns repository operating knowledge into compact verified skills for research agents."
+peripheral_themes:
+  - inference_platform_stabilization
+  - kv_cache_and_runner_maturation
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-09-04.md"
+  adopted:
+    - candidate_id: "sig_b32d8f0a988d7a63"
+      title: "Discriminative World Models for Web Agents"
+      adoption_reason: "Fresh web-agent paper directly tied to browser/computer-use action selection."
+    - candidate_id: "sig_061e2b2ff3404684"
+      title: "SafeEvolve: Harness-Policy Co-Evolution from Agent Experience for Safety Alignment"
+      adoption_reason: "Strong fit with today's permission, managed-settings and runtime governance signals."
+    - candidate_id: "sig_c6f73add0fbedb1a"
+      title: "Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills"
+      adoption_reason: "Connects repository knowledge, skills and agent product plugin/skill direction."
+  rejected_or_deferred:
+    - candidate_id: "sig_7fd820e1b998b43e"
+      title: "A connectomics milestone: Mapping the complete male fruit fly brain"
+      status: deferred
+      rejection_reason: "High-quality research blog but less central to today's agent/runtime thread."
+    - candidate_id: "sig_0c847efede75847c"
+      title: "Towards Trustworthy Autonomous Robots: An Explainable AI-Based Decision Framework"
+      status: deferred
+      rejection_reason: "Relevant to autonomy auditability, but robotics framing was less connected to selected product evidence."
+    - candidate_id: "sig_a489308c811a77ac"
+      title: "Post-Training Language Models for Gold-Medal Performance in Coding Competitions"
+      status: deferred
+      rejection_reason: "Important coding result, but competition setting overlaps less with runtime governance than selected papers."
+    - candidate_id: "sig_0af0dcd7db6ae34a"
+      title: "Language Models Can Control Their Own Attention"
+      status: deferred
+      rejection_reason: "Useful long-context systems signal; kept for possible weekly synthesis with inference-platform items."
+    - candidate_id: "sig_fd82c805b34ac8fa"
+      title: "Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems"
+      status: deferred
+      rejection_reason: "Multi-agent theory fit is real, but lower evidence priority than SafeEvolve and Repo-To-Skill."
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: "2026-09-04 09:08 Asia/Shanghai"
+    result: hit
+    note: "Read .codex-run/signal-reviews/2026-09-04.md as clue layer; selected arXiv items were verified against original arXiv pages."
+  - source_id: core_official_ai_news
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
+    result: hit
+    note: "Checked OpenAI News RSS, Anthropic/Claude Code releases, Cursor changelog, Codex releases and official GitHub release streams."
+  - source_id: ai_coding_agent_watchlist
+    checked_at: "2026-09-04 09:20 Asia/Shanghai"
+    result: hit
+    note: "Selected Claude Code v2.1.260, Qwen Code v0.23.0, Cursor self-hosted machines and Codex 0.153.x/0.154 alpha cadence."
+  - source_id: china_model_company_watchlist
+    checked_at: "2026-09-04 09:21 Asia/Shanghai"
+    result: partial
+    note: "Qwen blog RSS had no fresh 2026 item; Qwen Code release stream supplied the strongest China-side official engineering signal."
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-09-04 09:22 Asia/Shanghai"
+    result: hit
+    note: "Qwen Code v0.23.0 and LobeHub canary .26/.27 supplied China-side engineering/community signals."
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-09-04 09:24 Asia/Shanghai"
+    result: hit
+    note: "Simon Willison and Latent Space both had strict-window GPT-6 Astra entries; Import AI supplied recent policy/safety context."
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-09-04 09:24 Asia/Shanghai"
+    result: partial
+    note: "AI Snake Oil feed failed with SSL error; no X-only sources used."
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-09-04 09:25 Asia/Shanghai"
+    result: hit
+    note: "Checked Vercel AI SDK, Cursor, vLLM, SGLang and LobeHub release streams; selected Vercel as weaker background and vLLM as peripheral."
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-09-04 09:25 Asia/Shanghai"
+    result: hit
+    note: "Cursor self-hosted machines, Claude Code permission fixes, Qwen workflow controls and Codex model catalog changes all map to agent infrastructure."
+  - source_id: english_inference_platforms
+    checked_at: "2026-09-04 09:27 Asia/Shanghai"
+    result: partial
+    note: "vLLM rc2/rc3 were strict-window but thin; recorded under peripheral rather than main news."
+  - source_id: english_research_blogs
+    checked_at: "2026-09-04 09:28 Asia/Shanghai"
+    result: hit
+    note: "Simon Willison was selected as model-release benchmark/cost interpretation; Google Research connectomics was deferred as lower fit."
+  - source_id: english_industry_analysis
+    checked_at: "2026-09-04 09:28 Asia/Shanghai"
+    result: hit
+    note: "Latent Space Astra post selected for early high-volume usage/cost/subagent perspective."
+  - source_id: english_safety_governance
+    checked_at: "2026-09-04 09:29 Asia/Shanghai"
+    result: hit
+    note: "OpenAI Astra/Daybreak, Claude Code permission fixes, SafeEvolve and Import AI policy framing supplied safety-governance signals."
+  - source_id: research_frontier
+    checked_at: "2026-09-04 09:30 Asia/Shanghai"
+    result: hit
+    note: "Verified original arXiv pages for Discriminative World Models, SafeEvolve and Repo-To-Skill."
+  - source_id: github_hot_projects
+    checked_at: "2026-09-04 09:31 Asia/Shanghai"
+    result: partial
+    note: "Checked release streams for vLLM/SGLang/OpenCompass/Dify; omitted separate GitHub hot section to avoid repeated or lower-increment items."
+evidence_items:
+  - item_id: "news-openai-astra-daybreak"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: official_announcement
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://openai.com/index/safety-overview-gpt-6-astra"
+      - "https://openai.com/index/daybreak-for-frontline-defenders"
+      - "https://openai.com/index/gpt-6-astra/"
+    confidence_reason: "OpenAI News RSS exposed exact titles, timestamps and descriptions; page fetch was blocked by 403 but canonical links were retained."
+  - item_id: "news-claude-code-2160"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-04 09:20 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/anthropics/claude-code/releases/tag/v2.1.260"
+    confidence_reason: "Official GitHub release lists permission, sandbox, managed settings, cache and remote-control changes."
+  - item_id: "news-qwen-code-0230"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-04 09:21 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.23.0"
+    confidence_reason: "Official GitHub release lists workspace memory, workflow controls, MCP argument-aware classifier and scheduled task changes."
+  - item_id: "news-cursor-self-hosted-machines"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: changelog
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-04 09:22 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://cursor.com/changelog/self-hosted-machines"
+    confidence_reason: "Official Cursor changelog describes local execution, dynamic pools, sandbox integrations and Linux/Mac computer use."
+  - item_id: "news-codex-0153-model-catalog"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note_atom
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-04 09:23 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/openai/codex/releases/tag/rust-v0.153.1"
+      - "https://github.com/openai/codex/releases/tag/rust-v0.153.2"
+      - "https://github.com/openai/codex/releases/tag/rust-v0.154.0-alpha.3"
+    confidence_reason: "Official GitHub Atom feed exposes exact release timestamps, model catalog backport and Astra Fast description fix."
+  - item_id: "community-lobehub-canary-27"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: release_note_atom
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-04 09:24 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/lobehub/lobehub/releases/tag/v2.2.16-canary.27"
+      - "https://github.com/lobehub/lobehub/releases/tag/v2.2.16-canary.26"
+    confidence_reason: "Public GitHub release stream lists task, metric, token, evidence and workspace UI changes."
+  - item_id: "community-simon-astra"
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-04 09:25 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Sep/3/gpt6-astra/"
+      - "https://openai.com/index/gpt-6-astra/"
+    confidence_reason: "Personal blog is used as interpretation sample and links to OpenAI source; not treated as primary model fact."
+  - item_id: "community-latent-space-astra"
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: newsletter
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-04 09:26 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://www.latent.space/p/astra"
+      - "https://openai.com/index/gpt-6-astra/"
+    confidence_reason: "Newsletter supplies early usage/cost viewpoint; claims are clearly labeled as community experience rather than benchmark fact."
+  - item_id: "community-import-ai-471"
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: newsletter
+    item_date: "2026-08-31"
+    snapshot_time: "2026-09-04 09:27 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - "https://importai.substack.com/p/import-ai-471-why-hugging-face-worries"
+      - "https://www.homeaffairs.gov.au/about-us/our-portfolios/national-security/security-coordination/five-country-ministerial/five-country-ministerial-2026"
+    confidence_reason: "Used as policy/safety interpretation with primary government link retained; not used as sole source for product facts."
+  - item_id: "research-discriminative-world-models"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-04 09:29 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.02885v1"
+    confidence_reason: "Original arXiv page provides title, authors, abstract and submission time."
+  - item_id: "research-safeevolve"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-04 09:29 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.02786v1"
+    confidence_reason: "Original arXiv page provides title, abstract, benchmark claim and submission time."
+  - item_id: "research-repo-to-skill"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-09-02"
+    snapshot_time: "2026-09-04 09:30 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.02749v1"
+    confidence_reason: "Original arXiv page provides title, abstract, skill-library scale and reported benchmark deltas."
+  - item_id: "peripheral-vllm-0290rc"
+    section: "AI 外围情报观察"
+    source_role: community
+    evidence_type: release_note_atom
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-04 09:31 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - "https://github.com/vllm-project/vllm/releases/tag/v0.29.0rc3"
+      - "https://github.com/vllm-project/vllm/releases/tag/v0.29.0rc2"
+      - "https://github.com/vllm-project/vllm/releases/tag/v0.28.0"
+    confidence_reason: "RC tags are strict-window verified, but detailed public notes are thin; interpreted only as stabilization cadence."
+followups:
+  - "GPT-6 Astra Daybreak 是否出现可复查企业/政府防御部署案例。"
+  - "Claude Code/Qwen Code 权限和 managed settings 是否收敛成稳定审计接口。"
+  - "Cursor self-hosted machines 是否推动 agent 执行平面回客户侧。"
+  - "Repo-To-Skill/SafeEvolve 是否被产品化为技能库和安全回滚机制。"
+fact_confidence: high
+signal_strength: high

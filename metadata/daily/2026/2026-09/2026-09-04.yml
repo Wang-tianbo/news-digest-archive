@@ -117,55 +117,55 @@ source_checks:
     result: hit
     note: "Checked OpenAI News RSS, Anthropic/Claude Code releases, Cursor changelog, Codex releases and official GitHub release streams."
   - source_id: ai_coding_agent_watchlist
-    checked_at: "2026-09-04 09:20 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: hit
     note: "Selected Claude Code v2.1.260, Qwen Code v0.23.0, Cursor self-hosted machines and Codex 0.153.x/0.154 alpha cadence."
   - source_id: china_model_company_watchlist
-    checked_at: "2026-09-04 09:21 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: partial
     note: "Qwen blog RSS had no fresh 2026 item; Qwen Code release stream supplied the strongest China-side official engineering signal."
   - source_id: china_ai_engineering_radar
-    checked_at: "2026-09-04 09:22 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: hit
     note: "Qwen Code v0.23.0 and LobeHub canary .26/.27 supplied China-side engineering/community signals."
   - source_id: ai_blogger_core_radar
-    checked_at: "2026-09-04 09:24 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: hit
     note: "Simon Willison and Latent Space both had strict-window GPT-6 Astra entries; Import AI supplied recent policy/safety context."
   - source_id: ai_blogger_free_opinion_pool
-    checked_at: "2026-09-04 09:24 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: partial
     note: "AI Snake Oil feed failed with SSL error; no X-only sources used."
   - source_id: english_ai_engineering_radar
-    checked_at: "2026-09-04 09:25 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: hit
     note: "Checked Vercel AI SDK, Cursor, vLLM, SGLang and LobeHub release streams; selected Vercel as weaker background and vLLM as peripheral."
   - source_id: english_agent_infra_radar
-    checked_at: "2026-09-04 09:25 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: hit
     note: "Cursor self-hosted machines, Claude Code permission fixes, Qwen workflow controls and Codex model catalog changes all map to agent infrastructure."
   - source_id: english_inference_platforms
-    checked_at: "2026-09-04 09:27 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: partial
     note: "vLLM rc2/rc3 were strict-window but thin; recorded under peripheral rather than main news."
   - source_id: english_research_blogs
-    checked_at: "2026-09-04 09:28 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: hit
     note: "Simon Willison was selected as model-release benchmark/cost interpretation; Google Research connectomics was deferred as lower fit."
   - source_id: english_industry_analysis
-    checked_at: "2026-09-04 09:28 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: hit
     note: "Latent Space Astra post selected for early high-volume usage/cost/subagent perspective."
   - source_id: english_safety_governance
-    checked_at: "2026-09-04 09:29 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: hit
     note: "OpenAI Astra/Daybreak, Claude Code permission fixes, SafeEvolve and Import AI policy framing supplied safety-governance signals."
   - source_id: research_frontier
-    checked_at: "2026-09-04 09:30 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: hit
     note: "Verified original arXiv pages for Discriminative World Models, SafeEvolve and Repo-To-Skill."
   - source_id: github_hot_projects
-    checked_at: "2026-09-04 09:31 Asia/Shanghai"
+    checked_at: "2026-09-04 09:18 Asia/Shanghai"
     result: partial
     note: "Checked release streams for vLLM/SGLang/OpenCompass/Dify; omitted separate GitHub hot section to avoid repeated or lower-increment items."
 evidence_items:
@@ -186,7 +186,7 @@ evidence_items:
     source_role: official
     evidence_type: release_note
     item_date: "2026-09-03"
-    snapshot_time: "2026-09-04 09:20 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
       - "https://github.com/anthropics/claude-code/releases/tag/v2.1.260"
@@ -196,7 +196,7 @@ evidence_items:
     source_role: official
     evidence_type: release_note
     item_date: "2026-09-03"
-    snapshot_time: "2026-09-04 09:21 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
       - "https://github.com/QwenLM/qwen-code/releases/tag/v0.23.0"
@@ -206,7 +206,7 @@ evidence_items:
     source_role: official
     evidence_type: changelog
     item_date: "2026-09-02"
-    snapshot_time: "2026-09-04 09:22 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
       - "https://cursor.com/changelog/self-hosted-machines"
@@ -216,7 +216,7 @@ evidence_items:
     source_role: official
     evidence_type: release_note_atom
     item_date: "2026-09-03"
-    snapshot_time: "2026-09-04 09:23 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
       - "https://github.com/openai/codex/releases/tag/rust-v0.153.1"
@@ -228,7 +228,7 @@ evidence_items:
     source_role: community
     evidence_type: release_note_atom
     item_date: "2026-09-03"
-    snapshot_time: "2026-09-04 09:24 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
       - "https://github.com/lobehub/lobehub/releases/tag/v2.2.16-canary.27"
@@ -239,7 +239,7 @@ evidence_items:
     source_role: opinion
     evidence_type: blog_post
     item_date: "2026-09-03"
-    snapshot_time: "2026-09-04 09:25 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
       - "https://simonwillison.net/2026/Sep/3/gpt6-astra/"
@@ -250,7 +250,7 @@ evidence_items:
     source_role: opinion
     evidence_type: newsletter
     item_date: "2026-09-03"
-    snapshot_time: "2026-09-04 09:26 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
       - "https://www.latent.space/p/astra"
@@ -261,7 +261,7 @@ evidence_items:
     source_role: opinion
     evidence_type: newsletter
     item_date: "2026-08-31"
-    snapshot_time: "2026-09-04 09:27 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: partial
     linked_primary_sources:
       - "https://importai.substack.com/p/import-ai-471-why-hugging-face-worries"
@@ -272,7 +272,7 @@ evidence_items:
     source_role: research
     evidence_type: paper
     item_date: "2026-09-02"
-    snapshot_time: "2026-09-04 09:29 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
       - "https://arxiv.org/abs/2609.02885v1"
@@ -282,7 +282,7 @@ evidence_items:
     source_role: research
     evidence_type: paper
     item_date: "2026-09-02"
-    snapshot_time: "2026-09-04 09:29 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
       - "https://arxiv.org/abs/2609.02786v1"
@@ -292,7 +292,7 @@ evidence_items:
     source_role: research
     evidence_type: paper
     item_date: "2026-09-02"
-    snapshot_time: "2026-09-04 09:30 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
       - "https://arxiv.org/abs/2609.02749v1"
@@ -302,7 +302,7 @@ evidence_items:
     source_role: community
     evidence_type: release_note_atom
     item_date: "2026-09-03"
-    snapshot_time: "2026-09-04 09:31 Asia/Shanghai"
+    snapshot_time: "2026-09-04 09:18 Asia/Shanghai"
     verification_status: partial
     linked_primary_sources:
       - "https://github.com/vllm-project/vllm/releases/tag/v0.29.0rc3"

@@ -1,0 +1,301 @@
+date: "2026-09-05"
+window_start: "2026-09-04 09:00 Asia/Shanghai"
+window_end: "2026-09-05 09:00 Asia/Shanghai"
+supplemental_range: "2026-09-03 to 2026-09-05; non-duplicative Spotify, EEBench, Gimlet and research context used where strict-window official items benefited from background"
+themes:
+  - formal_verification
+  - ai_for_science
+  - multi_model_orchestration
+  - agent_runtime_governance
+  - coding_agent_cost_control
+  - model_catalog_distribution
+  - enterprise_agents
+  - engineering_evaluation
+  - inference_infrastructure
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Anthropic
+  - GitHub
+  - Microsoft
+  - OpenAI
+  - xAI
+  - LobeHub
+  - Spotify
+  - Hugging Face
+  - Gimlet Labs
+products:
+  - Claude
+  - Claude Code
+  - GitHub Copilot
+  - Project HydraFusion
+  - Codex
+  - GPT-6 Astra
+  - Grok Bot
+  - LobeHub Desktop
+  - Portal by Spotify
+  - VLM Run Gateway
+  - EEBench
+signals:
+  - "Anthropic published a Claude-generated Lean formalization of Fermat's Last Theorem with a public proof repository."
+  - "GitHub introduced HydraFusion as a Copilot research preview for runtime multi-model coding workflows."
+  - "Claude Code v2.1.261 added organization-policy diagnostics, larger output limits, subagent prompt-file support and many remote-control/runtime fixes."
+  - "Codex 0.153.3/0.153.4 moved GPT-6 Astra into Bedrock and bundled model-picker/default paths."
+  - "xAI's Grok Bot procurement case showed an enterprise agent workflow with vendor data access, approval lines and quantified savings."
+opinion_sources:
+  - "LobeHub GitHub releases"
+  - "Spotify Engineering"
+  - "Simon Willison"
+  - "Hugging Face community article"
+viewpoint_themes:
+  - agent_workbench_state
+  - coding_agent_token_routing
+  - model_cost_quality_methodology
+  - multimodal_gateway_infrastructure
+research_sources:
+  - "Anthropic Research"
+  - "EEBench"
+  - "arXiv:2609.04172"
+research_themes:
+  - formalized_mathematics
+  - proof_checking
+  - electronics_benchmark
+  - simulation_grading
+  - on_policy_distillation
+  - post_training_efficiency
+research_artifacts:
+  - research_blog
+  - proof_repo
+  - benchmark
+  - paper
+research_interpretations:
+  - "Anthropic's FLT result and EEBench both move AI evaluation toward externally checked artifacts."
+  - "One-shot OPD suggests state coverage and step efficiency may matter more than raw task-count scaling in some distillation settings."
+peripheral_themes:
+  - inference_infrastructure
+  - heterogeneous_accelerator_scheduling
+  - agent_cost_structure
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-09-05.md"
+  adopted:
+    - candidate_id: "sig_7f38133251937f76"
+      title: "Rethinking On-Policy Distillation of Large Language Models II: One Training Example"
+      adoption_reason: "Fresh post-training paper with strong fit to state coverage and efficiency themes."
+  rejected_or_deferred:
+    - candidate_id: "sig_46534d6bf2393b44"
+      title: "A Computationally Feasible Framework for Causal Probabilistic Explanation"
+      status: deferred
+      rejection_reason: "High-quality causality paper but weaker fit than OPD with today's agent/runtime themes."
+    - candidate_id: "sig_0c847efede75847c"
+      title: "Towards Trustworthy Autonomous Robots: An Explainable AI-Based Decision Framework"
+      status: deferred
+      rejection_reason: "Auditability fit is real, but robotics framing was less central after EEBench and FLT selection."
+    - candidate_id: "sig_a489308c811a77ac"
+      title: "Post-Training Language Models for Gold-Medal Performance in Coding Competitions"
+      status: deferred
+      rejection_reason: "Coding-competition result overlaps recent coding-agent coverage; kept for possible weekly synthesis."
+    - candidate_id: "sig_0c60b71198d3136f"
+      title: "AI Contextual Measurement for Recovering Individual and Group-Level Effects"
+      status: deferred
+      rejection_reason: "Interesting measurement method but less connected to today's verification/orchestration thread."
+    - candidate_id: "sig_a500fdc546d0b0ab"
+      title: "Measurement-Driven Sub-Network Selection for On-Premise Retrieval-Augmented Factory Agents"
+      status: deferred
+      rejection_reason: "On-prem agent angle is useful, but evidence priority went to official product and benchmark sources."
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: hit
+    note: "Read .codex-run/signal-reviews/2026-09-05.md as clue layer; adopted one OPD arXiv paper after checking the original arXiv page."
+  - source_id: core_official_ai_news
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: hit
+    note: "Checked Anthropic research, GitHub Blog, Claude Code releases, OpenAI Codex releases and xAI official page."
+  - source_id: ai_coding_agent_watchlist
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: hit
+    note: "Selected GitHub HydraFusion, Claude Code v2.1.261, Codex 0.153.3/0.153.4 and Spotify Portal/shunt practice."
+  - source_id: china_model_company_watchlist
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: partial
+    note: "No non-repeated strict-window Qwen/Z.ai/Kimi official model-company item selected; LobeHub supplied the main China-side engineering signal."
+  - source_id: china_ai_engineering_radar
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: partial
+    note: "LobeHub v2.2.17-canary.2 was selected; expanded scan did not produce a second non-repeated high-value Chinese public source, so the section remains shorter."
+  - source_id: ai_blogger_core_radar
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: hit
+    note: "Simon Willison had strict-window Astra hands-on output; Latent Space was checked but not selected to avoid repeating the Sept 4 Astra launch discussion."
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: partial
+    note: "Used reproducible blogs/RSS/GitHub/community sources; X-only claims were avoided except where linked by source pages and not used as primary evidence."
+  - source_id: english_ai_engineering_radar
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: hit
+    note: "Selected Spotify Engineering and Hugging Face VLM Run Gateway; Vercel AI SDK workflow patch was checked but not elevated to a full item."
+  - source_id: english_agent_infra_radar
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: hit
+    note: "HydraFusion, Claude Code v2.1.261, Codex Astra distribution and Portal/shunt all map to agent infrastructure."
+  - source_id: english_inference_platforms
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: partial
+    note: "vLLM v0.29.0rc4 was a strict-window thin RC bugfix; Gimlet Labs supplied stronger supplemental inference-infrastructure context."
+  - source_id: english_research_blogs
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: hit
+    note: "Anthropic FLT and EEBench were selected as externally checked research/benchmark signals."
+  - source_id: english_industry_analysis
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: hit
+    note: "Spotify Engineering and Gimlet Labs supplied practical cost-routing and inference-infrastructure context."
+  - source_id: english_safety_governance
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: hit
+    note: "Claude Code organization policy, dangerous-rm prompt, Remote Control and xAI permission-line details supplied governance signals."
+  - source_id: research_frontier
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: hit
+    note: "Selected Anthropic FLT, EEBench and arXiv OPD paper; other arXiv candidates were deferred for lower fit."
+  - source_id: github_hot_projects
+    checked_at: "2026-09-05 09:14 Asia/Shanghai"
+    result: partial
+    note: "Checked LobeHub, Vercel AI SDK and vLLM release streams; omitted a separate GitHub hot section to avoid repeated or lower-increment items."
+evidence_items:
+  - item_id: "news-anthropic-flt"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: research_blog
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://www.anthropic.com/research/formalizing-fermats-last-theorem"
+      - "https://github.com/anthropics/fermats-last-theorem"
+    confidence_reason: "Official Anthropic research page states the FLT formalization, date, 11-day largely autonomous work, Lean use and public proof repository."
+  - item_id: "news-github-hydrafusion"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: product_research_preview
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/"
+    confidence_reason: "Official GitHub Blog provides exact publication timestamp, preview availability, orchestration patterns and benchmark/cost table."
+  - item_id: "news-claude-code-2161"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note_atom
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/anthropics/claude-code/releases/tag/v2.1.261"
+    confidence_reason: "Official GitHub release stream lists organization policy diagnostics, output settings, subagent prompt-file support and remote-control fixes."
+  - item_id: "news-codex-astra-hotfixes"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: release_note_atom
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/openai/codex/releases/tag/rust-v0.153.3"
+      - "https://github.com/openai/codex/releases/tag/rust-v0.153.4"
+      - "https://github.com/openai/codex/releases/tag/rust-v0.154.0-alpha.4"
+    confidence_reason: "Official GitHub Atom feed exposes strict-window release timestamps and Astra Bedrock/bundled model-picker changes."
+  - item_id: "news-xai-grok-bot-procurement"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: official_case_study
+    item_date: "observed 2026-09-05"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: partial
+    linked_primary_sources:
+      - "https://x.ai/news/grok-bot-procurement"
+    confidence_reason: "Official xAI page states savings and workflow details, but the page did not expose a clear publication date in fetched metadata."
+  - item_id: "community-lobehub-canary-2217-2"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: release_note_atom
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/lobehub/lobehub/releases/tag/v2.2.17-canary.2"
+    confidence_reason: "Public GitHub release stream lists Astra support, local message store, task dock and agent-runtime polling changes."
+  - item_id: "community-spotify-portal-shunt"
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: engineering_blog
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://engineering.atspotify.com/2026/9/portal-by-spotify-cut-my-claude-code-token-usage-by-90"
+      - "https://github.com/spotify/portal-ai-plugins"
+    confidence_reason: "Spotify Engineering blog provides concrete hook/mode/script setup, benchmark caveats and plugin repository link."
+  - item_id: "community-simon-astra-pelicans"
+    section: "AI 圈博主"
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Sep/4/astra-pelicans/"
+      - "https://openai.com/index/gpt-6-astra/"
+    confidence_reason: "Personal blog is used as a hands-on methodology signal with OpenAI source retained for underlying model fact."
+  - item_id: "community-vlm-run-gateway"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: community_article
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://huggingface.co/blog/vlm-run/introducing-gateway"
+    confidence_reason: "Hugging Face page metadata gives exact publish timestamp and title for the community article."
+  - item_id: "research-eebench"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: benchmark
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://eebench.org/blog/can-ai-design-circuit-boards-yet/"
+    confidence_reason: "EEBench article describes V1 benchmark scope, atopile workflow, deterministic checks and simulation limitations."
+  - item_id: "research-one-shot-opd"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.04172v1"
+    confidence_reason: "Original arXiv page provides title, authors, abstract, submission date and reported state-coverage figures."
+  - item_id: "peripheral-gimlet-series-b"
+    section: "AI 外围情报观察"
+    source_role: official
+    evidence_type: company_blog
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-05 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://gimletlabs.ai/blog/announcing-series-b"
+    confidence_reason: "Official Gimlet blog metadata and article text state the $300M Series B, investor list and inference-infrastructure claims."
+followups:
+  - "Anthropic FLT proof repo 是否出现 Lean/数学社区独立复查。"
+  - "HydraFusion preview 是否在真实 Copilot CLI 任务中验证成本、延迟和质量权衡。"
+  - "Claude Code/Codex/LobeHub 是否继续围绕 subagent、skill、本地状态和组织策略热修。"
+  - "EEBench 是否被更多模型卡或 post-training/eval 团队采用。"
+fact_confidence: high
+signal_strength: high

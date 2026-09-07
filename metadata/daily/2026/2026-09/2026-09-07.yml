@@ -32,7 +32,7 @@ products:
 signals:
   - "OpenAI published An Alien Mind, framing Astra-era alignment around monitorability, generalization, scalable defense and RSI pacing."
   - "OpenAI published internal research-acceleration metrics for coding-agent use inside its research organization."
-  - "Claude Code v2.1.264 fixed Opus 4.1 automatic model fallback, continuing runtime-routing stabilization."
+  - "Claude Code v2.1.263 shipped bug fixes and reliability improvements, continuing runtime-stability maintenance."
   - "Qwen Code v0.23.1-preview.1 added dynamic workflow run visualization/management and IPC refused-message feedback."
   - "Vercel AI SDK OpenAI provider releases added GPT-6 reasoning configuration updates."
 opinion_sources:
@@ -110,7 +110,7 @@ source_checks:
   - source_id: ai_coding_agent_watchlist
     checked_at: "2026-09-07 09:13 Asia/Shanghai"
     result: hit
-    note: "Selected Claude Code v2.1.264, Qwen Code v0.23.1-preview.1, LobeHub canary.5 and supplemental Vercel AI SDK GPT-6 config updates."
+    note: "Selected Claude Code v2.1.263, Qwen Code v0.23.1-preview.1, LobeHub canary.5 and supplemental Vercel AI SDK GPT-6 config updates."
   - source_id: china_model_company_watchlist
     checked_at: "2026-09-07 09:13 Asia/Shanghai"
     result: partial
@@ -165,7 +165,7 @@ evidence_items:
     linked_primary_sources:
       - "https://openai.com/index/research-acceleration-view-inside-openai/"
     confidence_reason: "Official OpenAI article provides publication date, internal usage framing and quantitative research-agent metrics."
-  - item_id: "news-claude-code-2164"
+  - item_id: "news-claude-code-2163"
     section: "AI 新闻"
     source_role: official
     evidence_type: release_note
@@ -173,8 +173,8 @@ evidence_items:
     snapshot_time: "2026-09-07 09:13 Asia/Shanghai"
     verification_status: verified
     linked_primary_sources:
-      - "https://github.com/anthropics/claude-code/releases"
-    confidence_reason: "Official GitHub release stream lists v2.1.264 and its Opus 4.1 automatic model fallback fix."
+      - "https://github.com/anthropics/claude-code/releases/tag/v2.1.263"
+    confidence_reason: "Official GitHub release stream lists v2.1.263 with bug fixes and reliability improvements; no v2.1.264 release was verified."
   - item_id: "news-qwen-code-0231-preview1"
     section: "AI 新闻"
     source_role: official

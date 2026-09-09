@@ -1,0 +1,294 @@
+date: "2026-09-09"
+window_start: "2026-09-08 09:00 Asia/Shanghai"
+window_end: "2026-09-09 09:00 Asia/Shanghai"
+supplemental_range: "2026-09-03 to 2026-09-09; only non-repeated research and community context tied to agent security boundaries and verifiable execution"
+themes:
+  - research_execution
+  - formal_verification
+  - agent_runtime_security
+  - tool_output_provenance
+  - coding_agent_control_plane
+  - enterprise_agent_deployment
+  - multi_step_tool_calling
+  - executable_security_skills
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Google
+  - Anthropic
+  - Qwen
+  - GitHub
+products:
+  - GPT-5.6 Sol
+  - Codex
+  - OpenAI Lean research
+  - Gemini CLI
+  - Claude Code
+  - Qwen Code
+  - Copilot CLI
+  - ChatGPT Images 2.5
+signals:
+  - "OpenAI showed GPT-5.6 Sol and Codex running quantum-computing experiments as a concrete research-operator workflow."
+  - "OpenAI paired an AI-generated Navier-Stokes solution with a machine-checkable Lean formal proof."
+  - "Gemini CLI v0.59.0 stabilized MCP/workspace trust fixes while v0.60.0-preview.0 broadened network, sandbox, path, and tool-output provenance hardening."
+  - "Claude Code v2.1.265 expanded plugin/workflow controls and v2.1.266 repaired a gateway/proxy authentication regression."
+  - "Qwen Code v0.23.1 moved workflow, session, worktree, memory, skills, goal, and lease controls into stable."
+  - "GitHub Enterprise Server 3.22 brought Copilot CLI to disconnected and air-gapped enterprise environments."
+  - "KOPA-Bench/EDGE and BUGSTONE-E2E tied agent improvement to real execution traces and reusable verification skills."
+opinion_sources:
+  - "Simon Willison Blog"
+  - "Latent Space"
+  - "Import AI"
+  - "Qwen Code GitHub releases"
+viewpoint_themes:
+  - "agent runtime governance"
+  - "AEO and model retrieval observability"
+  - "multi-agent shared-infrastructure governance"
+  - "coding-agent workflow adoption"
+research_sources:
+  - "arXiv:2609.05395"
+  - "arXiv:2609.05335"
+  - "arXiv:2609.04170"
+research_themes:
+  - "real-execution tool calling"
+  - "agent trajectory data synthesis"
+  - "executable vulnerability detection"
+  - "multi-agent governance"
+research_artifacts:
+  - "paper"
+  - "benchmark"
+  - "security workflow"
+research_interpretations:
+  - "Import AI 472"
+  - "Simon Willison Blog"
+peripheral_themes:
+  - "AI security and governance"
+  - "provider interoperability"
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-09-09.md"
+  adopted:
+    - candidate_id: "sig_b0fbd7a01f414175"
+      title: "Multi-Step Tool-Calling over Korean Open Public APIs: A Benchmark and a Data-Synthesis Recipe"
+      adoption_reason: "Real API execution and verified tool dependencies directly support the day's provenance and tool-routing thesis."
+    - candidate_id: "sig_96d811b386dc85de"
+      title: "The History Is the Detector: Executing CVE Patch History, End-to-End"
+      adoption_reason: "Executable vulnerability rules and runtime evidence extend the day's agent-security thesis beyond product patch notes."
+  rejected_or_deferred:
+    - candidate_id: "sig_68963cee1fd4dfc2"
+      title: "Does Your Agent's Memory Survive a Model Upgrade? A Controlled Study of Memory Portability"
+      status: deferred
+      rejection_reason: "Strong agent-runtime risk signal, but less central than real tool execution and executable security verification; keep for a follow-up memory-focused report."
+    - candidate_id: "sig_fe17618c10c7e4d1"
+      title: "Necessary or Sufficient? Evaluating LLM Explanations With Behavioural Evidence"
+      status: deferred
+      rejection_reason: "Relevant to oversight, but current paper is narrower and less operationally concrete than KOPA-Bench and BUGSTONE-E2E."
+    - candidate_id: "sig_e49e3a87ffbeba7a"
+      title: "Design Docs Are All You Need: An AI-native Machine-Learning Performance Tool"
+      status: deferred
+      rejection_reason: "Interesting AI-native systems thesis, but outside today's runtime-security and verification focus."
+source_checks:
+  - source_id: "core_official_ai_news"
+    checked_at: "2026-09-09 09:25 Asia/Shanghai"
+    result: "partial"
+    note: "OpenAI News RSS supplied publication times for the selected quantum-experiment and Navier-Stokes pages; canonical OpenAI pages were access-limited during fetch, so the URLs remain explicitly marked as first-party sources."
+  - source_id: "coding_agent_releases"
+    checked_at: "2026-09-09 09:25 Asia/Shanghai"
+    result: "hit"
+    note: "Checked Codex, Claude Code, Gemini CLI, Qwen Code, and LobeHub releases; retained substantive non-repeated Claude, Gemini, and Qwen changes, while treating Codex empty-body cadence and LobeHub canary work as lower priority."
+  - source_id: "china_model_officials"
+    checked_at: "2026-09-09 09:25 Asia/Shanghai"
+    result: "partial"
+    note: "Checked Qwen Code and public Chinese AI engineering/media entry points; Qwen had a substantive stable release, while other sources had no independently verifiable non-repeated core update."
+  - source_id: "ai_blogger_core_radar"
+    checked_at: "2026-09-09 09:13 Asia/Shanghai"
+    result: "hit"
+    note: "Checked Simon Willison feed and retained the ChatGPT Images 2.5 workflow sample."
+  - source_id: "ai_blogger_free_opinion_pool"
+    checked_at: "2026-09-09 09:13 Asia/Shanghai"
+    result: "hit"
+    note: "Checked Latent Space and Import AI; used one AEO observation and one multi-agent governance discussion with primary-source links."
+  - source_id: "china_ai_media_signals"
+    checked_at: "2026-09-09 09:13 Asia/Shanghai"
+    result: "miss"
+    note: "Checked QbitAI, 机器之心, 火山引擎 developer entry points, and HelloGitHub; no non-repeated, independently verifiable mainline signal was retained."
+  - source_id: "china_ai_engineering_radar"
+    checked_at: "2026-09-09 09:13 Asia/Shanghai"
+    result: "partial"
+    note: "Public entry points were reachable, but exact release-level evidence was insufficient beyond Qwen Code."
+  - source_id: "english_ai_engineering_radar"
+    checked_at: "2026-09-09 09:25 Asia/Shanghai"
+    result: "hit"
+    note: "Checked Vercel AI SDK, Pydantic AI, LangChain OpenAI, and vLLM; these had usable release notes but were omitted from the headline set in favor of stronger research-execution, security, and enterprise-deployment signals."
+  - source_id: "english_agent_infra_radar"
+    checked_at: "2026-09-09 09:25 Asia/Shanghai"
+    result: "hit"
+    note: "Checked agent runtime and tool orchestration sources; retained security and control-plane changes with the clearest operational impact."
+  - source_id: "research_frontier"
+    checked_at: "2026-09-09 09:14 Asia/Shanghai"
+    result: "hit"
+    note: "Verified KOPA-Bench/EDGE, BUGSTONE-E2E, and emergent cheating/whistleblowing papers against arXiv abstracts."
+  - source_id: "local_signal_inbox"
+    checked_at: "2026-09-09 09:09 Asia/Shanghai"
+    result: "hit"
+    note: "Collected public candidates and rendered review; used only as a clue layer."
+evidence_items:
+  - item_id: "news-openai-codex-quantum-experiments"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "research_post"
+    item_date: "2026-09-08"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://openai.com/index/codex-quantum-computing-experiments"
+    confidence_reason: "OpenAI News RSS supplied the publication timestamp and the canonical first-party page describes the Codex/GPT-5.6 Sol quantum-computing workflow."
+  - item_id: "news-openai-navier-stokes-lean"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "research_post"
+    item_date: "2026-09-08"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://openai.com/index/navier-stokes-solution"
+    confidence_reason: "OpenAI News RSS supplied the publication timestamp and the canonical first-party page describes the Lean-checked proof artifact."
+  - item_id: "news-gemini-cli-059-060"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release_note"
+    item_date: "2026-09-08"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/google-gemini/gemini-cli/releases/tag/v0.59.0"
+      - "https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0-preview.0"
+    confidence_reason: "Official GitHub releases show stable promotion of trust fixes and preview hardening across network, OAuth, sandbox, path, permission, and tool-output provenance boundaries."
+  - item_id: "news-claude-code-21265-21266"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release_note"
+    item_date: "2026-09-08"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/anthropics/claude-code/releases/tag/v2.1.265"
+      - "https://github.com/anthropics/claude-code/releases/tag/v2.1.266"
+    confidence_reason: "Official releases document both the expanding plugin/workflow runtime and the exact gateway/proxy authentication regression and repair."
+  - item_id: "news-qwen-code-0231-stable"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release_note"
+    item_date: "2026-09-08"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.23.1"
+    confidence_reason: "Official stable release lists workflow, session, worktree, memory, skills, lease, goal, and review controls."
+  - item_id: "news-ghes-322-copilot-cli"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "changelog"
+    item_date: "2026-09-08"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.blog/changelog/2026-09-08-github-enterprise-server-3-22-is-now-generally-available"
+    confidence_reason: "GitHub's dated first-party changelog states that GHES 3.22 can configure Copilot CLI for use with GHES credentials without GitHub Cloud connectivity."
+  - item_id: "community-qwen-code-stable"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "information_signal"
+    item_date: "2026-09-08"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.23.1"
+    confidence_reason: "The community section uses the official Qwen release as a reproducible China-side engineering signal, with interpretation clearly separated from the product facts."
+  - item_id: "community-china-radar-gap"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "source_gap"
+    item_date: "2026-09-09"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://www.qbitai.com/"
+      - "https://www.jiqizhixin.com/"
+      - "https://hellogithub.com/"
+    confidence_reason: "The entry records a deliberate source gap after checking public Chinese AI media and engineering entry points; it does not assert an underlying product fact."
+  - item_id: "community-simon-images25"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "practice_recap"
+    item_date: "2026-09-08"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Sep/8/introducing-chatgpt-images-25/"
+      - "https://openai.com/index/introducing-chatgpt-images-2-5/"
+    confidence_reason: "Public dated post links the workflow experiment to OpenAI's first-party announcement."
+  - item_id: "community-latent-aeo"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "analysis"
+    item_date: "2026-09-07"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://www.latent.space/p/aeo"
+      - "https://is-agentic.com/"
+    confidence_reason: "Public small-sample tracker is reproducible, but methodology and cost/confidence confounding remain open."
+  - item_id: "community-importai-swarm-governance"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "analysis"
+    item_date: "2026-09-07"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://importai.substack.com/p/import-ai-472-deepminds-cheating"
+      - "https://arxiv.org/abs/2609.04170v1"
+    confidence_reason: "Newsletter is secondary context; the underlying arXiv paper supports the swarm behavior claims."
+  - item_id: "research-kopa-bench-edge"
+    section: "AI 研究前沿"
+    source_role: "research"
+    evidence_type: "benchmark"
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.05395v1"
+    confidence_reason: "ArXiv abstract states the 145-task benchmark, live execution graph synthesis, and reported 9B/27B comparison."
+  - item_id: "research-bugstone-e2e"
+    section: "AI 研究前沿"
+    source_role: "research"
+    evidence_type: "paper"
+    item_date: "2026-09-04"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.05335v1"
+    confidence_reason: "ArXiv abstract states rule mining, 172 skills, 644 runtime-evidenced findings, and differential validation."
+  - item_id: "research-swarm-governance"
+    section: "AI 外围情报观察"
+    source_role: "research"
+    evidence_type: "paper"
+    item_date: "2026-09-03"
+    snapshot_time: "2026-09-09 09:25 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.04170v1"
+    confidence_reason: "ArXiv abstract supports the shared-library propagation and whistleblowing/counter-response claims."
+followups:
+  - "OpenAI/Codex research-execution cases exposing reproducible tools, proofs, or intermediate artifacts"
+  - "GHES 3.22 disconnected Copilot CLI deployment and identity-audit evidence"
+  - "Gemini CLI v0.60.0-preview.0 security hardening entering stable"
+  - "Qwen Code v0.23.1 control-plane adoption outside the project"
+  - "Claude Code gateway regression follow-up and compatibility coverage"
+  - "KOPA-Bench/EDGE and BUGSTONE-E2E code or third-party reproduction"
+fact_confidence: high
+signal_strength: high

@@ -1,0 +1,306 @@
+date: "2026-09-11"
+window_start: "2026-09-10 09:00 Asia/Shanghai"
+window_end: "2026-09-11 09:00 Asia/Shanghai"
+supplemental_range: "2026-09-09 to 2026-09-11; only non-repeated signals tied to agent governance, model serving, executable evaluation, and runtime routing"
+themes:
+  - agent_runtime_control_plane
+  - external_agent_messages
+  - gateway_security_hardening
+  - acp_agent_delegation
+  - agentic_security_detection
+  - organization_level_ai_scanning
+  - multimodal_moe_serving
+  - open_weight_model_deployment
+  - gui_agent_evaluation
+  - enterprise_serving_route_eval
+  - multi_model_orchestration
+  - perceived_latency_routing
+  - ai_vendor_concentration_risk
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - GitHub
+  - DeepSeek
+  - Alibaba Qwen
+  - Google
+  - Shopify
+products:
+  - OpenAI Codex
+  - Claude Code
+  - GitHub AI Scan PR APIs
+  - DeepSeek-V4.1-Flash
+  - Qwen Code
+  - ToolGrad
+signals:
+  - "OpenAI Codex Python SDK 0.154.0 added ExternalMessage, include_turns, turn_service_tier, source metadata, and max/ultra reasoning effort."
+  - "Claude Code v2.1.268 tightened gateway pricing/telemetry, public-address warnings, symlink permission checks, secret redaction, and third-party endpoint compatibility."
+  - "Qwen Code v0.23.3 added ACP delegation to external agents, OpenAI Responses API generation, session-source unification, bounded self-review, and 256-workspace support."
+  - "GitHub made AI-powered security detections available through pull request APIs in public preview."
+  - "DeepSeek released V4.1-Flash with API availability, compatibility routing, pricing changes, open weights, and a technical report."
+  - "JarvisGUI frames GUI-agent evaluation around cross-device workflows and dynamic task composition."
+  - "IBIB argues enterprise AI systems should be evaluated by serving route rather than advertised model identifier."
+  - "PACE connects cascading RAG service routing with perceived latency and filler control."
+opinion_sources:
+  - "36Kr / 人人都是产品经理"
+  - "36Kr / 韦韦_wiwi"
+  - "Simon Willison Blog"
+  - "Google Developers Blog"
+  - "Google Research Blog"
+viewpoint_themes:
+  - "Chinese developer adoption of coding agents"
+  - "model vendor offline user acquisition"
+  - "traceable research-agent workflows"
+  - "AI coding tools changing engineering architecture tradeoffs"
+  - "harness engineering for coding agents"
+  - "tool-use data generation"
+research_sources:
+  - "arXiv:2609.10451"
+  - "arXiv:2609.10494"
+  - "arXiv:2609.10372"
+  - "arXiv:2609.10350"
+research_themes:
+  - "cross-device GUI agents"
+  - "enterprise serving-route evaluation"
+  - "RAG service routing"
+  - "AI vendor concentration risk"
+research_artifacts:
+  - "paper"
+  - "benchmark"
+  - "eval protocol"
+research_interpretations:
+  - "none"
+peripheral_themes:
+  - "AI vendor concentration in financial systems"
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-09-11.md"
+  adopted:
+    - candidate_id: "sig_58b60f17a9df411a"
+      title: "JarvisGUI: Towards Cross-Device GUI Agents with Dynamic Task Composition"
+      adoption_reason: "Extends recent GUI/CLI agent-environment tracking into cross-device dynamic task composition."
+    - candidate_id: "sig_b00a21dbc96e6e87"
+      title: "IBIB: A Protocol for Measuring Enterprise AI Systems by Serving Route, Not Model Identifier"
+      adoption_reason: "Directly supports the repository's model-routing and enterprise evaluation thesis."
+    - candidate_id: "sig_a4737d036c9c3f80"
+      title: "PACE: Perceived-Latency-Aware Cascading Service Routing and Filler Control for QoE-Efficient Retrieval-Augmented Dialogue Serving"
+      adoption_reason: "Connects runtime routing with user-perceived latency and RAG service quality."
+    - candidate_id: "sig_b66e6080d393076d"
+      title: "Cyber-Financial Contagion: Modeling the Propagation of an AI Vendor Compromise Through the Banking System"
+      adoption_reason: "Useful peripheral risk frame for shared AI vendors and organization-level agent APIs."
+    - candidate_id: "sig_08a3d9b2900ccf7d"
+      title: "ToolGrad: Efficient tool-use dataset generation with textual gradients"
+      adoption_reason: "Used as background for tool-use data generation, not as a headline daily signal."
+  rejected_or_deferred:
+    - candidate_id: "sig_bba6ea0cf4b1befa"
+      title: "Show-Harness: Just a VLM Agent Can Play Robots"
+      status: "deferred"
+      rejection_reason: "Embodied-agent signal is relevant but less connected to today's organization governance and service-routing thesis."
+    - candidate_id: "sig_75cad9111e80c914"
+      title: "Semigroup-JEPA: Latent Dynamics Consistency for Zero-Shot Physics Generalization"
+      status: "deferred"
+      rejection_reason: "Potentially useful world-model paper, but the current daily needs stronger AI-agent workflow relevance."
+    - candidate_id: "sig_330ce41c7750700d"
+      title: "ConvMem: Convolutional Memory for Long-Context Reasoning"
+      status: "deferred"
+      rejection_reason: "Long-context memory is relevant, but less actionable than serving-route and cross-device agent evaluation today."
+    - candidate_id: "sig_2946bd32a9daf10b"
+      title: "Forgetting Only What Matters: Layer-Selective Unlearning toward Robust LLMs"
+      status: "deferred"
+      rejection_reason: "Safety-adjacent, but does not alter today's agent runtime or archive thesis."
+    - candidate_id: "sig_29340ec4efc6ac6d"
+      title: "Can Foundation Models Moderate Online Content?"
+      status: "deferred"
+      rejection_reason: "Moderation evaluation is important but outside today's strongest operating-system and routing signals."
+    - candidate_id: "sig_fe17618c10c7e4d1"
+      title: "Necessary or Sufficient? Evaluating LLM Explanations With Behavioural Evidence"
+      status: "observing"
+      rejection_reason: "Kept as oversight background; recently deferred for being less operationally concrete than stronger agent evidence."
+source_checks:
+  - source_id: "core_official_ai_news"
+    checked_at: "2026-09-11 09:10 Asia/Shanghai"
+    result: "hit"
+    note: "OpenAI Codex, Claude Code, Qwen Code, GitHub changelog, and DeepSeek first-party sources supplied the strongest strict-window official updates."
+  - source_id: "coding_agent_releases"
+    checked_at: "2026-09-11 09:10 Asia/Shanghai"
+    result: "hit"
+    note: "Codex Python/Rust releases, Claude Code v2.1.268, and Qwen Code v0.23.3 all landed inside the strict window and were retained."
+  - source_id: "ai_blogger_core_radar"
+    checked_at: "2026-09-11 09:10 Asia/Shanghai"
+    result: "hit"
+    note: "Simon Willison, Google Developers, and Google Research supplied English public commentary or methodology samples."
+  - source_id: "china_ai_engineering_radar"
+    checked_at: "2026-09-11 09:10 Asia/Shanghai"
+    result: "hit"
+    note: "Two 36Kr Chinese-origin articles were retained as public community/industry signals: offline token campaigns and traceable scientific-research AI workflows."
+  - source_id: "english_ai_engineering_radar"
+    checked_at: "2026-09-11 09:10 Asia/Shanghai"
+    result: "hit"
+    note: "Three English public samples were retained: Simon Willison, Google Developers harness engineering, and Google Research ToolGrad."
+  - source_id: "research_frontier"
+    checked_at: "2026-09-11 09:10 Asia/Shanghai"
+    result: "hit"
+    note: "Selected JarvisGUI, IBIB, PACE, and AI vendor concentration risk from original arXiv pages."
+  - source_id: "local_signal_inbox"
+    checked_at: "2026-09-11 08:42 Asia/Shanghai"
+    result: "hit"
+    note: "Collected 13 public sources, upserted 145 candidates, exported 123 candidates, and rendered the local review."
+evidence_items:
+  - item_id: "news-openai-codex-python-0154"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-11"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/openai/codex/releases/tag/python-v0.154.0"
+      - "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.2.3"
+    confidence_reason: "OpenAI Codex first-party GitHub releases list Python 0.154.0 and Rust 0.155.0 alpha builds inside the strict window."
+  - item_id: "news-claude-code-21268"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-11"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/anthropics/claude-code/releases/tag/v2.1.268"
+    confidence_reason: "Anthropic Claude Code first-party GitHub release details gateway, permission, endpoint, WebFetch, and secret-redaction fixes."
+  - item_id: "news-qwen-code-0233"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-10"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.23.3"
+    confidence_reason: "Qwen Code first-party GitHub release lists ACP external-agent delegation, Responses API generation, session registry, bounded self-review, and trust-boundary fixes."
+  - item_id: "news-github-ai-scan-pr-apis"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "changelog"
+    item_date: "2026-09-10"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.blog/changelog/2026-09-10-ai-scan-for-pull-request-apis-in-public-preview"
+      - "https://docs.github.com/rest/code-scanning/code-scanning?apiVersion=2026-03-10"
+    confidence_reason: "GitHub first-party changelog and REST docs describe organization and repository APIs for AI Scan pull request enablement."
+  - item_id: "news-deepseek-v41-flash"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release_note"
+    item_date: "2026-09-10"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://api-docs.deepseek.com/news/news260910/"
+      - "https://api-docs.deepseek.com/updates/"
+      - "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+    confidence_reason: "DeepSeek first-party docs describe the release, API model name, compatibility routing, pricing timing, and linked model/paper artifacts."
+  - item_id: "community-36kr-qwen-zhipu-offline"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "industry_note"
+    item_date: "2026-09-10"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://eu.36kr.com/en/p/3977537295858690"
+    confidence_reason: "36Kr article is used as a Chinese-origin industry/community signal about model-vendor distribution and token subsidies."
+  - item_id: "community-36kr-research-ai-workflows"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "industry_note"
+    item_date: "2026-09-10"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://eu.36kr.com/en/p/3977449594033798"
+    confidence_reason: "36Kr article is used as a Chinese-origin industry signal around traceable scientific-research AI workflows."
+  - item_id: "community-simon-shopify-native"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "methodology"
+    item_date: "2026-09-10"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Sep/10/shopify-react-native/"
+      - "https://shopify.engineering/native-future-mobile-shopify"
+    confidence_reason: "The item is used as a clearly labeled peripheral engineering-methodology signal, not as a core AI product fact."
+  - item_id: "community-google-harness-engineering"
+    section: "AI 圈博主"
+    source_role: "engineering_blog"
+    evidence_type: "methodology"
+    item_date: "2026-09-09"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://developers.googleblog.com/the-anatomy-of-harness-engineering-how-to-evaluate-iterate-and-guard-ai-coding-agents/"
+    confidence_reason: "Google Developers first-party blog describes harness engineering as an evaluation and guardrail approach for AI coding agents."
+  - item_id: "research-toolgrad"
+    section: "AI 圈博主"
+    source_role: "research"
+    evidence_type: "research_blog"
+    item_date: "2026-09-10"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients"
+    confidence_reason: "Google Research first-party blog is retained as background for tool-use data generation."
+  - item_id: "research-jarvisgui"
+    section: "AI 研究前沿"
+    source_role: "research"
+    evidence_type: "paper"
+    item_date: "2026-09-10"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.10451v1"
+    confidence_reason: "Original arXiv page frames the benchmark around cross-device GUI agents and dynamic task composition."
+  - item_id: "research-ibib"
+    section: "AI 研究前沿"
+    source_role: "research"
+    evidence_type: "paper"
+    item_date: "2026-09-10"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.10494v1"
+    confidence_reason: "Original arXiv page supports the serving-route rather than model-identifier evaluation thesis."
+  - item_id: "research-pace"
+    section: "AI 研究前沿"
+    source_role: "research"
+    evidence_type: "paper"
+    item_date: "2026-09-10"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.10372v1"
+    confidence_reason: "Original arXiv page describes perceived-latency-aware cascading service routing for RAG dialogue serving."
+  - item_id: "peripheral-ai-vendor-contagion"
+    section: "AI 外围情报观察"
+    source_role: "research"
+    evidence_type: "paper"
+    item_date: "2026-09-09"
+    snapshot_time: "2026-09-11 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.10350v1"
+    confidence_reason: "Original arXiv page is used as a peripheral risk model for shared AI vendor concentration."
+followups:
+  - "Codex ExternalMessage, include_turns, and turn_service_tier adoption by third-party IDEs, schedulers, or enterprise control planes."
+  - "Claude Code gateway, symlink permission, and secret-redaction fixes reducing managed deployment risk."
+  - "Qwen Code ACP external-agent delegation forming reproducible multi-agent workflows."
+  - "GitHub AI Scan PR APIs adoption in organization-level security policy and campaigns."
+  - "DeepSeek-V4.1-Flash third-party serving stability and cost benchmarks."
+  - "JarvisGUI release of environment, task set, and baseline trajectories."
+  - "IBIB and PACE adoption by enterprise LLM gateways, model routers, or RAG serving stacks."
+fact_confidence: "high"
+signal_strength: "medium"

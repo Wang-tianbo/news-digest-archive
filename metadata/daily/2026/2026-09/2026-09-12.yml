@@ -85,6 +85,9 @@ candidate_usage:
     - candidate_id: "sig_68963cee1fd4dfc2"
       title: "Does Your Agent's Memory Survive a Model Upgrade?"
       adoption_reason: "Directly addresses long-running agent state, model migration, and evidence retention."
+    - candidate_id: "sig_fe17618c10c7e4d1"
+      title: "Necessary or Sufficient? Evaluating LLM Explanations With Behavioural Evidence"
+      adoption_reason: "Used as a supplemental oversight method for checking whether agent explanations match observable behavior."
   rejected_or_deferred:
     - candidate_id: "sig_885f533fc1446e1c"
       title: "@ai-sdk/xai@2.0.94"

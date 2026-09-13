@@ -1,0 +1,198 @@
+date: "2026-09-13"
+window_start: "2026-09-12 09:00 Asia/Shanghai"
+window_end: "2026-09-13 09:00 Asia/Shanghai"
+supplemental_range: "2026-09-10 to 2026-09-13; only agent persistence, governance, reliability, and evaluation context not repeated from 2026-09-12"
+themes:
+  - agent_runtime_control_plane
+  - cross_session_persistence
+  - model_based_routing
+  - prompt_injection_defense
+  - filesystem_boundary_hardening
+  - long_running_session_reliability
+  - agent_evaluation
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Alibaba Qwen
+  - Google
+  - Anthropic
+  - Vercel
+  - OpenAI
+products:
+  - Qwen Code
+  - Gemini CLI
+  - Claude Code
+  - Vercel AI SDK workflow-harness
+  - ChatGPT Work
+signals:
+  - "Qwen Code nightly added cross-session peer messaging, persistence and restart recovery, scheduled model routing, Goal budgets, subagent integration, and hook provenance."
+  - "Gemini CLI nightly fixed indirect prompt injection paths and hardened filesystem/runtime boundaries."
+  - "Claude Code v2.1.270 fixed a long-session regression where read-only Git commands unexpectedly requested permission."
+  - "Vercel workflow-harness 1.0.109 was a low-signal dependency update."
+opinion_sources:
+  - Simon Willison
+  - Latent Space
+viewpoint_themes:
+  - long_running_agent_practice
+  - forward_deployed_engineering
+research_sources:
+  - "arXiv:2609.11911"
+  - "arXiv:2609.11900"
+research_themes:
+  - persistent_agent_alignment
+  - closed_loop_planning_evaluation
+research_artifacts:
+  - paper
+  - benchmark
+research_interpretations:
+  - "Persistent agents should expose state, authority, identity, provenance, and hard-constraint boundaries."
+  - "Static reasoning scores should not be treated as evidence of reliable closed-loop execution."
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-09-13.md"
+  adopted: []
+  rejected_or_deferred:
+    - candidate_id: "sig_828467afc3b320b1"
+      title: "General Quantification of Covariate and Concept Shifts"
+      status: "降权"
+      rejection_reason: "泛化理论与本期 agent runtime 主线连接弱。"
+    - candidate_id: "sig_32e3d7d067382752"
+      title: "Can Edge-Deployable Vision-Language Models Identify Species?"
+      status: "降权"
+      rejection_reason: "特定物种识别场景较窄。"
+    - candidate_id: "sig_56f15e314458bc45"
+      title: "Artificial Id: Drive and Persistent Alignment in Agentic AI"
+      status: "观察中"
+      rejection_reason: "作为补充研究阅读，但缺少代码或复现实验，未计入采用候选。"
+    - candidate_id: "sig_7d949bcf52ff2bfa"
+      title: "MindTopo: Can Foundation Models Reason in Topological Space?"
+      status: "降权"
+      rejection_reason: "作为评测反例补充阅读，但不构成本期产品信号。"
+    - candidate_id: "sig_5e53a2cbeb9c46e5"
+      title: "@ai-sdk/workflow-harness@1.0.109"
+      status: "观察中"
+      rejection_reason: "仅有依赖更新说明，保留为低权重背景。"
+source_checks:
+  - source_id: "local_signal_inbox"
+    checked_at: "2026-09-13 08:41 Asia/Shanghai"
+    result: "hit"
+    note: "Collected 13 public sources, exported 125 candidates, rendered review, and applied feedback to 20 blocks; review used only as a clue layer."
+  - source_id: "coding_agent_releases"
+    checked_at: "2026-09-13 08:42 Asia/Shanghai"
+    result: "hit"
+    note: "Qwen Code, Gemini CLI, Claude Code, OpenAI Codex, and Vercel release feeds checked; Qwen, Gemini, and Claude had the strongest in-window signals."
+  - source_id: "core_official_ai_news"
+    checked_at: "2026-09-13 08:42 Asia/Shanghai"
+    result: "partial"
+    note: "Checked public first-party release surfaces; no new in-window OpenAI, Anthropic model, GitHub, Microsoft, DeepSeek, or standalone Qwen model announcement was confirmed."
+  - source_id: "ai_blogger_core_radar"
+    checked_at: "2026-09-13 08:43 Asia/Shanghai"
+    result: "partial"
+    note: "Simon Willison and Latent Space yielded two usable English practice/methodology samples; strict window did not yield enough Chinese or English samples for the five-item target."
+  - source_id: "china_ai_engineering_radar"
+    checked_at: "2026-09-13 08:43 Asia/Shanghai"
+    result: "hit"
+    note: "Qwen Code nightly supplied a strong Chinese-origin runtime signal; no separate model-factory announcement met the bar."
+  - source_id: "english_ai_engineering_radar"
+    checked_at: "2026-09-13 08:43 Asia/Shanghai"
+    result: "hit"
+    note: "Gemini CLI and Claude Code release pages supplied direct execution-boundary and long-session reliability evidence."
+  - source_id: "english_research_blogs"
+    checked_at: "2026-09-13 08:43 Asia/Shanghai"
+    result: "partial"
+    note: "No new in-window research release was found; two pre-window arXiv records were retained as explicitly labeled supplemental context."
+  - source_id: "research_frontier"
+    checked_at: "2026-09-13 08:43 Asia/Shanghai"
+    result: "partial"
+    note: "Candidate arXiv records were checked against original pages; the strongest-looking items were submitted before the report window."
+evidence_items:
+  - item_id: "news-qwen-code-runtime-20260912"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-13"
+    snapshot_time: "2026-09-13 08:43 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.23.3-nightly.20260912.54aa66834b"
+    confidence_reason: "Qwen Code first-party release notes list cross-session peer messaging, persistence, routing, Goal budgets, subagents, and hook provenance changes."
+  - item_id: "news-gemini-cli-security-20260912"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-12"
+    snapshot_time: "2026-09-13 08:43 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/google-gemini/gemini-cli/releases/tag/v0.61.0-nightly.20260912.g9c1b0a610"
+    confidence_reason: "Google Gemini CLI first-party nightly release states indirect prompt-injection and filesystem-boundary fixes."
+  - item_id: "news-claude-code-permission-regression"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-13"
+    snapshot_time: "2026-09-13 08:43 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/anthropics/claude-code/releases/tag/v2.1.270"
+    confidence_reason: "Anthropic first-party release identifies the long-session read-only Git permission regression and its fix."
+  - item_id: "news-workflow-harness-10109"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-12"
+    snapshot_time: "2026-09-13 08:43 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/vercel/ai/releases/tag/%40ai-sdk%2Fworkflow-harness%401.0.109"
+    confidence_reason: "Release page confirms the version and one-line dependency update; no broader feature claim was made."
+  - item_id: "community-simon-long-running-practice"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "practice_report"
+    item_date: "2026-09-12"
+    snapshot_time: "2026-09-13 08:43 Asia/Shanghai"
+    verification_status: "partially_verified"
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Sep/12/astra-running-routes"
+    confidence_reason: "Public first-person practice report; it is evidence of one workflow, not a general capability benchmark."
+  - item_id: "community-latent-space-fde"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "methodology"
+    item_date: "2026-09-12"
+    snapshot_time: "2026-09-13 08:43 Asia/Shanghai"
+    verification_status: "partially_verified"
+    linked_primary_sources:
+      - "https://www.latent.space/p/forward-deployed-engineer-best-practices"
+    confidence_reason: "Public interview and methodology discussion; retained as context rather than product evidence."
+  - item_id: "research-artificial-id"
+    section: "AI 研究前沿"
+    source_role: "original_paper"
+    evidence_type: "paper"
+    item_date: "2026-09-11"
+    snapshot_time: "2026-09-13 08:43 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.11911"
+    confidence_reason: "Original arXiv record checked; explicitly labeled pre-window supplemental research."
+  - item_id: "research-mindtopo"
+    section: "AI 研究前沿"
+    source_role: "original_paper"
+    evidence_type: "benchmark"
+    item_date: "2026-09-11"
+    snapshot_time: "2026-09-13 08:43 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.11900"
+    confidence_reason: "Original arXiv record checked; used as a caution about closed-loop evaluation, not as a product capability claim."
+followups:
+  - "Qwen Code peer endpoint authentication, session ownership, and auditability"
+  - "Gemini CLI prompt-injection coverage across plugins, MCP, and build systems"
+  - "Claude Code long-session permission regression rate"
+  - "Whether agent benchmarks add persistence, recovery, budgets, permissions, and side-effect metrics"
+fact_confidence: high
+signal_strength: medium

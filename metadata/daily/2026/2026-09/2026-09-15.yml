@@ -1,0 +1,260 @@
+date: "2026-09-15"
+window_start: "2026-09-14 09:00 Asia/Shanghai"
+window_end: "2026-09-15 09:00 Asia/Shanghai"
+supplemental_range: "2026-09-11 to 2026-09-15; only non-repeated research and community samples that explain model routing, agent control planes, and serving efficiency"
+themes:
+  - model_routing_governance
+  - agent_runtime_control_plane
+  - cross_session_persistence
+  - workflow_recovery
+  - hook_provenance
+  - serving_system_efficiency
+  - benchmark_artifact_verification
+regions:
+  - us
+  - china
+  - global
+companies:
+  - GitHub
+  - Microsoft
+  - Alibaba Qwen
+  - OpenAI
+  - Google
+  - NVIDIA
+products:
+  - GitHub Copilot
+  - Qwen Code
+  - OpenAI Codex
+  - Gemini CLI
+  - NVIDIA Transformer Engine
+  - WorkBuddy
+signals:
+  - "GitHub Copilot auto model selection exposed efficiency, balance, and intelligence tiers for cost, quality, and latency tradeoffs."
+  - "Qwen Code v0.23.4 stable concentrated peer endpoint, Goal limits, scheduled model routing, hook provenance, subagents, workflow options, recovery, compression, and web-search budget controls."
+  - "OpenAI Codex and Gemini CLI had strict-window releases, but public notes were too sparse for strong behavior claims."
+  - "Research and engineering samples reinforced that model capability increasingly depends on serving architecture, workflow evidence, and artifact verification."
+opinion_sources:
+  - AI-Frontiers
+  - AI架构师汤师爷
+  - Simon Willison
+  - Latent Space
+  - NVIDIA Technical Blog
+viewpoint_themes:
+  - Agentic RAG
+  - 办公 agent 流程复用
+  - release hygiene
+  - RSI 产品叙事
+  - MoE training systems
+research_sources:
+  - "arXiv:2609.13134"
+  - "arXiv:2609.13082"
+research_themes:
+  - disaggregated_serving
+  - subquadratic_attention
+  - benchmark_synthesis
+  - workflow_verification
+research_artifacts:
+  - paper
+  - benchmark
+research_interpretations:
+  - "Subquadratic attention can make serving architecture part of model capability."
+  - "Benchmark and workflow construction need artifact dependency graphs, local verification, and rollback semantics."
+peripheral_themes:
+  - "AI infrastructure efficiency"
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-09-15.md"
+  adopted:
+    - candidate_id: "sig_030a37334f49aa94"
+      title: "Rethinking Heterogeneous System Disaggregation for Subquadratic Attention"
+      adoption_reason: "Directly supports the provider route and serving-system-efficiency thesis behind model routing."
+    - candidate_id: "sig_888d323af5cfba76"
+      title: "Embodied-BenchForge: A Closed-Loop Agentic Workflow for Embodied Benchmark Construction"
+      adoption_reason: "Artifact dependency, verification, repair, and rollback semantics map onto agent workflow control-plane design."
+  rejected_or_deferred:
+    - candidate_id: "sig_45466e6456b240c6"
+      title: "A Hybrid LSTM-XGBoost Framework for Multi-Horizon Stock Return Prediction Across Diversified Equity Portfolios"
+      status: "降权"
+      rejection_reason: "Finance forecasting topic was too far from the report's agent runtime and serving-system focus."
+    - candidate_id: "sig_cf5f2e910e93f300"
+      title: "CMA-OT: Hierarchical Expert Supervision for Dance-to-Music Generation"
+      status: "降权"
+      rejection_reason: "Narrow generation application with low relevance to the day's core thesis."
+    - candidate_id: "sig_f0ac7821a6538195"
+      title: "MP-Bench: Evaluating Voice Agents as a Multiparty Conversation Participant"
+      status: "观察中"
+      rejection_reason: "Useful voice-agent evaluation candidate, but weaker fit than serving and workflow control signals."
+    - candidate_id: "sig_4364dd6bc3ef6aa6"
+      title: "Autonomous Research for Open-Ended Problems: A Case Study on Telecom Ticket Retrieval"
+      status: "观察中"
+      rejection_reason: "Related to autonomous research, but not as directly tied to current product-control-plane facts."
+    - candidate_id: "sig_26fa5ffeb2c73323"
+      title: "MAxBench: A Multinomial Concept Recovery Benchmark"
+      status: "观察中"
+      rejection_reason: "Interpretability benchmark has governance value, but lower direct relevance for this issue."
+    - candidate_id: "official-subagent-qwen-v0240"
+      title: "Qwen Code v0.24.0 candidate from official-source sidecar"
+      status: "rejected"
+      rejection_reason: "The claimed release URL returned 404 during verification; report uses verified v0.23.4 instead."
+source_checks:
+  - source_id: "local_signal_inbox"
+    checked_at: "2026-09-15 08:42 Asia/Shanghai"
+    result: "hit"
+    note: "Read local review, adopted two research candidates, and applied feedback to 20 candidates."
+  - source_id: "official_source_sidecar"
+    checked_at: "2026-09-15 09:20 Asia/Shanghai"
+    result: "partial"
+    note: "Read background official-source note; independently rejected its Qwen v0.24.0 claim because the release URL returned 404."
+  - source_id: "coding_agent_releases"
+    checked_at: "2026-09-15 09:24 Asia/Shanghai"
+    result: "hit"
+    note: "Verified Qwen Code v0.23.4, OpenAI Codex rust alpha releases, and Gemini CLI nightly. Anthropic Claude Code and Cursor had no retained strict-window item."
+  - source_id: "github_copilot_changelog"
+    checked_at: "2026-09-15 09:17 Asia/Shanghai"
+    result: "hit"
+    note: "Verified September 14 Copilot auto model selection tier changelog."
+  - source_id: "core_official_ai_news"
+    checked_at: "2026-09-15 09:18 Asia/Shanghai"
+    result: "partial"
+    note: "OpenAI API changelog local fetch was noisy and ChatGPT help-center page was not retained; no new strict-window Anthropic API, Cursor, Z.ai, DeepSeek, or standalone Qwen model item was retained."
+  - source_id: "china_ai_media_signals"
+    checked_at: "2026-09-15 09:23 Asia/Shanghai"
+    result: "hit"
+    note: "CNBlogs public RSS and article pages yielded Agentic RAG and WorkBuddy practice samples."
+  - source_id: "ai_blogger_core_radar"
+    checked_at: "2026-09-15 09:22 Asia/Shanghai"
+    result: "hit"
+    note: "Simon Willison and Latent Space supplied two public English samples; NVIDIA technical blog supplied engineering context."
+  - source_id: "english_ai_engineering_radar"
+    checked_at: "2026-09-15 09:23 Asia/Shanghai"
+    result: "hit"
+    note: "NVIDIA Technical Blog and release hygiene sample retained as engineering radar context."
+  - source_id: "research_frontier"
+    checked_at: "2026-09-15 09:21 Asia/Shanghai"
+    result: "hit"
+    note: "Original arXiv pages checked for SQD and Embodied-BenchForge; both are supplemental September 11 submissions."
+  - source_id: "github_project_radar"
+    checked_at: "2026-09-15 09:24 Asia/Shanghai"
+    result: "partial"
+    note: "No separate GitHub hot-project section retained; main project signals were official Qwen/Codex/Gemini release pages."
+evidence_items:
+  - item_id: "news-copilot-auto-model-selection-tiers"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "changelog"
+    item_date: "2026-09-14"
+    snapshot_time: "2026-09-15 09:17 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection"
+    confidence_reason: "Official GitHub Changelog states the three tiers, routing behavior, rollout surfaces, and billing basis."
+  - item_id: "news-qwen-code-v0234"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-14"
+    snapshot_time: "2026-09-15 09:18 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.23.4"
+    confidence_reason: "First-party GitHub release page returned 200 and contained detailed release notes plus 2026-09-14T15:20:21Z timestamp."
+  - item_id: "news-openai-codex-alpha-cadence"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-15 09:19 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://github.com/openai/codex/releases"
+      - "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.5"
+      - "https://github.com/openai/codex/releases/tag/rust-v0.155.0-alpha.4"
+    confidence_reason: "Release list showed strict-window timestamps, but public release body did not support a stronger behavior claim."
+  - item_id: "news-gemini-cli-nightly-20260914"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-14"
+    snapshot_time: "2026-09-15 09:19 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://github.com/google-gemini/gemini-cli/releases/tag/v0.61.0-nightly.20260914.g9c1b0a610"
+    confidence_reason: "Official release page verified the nightly and timestamp; release body only pointed to full changelog."
+  - item_id: "community-agentic-rag-cnblogs"
+    section: "AI 圈博主"
+    source_role: "community"
+    evidence_type: "public_article"
+    item_date: "2026-09-14"
+    snapshot_time: "2026-09-15 09:23 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://www.cnblogs.com/aifrontiers/p/22969123"
+    confidence_reason: "Public article page exposed title and 2026-09-14 17:19 publication metadata."
+  - item_id: "community-workbuddy-office-agent"
+    section: "AI 圈博主"
+    source_role: "community"
+    evidence_type: "practice_report"
+    item_date: "2026-09-14"
+    snapshot_time: "2026-09-15 09:23 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://www.cnblogs.com/tangshiye/p/22968082"
+    confidence_reason: "Public article page exposed workflow details and 2026-09-14 publication metadata."
+  - item_id: "community-simon-commit-rewriter"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "practice_report"
+    item_date: "2026-09-14"
+    snapshot_time: "2026-09-15 09:22 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Sep/14/commit-rewriter/"
+    confidence_reason: "First-person public post describes the tool and the coding-agent commit-message cleanup use case."
+  - item_id: "community-latent-space-recursive"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "interview"
+    item_date: "2026-09-14"
+    snapshot_time: "2026-09-15 09:22 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://www.latent.space/p/recursive"
+    confidence_reason: "Public podcast/interview page and RSS metadata verified; retained as viewpoint signal, not product evidence."
+  - item_id: "community-nvidia-dropless-moe"
+    section: "AI 圈博主"
+    source_role: "official_engineering_blog"
+    evidence_type: "technical_blog"
+    item_date: "2026-09-14"
+    snapshot_time: "2026-09-15 09:23 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://developer.nvidia.com/blog/accelerating-dropless-moe-training-in-jax-with-nvidia-transformer-engine/"
+    confidence_reason: "NVIDIA Technical Blog page exposed 2026-09-14 publication metadata and concrete MoE optimization claims."
+  - item_id: "research-sqd-subquadratic-serving"
+    section: "AI 研究前沿"
+    source_role: "original_paper"
+    evidence_type: "paper"
+    item_date: "2026-09-11"
+    snapshot_time: "2026-09-15 09:21 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.13134"
+    confidence_reason: "Original arXiv page checked; explicitly labeled supplemental."
+  - item_id: "research-embodied-benchforge"
+    section: "AI 研究前沿"
+    source_role: "original_paper"
+    evidence_type: "paper"
+    item_date: "2026-09-11"
+    snapshot_time: "2026-09-15 09:21 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.13082"
+    confidence_reason: "Original arXiv page checked; explicitly labeled supplemental."
+followups:
+  - "Whether Copilot auto model selection tiers become organization policy with audit data."
+  - "Whether Qwen Code peer endpoint and Goal controls gain third-party workflow adoption."
+  - "Whether Codex rust-v0.155 alpha releases receive detailed public changelogs."
+  - "Whether Gemini CLI v0.61 nightly changes consolidate into a stable release with security/runtime notes."
+  - "Whether SQD-like serving disaggregation appears in vLLM, SGLang, TensorRT-LLM, or cloud provider routing."
+fact_confidence: high
+signal_strength: medium

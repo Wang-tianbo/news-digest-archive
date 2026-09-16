@@ -1,0 +1,298 @@
+date: "2026-09-16"
+window_start: "2026-09-15 09:00 Asia/Shanghai"
+window_end: "2026-09-16 09:00 Asia/Shanghai"
+supplemental_range: "2026-09-14 to 2026-09-16; only non-repeated research and community samples that explain voice agents, agent reliability, tool security, and reproducible open training"
+themes:
+  - voice_agent_runtime
+  - live_api_tool_calling
+  - long_session_reliability
+  - tool_security_boundary
+  - mcp_governance
+  - agent_consistency_evaluation
+  - skill_routing
+  - reproducible_training
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Google
+  - Anthropic
+  - Alibaba Qwen
+  - GitHub
+  - IBM Research
+  - Hugging Face
+products:
+  - Gemini 3.8 Live
+  - Gemini API
+  - Claude Code
+  - Gemini CLI
+  - Qwen Code CUA Driver
+  - GitHub Copilot
+  - ZGCM-1
+  - llama.cpp
+signals:
+  - "Google moved Gemini 3.8 Live and Gemini 3.8 Live Extended Thinking to GA for real-time audio-to-audio agent applications."
+  - "Claude Code v2.1.273 concentrated gateway hint headers, MCP disconnect handling, Remote Control session forking, permissions fixes, and long-session reliability repairs."
+  - "Gemini CLI v0.60.0 stabilized a set of web fetch, MCP OAuth, sandbox, filesystem, config, environment, and tool-output provenance hardening changes."
+  - "Qwen CUA Driver v0.20.9 added relative coordinate and textual MCP payload filtering switches, plus hook progress and dynamic workflow signals."
+  - "Agent evaluation samples emphasized repeatability and consistency gaps rather than single-run success."
+opinion_sources:
+  - QbitAI
+  - CNBlogs News
+  - Simon Willison
+  - Latent Space
+  - Hugging Face Blog
+viewpoint_themes:
+  - reproducible open model training
+  - voice agent implementation
+  - game-based agent training transfer
+  - agent reliability metrics
+research_sources:
+  - Google Research Blog
+  - "arXiv:2603.06397"
+  - "arXiv:2609.15989"
+  - "arXiv:2609.15982"
+research_themes:
+  - retrieval_latency
+  - offline_rl_compilation
+  - chain_of_thought_monitoring
+  - plan_injection
+  - skill_routing
+research_artifacts:
+  - research_blog
+  - paper
+research_interpretations:
+  - "Retrieve-for-Train shifts set-valued search optimization from online thinking into offline RL and distillation."
+  - "Plan injection and native skill routing both argue against relying only on prompt-context stuffing for agent control."
+peripheral_themes:
+  - "local inference systems"
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-09-16.md"
+  adopted:
+    - candidate_id: "sig_acfc7f548a899d3e"
+      title: "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train"
+      adoption_reason: "Directly explains the latency side of production agent and search systems by moving reasoning work into offline training."
+    - candidate_id: "sig_ba4d695ac600c928"
+      title: "Corrupt Plans, Clean Traces: Evading Chain-of-Thought Monitoring with Plan Injection"
+      adoption_reason: "High fit with this issue's tool security and runtime monitoring thesis."
+    - candidate_id: "sig_f4ac40dd64af35aa"
+      title: "The Router Within: Eliciting Native Skill Routing from a Frozen LLM"
+      adoption_reason: "Directly supports the skill-routing and agent control-plane thread."
+  rejected_or_deferred:
+    - candidate_id: "sig_e358e6d70eff7781"
+      title: "Stellar Colosseum: A Many-Agent Harness for Long-Horizon Research in Mathematics and Theoretical Computer Science"
+      status: "观察中"
+      rejection_reason: "Strong long-horizon research-agent candidate, but this issue prioritized voice runtime, tool boundary, and consistency metrics."
+    - candidate_id: "sig_abd193360a74dffd"
+      title: "Vulnerability Localization Benchmark: Measuring Agentic Security Analysis at Repository Scale"
+      status: "观察中"
+      rejection_reason: "High-value repository-scale security-agent benchmark, deferred to avoid overloading the research section."
+    - candidate_id: "sig_43b99d18c31ad18a"
+      title: "Recurrent GraphNeural NetworkswithSet-BasedAggregation"
+      status: "降权"
+      rejection_reason: "Theoretical GNN topic was far from this issue's agent runtime and tool-governance focus."
+    - candidate_id: "sig_12fa5a1d902258af"
+      title: "SlipSense: Multimodal Tactile Learning for Low-Latency and Generalized Slip Detection"
+      status: "降权"
+      rejection_reason: "Robotics tactile sensing candidate was less central than voice-agent and software-agent reliability signals."
+    - candidate_id: "sig_d1fe6c33e6f5345f"
+      title: "Privacy-enhanced federated learning via asynchronous aggregation and local differential perturbation"
+      status: "降权"
+      rejection_reason: "Federated learning privacy topic had weaker connection to the day's product evidence."
+    - candidate_id: "sig_a3433732c2e3b84a"
+      title: "Learning Multimodal One-step Flow Policy via Value-weighted Optimal Transport"
+      status: "降权"
+      rejection_reason: "Offline RL policy topic was lower fit for the report's agent runtime narrative."
+    - candidate_id: "sig_c9f777e8e903328d"
+      title: "LLM-Based Schema-Aware Split Learning for Privacy-Preserving Mental Distress Prediction Across Heterogeneous Surveys"
+      status: "降权"
+      rejection_reason: "Clinical privacy application was too vertical for today's main line."
+    - candidate_id: "sig_208bef9ea5f370cc"
+      title: "LongAgent: History-Guided Agentic Search for Longitudinal Outcome Prediction"
+      status: "观察中"
+      rejection_reason: "Medical longitudinal prediction agent may be useful later, but not prioritized against runtime/tooling signals."
+    - candidate_id: "sig_d381822039a30d5f"
+      title: "K-Bench: a clinically calibrated benchmark for evaluating large language models in high-risk mental health conversations"
+      status: "观察中"
+      rejection_reason: "Important high-risk safety benchmark, but less tied to this issue's voice-agent product and developer-tool evidence."
+    - candidate_id: "sig_75f64499b4f1d5de"
+      title: "Before You Poll with LLMs: A Deliberative Diagnostic Framework"
+      status: "降权"
+      rejection_reason: "Silicon sampling diagnostics were lower priority than agent reliability and tool-boundary signals."
+    - candidate_id: "sig_4140713431b7e066"
+      title: "Per-Matrix Optimality Is Not Enough: Three-Level Optimization for Low-Rank LLM Compression"
+      status: "降权"
+      rejection_reason: "Compression research was not central to the voice-agent and runtime-governance thesis."
+source_checks:
+  - source_id: "local_signal_inbox"
+    checked_at: "2026-09-16 08:42 Asia/Shanghai"
+    result: "hit"
+    note: "Read local review and adopted Retrieve-for-Train plus two agent-control papers as primary research clues."
+  - source_id: "core_official_ai_news"
+    checked_at: "2026-09-16 09:08 Asia/Shanghai"
+    result: "hit"
+    note: "Verified Google Gemini 3.8 Live blog and Gemini API release notes; OpenAI news had no retained strict-window core item beyond sparse Codex alpha releases."
+  - source_id: "coding_agent_releases"
+    checked_at: "2026-09-16 09:10 Asia/Shanghai"
+    result: "hit"
+    note: "Verified Claude Code v2.1.273, Gemini CLI v0.60.0, Qwen CUA Driver v0.20.9, Codex alpha cadence, and Windsurf/Devin Desktop patch notes."
+  - source_id: "github_copilot_changelog"
+    checked_at: "2026-09-16 09:11 Asia/Shanghai"
+    result: "hit"
+    note: "Retained Copilot custom properties suggestions; GitHub Advanced Security enforcement was checked but treated as lower AI fit."
+  - source_id: "china_ai_media_signals"
+    checked_at: "2026-09-16 09:12 Asia/Shanghai"
+    result: "partial"
+    note: "CNBlogs public index and ZGCM-1 GitHub were usable; direct news article pages were inconsistent, so retained as community line with original GitHub evidence where available."
+  - source_id: "ai_blogger_core_radar"
+    checked_at: "2026-09-16 09:12 Asia/Shanghai"
+    result: "hit"
+    note: "Simon Willison and Latent Space supplied strict-window English samples."
+  - source_id: "english_ai_engineering_radar"
+    checked_at: "2026-09-16 09:13 Asia/Shanghai"
+    result: "hit"
+    note: "Hugging Face IBM Research post and llama.cpp releases supplied reliability/eval and local inference engineering signals."
+  - source_id: "research_frontier"
+    checked_at: "2026-09-16 09:13 Asia/Shanghai"
+    result: "hit"
+    note: "Checked Google Research Retrieve-for-Train and arXiv pages for plan injection, skill routing, VLoc Bench, and Stellar Colosseum."
+  - source_id: "github_project_radar"
+    checked_at: "2026-09-16 09:14 Asia/Shanghai"
+    result: "hit"
+    note: "Retained llama.cpp as a mainline-adjacent local inference systems signal; no separate vLLM/SGLang release retained."
+evidence_items:
+  - item_id: "news-gemini-38-live-ga"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release_note"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:08 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
+      - "https://ai.google.dev/gemini-api/docs/changelog"
+    confidence_reason: "Official Google blog and Gemini API release notes list models, model IDs, Live API behavior, and GA status."
+  - item_id: "news-claude-code-v2173"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/anthropics/claude-code/releases/tag/v2.1.273"
+    confidence_reason: "First-party GitHub release page provided timestamp and detailed changelog."
+  - item_id: "news-gemini-cli-v0600"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/google-gemini/gemini-cli/releases/tag/v0.60.0"
+    confidence_reason: "Official stable release listed concrete security and sandbox-related pull requests."
+  - item_id: "news-qwen-cua-driver-v0209"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:10 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/cua-driver-rs-v0.20.9"
+    confidence_reason: "Official QwenLM release page exposed the CUA driver assets, environment switches, and changelog."
+  - item_id: "news-copilot-custom-properties"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "changelog"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:11 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions"
+    confidence_reason: "Official GitHub Changelog described the Copilot Business and Enterprise public preview."
+  - item_id: "community-zgcm1-open-training"
+    section: "AI 圈博主"
+    source_role: "community"
+    evidence_type: "public_article_and_repo"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:12 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://news.cnblogs.com/n/838028/"
+      - "https://github.com/zgcagi/ZGCM-1"
+    confidence_reason: "CNBlogs public index exposed the Chinese article metadata; GitHub repository provided original model, data, and workflow claims."
+  - item_id: "community-simon-gemini-live"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "practice_report"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:12 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Sep/15/gemini-live/"
+      - "https://ai.google.dev/gemini-api/docs/live-api/get-started-websocket"
+    confidence_reason: "Public post and linked implementation described the WebSocket and Web Audio usage."
+  - item_id: "community-latent-good-start-labs"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "interview"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:12 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://www.latent.space/p/good-start-labs"
+    confidence_reason: "Public Latent Space article contained interview details and explicit claims about games, training design, and transfer limits."
+  - item_id: "community-hf-agent-consistency"
+    section: "AI 圈博主"
+    source_role: "official_engineering_blog"
+    evidence_type: "technical_blog"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:13 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://huggingface.co/blog/ibm-research/altk-evolve-consistency"
+    confidence_reason: "Hugging Face Blog page exposed 2026-09-15 metadata and concrete Mean@5 / Pass^5 figures."
+  - item_id: "research-retrieve-for-train"
+    section: "AI 研究前沿"
+    source_role: "research"
+    evidence_type: "research_blog"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:13 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/"
+      - "https://arxiv.org/abs/2603.06397"
+    confidence_reason: "Google Research post described the framework, paper, model size, and reported speedup."
+  - item_id: "research-plan-injection-skill-routing"
+    section: "AI 研究前沿"
+    source_role: "research"
+    evidence_type: "paper"
+    item_date: "2026-09-14"
+    snapshot_time: "2026-09-16 09:13 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.15989"
+      - "https://arxiv.org/abs/2609.15982"
+    confidence_reason: "Original arXiv pages were checked and retained as supplemental agent-control research."
+  - item_id: "project-llamacpp-sep15"
+    section: "GitHub 热门项目"
+    source_role: "community"
+    evidence_type: "release"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-16 09:14 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/ggml-org/llama.cpp/releases"
+    confidence_reason: "Official GitHub releases showed strict-window build tags and low-level inference-system changes."
+followups:
+  - "Whether Gemini 3.8 Live asynchronous function calling becomes a default voice-agent pattern."
+  - "Whether Claude Code gateway hint headers appear in enterprise gateway docs or telemetry schemas."
+  - "Whether Gemini CLI v0.60.0 security fixes receive external reproduction or CVE-style discussion."
+  - "Whether Qwen CUA Driver MCP payload filtering moves into stable Qwen Code docs."
+  - "Whether Pass^k and consistency gap become regular agent benchmark fields."
+fact_confidence: high
+signal_strength: medium

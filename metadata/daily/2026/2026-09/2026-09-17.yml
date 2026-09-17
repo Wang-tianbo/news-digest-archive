@@ -1,0 +1,309 @@
+date: "2026-09-17"
+window_start: "2026-09-16 09:00 Asia/Shanghai"
+window_end: "2026-09-17 09:00 Asia/Shanghai"
+supplemental_range: "2026-09-15 to 2026-09-17; only non-repeated community and research samples that explain agent budget governance, tool discovery, and research-agent verification boundaries"
+themes:
+  - agent_budget_governance
+  - workflow_runtime_control
+  - mcp_reliability
+  - tool_discovery
+  - evaluation_model_routing
+  - api_key_governance
+  - multi_agent_social_harness
+  - local_long_context_serving
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Alibaba Qwen
+  - Anthropic
+  - GitHub
+  - Microsoft
+  - Vercel
+  - OpenAI
+products:
+  - Qwen Code
+  - Claude Code
+  - GitHub Copilot
+  - Vercel AI SDK
+  - OpenAI API
+  - Codex
+  - OpenClaw.NET
+signals:
+  - "Qwen Code v0.24.0 exposed workflow token budgets, budget-based ACP child admission, cross-session messaging defaults, workflow provenance, hook progress, and Goal lifecycle telemetry."
+  - "Claude Code v2.1.274 concentrated MCP startup and timeout controls, OpenTelemetry fields, context compaction/resume fixes, and background-agent reliability repairs."
+  - "GitHub Copilot budget increase requests reached GA, turning exhausted AI credits into an approvable organization or enterprise workflow."
+  - "Vercel AI SDK added experimental evaluation models, registry resolution, tool search, and mid-conversation tool discovery."
+  - "OpenAI API key creation governance controls reinforced organization-level credential lifecycle management."
+opinion_sources:
+  - 程序员徐公
+  - 张善友
+  - Simon Willison
+  - Latent Space
+  - AI Snake Oil
+viewpoint_themes:
+  - agent_capacity_planning
+  - llm_secret_management
+  - agent_product_convergence
+  - agent_liability_and_insurance
+  - normal_technology_risk_view
+research_sources:
+  - "arXiv:2609.17527"
+  - "arXiv:2609.17523"
+  - "arXiv:2609.17475"
+research_themes:
+  - multi_agent_coordination
+  - social_harness
+  - scientific_agent_self_improvement
+  - execution_evidence_learning
+  - local_llm_state_management
+research_artifacts:
+  - paper
+  - system_prototype
+research_interpretations:
+  - "Multi-agent systems need governance over communication relationships, not just private agent harnesses."
+  - "Research-agent improvement depends on tasks, rubrics, execution evidence, harness iteration, and model learning together."
+  - "Local long-context coding agents are constrained by runtime state management as much as model weights."
+peripheral_themes:
+  - "enterprise governance"
+  - "local inference systems"
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-09-17.md"
+  adopted:
+    - candidate_id: "sig_638cbdf04999eb8c"
+      title: "Agentic Societies Need a Social Harness"
+      adoption_reason: "Directly supports the multi-agent communication and cross-session governance thesis."
+    - candidate_id: "sig_f063606a8e01518a"
+      title: "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents"
+      adoption_reason: "Explains why agent improvement needs harness evolution, execution evidence, and model learning together."
+    - candidate_id: "sig_0ea8d75638880298"
+      title: "JustFit: 200K-Token LLM Serving on a 24 GiB Laptop with Just-in-Time State Management"
+      adoption_reason: "Connects local coding-agent usefulness to long-context state management and serving transitions."
+    - candidate_id: "sig_7f803af_alibaba_reasoning"
+      title: "@ai-sdk/alibaba@2.0.49"
+      adoption_reason: "Retained as secondary evidence for provider-level multi-turn reasoning preservation."
+  rejected_or_deferred:
+    - candidate_id: "sig_9f14ffca3e9c2a6f"
+      title: "PhysStream: Streaming Physics-Grounded Video Generation with Structured Scene Memory and Fine-Grained Motion Control"
+      status: "观察中"
+      rejection_reason: "Interesting video-generation control paper, but weaker fit than agent budget and runtime governance."
+    - candidate_id: "sig_4d38d80fdf145561"
+      title: "When Should LLMs Abstain? Chain-of-Self-Questioning for Selective Risk Control"
+      status: "观察中"
+      rejection_reason: "Useful selective-risk-control candidate, deferred to keep research section focused on agent systems."
+    - candidate_id: "sig_6e00027626a0bd8a"
+      title: "Decomposition Buys Integrity, Not Yield"
+      status: "观察中"
+      rejection_reason: "Relevant to multi-agent decomposition, but not retained because social harness was a closer fit to product evidence."
+    - candidate_id: "sig_codex_alpha_cadence_20260916"
+      title: "OpenAI Codex Rust alpha cadence"
+      status: "降权"
+      rejection_reason: "Multiple in-window releases were verified, but public release bodies were too sparse for behavior claims."
+    - candidate_id: "sig_gemini_cli_nightly_20260916"
+      title: "Gemini CLI v0.62.0-nightly.20260916"
+      status: "降权"
+      rejection_reason: "Official release existed, but higher-signal Gemini CLI safety changes were already covered by the prior day's stable release."
+source_checks:
+  - source_id: "local_signal_inbox"
+    checked_at: "2026-09-17 09:45 Asia/Shanghai"
+    result: "hit"
+    note: "Collected 13 public sources, exported 178 candidates, rendered review, and used it only as a clue layer."
+  - source_id: "core_official_ai_news"
+    checked_at: "2026-09-17 09:47 Asia/Shanghai"
+    result: "hit"
+    note: "Verified Qwen Code, Claude Code, GitHub Changelog, Vercel AI SDK, OpenAI API changelog, Codex releases, and Gemini API release notes."
+  - source_id: "coding_agent_releases"
+    checked_at: "2026-09-17 09:47 Asia/Shanghai"
+    result: "hit"
+    note: "Retained Qwen Code v0.24.0, Claude Code v2.1.274, Copilot budget requests, and Vercel AI SDK; Codex alpha and Gemini nightly were verified but downgraded for low public detail."
+  - source_id: "github_copilot_changelog"
+    checked_at: "2026-09-17 09:47 Asia/Shanghai"
+    result: "hit"
+    note: "Verified September 16 Copilot budget increase requests GA and used September 14/15 Copilot governance items as background."
+  - source_id: "ai_blogger_core_radar"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "hit"
+    note: "Simon Willison, Latent Space, and AI Snake Oil supplied public English samples."
+  - source_id: "ai_blogger_free_opinion_pool"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "hit"
+    note: "Used public blogs and newsletter posts only; X-only and private sources were not used."
+  - source_id: "china_ai_media_signals"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "partial"
+    note: "CNBlogs public pages supplied two Chinese samples; broader Chinese media scan was limited and no model-company official announcement was retained."
+  - source_id: "china_ai_engineering_radar"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "hit"
+    note: "Qwen Code release and OpenClaw.NET security article supplied Chinese-origin engineering signals."
+  - source_id: "english_ai_engineering_radar"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "hit"
+    note: "Vercel AI SDK release feed and Simon Willison product/practice posts were checked; retained Vercel and Simon items."
+  - source_id: "english_agent_infra_radar"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "hit"
+    note: "Retained AI SDK tool discovery and evaluation-model changes as agent infrastructure signals."
+  - source_id: "english_research_blogs"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "partial"
+    note: "Google Research had no retained agent-governance item; arXiv candidate review supplied stronger research evidence."
+  - source_id: "english_industry_analysis"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "hit"
+    note: "Latent Space and AI Snake Oil supplied liability and governance perspective samples."
+  - source_id: "english_safety_governance"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "hit"
+    note: "AI Snake Oil and OpenAI/GitHub governance changes were retained as safety/governance context."
+  - source_id: "research_frontier"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "hit"
+    note: "Checked original arXiv pages for social harness, ScienceBuddy, JustFit, and other candidates; retained three."
+  - source_id: "github_project_radar"
+    checked_at: "2026-09-17 09:48 Asia/Shanghai"
+    result: "hit"
+    note: "Retained Vercel AI SDK due to concrete agent-evaluation and tool-discovery release notes; did not use mainline Codex/Gemini/Claude repos as hot-project filler."
+evidence_items:
+  - item_id: "news-qwen-code-v0240"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-16"
+    snapshot_time: "2026-09-17 09:47 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.24.0"
+    confidence_reason: "First-party GitHub release lists workflow budgets, ACP admission, cross-session messaging, hook progress, telemetry, and workflow provenance changes."
+  - item_id: "news-claude-code-v2174"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-17"
+    snapshot_time: "2026-09-17 09:47 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/anthropics/claude-code/releases/tag/v2.1.274"
+    confidence_reason: "First-party release page lists concrete MCP, OTel, memory, resume, background-agent, and gateway reliability changes."
+  - item_id: "news-copilot-budget-requests-ga"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "changelog"
+    item_date: "2026-09-16"
+    snapshot_time: "2026-09-17 09:47 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available"
+    confidence_reason: "Official GitHub Changelog states GA status, request routing, reviewer roles, and usage-based billing plan availability."
+  - item_id: "news-vercel-ai-evaluation-tool-discovery"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-16"
+    snapshot_time: "2026-09-17 09:47 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/vercel/ai/releases/tag/ai%407.0.103"
+      - "https://github.com/vercel/ai/releases/tag/ai%407.0.104"
+    confidence_reason: "First-party release notes list experimental evaluation model specification, model aliases, registry resolution, tool search, and mid-conversation tool discovery."
+  - item_id: "news-openai-api-key-governance"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "changelog"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-17 09:47 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://platform.openai.com/docs/changelog"
+    confidence_reason: "Official OpenAI API changelog describes organization and project API key creation governance controls."
+  - item_id: "community-cn-codex-reset-radar"
+    section: "AI 圈博主"
+    source_role: "community"
+    evidence_type: "practice_report"
+    item_date: "2026-09-16"
+    snapshot_time: "2026-09-17 09:48 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://www.cnblogs.com/gdutxiaoxu/p/23002964"
+    confidence_reason: "Public CNBlogs post with timestamp; retained as community practice sample, not official Codex evidence."
+  - item_id: "community-openclaw-vault-secret-provider"
+    section: "AI 圈博主"
+    source_role: "community"
+    evidence_type: "public_article_and_repo"
+    item_date: "2026-09-16"
+    snapshot_time: "2026-09-17 09:48 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://www.cnblogs.com/shanyou/p/23002448"
+      - "https://github.com/clawdotnet/openclaw.net"
+    confidence_reason: "Public article links project, PR, and security docs; retained as engineering security signal."
+  - item_id: "community-simon-one-claude"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "product_observation"
+    item_date: "2026-09-16"
+    snapshot_time: "2026-09-17 09:48 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://simonwillison.net/2026/Sep/16/one-claude"
+    confidence_reason: "Public product observation from a tracked engineering blogger; not used as a primary Anthropic source."
+  - item_id: "community-latent-space-aiuc"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "interview"
+    item_date: "2026-09-16"
+    snapshot_time: "2026-09-17 09:48 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://www.latent.space/p/aiuc"
+    confidence_reason: "Public interview retained as liability and third-party evaluation viewpoint sample."
+  - item_id: "community-ai-snake-oil-normal-tech"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "analysis"
+    item_date: "2026-09-14"
+    snapshot_time: "2026-09-17 09:48 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://www.normaltech.ai/p/the-ai-as-normal-technology-view"
+    confidence_reason: "Public risk-governance analysis retained as supplemental viewpoint sample."
+  - item_id: "research-social-harness"
+    section: "AI 研究前沿"
+    source_role: "original_paper"
+    evidence_type: "paper"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-17 09:48 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.17527"
+    confidence_reason: "Original arXiv record checked; directly relevant to multi-agent communication governance."
+  - item_id: "research-sciencebuddy"
+    section: "AI 研究前沿"
+    source_role: "original_paper"
+    evidence_type: "paper"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-17 09:48 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.17523"
+    confidence_reason: "Original arXiv record checked; used as research-agent harness and evidence-learning signal."
+  - item_id: "research-justfit"
+    section: "AI 研究前沿"
+    source_role: "original_paper"
+    evidence_type: "paper"
+    item_date: "2026-09-15"
+    snapshot_time: "2026-09-17 09:48 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.17475"
+    confidence_reason: "Original arXiv record checked; local long-context serving claims explicitly treated as needing third-party reproduction."
+followups:
+  - "Whether Qwen Code workflow budgets and ACP child admission become stable third-party workflow primitives"
+  - "Whether Claude Code MCP and resume fixes measurably reduce long-session failure rates"
+  - "Whether Copilot budget requests integrate with auto model selection tiers and team policy"
+  - "Whether Vercel AI SDK experimental evaluation and tool discovery APIs graduate into stable contracts"
+  - "Whether social harness, ScienceBuddy, and JustFit provide reproducible artifacts"
+fact_confidence: high
+signal_strength: medium

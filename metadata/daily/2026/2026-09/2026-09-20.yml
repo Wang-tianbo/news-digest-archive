@@ -1,0 +1,183 @@
+date: "2026-09-20"
+window_start: "2026-09-19 09:00 Asia/Shanghai"
+window_end: "2026-09-20 09:00 Asia/Shanghai"
+supplemental_range: "2026-09-17 to 2026-09-20; only non-repeated high-value items about model governance, coding-agent lifecycle, and computer-use agents"
+themes:
+  - model_lifecycle_governance
+  - ai_behavior_reporting
+  - coding_agent_mode_routing
+  - copilot_enterprise_governance
+  - computer_use_agents
+regions:
+  - us
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - GitHub
+  - Google
+  - Microsoft
+products:
+  - ChatGPT
+  - Codex
+  - Claude Code
+  - GitHub Copilot
+  - Gemini API
+  - Cua
+signals:
+  - "OpenAI published a misalignment reporting framework for classifying and disclosing concerning AI behavior."
+  - "OpenAI Learn reminded Codex and ChatGPT users that GPT-5.5 retires on 2026-09-29 and named migration targets."
+  - "Claude Code v2.1.278 moved Auto mode classifier behavior server-side."
+  - "GitHub Copilot weekly releases emphasized follow-up commit review, network configuration, model picker visibility, CLI updates, and upcoming model deprecations."
+  - "Google Gemini API deprecations page continues to expose model deprecation, shutdown, and replacement information."
+opinion_sources:
+  - Bill Gates
+  - Hacker News
+viewpoint_themes:
+  - ai_in_education
+  - computer_use_agent_community_signal
+research_sources: []
+research_themes: []
+research_artifacts: []
+research_interpretations: []
+peripheral_themes:
+  - "education adoption"
+candidate_usage:
+  used_local_signal_inbox: false
+  review_path: null
+  adopted: []
+  rejected_or_deferred:
+    - candidate_id: "local_signal_review_2026_09_20"
+      status: "missing"
+      rejection_reason: "No .codex-run/signal-reviews/2026-09-20.md file was present during watchdog backfill."
+source_checks:
+  - source_id: "local_signal_inbox"
+    checked_at: "2026-09-20 09:37 Asia/Shanghai"
+    result: "miss"
+    note: "No local signal review file found for 2026-09-20."
+  - source_id: "core_official_ai_news"
+    checked_at: "2026-09-20 09:39 Asia/Shanghai"
+    result: "hit"
+    note: "Retained OpenAI misalignment framework, OpenAI Learn Codex weekly note, Claude Code release, GitHub Changelog, and Gemini API deprecations page."
+  - source_id: "coding_agent_releases"
+    checked_at: "2026-09-20 09:39 Asia/Shanghai"
+    result: "hit"
+    note: "Retained Claude Code v2.1.278 and GitHub Copilot September 18 weekly/model lifecycle updates."
+  - source_id: "github_copilot_changelog"
+    checked_at: "2026-09-20 09:39 Asia/Shanghai"
+    result: "hit"
+    note: "Used official September 18 Copilot weekly release and model deprecation changelog entries."
+  - source_id: "openai_official_sources"
+    checked_at: "2026-09-20 09:39 Asia/Shanghai"
+    result: "hit"
+    note: "Used OpenAI official misalignment framework and OpenAI Learn Codex update page."
+  - source_id: "google_gemini_lifecycle"
+    checked_at: "2026-09-20 09:39 Asia/Shanghai"
+    result: "hit"
+    note: "Used official Gemini API deprecations table updated 2026-09-17."
+  - source_id: "ai_blogger_core_radar"
+    checked_at: "2026-09-20 09:39 Asia/Shanghai"
+    result: "partial"
+    note: "Only Gates Notes and Hacker News/Cua were retained; broader public viewpoint scan had limited high-confidence fresh signal."
+  - source_id: "ai_blogger_free_opinion_pool"
+    checked_at: "2026-09-20 09:39 Asia/Shanghai"
+    result: "partial"
+    note: "Retained two reproducible public samples and avoided filling five slots with low-signal repeats."
+  - source_id: "research_frontier"
+    checked_at: "2026-09-20 09:39 Asia/Shanghai"
+    result: "miss"
+    note: "No high-value research item was retained for this concise watchdog backfill."
+  - source_id: "github_project_radar"
+    checked_at: "2026-09-20 09:39 Asia/Shanghai"
+    result: "hit"
+    note: "Retained trycua/cua as a computer-use agent project signal due to public repository and Hacker News discussion."
+evidence_items:
+  - item_id: "news-openai-misalignment-framework"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "policy_framework"
+    item_date: "2026-09-17"
+    snapshot_time: "2026-09-20 09:39 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://openai.com/index/misalignment-reporting-framework/"
+    confidence_reason: "Official OpenAI post describes the reporting framework and examples of tracked behavior categories."
+  - item_id: "news-openai-codex-gpt55-retirement"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "weekly_update"
+    item_date: "2026-09-18"
+    snapshot_time: "2026-09-20 09:39 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://learn.chatgpt.com/codex/whats-new"
+    confidence_reason: "OpenAI Learn page lists the September 14-18 Codex update and GPT-5.5 retirement timing."
+  - item_id: "news-claude-code-v2178"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "release"
+    item_date: "2026-09-19"
+    snapshot_time: "2026-09-20 09:39 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.com/anthropics/claude-code/releases/tag/v2.1.278"
+    confidence_reason: "First-party GitHub release states Auto mode classifier now works server-side."
+  - item_id: "news-github-copilot-weekly"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "changelog"
+    item_date: "2026-09-18"
+    snapshot_time: "2026-09-20 09:39 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14/"
+    confidence_reason: "Official GitHub Changelog weekly roundup lists Copilot coding agent, CLI, Azure extension, model visibility, JetBrains, and mobile updates."
+  - item_id: "news-github-copilot-model-deprecations"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "changelog"
+    item_date: "2026-09-18"
+    snapshot_time: "2026-09-20 09:39 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october/"
+    confidence_reason: "Official GitHub Changelog announces upcoming selected Copilot model deprecations."
+  - item_id: "news-google-gemini-deprecations"
+    section: "AI 新闻"
+    source_role: "official"
+    evidence_type: "documentation"
+    item_date: "2026-09-17"
+    snapshot_time: "2026-09-20 09:39 Asia/Shanghai"
+    verification_status: "verified"
+    linked_primary_sources:
+      - "https://ai.google.dev/gemini-api/docs/deprecations"
+    confidence_reason: "Official Gemini API documentation lists deprecation, shutdown, and replacement model data."
+  - item_id: "community-gates-ai-learning"
+    section: "AI 圈博主"
+    source_role: "opinion"
+    evidence_type: "public_blog"
+    item_date: "2026-09-19"
+    snapshot_time: "2026-09-20 09:39 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://www.gatesnotes.com/artificial-intelligence-and-learning"
+    confidence_reason: "Public Gates Notes post retained as opinion sample, not as primary product evidence."
+  - item_id: "community-cua-hn"
+    section: "AI 圈博主"
+    source_role: "community"
+    evidence_type: "discussion_and_repository"
+    item_date: "2026-09-20"
+    snapshot_time: "2026-09-20 09:39 Asia/Shanghai"
+    verification_status: "partial"
+    linked_primary_sources:
+      - "https://news.ycombinator.com/item?id=45309709"
+      - "https://github.com/trycua/cua"
+    confidence_reason: "Public repository and Hacker News discussion show community attention; capability claims were not treated as third-party verified."
+followups:
+  - "Check whether GPT-5.5 retirement on 2026-09-29 affects Codex automation defaults or archived prompts."
+  - "Watch for Claude Code documentation explaining server-side Auto mode classifier controls, logs, or overrides."
+  - "Review GitHub Copilot model deprecation details before mid-October to avoid stale enterprise defaults."
+  - "Track whether OpenAI misalignment framework produces repeatable public case studies."
+  - "Track trycua/cua for benchmark, sandboxing, and independent replication evidence."
+fact_confidence: high
+signal_strength: medium

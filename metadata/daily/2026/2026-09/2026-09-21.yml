@@ -1,0 +1,205 @@
+date: "2026-09-21"
+generated_at: "2026-09-21T09:11:00+08:00"
+timezone: "Asia/Shanghai"
+window_start: "2026-09-20 09:00 Asia/Shanghai"
+window_end: "2026-09-21 09:00 Asia/Shanghai"
+supplemental_range:
+  start: "2026-09-18"
+  end: "2026-09-21"
+  policy: "only non-duplicative high-signal items explaining agent runtime, embodied-agent safety, and AI infrastructure financing"
+fact_confidence: high
+signal_strength: medium
+themes:
+  - agent_runtime_governance
+  - coding_agent_reliability
+  - tool_discovery
+  - embodied_agent_safety
+  - world_models
+  - ai_infrastructure_finance
+signals:
+  - "项目指令与网关边界"
+  - "工具发现与流式失败恢复"
+  - "机器人安全 harness"
+  - "物理世界长期记忆"
+  - "AI 基建表外融资"
+companies:
+  - Anthropic
+  - Alibaba Qwen
+  - Vercel
+  - Google
+  - OpenAI
+  - Emulate
+  - Positron
+products:
+  - Claude Code
+  - Qwen Code
+  - Vercel AI SDK
+  - Gemini CLI
+  - OpenAI Codex
+  - MilleMiglia
+opinion_sources:
+  - Simon Willison
+  - Latent Space
+viewpoint_themes:
+  - "LLM 密钥本地管理"
+  - "AI 产品形态快速复制"
+research_sources:
+  - "arXiv:2609.20822"
+  - "arXiv:2609.20820"
+  - "Google Research MilleMiglia"
+  - "Google Research generative UI for teachers"
+research_themes:
+  - robot_coding_agent_safety
+  - robotic_workspace_memory
+  - logistics_task_generation
+  - education_generative_ui
+research_artifacts:
+  - paper
+  - research_blog
+  - benchmark
+research_interpretations:
+  - none
+peripheral_themes:
+  - "AI 基建融资"
+  - "世界模型投资"
+  - "推理芯片"
+source_checks:
+  - group: coding_agent_releases
+    checked_at: "2026-09-21T09:11:00+08:00"
+    result: hit
+    notes: "GitHub API checked Claude Code, Qwen Code, Gemini CLI, OpenAI Codex, Vercel AI SDK releases; Codex rust-v0.155.1 bugfix body and rust-v0.156 alpha cadence were verified."
+  - group: research_frontier
+    checked_at: "2026-09-21T08:42:00+08:00"
+    result: hit
+    notes: "Local arXiv and Google Research feeds surfaced robotics safety, robotic memory, logistics and education UI research."
+  - group: ai_blogger_core_radar
+    checked_at: "2026-09-21T08:42:00+08:00"
+    result: partial
+    notes: "Simon Willison and Latent Space had relevant English public items; no fresh Chinese public samples were adopted."
+  - group: investment_signals
+    checked_at: "2026-09-21T08:49:00+08:00"
+    result: hit
+    notes: "FT and WSJ reports used for AI infrastructure financing, world-model startup valuation, and inference-chip funding."
+  - group: china_ai_media_signals
+    checked_at: "2026-09-21T08:48:00+08:00"
+    result: miss
+    notes: "No high-confidence fresh Chinese public item selected for this issue."
+evidence_items:
+  - title: "Claude Code v2.1.277"
+    source_role: official
+    evidence_type: release
+    item_date: "2026-09-18"
+    url: "https://github.com/anthropics/claude-code/releases/tag/v2.1.277"
+    verification_status: verified
+  - title: "Claude Code v2.1.278"
+    source_role: official
+    evidence_type: release
+    item_date: "2026-09-19"
+    url: "https://github.com/anthropics/claude-code/releases/tag/v2.1.278"
+    verification_status: verified
+  - title: "Qwen Code v0.24.2"
+    source_role: official
+    evidence_type: release
+    item_date: "2026-09-20"
+    url: "https://github.com/QwenLM/qwen-code/releases/tag/v0.24.2"
+    verification_status: verified
+  - title: "Qwen Code v0.24.2 nightly"
+    source_role: official
+    evidence_type: release
+    item_date: "2026-09-20"
+    url: "https://github.com/QwenLM/qwen-code/releases/tag/v0.24.2-nightly.20260920.eceaede18e"
+    verification_status: verified
+  - title: "Vercel AI SDK ai@7.0.107"
+    source_role: official
+    evidence_type: release
+    item_date: "2026-09-18"
+    url: "https://github.com/vercel/ai/releases/tag/ai%407.0.107"
+    verification_status: verified
+  - title: "Gemini CLI v0.62.0-nightly.20260919"
+    source_role: official
+    evidence_type: release
+    item_date: "2026-09-19"
+    url: "https://github.com/google-gemini/gemini-cli/releases/tag/v0.62.0-nightly.20260919.gcfbcaa8df"
+    verification_status: verified
+  - title: "OpenAI Codex releases"
+    source_role: official
+    evidence_type: release_index
+    item_date: "2026-09-21"
+    url: "https://github.com/openai/codex/releases"
+    verification_status: verified
+  - title: "OpenAI Codex rust-v0.155.1"
+    source_role: official
+    evidence_type: release
+    item_date: "2026-09-18"
+    url: "https://github.com/openai/codex/releases/tag/rust-v0.155.1"
+    verification_status: verified
+  - title: "llm-keys-ui 0.1"
+    source_role: opinion
+    evidence_type: blog
+    item_date: "2026-09-20"
+    url: "https://simonwillison.net/2026/Sep/20/llm-keys-ui/"
+    verification_status: verified
+  - title: "Here are 6 Clones of Jev in 2 days"
+    source_role: opinion
+    evidence_type: newsletter
+    item_date: "2026-09-19"
+    url: "https://www.latent.space/p/ainews-here-are-6-clones-of-jev-in"
+    verification_status: partial
+  - title: "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulation"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-09-18"
+    url: "https://arxiv.org/abs/2609.20822v1"
+    verification_status: verified
+  - title: "Workspace Models"
+    source_role: research
+    evidence_type: paper
+    item_date: "2026-09-18"
+    url: "https://arxiv.org/abs/2609.20820v1"
+    verification_status: verified
+  - title: "MilleMiglia"
+    source_role: research
+    evidence_type: research_blog
+    item_date: "2026-09-18"
+    url: "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/"
+    verification_status: verified
+  - title: "The future of practice"
+    source_role: research
+    evidence_type: research_blog
+    item_date: "2026-09-17"
+    url: "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/"
+    verification_status: verified
+  - title: "Big Tech uses guarantees to keep $300bn of AI exposure off balance sheets"
+    source_role: media
+    evidence_type: financial_report
+    item_date: "2026-09-21"
+    url: "https://www.ft.com/content/7f11afae-c4e3-4054-a65b-873f3647f563"
+    verification_status: partial
+  - title: "Google DeepMind offshoot nears $4bn valuation"
+    source_role: media
+    evidence_type: funding_report
+    item_date: "2026-09-18"
+    url: "https://www.ft.com/content/0b83cb60-0d07-49a7-a46a-654077a75b39"
+    verification_status: partial
+  - title: "Positron valued at $5 billion"
+    source_role: media
+    evidence_type: funding_report
+    item_date: "2026-09-14"
+    url: "https://www.wsj.com/tech/ai/positron-valued-at-5-billion-in-new-funding-as-cpu-demand-surges-76dde819"
+    verification_status: partial
+candidate_usage:
+  used_review: ".codex-run/signal-reviews/2026-09-21.md"
+  adopted:
+    - sig_84be19d635f33f51
+    - sig_8e408562bddc8818
+    - sig_fb0ebe24a1ef5757
+  rejected_or_deprioritized:
+    - candidate: "Gemini / Codex empty version churn"
+      reason: "recorded only when useful, not treated as strong signal without behavior notes"
+    - candidate: "older 2026-09-17 arXiv items"
+      reason: "already covered or lower freshness than 2026-09-18 robotics papers"
+followups:
+  - "Claude Code AGENTS.md 是否推动跨工具项目指令格式收敛。"
+  - "Qwen Code web-shell / Live Voice 是否补充权限和审计说明。"
+  - "机器人 coding-agent safety harness 是否出现代码或第三方复现。"
+  - "AI 基建表外融资是否影响模型供应、价格或限额。"

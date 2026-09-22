@@ -1,0 +1,282 @@
+date: "2026-09-22"
+generated_at: "2026-09-22T09:20:00+08:00"
+timezone: "Asia/Shanghai"
+window_start: "2026-09-21 09:00 Asia/Shanghai"
+window_end: "2026-09-22 09:00 Asia/Shanghai"
+supplemental_range:
+  start: "2026-09-18"
+  end: "2026-09-22"
+  policy: "only non-duplicative high-signal community/framework/research items explaining agent runtime contracts, model routing, and coding-agent training environments"
+fact_confidence: high
+signal_strength: medium
+themes:
+  - model_routing
+  - agent_runtime_governance
+  - tool_execution_contracts
+  - coding_agent_training
+  - procedural_memory
+  - multimodal_generation_api_lifecycle
+regions:
+  - us
+  - china
+companies:
+  - xAI
+  - GitHub
+  - Anysphere
+  - Alibaba Qwen
+  - Vercel
+  - Tencent Cloud
+  - LobeHub
+  - LangChain
+  - Pydantic
+  - Ollama
+products:
+  - Grok 4.7
+  - GitHub Copilot
+  - Cursor
+  - Qwen Code
+  - Vercel AI SDK
+  - Tencent Hunyuan 3D
+  - LobeHub
+  - LangChain
+  - Pydantic AI
+  - Ollama
+signals:
+  - "新模型快速进入 IDE / coding-agent"
+  - "Web Shell 轨迹指标与结构化 shell 结果"
+  - "工具执行合同收紧"
+  - "runtime/session 持久化"
+  - "程序记忆与自动训练环境"
+opinion_sources:
+  - LobeHub GitHub releases
+  - Qwen Code nightly release
+  - LangChain releases
+  - Pydantic AI releases
+  - Ollama releases
+viewpoint_themes:
+  - "AI 客户端多 agent 计量"
+  - "workspace session catalog"
+  - "模型路由与类型安全"
+  - "工具执行约束"
+  - "thinking controls metadata"
+research_sources:
+  - "arXiv:2609.22068"
+  - "arXiv:2609.22086"
+research_themes:
+  - coding_agent_rl_environments
+  - procedural_memory
+  - agentic_design
+research_artifacts:
+  - paper
+research_interpretations:
+  - none
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: ".codex-run/signal-reviews/2026-09-22.md"
+  adopted:
+    - candidate_id: "sig_bf46d05d6f786508"
+      title: "CodeMidas: Scaling Agentic Coding RL Environments from Code Itself"
+      adoption_reason: "high fit for coding-agent RL environment generation; verified via arXiv original"
+    - candidate_id: "sig_0850c6376e6c8ca1"
+      title: "Designer-RSI: Evolving Procedural Memory from User Traffic for Agentic Graphic Design"
+      adoption_reason: "high fit for procedural memory / skills trend; verified via arXiv original"
+  rejected_or_deferred:
+    - candidate_id: "sig_d2e6bba898c2b04d"
+      title: "NemotronLabs VoiceChat"
+      status: "deferred"
+      rejection_reason: "useful full-duplex voice-agent signal but lower fit than coding-agent and procedural-memory items for this issue"
+    - candidate_id: "sig_2905f4c52cdbc479"
+      title: "Value-Sensitive Delegation in Everyday AI Agent Use"
+      status: "deferred"
+      rejection_reason: "interesting agent adoption research, but not as directly tied to today's product/runtime signals"
+    - candidate_id: "sig_987a99adcb795b29"
+      title: "DiaVLo"
+      status: "deferred"
+      rejection_reason: "VLM diagnosis topic was less central to the day's coding-agent/product-control theme"
+source_checks:
+  - source_id: "local_signal_inbox"
+    checked_at: "2026-09-22 09:08 Asia/Shanghai"
+    result: hit
+    note: "Read optional local candidate review as clue layer; adopted two arXiv candidates after primary verification."
+  - source_id: "coding_agent_releases"
+    checked_at: "2026-09-22 09:12 Asia/Shanghai"
+    result: hit
+    note: "Checked Qwen Code, Codex, Gemini CLI, Vercel AI SDK, GitHub Copilot and Cursor; selected Qwen Code, Vercel AI SDK, Copilot/Cursor Grok 4.7."
+  - source_id: "core_official_ai_news"
+    checked_at: "2026-09-22 09:13 Asia/Shanghai"
+    result: hit
+    note: "Checked xAI, GitHub Changelog and Cursor official pages for Grok 4.7 developer-tool distribution."
+  - source_id: "china_model_officials"
+    checked_at: "2026-09-22 09:14 Asia/Shanghai"
+    result: hit
+    note: "Checked Tencent Hunyuan cloud announcement stream; selected Hunyuan 3D API migration/deprecation notice."
+  - source_id: "ai_blogger_free_opinion_pool"
+    checked_at: "2026-09-22 09:16 Asia/Shanghai"
+    result: hit
+    note: "Included reproducible GitHub release/community signals instead of X-only sources."
+  - source_id: "china_ai_media_signals"
+    checked_at: "2026-09-22 09:15 Asia/Shanghai"
+    result: partial
+    note: "No separate Chinese media item adopted; official Tencent and GitHub release sources supplied stronger evidence."
+  - source_id: "china_ai_engineering_radar"
+    checked_at: "2026-09-22 09:16 Asia/Shanghai"
+    result: hit
+    note: "Checked LobeHub, Cherry Studio, Dify and RAGFlow release streams; adopted LobeHub and Qwen Code nightly."
+  - source_id: "china_research_community"
+    checked_at: "2026-09-22 09:17 Asia/Shanghai"
+    result: partial
+    note: "Checked local arXiv candidates and Chinese engineering streams; no separate Chinese research-community article adopted."
+  - source_id: "english_ai_engineering_radar"
+    checked_at: "2026-09-22 09:17 Asia/Shanghai"
+    result: hit
+    note: "Checked Vercel AI SDK, Ollama, Pydantic AI, Aider and related release streams; adopted Vercel/Ollama/Pydantic signals."
+  - source_id: "english_agent_infra_radar"
+    checked_at: "2026-09-22 09:17 Asia/Shanghai"
+    result: hit
+    note: "Checked LangChain, Pydantic AI, CrewAI and framework releases; adopted LangChain/Pydantic items."
+  - source_id: "english_inference_platforms"
+    checked_at: "2026-09-22 09:18 Asia/Shanghai"
+    result: partial
+    note: "Checked OpenRouter/Grok-related provider context through Vercel AI SDK xAI package; no separate inference-platform article adopted."
+  - source_id: "english_research_blogs"
+    checked_at: "2026-09-22 09:18 Asia/Shanghai"
+    result: miss
+    note: "No non-repeated high-value English research blog selected; arXiv originals carried the research section."
+  - source_id: "english_industry_analysis"
+    checked_at: "2026-09-22 09:18 Asia/Shanghai"
+    result: miss
+    note: "No high-confidence adjacent industry analysis included in this issue."
+  - source_id: "english_safety_governance"
+    checked_at: "2026-09-22 09:18 Asia/Shanghai"
+    result: partial
+    note: "Safety/governance relevance appeared through tool execution and API lifecycle evidence rather than a separate governance source."
+  - source_id: "research_frontier"
+    checked_at: "2026-09-22 09:19 Asia/Shanghai"
+    result: hit
+    note: "Verified CodeMidas and Designer-RSI via arXiv original records; both are supplemental, not strict-window publications."
+  - source_id: "github_trending_ai"
+    checked_at: "2026-09-22 09:19 Asia/Shanghai"
+    result: miss
+    note: "No separate non-repeated GitHub hot project with enough information gain was included."
+evidence_items:
+  - item_id: "news-1-xai-grok-47"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: "product_announcement"
+    item_date: "2026-09-21"
+    snapshot_time: "2026-09-22 09:13 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://x.ai/news/grok-4-7"
+      - "https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot/"
+      - "https://cursor.com/blog/grok-4-7"
+    confidence_reason: "Official xAI announcement plus official GitHub and Cursor product/changelog pages."
+  - item_id: "news-2-qwen-code-0243"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: "release"
+    item_date: "2026-09-21"
+    snapshot_time: "2026-09-22 09:12 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.24.3"
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.24.3-nightly.20260921.2800e9bb4f"
+    confidence_reason: "First-party GitHub releases with detailed release notes and timestamps inside the reporting window."
+  - item_id: "news-3-vercel-ai-sdk-70108"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: "release"
+    item_date: "2026-09-21"
+    snapshot_time: "2026-09-22 09:17 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/vercel/ai/releases/tag/ai%407.0.108"
+    confidence_reason: "First-party GitHub release lists concrete tool execution and cancellation fixes."
+  - item_id: "news-4-tencent-hunyuan3d-migration"
+    section: "AI 新闻"
+    source_role: official
+    evidence_type: "service_announcement"
+    item_date: "2026-09-21"
+    snapshot_time: "2026-09-22 09:14 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://cloud.tencent.com/announce"
+    confidence_reason: "Tencent Cloud official announcement stream lists the Hunyuan 3D interface migration notice."
+  - item_id: "opinion-cn-1-lobehub-canary"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: "github_release"
+    item_date: "2026-09-21"
+    snapshot_time: "2026-09-22 09:16 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/lobehub/lobehub/releases/tag/v2.2.19-canary.5"
+    confidence_reason: "Public GitHub release body lists the concrete canary commits."
+  - item_id: "opinion-cn-2-qwen-nightly"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: "github_release"
+    item_date: "2026-09-21"
+    snapshot_time: "2026-09-22 09:16 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/QwenLM/qwen-code/releases/tag/v0.24.3-nightly.20260921.2800e9bb4f"
+    confidence_reason: "First-party nightly release lists monitor guidance and batched workspace session catalogs."
+  - item_id: "opinion-en-1-langchain"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: "github_release"
+    item_date: "2026-09-21"
+    snapshot_time: "2026-09-22 09:17 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.6.3"
+      - "https://github.com/langchain-ai/langchain/releases/tag/langchain-typesafe%3D%3D0.0.1a3"
+    confidence_reason: "LangChain release notes list OpenAI routing/request constraint and TypeSafe middleware changes."
+  - item_id: "opinion-en-2-pydantic-ai"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: "github_release"
+    item_date: "2026-09-19"
+    snapshot_time: "2026-09-22 09:17 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/pydantic/pydantic-ai/releases/tag/v2.46.0"
+    confidence_reason: "Pydantic AI first-party release lists TypeSafeModel, realtime and eval profile changes."
+  - item_id: "opinion-en-3-ollama"
+    section: "AI 圈博主"
+    source_role: community
+    evidence_type: "github_release"
+    item_date: "2026-09-19"
+    snapshot_time: "2026-09-22 09:17 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://github.com/ollama/ollama/releases/tag/v0.34.3-rc1"
+    confidence_reason: "Ollama first-party release candidate notes describe /api/show thinking controls."
+  - item_id: "research-1-codemidas"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: "paper"
+    item_date: "2026-09-18"
+    snapshot_time: "2026-09-22 09:19 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.22068v1"
+    confidence_reason: "arXiv original record provides title, abstract, publication timestamp and source link."
+  - item_id: "research-2-designer-rsi"
+    section: "AI 研究前沿"
+    source_role: research
+    evidence_type: "paper"
+    item_date: "2026-09-18"
+    snapshot_time: "2026-09-22 09:19 Asia/Shanghai"
+    verification_status: verified
+    linked_primary_sources:
+      - "https://arxiv.org/abs/2609.22086v1"
+    confidence_reason: "arXiv original record provides title, abstract, publication timestamp and source link."
+followups:
+  - "Grok 4.7 在 Copilot / Cursor 中的工具调用、限额和默认路由表现。"
+  - "Qwen Code runtime/session/JDBC/bwrap 能力是否进入稳定文档和第三方复用。"
+  - "Vercel AI SDK tool-caller 修复是否暴露更多 agent 误执行案例。"
+  - "LangChain / Pydantic TypeSafe 路由是否形成跨框架模式。"
+  - "CodeMidas 是否公开代码、数据或被后续 coding-agent RL 工作引用。"

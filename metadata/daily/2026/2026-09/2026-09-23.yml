@@ -1,0 +1,306 @@
+date: '2026-09-23'
+window_start: '2026-09-22 09:00 Asia/Shanghai'
+window_end: '2026-09-23 09:00 Asia/Shanghai'
+supplemental_range: '2026-09-19 to 2026-09-23; only non-repeated samples for local browser agents, framework model profiles, and agent harness research'
+themes:
+  - model_routing
+  - coding_agent_runtime
+  - structured_output
+  - tool_execution_governance
+  - agent_harness
+  - agent_memory
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - GitHub
+  - Qwen
+  - Vercel
+  - LangChain
+  - Pydantic
+  - LlamaIndex
+  - LobeHub
+products:
+  - GitHub Copilot
+  - GPT-6 Sol
+  - GPT-6 Luna
+  - Claude Opus 5.5
+  - Codex
+  - Claude Code
+  - Qwen Code
+  - Vercel AI SDK
+  - Pydantic AI
+  - LangChain
+  - LlamaIndex AgentMesh
+  - Fast Browser Use
+signals:
+  - 模型菜单扩张
+  - agent command center
+  - 后台 subagent 状态治理
+  - tool context contract
+  - structured output profile
+  - 本地浏览器离散动作选择
+opinion_sources:
+  - LobeHub releases
+  - APUS-AI-Lab fast-browser-use
+  - Pydantic AI releases
+  - LangChain releases
+  - LlamaIndex releases
+viewpoint_themes:
+  - AI 编程客户端工程化
+  - 本地浏览器 agent
+  - 结构化输出与模型画像
+  - agent 框架安全治理
+research_sources:
+  - arXiv:2609.24974
+  - arXiv:2609.24971
+  - arXiv:2609.24969
+research_themes:
+  - agent_harness_distillation
+  - agent_memory_benchmark
+  - rare_event_estimation
+research_artifacts:
+  - paper
+  - benchmark
+research_interpretations:
+  - none
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: '.codex-run/signal-reviews/2026-09-23.md'
+  adopted:
+    - candidate_id: sig_bac1f4fe8d07079d
+      title: 'Harness-Zero: Harness Distillation via Agent-as-Harness'
+      adoption_reason: 'Directly explains agent harness portability, matching the product-side runtime governance theme.'
+    - candidate_id: sig_75763d68e4eebf1c
+      title: 'DolphinBench: Mapping the Pareto Frontier of Agent Memory'
+      adoption_reason: 'Provides original research lens for session, memory, transcript, and worktree state management.'
+    - candidate_id: sig_d3015fff9b504596
+      title: 'Rare Event Estimation via Iterative Unalignment'
+      adoption_reason: 'Adds high-value safety/eval perspective for low-probability autonomous-agent failures.'
+  rejected_or_deferred:
+    - candidate_id: sig_324d8f090ad7b76c
+      status: 待审
+      rejection_reason: 'Gameplay evaluation is relevant but less aligned with today coding-agent runtime theme.'
+    - candidate_id: sig_6e606843ae0fe272
+      status: 待审
+      rejection_reason: 'Robotics/tactile world-action model is high value but would dilute today software-agent focus.'
+    - candidate_id: sig_131a88781c369acf
+      status: 待审
+      rejection_reason: 'RRSI overlaps with recently covered Designer-RSI and harness theme; deferred to avoid repetition.'
+    - candidate_id: sig_6fc17dcc8999a83d
+      status: 待审
+      rejection_reason: 'Multi-agent collusion is important but needs deeper verification and space than today digest allows.'
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: '2026-09-23 09:10 Asia/Shanghai'
+    result: hit
+    note: 'Read optional local candidate review as clue layer; adopted only after arXiv primary-source checks.'
+  - source_id: coding_agent_releases
+    checked_at: '2026-09-23 09:17 Asia/Shanghai'
+    result: hit
+    note: 'Checked Codex, Claude Code, Qwen Code, Gemini CLI, Copilot changelog, Vercel AI SDK releases.'
+  - source_id: core_official_ai_news
+    checked_at: '2026-09-23 09:18 Asia/Shanghai'
+    result: hit
+    note: 'Hit GitHub Copilot model changelogs and OpenAI SDK model identifier release; no separate flagship model blog used.'
+  - source_id: china_model_officials
+    checked_at: '2026-09-23 09:19 Asia/Shanghai'
+    result: partial
+    note: 'Checked Qwen Code/Qwen GitHub and sampled DeepSeek/Z.ai/Kimi/MiniMax/Tencent/Baidu/Volcano official sources; high-confidence inclusion came from Qwen Code.'
+  - source_id: ai_blogger_core_radar
+    checked_at: '2026-09-23 09:21 Asia/Shanghai'
+    result: partial
+    note: 'Used reproducible release/blog/GitHub sources only; X-only Chinese sources remain blocked by policy.'
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: '2026-09-23 09:22 Asia/Shanghai'
+    result: hit
+    note: 'Included 2 Chinese-source and 3 English-source reproducible community/framework signals.'
+  - source_id: china_ai_media_signals
+    checked_at: '2026-09-23 09:20 Asia/Shanghai'
+    result: partial
+    note: 'Sampled public search results; no media-only fact used without primary source.'
+  - source_id: china_ai_engineering_radar
+    checked_at: '2026-09-23 09:22 Asia/Shanghai'
+    result: hit
+    note: 'Checked LobeHub, Dify, RAGFlow, Cherry Studio, and fast-browser-use; included LobeHub and fast-browser-use.'
+  - source_id: china_research_community
+    checked_at: '2026-09-23 09:22 Asia/Shanghai'
+    result: partial
+    note: 'Checked candidate research/community sources; no separate Chinese research item included beyond arXiv candidates.'
+  - source_id: english_ai_engineering_radar
+    checked_at: '2026-09-23 09:23 Asia/Shanghai'
+    result: hit
+    note: 'Checked Pydantic AI, LlamaIndex, Vercel AI SDK, and related engineering releases.'
+  - source_id: english_agent_infra_radar
+    checked_at: '2026-09-23 09:23 Asia/Shanghai'
+    result: hit
+    note: 'Checked LangChain and LlamaIndex releases; included model profile and AgentMesh security signals.'
+  - source_id: english_inference_platforms
+    checked_at: '2026-09-23 09:23 Asia/Shanghai'
+    result: partial
+    note: 'Sampled OpenRouter/Together/Fireworks/Groq/Cohere/Replicate class sources; no higher-priority strict-window item included.'
+  - source_id: english_research_blogs
+    checked_at: '2026-09-23 09:24 Asia/Shanghai'
+    result: miss
+    note: 'No higher-value non-repeated research blog selected over arXiv primary papers.'
+  - source_id: english_industry_analysis
+    checked_at: '2026-09-23 09:24 Asia/Shanghai'
+    result: partial
+    note: 'No high-confidence adjacent industry signal included in body.'
+  - source_id: english_safety_governance
+    checked_at: '2026-09-23 09:24 Asia/Shanghai'
+    result: hit
+    note: 'Rare-event estimation paper included as research-frontier safety signal.'
+  - source_id: research_frontier
+    checked_at: '2026-09-23 09:25 Asia/Shanghai'
+    result: hit
+    note: 'Checked local arXiv candidate review and retained original arXiv links for included research items.'
+evidence_items:
+  - item_id: news-1-copilot-models
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog_and_sdk_release
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:18 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available'
+      - 'https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot'
+      - 'https://github.com/openai/openai-python/releases/tag/v3.18.0'
+      - 'https://github.com/anthropics/claude-code/releases/tag/v2.1.280'
+    confidence_reason: 'Official GitHub changelog plus official SDK and Claude Code release notes.'
+  - item_id: news-2-codex-0-156
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:17 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://github.com/openai/codex/releases/tag/rust-v0.156.0'
+    confidence_reason: 'Official OpenAI Codex GitHub release with detailed release body.'
+  - item_id: news-3-claude-code-2-1-280
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:17 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://github.com/anthropics/claude-code/releases/tag/v2.1.280'
+    confidence_reason: 'Official Anthropic Claude Code release notes.'
+  - item_id: news-4-qwen-code-0-24-4
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:17 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://github.com/QwenLM/qwen-code/releases/tag/v0.24.4'
+      - 'https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.24.4'
+    confidence_reason: 'Official Qwen Code release notes.'
+  - item_id: news-5-vercel-ai-sdk
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:23 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://github.com/vercel/ai/releases/tag/ai%407.0.109'
+      - 'https://github.com/vercel/ai/releases/tag/ai%407.0.111'
+    confidence_reason: 'Official Vercel AI SDK release notes.'
+  - item_id: opinion-cn-1-lobehub
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:22 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://github.com/lobehub/lobehub/releases/tag/v2.2.19-canary.8'
+      - 'https://github.com/lobehub/lobehub/releases/tag/v2.2.19-canary.6'
+    confidence_reason: 'Public GitHub canary release notes; treated as clue-level product signal.'
+  - item_id: opinion-cn-2-fast-browser-use
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_repo_snapshot
+    item_date: '2026-09-19'
+    snapshot_time: '2026-09-23 09:22 Asia/Shanghai'
+    verification_status: partial
+    linked_primary_sources:
+      - 'https://github.com/APUS-AI-Lab/fast-browser-use'
+    confidence_reason: 'Original public repository and README; no formal release, so maturity is marked partial.'
+  - item_id: opinion-en-1-pydantic-ai
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:23 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://github.com/pydantic/pydantic-ai/releases/tag/v2.47.0'
+    confidence_reason: 'Official project release notes.'
+  - item_id: opinion-en-2-langchain
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:23 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://github.com/langchain-ai/langchain/releases/tag/langchain-anthropic%3D%3D1.7.3'
+      - 'https://github.com/langchain-ai/langchain/releases/tag/langchain-openai%3D%3D1.6.4'
+    confidence_reason: 'Official LangChain release notes for partner packages.'
+  - item_id: opinion-en-3-llamaindex
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: '2026-09-21'
+    snapshot_time: '2026-09-23 09:23 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://github.com/run-llama/llama_index/releases/tag/v0.14.25'
+    confidence_reason: 'Official LlamaIndex release note; used as governance clue, not major factual claim.'
+  - item_id: research-1-harness-zero
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:25 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://arxiv.org/abs/2609.24974v1'
+    confidence_reason: 'Primary arXiv page retained.'
+  - item_id: research-2-dolphinbench
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:25 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://arxiv.org/abs/2609.24971v1'
+    confidence_reason: 'Primary arXiv page retained.'
+  - item_id: research-3-rare-event-estimation
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: '2026-09-22'
+    snapshot_time: '2026-09-23 09:25 Asia/Shanghai'
+    verification_status: verified
+    linked_primary_sources:
+      - 'https://arxiv.org/abs/2609.24969v1'
+    confidence_reason: 'Primary arXiv page retained.'
+followups:
+  - 'Check Copilot routing and limits for GPT-6 Sol/Luna and Claude Opus 5.5.'
+  - 'Track Codex fullscreen TUI, voice, usage analytics, and worktree command center adoption.'
+  - 'Watch Claude Code symlink, auto mode retry, background subagent, and cloud token fixes for follow-up regressions.'
+  - 'Revisit Harness-Zero, DolphinBench, and rare-event estimation if code or third-party reproduction appears.'
+fact_confidence: high
+signal_strength: medium

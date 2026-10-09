@@ -1,0 +1,314 @@
+date: 2026-10-09
+window_start: 2026-10-08 09:00 Asia/Shanghai
+window_end: 2026-10-09 09:00 Asia/Shanghai
+supplemental_range: 2026-10-02 to 2026-10-09
+themes:
+  - agent_control_plane
+  - coding_agent_runtime
+  - sandbox_governance
+  - low_cost_subagents
+  - agent_security
+  - reasoning_post_training
+regions:
+  - us
+  - china
+  - global
+companies:
+  - OpenAI
+  - Anthropic
+  - GitHub
+  - Microsoft
+  - Google
+  - Qwen
+  - Stacklok
+products:
+  - Codex
+  - Claude Code
+  - Claude Haiku 5.5
+  - GitHub Copilot
+  - Qwen Code
+  - Gemini CLI
+  - Mecatl
+signals:
+  - 托管 worktree 与任务控制面
+  - hook fail-closed
+  - 本地沙箱 GA
+  - secret detection 接入开发流
+  - 低成本子 agent 模型
+  - agent 训练前筛选
+  - agentic privacy and security
+opinion_sources:
+  - AI 之家
+  - zgaiagent
+  - Simon Willison
+  - Latent Space
+viewpoint_themes:
+  - 小模型作为子 agent
+  - agent harness 云原生化
+  - agent reliability
+  - AI 编程成本结构
+research_sources:
+  - arXiv:2610.10478
+  - arXiv:2610.10536
+  - Google Research
+research_themes:
+  - coding_agent_evaluation
+  - agentic_post_training
+  - RLVR
+  - agentic_privacy_security
+research_artifacts:
+  - paper
+  - research_blog
+research_interpretations:
+  - none
+peripheral_themes:
+  - 安全与治理
+  - 企业采用
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-10-09.md
+  adopted:
+    - candidate_id: sig_d33e8086a0080016
+      title: Before They Can Solve
+      adoption_reason: 最贴合 AI 编程代理训练前筛选与 post-training 成本判断
+    - candidate_id: sig_da1c4a5b6e7ad57f
+      title: Decoupling Exploration from Optimization in RLVR
+      adoption_reason: 补充 reasoning post-training 与可验证奖励训练路线
+    - candidate_id: sig_93854539beed00db
+      title: Open and Emergent Problems in Agentic Privacy and Security
+      adoption_reason: 与 GitHub secret detection 和 sandbox 治理形成同一安全主线
+  rejected_or_deferred:
+    - candidate_id: sig_ed74333ed8ca804c
+      status: 待审
+      rejection_reason: 具身视觉记忆方向有价值，但与本期 coding-agent 控制面主线距离较远
+    - candidate_id: sig_077c05c22e70f5af
+      status: 待审
+      rejection_reason: world-action model 方向保留观察，本期优先 coding-agent 与 RLVR
+    - candidate_id: sig_b570808b082ebb23
+      status: 待审
+      rejection_reason: 机器人 latent world model 与本期主线弱相关
+    - candidate_id: sig_71271ab2e542e35d
+      status: 待审
+      rejection_reason: scientific agent eval 有长期价值，但本期研究名额优先 agent coding 与 RLVR
+    - candidate_id: sig_45abe5eae007502b
+      status: 待审
+      rejection_reason: adaptive evidence routing 值得后续 RAG 专题跟踪，本期未采用
+    - candidate_id: sig_4492150d95993260
+      status: 待审
+      rejection_reason: post-hallucination eval 与可靠性相关，但本期已有更贴合主线的研究项
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-10-09 09:10 Asia/Shanghai
+    result: hit
+    note: 读取本地候选 review；仅作为线索层，入选项已回到原文核验
+  - source_id: coding_agent_releases
+    checked_at: 2026-10-09 09:16 Asia/Shanghai
+    result: hit
+    note: 命中 Codex、Claude Code、GitHub Copilot、Qwen Code、Gemini CLI 官方 release / changelog
+  - source_id: core_official_ai_news
+    checked_at: 2026-10-09 09:18 Asia/Shanghai
+    result: hit
+    note: 核验 OpenAI API Changelog、Anthropic release notes、GitHub Changelog
+  - source_id: china_model_officials
+    checked_at: 2026-10-09 09:18 Asia/Shanghai
+    result: partial
+    note: Qwen Code 命中；DeepSeek、Zhipu、Kimi、MiniMax、Tencent、Baidu、ByteDance 未找到高置信严格窗口模型发布
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-10-09 09:19 Asia/Shanghai
+    result: hit
+    note: 命中 Simon Willison 与 Latent Space；X-only 来源未纳入
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-10-09 09:19 Asia/Shanghai
+    result: hit
+    note: 补入 2 个中文来源与 3 个英文来源；资讯整理均标为信息线索
+  - source_id: china_ai_media_signals
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: hit
+    note: AI 之家与 zgaiagent 提供中文社区线索；事实以官方源为准
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: partial
+    note: GitHub API quota exhausted after官方 release 查询；未用社区 repo release 作为填充
+  - source_id: china_research_community
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: miss
+    note: 未采用额外中文研究社区条目
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: partial
+    note: LangChain release 有命中但信息增量弱；GitHub API quota 用尽后未继续扩展
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: hit
+    note: Latent Space / Stacklok 云原生 agent harness 作为观点样本入选
+  - source_id: english_inference_platforms
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: miss
+    note: 未发现比 agent 控制面更高优先级的平台更新
+  - source_id: english_research_blogs
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: hit
+    note: Google Research agentic privacy/security 文章入选外围治理观察
+  - source_id: english_industry_analysis
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: partial
+    note: 仅采用 Latent Space 访谈作为观点样本，未扩展到付费墙或 X-only 来源
+  - source_id: english_safety_governance
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: hit
+    note: GitHub secret detection 与 Google Research agentic privacy/security 命中
+  - source_id: research_frontier
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: hit
+    note: arXiv 候选回到原文核验；采用 coding-agent base-model predictor 与 RLVR exploration-distillation
+  - source_id: github_trending_projects
+    checked_at: 2026-10-09 09:20 Asia/Shanghai
+    result: partial
+    note: GitHub API core quota exhausted；未强行加入 GitHub 热门项目
+evidence_items:
+  - item_id: news-codex-0162
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-10-08
+    snapshot_time: 2026-10-09 09:16 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/codex/releases/tag/rust-v0.162.0
+      - https://platform.openai.com/docs/changelog
+    confidence_reason: 官方 GitHub release 与 OpenAI API changelog 均可访问
+  - item_id: news-claude-code-21295
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-10-08
+    snapshot_time: 2026-10-09 09:16 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.295
+    confidence_reason: 官方 GitHub release 列出 hook、gateway、audit 与 MCP 修复
+  - item_id: news-haiku-55-copilot
+    section: AI 新闻
+    source_role: official
+    evidence_type: release_note
+    item_date: 2026-10-07
+    snapshot_time: 2026-10-09 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://docs.anthropic.com/en/release-notes/api
+      - https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/
+    confidence_reason: Anthropic release notes 与 GitHub Changelog 对模型和 Copilot 可用性相互印证
+  - item_id: news-copilot-sandbox-secret
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-10-07
+    snapshot_time: 2026-10-09 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/
+      - https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection/
+    confidence_reason: GitHub 官方 changelog 明确 GA、private preview 与计费口径
+  - item_id: news-qwen-gemini-runtime
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-10-08
+    snapshot_time: 2026-10-09 09:16 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.25.0-nightly.20261007.8003d28042
+      - https://github.com/google-gemini/gemini-cli/releases/tag/v0.65.0-nightly.20261008.g44d764ee5
+    confidence_reason: 官方 GitHub release；解释层因 nightly 性质标为中等信号
+  - item_id: opinion-aihome-haiku
+    section: AI 圈博主
+    source_role: community
+    evidence_type: public_article
+    item_date: 2026-10-08
+    snapshot_time: 2026-10-09 09:20 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://aiho.net/news/2026/claude-haiku-5-5-release.html
+      - https://docs.anthropic.com/en/release-notes/api
+    confidence_reason: 中文社区文章可访问，事实部分回到 Anthropic 官方源
+  - item_id: opinion-zgaiagent-agent-reliability
+    section: AI 圈博主
+    source_role: community
+    evidence_type: public_roundup
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-09 09:20 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://www.zgaiagent.cn/today
+    confidence_reason: 仅作为中文社区雷达线索，不作为事实确认来源
+  - item_id: opinion-simon-haiku-cost
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-10-07
+    snapshot_time: 2026-10-09 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/
+      - https://docs.anthropic.com/en/release-notes/api
+    confidence_reason: 作者实践记录可访问；模型事实回到 Anthropic 官方源
+  - item_id: opinion-latent-haiku
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: newsletter
+    item_date: 2026-10-08
+    snapshot_time: 2026-10-09 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.latent.space/p/ainews-claude-haiku-55-better-than
+      - https://docs.anthropic.com/en/release-notes/api
+    confidence_reason: Newsletter 可访问；事实以 Anthropic/GitHub 官方源为准
+  - item_id: opinion-latent-stacklok
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: interview
+    item_date: 2026-10-07
+    snapshot_time: 2026-10-09 09:19 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://www.latent.space/p/stacklok
+    confidence_reason: 作为观点样本采用，Stacklok 项目事实需后续回到官方项目页复查
+  - item_id: research-coding-agent-base
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-10-07
+    snapshot_time: 2026-10-09 09:20 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.10478
+    confidence_reason: arXiv 原文页面核验题名、摘要、提交时间和研究问题
+  - item_id: research-rlvr-expdis
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-10-07
+    snapshot_time: 2026-10-09 09:20 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.10536
+    confidence_reason: arXiv 原文页面核验摘要、代码/checkpoint 声明和提交时间
+  - item_id: peripheral-agentic-security
+    section: AI 外围情报观察
+    source_role: research
+    evidence_type: research_blog
+    item_date: 2026-10-05
+    snapshot_time: 2026-10-09 09:20 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/
+      - https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection/
+    confidence_reason: Google Research 与 GitHub 官方源共同支撑 agentic security / governance 主题
+followups:
+  - Codex 托管 worktree 是否进入团队共享任务中心和云端长任务
+  - Claude Code fail-closed hook 是否成为企业默认策略
+  - Copilot local sandboxing 是否被 Business/Enterprise 管理员强制开启
+  - Haiku 5.5 是否成为子 agent、compaction 和 terminal task 默认模型
+  - Qwen Code hosted / managed-agent runtime 是否进入稳定版
+fact_confidence: high
+signal_strength: high

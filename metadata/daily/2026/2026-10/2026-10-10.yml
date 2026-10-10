@@ -1,0 +1,259 @@
+date: 2026-10-10
+window_start: 2026-10-09 09:00 Asia/Shanghai
+window_end: 2026-10-10 09:00 Asia/Shanghai
+supplemental_range: 2026-10-03 to 2026-10-10
+themes:
+  - agent_runtime_governance
+  - coding_agent_workflow
+  - subagent_cost_control
+  - local_model_routing
+  - inference_serving
+  - agent_learning_benchmarks
+regions:
+  - us
+  - china
+  - global
+companies:
+  - Anthropic
+  - GitHub
+  - Microsoft
+  - OpenAI
+  - Qwen
+  - Google
+  - Anysphere
+products:
+  - Claude Code
+  - GitHub Copilot
+  - Codex
+  - Qwen Code
+  - Cursor
+  - Gemini CLI
+  - vLLM
+signals:
+  - Desktop Code tab 管理策略
+  - subagent 独立 compaction window
+  - Copilot 本地模型发现
+  - agent sessions 并排管理
+  - worktree cleanup
+  - hosted managed-agent runtime
+  - token-level model routing
+  - PR security review and rollout monitoring
+opinion_sources:
+  - Qwen Code releases
+  - LobeHub releases
+  - Simon Willison
+  - Latent Space
+  - vLLM releases
+viewpoint_themes:
+  - agent 运行层治理
+  - token budget tooling
+  - AI biology 反 hype
+  - 推理基础设施
+  - 中文 AI 客户端工程 cadence
+research_sources:
+  - arXiv:2610.12242
+  - arXiv:2610.08215
+research_themes:
+  - token_level_routing
+  - llm_serving
+  - agent_learning
+  - experience_retention
+research_artifacts:
+  - paper
+  - benchmark
+research_interpretations:
+  - none
+peripheral_themes: []
+candidate_usage:
+  used_local_signal_inbox: false
+  review_path: .codex-run/signal-reviews/2026-10-10.md
+  adopted: []
+  rejected_or_deferred: []
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-10-10 09:04 Asia/Shanghai
+    result: miss
+    note: optional local review file was missing; normal source scan continued
+  - source_id: coding_agent_releases
+    checked_at: 2026-10-10 09:07 Asia/Shanghai
+    result: hit
+    note: verified Claude Code, Copilot, Codex, Cursor, Qwen Code, Gemini CLI and related release streams
+  - source_id: core_official_ai_news
+    checked_at: 2026-10-10 09:08 Asia/Shanghai
+    result: hit
+    note: strongest strict-window hits were operational agent workflow updates, not new base-model launches
+  - source_id: china_model_officials
+    checked_at: 2026-10-10 09:08 Asia/Shanghai
+    result: partial
+    note: Qwen Code hit; DeepSeek GitHub org activity observed but no high-confidence new model release; Kimi, MiniMax, Tencent, Baidu and Volcano Ark pages did not yield a strict-window model launch
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: partial
+    note: Simon Willison and Latent Space yielded reproducible items; several X-only or older Chinese core sources were not used
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: hit
+    note: included 2 Chinese-source engineering/community signals and 3 English-source reproducible signals; Chinese public blog quota was filled by engineering releases, not strong viewpoints
+  - source_id: china_ai_media_signals
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: partial
+    note: no stronger non-repeated public media/blog item found in the strict window; did not reuse AI 之家 or zgaiagent items from 2026-10-09
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: hit
+    note: Qwen Code preview and LobeHub canary used as engineering cadence signals
+  - source_id: china_research_community
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: miss
+    note: no separate Chinese research-community item adopted
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: hit
+    note: Simon Willison ttok and vLLM release provided engineering signals
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: hit
+    note: Copilot, Claude Code, Cursor, Codex and Qwen Code all reinforced agent runtime governance theme
+  - source_id: english_inference_platforms
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: hit
+    note: vLLM 0.31.0 and TokenRouter highlighted inference and routing infrastructure
+  - source_id: english_research_blogs
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: hit
+    note: Latent Space Biohub/DeepMind interview used as opinion sample; original scientific facts require primary paper/lab follow-up
+  - source_id: english_industry_analysis
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: partial
+    note: used only reproducible public Latent Space item; did not use paywalled or X-only signals
+  - source_id: english_safety_governance
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: partial
+    note: no stronger new safety-governance item adopted beyond operational governance in coding-agent releases
+  - source_id: research_frontier
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: hit
+    note: adopted TokenRouter and Learn2Play Bench after checking original arXiv pages
+  - source_id: github_trending_projects
+    checked_at: 2026-10-10 09:09 Asia/Shanghai
+    result: partial
+    note: no fresh mainline-external trending project with stronger information gain; vLLM 0.31.0 retained as supplemental infrastructure signal
+evidence_items:
+  - item_id: news-claude-code-21296
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-10 09:07 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/anthropics/claude-code/releases/tag/v2.1.296
+    confidence_reason: official Claude Code GitHub release with exact tag and timestamp
+  - item_id: news-copilot-weekly-20261005
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-10 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5/
+    confidence_reason: official GitHub changelog summary of Copilot weekly releases
+  - item_id: news-codex-01621
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-10 09:07 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/openai/codex/releases/tag/rust-v0.162.1
+    confidence_reason: official OpenAI Codex release; patch-level details are explicit
+  - item_id: news-qwen-code-0251-preview1
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-10 09:07 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.25.1-preview.1
+    confidence_reason: official QwenLM GitHub release; preview status limits signal strength
+  - item_id: news-cursor-security-rollouts
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-10-06
+    snapshot_time: 2026-10-10 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://cursor.com/changelog
+    confidence_reason: official Cursor changelog; supplemental due to date but directly relevant to AI code-review governance
+  - item_id: opinion-lobehub-canary-2220-2
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-10 09:09 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://github.com/lobehub/lobehub/releases/tag/v2.2.20-canary.2
+    confidence_reason: release is public but has limited feature detail, so used only as cadence signal
+  - item_id: opinion-simon-ttok-10
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: blog_post
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-10 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://simonwillison.net/2026/Oct/9/ttok/
+    confidence_reason: public author blog post with release context; tokenizer inference still requires official confirmation
+  - item_id: opinion-latent-biohub-deepmind
+    section: AI 圈博主
+    source_role: opinion
+    evidence_type: podcast_transcript
+    item_date: 2026-10-10
+    snapshot_time: 2026-10-10 09:09 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://www.latent.space/p/biohub-deepmind
+    confidence_reason: public transcript/interview; treated as viewpoint sample, not factual replacement for original research
+  - item_id: infra-vllm-0310
+    section: GitHub 热门项目
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-10-05
+    snapshot_time: 2026-10-10 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vllm-project/vllm/releases/tag/v0.31.0
+    confidence_reason: official vLLM release with detailed highlights; supplemental due to date
+  - item_id: research-tokenrouter
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-10-08
+    snapshot_time: 2026-10-10 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.12242
+    confidence_reason: original arXiv page checked; claims not independently reproduced
+  - item_id: research-learn2play
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: benchmark
+    item_date: 2026-10-08
+    snapshot_time: 2026-10-10 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.08215
+    confidence_reason: original arXiv page checked; benchmark not independently reproduced
+followups:
+  - Claude Code Desktop Code tab managed policy 是否进入企业默认配置
+  - Copilot Agents window 是否和云端 coding-agent task 状态合并
+  - Cursor Security Review / Rollouts 是否进入强制 PR 或部署 gate
+  - Qwen Code hosted managed-agent runtime 是否进入稳定版
+  - Token-level routing 是否被主流推理平台采用
+fact_confidence: high
+signal_strength: medium

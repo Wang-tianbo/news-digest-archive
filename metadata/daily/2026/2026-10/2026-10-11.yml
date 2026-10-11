@@ -1,0 +1,310 @@
+date: 2026-10-11
+window_start: 2026-10-10 09:00 Asia/Shanghai
+window_end: 2026-10-11 09:00 Asia/Shanghai
+supplemental_range: 2026-10-04 to 2026-10-11
+themes:
+  - agent_runtime_governance
+  - coding_agent_workflow
+  - enterprise_agent_platform
+  - mcp_tool_governance
+  - agent_evaluation
+  - long_horizon_workflows
+regions:
+  - us
+  - china
+  - global
+companies:
+  - GitHub
+  - Microsoft
+  - Qwen
+  - Google
+  - LangGenius
+  - Pydantic
+products:
+  - GitHub Copilot
+  - Copilot for JetBrains
+  - Qwen Code
+  - Gemini CLI
+  - Gemini Enterprise
+  - Dify
+  - Pydantic AI
+signals:
+  - 企业默认模型治理
+  - MCP server 启动控制
+  - Email Channel 委派
+  - batch background work
+  - trajectory timing
+  - managed-agent runtime
+  - coworker agent identity
+  - tools and skills registry
+  - coding-agent runtime monitor
+  - test-generation evaluation
+opinion_sources:
+  - Qwen Code Chinese weekly
+  - Dify releases
+  - Gemini CLI releases
+  - Pydantic AI releases
+  - Google Cloud blog
+viewpoint_themes:
+  - agent 运行层治理
+  - 中文 AI 工程社区
+  - MCP 工具边界
+  - durable execution
+  - 企业 agent 平台化
+research_sources:
+  - arXiv:2610.12269
+  - arXiv:2610.12289
+  - arXiv:2610.11559
+research_themes:
+  - coding_agent_monitoring
+  - test_generation_evaluation
+  - long_horizon_agent_evaluation
+  - human_agent_interaction
+research_artifacts:
+  - paper
+  - benchmark
+research_interpretations:
+  - none
+peripheral_themes:
+  - 企业采用
+  - 云平台与企业工具链
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-10-11.md
+  adopted:
+    - candidate_id: sig_d0f53098b7be9af2
+      title: On the estimation and validity of AI time horizons
+      adoption_reason: used as local review clue for research scan, but not included because Cadence/TestPrism/SWE-Journey fit today's coding-agent runtime theme better
+    - candidate_id: research-sidecar-cadence
+      title: Cadence
+      adoption_reason: adopted from research sidecar after arXiv verification; directly fits runtime monitoring theme
+    - candidate_id: research-sidecar-testprism
+      title: TestPrism
+      adoption_reason: adopted from research sidecar after arXiv verification; strong coding-agent eval signal
+    - candidate_id: research-sidecar-swe-journey
+      title: SWE-Journey
+      adoption_reason: adopted from research sidecar after arXiv verification; complements long-horizon user-agent evaluation theme
+  rejected_or_deferred:
+    - candidate_id: sig_ed889c864095afbd
+      status: 观察中
+      rejection_reason: agent security topic is relevant but claims were broader and less central than Cadence/TestPrism for this run
+    - candidate_id: sig_ccff47e68b74d55a
+      status: 观察中
+      rejection_reason: BrickBench is interesting but less central to coding-agent and enterprise workflow thread
+    - candidate_id: sig_654ee6e9cd939bb6
+      status: 观察中
+      rejection_reason: agent ecology risk signal deferred for safety-focused issue or weekly synthesis
+    - candidate_id: research-sidecar-agentspy
+      status: 观察中
+      rejection_reason: strong observability candidate but older supplemental date and lower priority than Cadence/TestPrism
+    - candidate_id: research-sidecar-undobench
+      status: 观察中
+      rejection_reason: useful recovery benchmark but deferred due to space and older supplemental date
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-10-11 09:07 Asia/Shanghai
+    result: hit
+    note: optional local review existed and was used as a research clue layer only
+  - source_id: research_sidecar
+    checked_at: 2026-10-11 09:16 Asia/Shanghai
+    result: hit
+    note: background research sidecar provided strongest candidates and gaps; tracked report files were written by main run
+  - source_id: coding_agent_releases
+    checked_at: 2026-10-11 09:12 Asia/Shanghai
+    result: hit
+    note: verified Copilot JetBrains changelog, Qwen Code releases, Gemini CLI release, and checked Codex / Claude Code release feeds for non-repeated updates
+  - source_id: core_official_ai_news
+    checked_at: 2026-10-11 09:13 Asia/Shanghai
+    result: hit
+    note: strongest hits were dev-tool control-plane and enterprise-agent platform updates, not foundation model launches
+  - source_id: china_model_officials
+    checked_at: 2026-10-11 09:14 Asia/Shanghai
+    result: partial
+    note: Qwen Code yielded strong coding-agent signal; DeepSeek, Z.ai, Kimi, MiniMax, Tencent Hunyuan, Baidu Qianfan and Doubao/Volcano Ark did not yield high-confidence strict-window model/platform launches
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-10-11 09:17 Asia/Shanghai
+    result: partial
+    note: reproducible non-X core-blog hits were weaker than official releases; Simon/Latent Space did not yield stronger non-repeated strict-window items
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-10-11 09:18 Asia/Shanghai
+    result: hit
+    note: included 2 Chinese-source and 3 English-source reproducible information signals; many are engineering/community release signals rather than strong opinions
+  - source_id: china_ai_media_signals
+    checked_at: 2026-10-11 09:18 Asia/Shanghai
+    result: partial
+    note: broad Chinese media search did not produce stronger primary-source-backed items; no private or login-state sources used
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-10-11 09:18 Asia/Shanghai
+    result: hit
+    note: Qwen Code weekly and Dify release used as Chinese engineering/community signals
+  - source_id: china_research_community
+    checked_at: 2026-10-11 09:18 Asia/Shanghai
+    result: miss
+    note: no separate Chinese research-community item adopted
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-10-11 09:18 Asia/Shanghai
+    result: hit
+    note: Gemini CLI and Pydantic AI releases provided engineering signals
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-10-11 09:18 Asia/Shanghai
+    result: hit
+    note: Copilot, Qwen Code, Gemini CLI, Dify and Pydantic AI all reinforced agent runtime governance theme
+  - source_id: english_inference_platforms
+    checked_at: 2026-10-11 09:19 Asia/Shanghai
+    result: partial
+    note: GitHub API quota was exhausted mid-run; no fresh non-repeated inference-platform item adopted
+  - source_id: english_research_blogs
+    checked_at: 2026-10-11 09:19 Asia/Shanghai
+    result: partial
+    note: no stronger public long-form research-blog item adopted beyond arXiv research sources
+  - source_id: english_industry_analysis
+    checked_at: 2026-10-11 09:19 Asia/Shanghai
+    result: hit
+    note: Google Cloud Gemini Enterprise post used as enterprise-agent platform signal
+  - source_id: english_safety_governance
+    checked_at: 2026-10-11 09:19 Asia/Shanghai
+    result: partial
+    note: AgentSpy/UndoBench and agent-security candidates deferred; no safety-governance body item included
+  - source_id: research_frontier
+    checked_at: 2026-10-11 09:19 Asia/Shanghai
+    result: hit
+    note: adopted Cadence, TestPrism and SWE-Journey after checking original arXiv pages
+  - source_id: github_trending_projects
+    checked_at: 2026-10-11 09:20 Asia/Shanghai
+    result: partial
+    note: GitHub API core quota was exhausted; no fresh mainline-external project with enough information gain was included as GitHub 热门项目
+  - source_id: x_only_sources
+    checked_at: 2026-10-11 09:20 Asia/Shanghai
+    result: blocked
+    note: X-only blogger sources were not used per automation policy
+evidence_items:
+  - item_id: news-copilot-jetbrains-controls
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-10-10
+    snapshot_time: 2026-10-11 09:12 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains/
+    confidence_reason: official GitHub changelog with exact date and details on default models and MCP startup controls
+  - item_id: news-qwen-code-weekly-preview2
+    section: AI 新闻
+    source_role: official
+    evidence_type: blog_and_github_release
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-11 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://qwenlm.github.io/qwen-code-docs/en/blog/updates/weekly-update-2026-10-09/
+      - https://qwenlm.github.io/qwen-code-docs/zh/blog/updates/weekly-update-2026-10-09/
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.25.1-preview.2
+    confidence_reason: official Qwen docs/blog and GitHub release; preview/nightly nature limits signal strength
+  - item_id: news-gemini-cli-065-nightly
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-10-10
+    snapshot_time: 2026-10-11 09:13 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/google-gemini/gemini-cli/releases/tag/v0.65.0-nightly.20261010.g9b6e0265d
+    confidence_reason: official Gemini CLI GitHub release; nightly status limits product signal strength
+  - item_id: news-google-gemini-enterprise
+    section: AI 新闻
+    source_role: official
+    evidence_type: company_blog
+    item_date: 2026-10-10
+    snapshot_time: 2026-10-11 09:14 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026
+    confidence_reason: official Google Cloud blog; customer claims not independently verified in this run
+  - item_id: opinion-qwen-code-cn-weekly
+    section: AI 圈博主
+    source_role: community
+    evidence_type: official_community_blog
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-11 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://qwenlm.github.io/qwen-code-docs/zh/blog/updates/weekly-update-2026-10-09/
+    confidence_reason: official Chinese Qwen Code blog used as community/engineering narrative sample
+  - item_id: opinion-dify-1171
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-10-10
+    snapshot_time: 2026-10-11 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/langgenius/dify/releases/tag/1.17.1
+    confidence_reason: public GitHub release; used as engineering signal rather than strategic viewpoint
+  - item_id: opinion-gemini-cli-release
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-10-10
+    snapshot_time: 2026-10-11 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/google-gemini/gemini-cli/releases/tag/v0.65.0-nightly.20261010.g9b6e0265d
+    confidence_reason: public official release, treated as engineering-community signal
+  - item_id: opinion-pydantic-ai-2550
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-11 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/pydantic/pydantic-ai/releases/tag/v2.55.0
+    confidence_reason: public GitHub release with concrete durable execution, MCP and tool-call boundary details
+  - item_id: opinion-google-gemini-enterprise
+    section: AI 圈博主
+    source_role: official
+    evidence_type: company_blog
+    item_date: 2026-10-10
+    snapshot_time: 2026-10-11 09:18 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026
+    confidence_reason: official enterprise platform narrative; treated as signal, not independent adoption proof
+  - item_id: research-cadence
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-10-08
+    snapshot_time: 2026-10-11 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.12269
+    confidence_reason: original arXiv page checked; not independently reproduced
+  - item_id: research-testprism
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: paper
+    item_date: 2026-10-08
+    snapshot_time: 2026-10-11 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.12289
+    confidence_reason: original arXiv page checked; not independently reproduced
+  - item_id: research-swe-journey
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: benchmark
+    item_date: 2026-10-08
+    snapshot_time: 2026-10-11 09:19 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.11559
+    confidence_reason: original arXiv page checked; not independently reproduced
+followups:
+  - Copilot JetBrains default-model and MCP startup controls 是否扩展到更多 Copilot surfaces
+  - Qwen Code Email Channel、batch work 和 managed-agent runtime 是否进入稳定版
+  - Gemini CLI 夜版 command trust / MCP session 修复是否进入稳定版
+  - Gemini Enterprise coworker agent 是否公开更细的身份、权限、记忆和审计文档
+  - Cadence / TestPrism / SWE-Journey 是否被 agent 产品或评测榜单采用
+fact_confidence: high
+signal_strength: medium

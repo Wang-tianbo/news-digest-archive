@@ -1,0 +1,346 @@
+date: 2026-10-13
+window_start: 2026-10-12 09:00 Asia/Shanghai
+window_end: 2026-10-13 09:00 Asia/Shanghai
+supplemental_range: 2026-10-06 to 2026-10-13
+themes:
+  - agent_runtime_governance
+  - coding_agent_workflow
+  - china_model_release
+  - project_context
+  - agent_reliability
+  - agent_safety
+  - tool_retrieval
+regions:
+  - china
+  - us
+  - global
+companies:
+  - ByteDance
+  - Volcano Engine
+  - Z.ai
+  - Qwen
+  - GitHub
+  - Microsoft
+  - Anthropic
+  - LobeHub
+  - LangChain
+  - Vercel
+  - Ollama
+products:
+  - Doubao-Seed-2.0
+  - Doubao-Seed-2.0-Code
+  - TRAE
+  - Z Code
+  - GLM HighSpeed
+  - Qwen Code
+  - GitHub Copilot
+  - Claude
+  - LobeChat
+  - LangChain
+  - Vercel AI SDK
+  - Ollama
+signals:
+  - 豆包 2.0 API 与 Code 模型上线
+  - 子 agent 分模型配置
+  - MCP App / UI plugin
+  - workflow replay
+  - managed-agent mailbox
+  - worktree child-run settlement
+  - repository instructions and skills
+  - unintended agent actions
+  - code-review benchmark
+  - test-suite benchmark
+  - sandbox snapshot recovery
+  - reliability-aware tool retrieval
+opinion_sources:
+  - 量子位
+  - LobeChat releases
+  - LangChain releases
+  - Vercel AI SDK releases
+  - Ollama releases
+viewpoint_themes:
+  - 高速 coding worker
+  - 中文 AI 客户端工程
+  - agent framework model profiles
+  - chat stream recovery
+  - local model integration
+research_sources:
+  - arXiv:2610.13668
+  - arXiv:2610.13065
+  - arXiv:2610.13841
+  - arXiv:2610.13889
+research_themes:
+  - coding_agent_review
+  - test_generation_evaluation
+  - sandbox_state_recovery
+  - reliability_aware_tool_retrieval
+  - agent_safety_evaluation
+research_artifacts:
+  - benchmark
+  - paper
+research_interpretations:
+  - none
+peripheral_themes:
+  - 安全与治理
+  - 企业采用
+candidate_usage:
+  used_local_signal_inbox: true
+  review_path: .codex-run/signal-reviews/2026-10-13.md
+  adopted:
+    - candidate_id: sig_1a100546c2c9e61e
+      title: RATED Reliability-Aware AI Agent Tool Retrieval via Execution Dynamics
+      adoption_reason: 直接解释 MCP / tool ecosystem 中实时工具失败和检索可靠性问题
+    - candidate_id: research-sidecar-crbugbench
+      title: (When) Should a Software Factory be Lights-off?
+      adoption_reason: 贴合 code-review agent 与 lights-off software factory 的本期判断主线
+    - candidate_id: research-sidecar-testsuitebench
+      title: TestSuiteBench
+      adoption_reason: 强化 agent 能写应用但难以验证应用的研究信号
+    - candidate_id: research-sidecar-sandbox-snapshots
+      title: Returning to Development States
+      adoption_reason: 与 worktree、workspace session、snapshot、replay 等产品信号高度相关
+  rejected_or_deferred:
+    - candidate_id: sig_9631f227983e70d8
+      status: 待审
+      rejection_reason: Wikipedia Game 检索能力有趣，但与本期 coding-agent 可靠性主线弱于已采用研究项
+    - candidate_id: sig_56cf100a7360fb6f
+      status: 观察中
+      rejection_reason: X-AgentRed 与个人 agent 安全相关，保留给后续安全专题或周报聚合
+    - candidate_id: research-sidecar-agent-swe
+      status: 观察中
+      rejection_reason: AgentSWE 贴近 agent-building 主题，但本期研究名额优先 review、testing、snapshot 与 tool reliability
+    - candidate_id: research-sidecar-hidden-capabilities
+      status: 观察中
+      rejection_reason: capability hiding 属于高价值安全研究，但与本期产品事实样本距离较远
+source_checks:
+  - source_id: local_signal_inbox
+    checked_at: 2026-10-13 09:04 Asia/Shanghai
+    result: hit
+    note: optional local review existed and was used as clue layer only; adopted research item returned to arXiv source
+  - source_id: research_sidecar
+    checked_at: 2026-10-13 09:09 Asia/Shanghai
+    result: hit
+    note: background research scan returned coding-agent reliability and safety candidates; main run verified included arXiv pages
+  - source_id: coding_agent_releases
+    checked_at: 2026-10-13 09:08 Asia/Shanghai
+    result: hit
+    note: verified Z Code changelog, Qwen Code release, GitHub Copilot blog, LobeChat, LangChain, Vercel AI SDK and Ollama releases
+  - source_id: core_official_ai_news
+    checked_at: 2026-10-13 09:07 Asia/Shanghai
+    result: hit
+    note: strongest official hits were Doubao 2.0, Z Code 3.15.1, Qwen Code nightly, GitHub Copilot project-context guidance and Anthropic safety report
+  - source_id: china_model_officials
+    checked_at: 2026-10-13 09:07 Asia/Shanghai
+    result: hit
+    note: Doubao 2.0 official developer-community post and Z Code 3.15.1 changelog were included; broader DeepSeek, Kimi, MiniMax, Tencent, Baidu and other China model pages did not produce stronger strict-window items in this run
+  - source_id: ai_blogger_core_radar
+    checked_at: 2026-10-13 09:08 Asia/Shanghai
+    result: partial
+    note: non-X personal blog hits were weaker than engineering/community sources; X-only sources were not used
+  - source_id: ai_blogger_free_opinion_pool
+    checked_at: 2026-10-13 09:08 Asia/Shanghai
+    result: hit
+    note: included 2 Chinese-source and 3 English-source reproducible information signals; most are engineering/community release signals rather than strong opinions
+  - source_id: china_ai_media_signals
+    checked_at: 2026-10-13 09:08 Asia/Shanghai
+    result: hit
+    note: QbitAI GLM HighSpeed item used as community clue and backed by Z Code changelog; speed claim kept as community-observed
+  - source_id: china_ai_engineering_radar
+    checked_at: 2026-10-13 09:08 Asia/Shanghai
+    result: hit
+    note: Qwen Code, Z Code and LobeChat provided China-side engineering signals
+  - source_id: china_research_community
+    checked_at: 2026-10-13 09:08 Asia/Shanghai
+    result: partial
+    note: no separate Chinese research-community body item adopted; China source quota filled by media and engineering signals
+  - source_id: english_ai_engineering_radar
+    checked_at: 2026-10-13 09:09 Asia/Shanghai
+    result: hit
+    note: Vercel AI SDK and Ollama releases provided engineering signals
+  - source_id: english_agent_infra_radar
+    checked_at: 2026-10-13 09:09 Asia/Shanghai
+    result: hit
+    note: LangChain, GitHub Copilot, Qwen Code and Z Code reinforced project-context and agent-runtime themes
+  - source_id: english_inference_platforms
+    checked_at: 2026-10-13 09:09 Asia/Shanghai
+    result: partial
+    note: Ollama local inference signal adopted; no stronger OpenRouter/Together/Fireworks/Groq item included
+  - source_id: english_research_blogs
+    checked_at: 2026-10-13 09:09 Asia/Shanghai
+    result: hit
+    note: Anthropic research report included as safety/governance signal; arXiv papers included as research frontier
+  - source_id: english_industry_analysis
+    checked_at: 2026-10-13 09:09 Asia/Shanghai
+    result: partial
+    note: no paywalled or X-only industry analysis used; GitHub Blog used as official developer guidance
+  - source_id: english_safety_governance
+    checked_at: 2026-10-13 09:09 Asia/Shanghai
+    result: hit
+    note: Anthropic unintended model actions report and RATED/X-AgentRed scan reinforced agent safety and tool reliability theme
+  - source_id: research_frontier
+    checked_at: 2026-10-13 09:09 Asia/Shanghai
+    result: hit
+    note: adopted CRBugBench, TestSuiteBench, sandbox snapshots and RATED after checking original arXiv pages
+  - source_id: github_trending_projects
+    checked_at: 2026-10-13 09:09 Asia/Shanghai
+    result: partial
+    note: no fresh mainline-external trending project with stronger information gain than research and official releases; GitHub 热门项目 omitted
+  - source_id: x_only_sources
+    checked_at: 2026-10-13 09:09 Asia/Shanghai
+    result: blocked
+    note: X-only blogger sources were not used per automation policy
+evidence_items:
+  - item_id: news-doubao-2
+    section: AI 新闻
+    source_role: official
+    evidence_type: developer_community_announcement
+    item_date: 2026-10-13
+    snapshot_time: 2026-10-13 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://developer.volcengine.com/articles/7610285824933445675
+      - https://www.volcengine.com/product/trae
+    confidence_reason: 火山引擎开发者社区原文可访问；具体 benchmark claims 未独立复现
+  - item_id: news-zcode-3151
+    section: AI 新闻
+    source_role: official
+    evidence_type: changelog
+    item_date: 2026-10-12
+    snapshot_time: 2026-10-13 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://zcode.z.ai/en/changelog
+    confidence_reason: official Z Code changelog lists version 3.15.1 and detailed feature / fix entries
+  - item_id: news-qwen-code-nightly-20261012
+    section: AI 新闻
+    source_role: official
+    evidence_type: github_release
+    item_date: 2026-10-12
+    snapshot_time: 2026-10-13 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/QwenLM/qwen-code/releases/tag/v0.25.1-nightly.20261012.18f80f5666
+    confidence_reason: official QwenLM GitHub release with exact tag and UTC timestamp; nightly status limits signal strength
+  - item_id: news-github-copilot-project-context
+    section: AI 新闻
+    source_role: official
+    evidence_type: company_blog
+    item_date: 2026-10-12
+    snapshot_time: 2026-10-13 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-teach-copilot-about-your-codebase/
+    confidence_reason: official GitHub Blog article with structured metadata and project-context details
+  - item_id: news-anthropic-unintended-actions
+    section: AI 新闻
+    source_role: official
+    evidence_type: research_blog
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-13 09:08 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://www.anthropic.com/research/investigating-unintended-model-actions
+    confidence_reason: official Anthropic research report; included as supplemental because correction/update occurred 2026-10-12
+  - item_id: opinion-qbitai-glm-highspeed
+    section: AI 圈博主
+    source_role: media
+    evidence_type: media_signal
+    item_date: 2026-10-12
+    snapshot_time: 2026-10-13 09:08 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://www.qbitai.com/2026/10/502649.html
+      - https://zcode.z.ai/en/changelog
+    confidence_reason: Z Code changelog verifies GLM HighSpeed trial; QbitAI speed figure remains community-observed
+  - item_id: opinion-lobechat-canary-2220-5
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-10-12
+    snapshot_time: 2026-10-13 09:08 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://github.com/lobehub/lobe-chat/releases/tag/v2.2.20-canary.5
+      - https://github.com/lobehub/lobe-chat/releases
+    confidence_reason: public GitHub release is available but canary status limits product-level importance
+  - item_id: opinion-langchain-145
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-10-12
+    snapshot_time: 2026-10-13 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.4.5
+      - https://github.com/langchain-ai/langchain/releases
+    confidence_reason: official LangChain GitHub release stream with exact package tags
+  - item_id: opinion-vercel-ai-sdk-70138
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-10-12
+    snapshot_time: 2026-10-13 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://github.com/vercel/ai/releases/tag/ai%407.0.138
+      - https://github.com/vercel/ai/releases
+    confidence_reason: official Vercel AI SDK GitHub release details stream resume and tool-output fixes
+  - item_id: opinion-ollama-0404-rc0
+    section: AI 圈博主
+    source_role: community
+    evidence_type: github_release
+    item_date: 2026-10-12
+    snapshot_time: 2026-10-13 09:09 Asia/Shanghai
+    verification_status: partial
+    linked_primary_sources:
+      - https://github.com/ollama/ollama/releases/tag/v0.40.4-rc0
+      - https://github.com/ollama/ollama/releases
+    confidence_reason: official Ollama GitHub RC release; release-candidate status limits signal strength
+  - item_id: research-crbugbench
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-13 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.13668
+    confidence_reason: arXiv abstract and submission metadata checked; listed in 2026-10-12 arXiv recent stream per research sidecar
+  - item_id: research-testsuitebench
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-13 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.13065
+    confidence_reason: arXiv abstract and submission metadata checked; claims not independently reproduced
+  - item_id: research-sandbox-snapshots
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-13 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.13841
+    confidence_reason: arXiv abstract and submission metadata checked; used as early research signal
+  - item_id: research-rated-tool-retrieval
+    section: AI 研究前沿
+    source_role: research
+    evidence_type: arxiv_paper
+    item_date: 2026-10-09
+    snapshot_time: 2026-10-13 09:09 Asia/Shanghai
+    verification_status: verified
+    linked_primary_sources:
+      - https://arxiv.org/abs/2610.13889
+    confidence_reason: arXiv abstract and submission metadata checked; code/data availability claim not independently verified
+followups:
+  - 核验豆包 2.0 / Doubao-Seed-2.0-Code 的正式模型 ID、价格、上下文和火山方舟 API 文档
+  - 跟踪 Z Code GLM HighSpeed trial 是否转为正式模型入口并公开性能/成本细节
+  - 观察 Qwen Code managed-agent mailbox 和 worktree child-run settlement 是否进入稳定版
+  - 复查 CRBugBench 与 TestSuiteBench 是否被 Copilot、Cursor、Claude Code 或 Codex 相关团队引用
+  - 关注 Anthropic 是否发布更多 unintended model actions 后续报告和产品级防护
+fact_confidence: high
+signal_strength: medium
